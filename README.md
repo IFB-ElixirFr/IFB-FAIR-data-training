@@ -1,12 +1,22 @@
----
-tags: tag1, tag2, rage
----
-
-# Formation IFB science ouverte & PGD : comment gérer des jeux de données haut-débit en sciences de la vie et de la santé 
-
+# Formation IFB science ouverte & PGD : comment gérer des jeux de données haut-débit en sciences de la vie et de la santé
 ## Présentation et application des principes FAIR de gestion des données dans un projet bioinformatique.
 
 L’Institut Français de Bioinformatique (IFB) organise une formation à destination de bioinformaticiens, biologistes et médecins impliqués dans des projets d’analyse bioinformatique de jeux de données omiques et souhaitant mettre en œuvre les principes "FAIR" (Facile à trouver, Accessible, Interopérable, Réutilisable) tout au long du déroulement du projet. La formation abordera les différents points fondamentaux (théoriques, pratiques, juridiques) en lien avec la politique nationale d’ouverture des données de la recherche et présentera sous forme de séances pratiques les ressources nationales accessibles à la communauté scientifique ainsi que les solutions proposées par l’IFB pour gérer les données d’un projet de recherche.
+
+[![](https://img.shields.io/badge/LICENCE-GNU--Affero-brightgreen.svg)](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/blob/main/LICENSE) 
+
+[![Website Ressources](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://ifb-elixirfr.github.io/IFB-FAIR-data-training/)
+[![example workflow name](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/workflows/Build%20and%20deploy%20Jekyll%20site%20to%20GitHub%20Pages/badge.svg)](https://ifb-elixirfr.github.io/IFB-FAIR-data-training/)
+
+[![made-with-Jekyll](https://img.shields.io/badge/Made%20with-Jekyll-1f425f.svg)](https://jekyllrb.com/)
+[![made-with-markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+[![made-with-JS](https://img.shields.io/badge/Made%20with-JS-1f425f.svg)](https://developer.mozilla.org/fr/docs/Web/JavaScript)
+
+[:speech_balloon: Posez une question](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/discussions/new)
+[:book: Lisez les questions](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/discussions?discussions_q=sort%3Atop)
+[:e-mail: Par mail](mailto:thomas.denecker@gfrance-bioinformatique.fr)
+
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 
 ### Objectifs pédagogiques
 
@@ -16,17 +26,16 @@ Les bonnes pratiques et outils de gestion des données d’un projet en bioinfor
 Le PGD : séances théoriques et pratiques de construction d’un PGD sur des exemples de jeux de données omiques 
 Le choix des métadonnées : panorama des ressources existantes pour choisir des métadonnées et mise en pratique pour annoter des jeux de données omiques en vue de la publication des données dans une banque internationale ou un dataverse institutionnel.
 
-
-### Modalités pratiques 
+### Modalités pratiques
 
 5 séances de 3 heures en distanciel synchrone de 9h00 à 12h00. Des travaux ponctuels seront à effectuer entre les séances.
 Outil de visio proposé : zoom.
 
 ### Formateurs
 
-Hélène Chiapello, Thomas Denecker, Jean-François Dufayard, Gautier Sarah, Frédéric de Lamotte, Paulette Lieby, Lionel Maurel, Julien Seiler. 
+Hélène Chiapello, Thomas Denecker, Jean-François Dufayard, Gautier Sarah, Frédéric de Lamotte, Paulette Lieby, Lionel Maurel, Julien Seiler.
 
-### Programme de la version de test 
+### Programme de la version de test
 
 | Session  | Dates    | Formateurs   |
 | -------- | -------- | ------------ |
