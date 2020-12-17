@@ -93,3 +93,21 @@ html {
       margin-bottom: 20px;
       box-sizing: border-box;
   }
+
+
+  .nt {
+    color: #63a35c;
+  }
+
+  .na {
+    color: #795da3;
+  }
+
+  .s {
+    color: #df5000;
+  }
+ 
+  img {
+    max-width: 100% ;
+  }
+

@@ -3,10 +3,10 @@ layout: tp
 title: TP
 header_title: Travaux Pratiques
 header_subTitle: Session 3 - Metadonnées
-toc: true
 ---
 
 # Choix des métadonnées et soumission d'un génome de la bactérie *S. salivarius* à l'EBI
+
 ## Partie 1 : Exploration de l'European National Archive (ENA)
 
 ### Connection à l'ENA
@@ -18,6 +18,7 @@ Utiliser votre compte webin personnel pour vous connecter à l'instance de déve
 [instance dev ENA](https://wwwdev.ebi.ac.uk/ena/submit/webin/)
 
 ## Comment sont gérées les métadonnées sur l'ENA ? 
+
 Le modèle d'organisation des données et métadonnées de l'ENA est décrit sur la figure suivante.
 ![Figure modele ENA](https://ena-docs.readthedocs.io/en/latest/_images/metadata_model_whole.png)
 
@@ -32,7 +33,6 @@ Extrait de la documentation de l'ENA (disponible [ici](https://ena-docs.readthed
 
 > Quels sont le ou les objets de l'ENA qui sont associés à un vocabulaire contrôlé domaine dépendant appelé *Checklist* par l'ENA ?
 > Réponse : l'objet "Sample"
-
 
 ## Choisir une checklist correpondant à la bactérie *S. salivarius* en utilisant le mot-clé *prokaryote* ou *pathogen*
 
@@ -97,15 +97,13 @@ Pour ce TP, nous allons utiliser omicsBroker, un outil de *brokering* développ�
 
 Créer et renseigner les champs demandés en utilsant le DMP xxx depuis Opidor [lien](#)
 
-
 ### Renseigner les métadonnées associées aux expériences et aux échantillons
+
 #### Sélectionner la  checklist identifiée à la question précédente
 
-
-#### Remplir les différents champs 
+#### Remplir les différents champs
 
 ### Uploader les fichiers de données
-
 
 ### Soumettre à l'instance de test de l'EBI
 
@@ -114,7 +112,6 @@ Créer et renseigner les champs demandés en utilsant le DMP xxx depuis Opidor [
 #### Envoyer les fichiers de données sur l'instance de test
 
 #### Envoyer les métadonnées sur l'instance de test 
-
 
 #### Vérifier que la soumission des données s'est bien déroulée
 
