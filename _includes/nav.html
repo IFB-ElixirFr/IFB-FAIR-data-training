@@ -19,9 +19,21 @@
                 <li {% if page.url == "/Programme.html" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
                     <a class="nav-link" href="#Programme">Programme</a>
                 </li>
-                <li {% if page.url == "/tp.html" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
-                    <a class="nav-link" href="/tp.html">TP</a>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        TPs
+                    </a>
+                    {% for item in site.data.TPs %}
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>
+                                {{ item.name }}
+                            </a>
+                        </div>
+                    {% endfor %}
                 </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
@@ -43,3 +55,5 @@
     </div>
 
 </nav>
+
+
