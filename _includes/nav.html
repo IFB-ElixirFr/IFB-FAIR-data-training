@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="#home">
+        <a class="navbar-brand" href="/">
             <img src="./assets/img/logo.png" height="30" class="d-inline-block align-top" alt="">
             FAIR data
         </a>
@@ -10,8 +10,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
-                <li {% if page.url == "/" or page.url == "/index.html" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
-                    <a class="nav-link" href="/index.html">Home</a>
+                <li {% if page.url == "/" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li {% if page.url == "/Description.html" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
                     <a class="nav-link" href="#Description">Description</a>

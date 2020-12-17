@@ -1,14 +1,13 @@
 ---
-layout: default
+layout: tp
 title: TP
-header_title: Formation IFB science ouverte & PGD 
-header_subTitle: Comment gérer des jeux de données haut-débit en sciences de la vie et de la santé 
+header_title: Travaux Pratiques
+header_subTitle: Session 3 - Metadonnées
+toc: true
 ---
 
-# TP 1 Session 3 Metadonnées
 # Choix des métadonnées et soumission d'un génome de la bactérie *S. salivarius* à l'EBI
 ## Partie 1 : Exploration de l'European National Archive (ENA)
-
 
 ### Connection à l'ENA
 
