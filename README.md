@@ -1,3 +1,7 @@
+---
+tags: tag1, tag2, rage
+---
+
 # Formation IFB science ouverte & PGD : comment gérer des jeux de données haut-débit en sciences de la vie et de la santé 
 
 ## Présentation et application des principes FAIR de gestion des données dans un projet bioinformatique.
@@ -26,7 +30,8 @@ Hélène Chiapello, Thomas Denecker, Jean-François Dufayard, Gautier Sarah, Fr�
 
 | Session  | Dates    | Formateurs   |
 | -------- | -------- | ------------ |
-| Session 1 - Les données de la Recherche et leur centralité dans le processus de recherche. Crise de la reproductibilité, le PGD             | Mercredi 13 janvier 2021 | F.de Lamotte, P. Lieby                                                       |
+| Session 1 - Les données de la Recherche et leur centralité dans le processus de recherche. Crise de la reproductibilité, le PGD             | Mercredi 13 janvier 2021 | F.de Lamotte, P. Lieby |
+| Session 2 - La vie des données pendant le projet . Principe et outils pour organiser, nommer, versionner, stocker, archiver, mes données    | Jeudi 14 janvier 2021    | F. de Lamotte, J. Seiler |
 | Session 3 - Les Métadonnées. Les standards du domaine des données omiques en biologie et séances pratiques d’annotations de jeux de données | Vendredi 15 janvier 2021 | H. Chiapello, T. Denecker, J.F. Dufayard,  G. Sarah, P. Lieby, F. de Lamotte |
 | Session 4 : Partager et diffuser les données. Le cadre juridique, les entrepôts et les licences sur les données | Mercredi 20 janvier 2021 | L. Maurel, F. de Lamotte |
 | Session 5 : Le PGD : suite et fin. Débrief des séances 1 à 4 avec les participants | Jeudi 21 janvier 2021 | Tous |
