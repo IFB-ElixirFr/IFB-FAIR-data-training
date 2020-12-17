@@ -1,8 +1,8 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: default
+title: Home
+header_title: Formation IFB science ouverte & PGD 
+header_subTitle: Comment gérer des jeux de données haut-débit en sciences de la vie et de la santé 
 ---
 
 # Formation IFB science ouverte & PGD : comment gérer des jeux de données haut-débit en sciences de la vie et de la santé 
@@ -22,7 +22,7 @@ Le choix des métadonnées : panorama des ressources existantes pour choisir des
 ### Modalités pratiques
 
 5 séances de 3 heures en distanciel synchrone de 9h00 à 12h00. Des travaux ponctuels seront à effectuer entre les séances.
-Outil de visio proposé : zoom.
+Outil de visio proposé : Zoom.
 
 ### Formateurs
 
@@ -37,8 +37,3 @@ Hélène Chiapello, Thomas Denecker, Jean-François Dufayard, Gautier Sarah, Fr�
 | Session 3 - Les Métadonnées. Les standards du domaine des données omiques en biologie et séances pratiques d’annotations de jeux de données | Vendredi 15 janvier 2021 | H. Chiapello, T. Denecker, J.F. Dufayard,  G. Sarah, P. Lieby, F. de Lamotte |
 | Session 4 - Partager et diffuser les données. Le cadre juridique, les entrepôts et les licences sur les données                             | Mercredi 20 janvier 2021 | L. Maurel, F. de Lamotte                                                     |
 | Session 5 - Le PGD : suite et fin. Débrief des séances 1 à 4 avec les participants                                                          | Jeudi 21 janvier 2021    | Tous                                                                         |
-
-{% assign date = '2020-04-13T10:20:00Z' %}
-
-- Original date - {{ date }}
-- With timeago filter - {{ date | timeago }}

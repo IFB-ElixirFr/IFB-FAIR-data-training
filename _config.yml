@@ -35,7 +35,6 @@ twitter_username: IFB_Bioinfo
 github_username:  IFB-ElixirFr
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
 
