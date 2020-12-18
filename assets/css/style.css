@@ -11,8 +11,6 @@ html {
   }
   
   body {
-    /* Margin bottom by footer height */
-    margin-bottom: 75px;
     position: relative;
   }
   
@@ -78,8 +76,6 @@ html {
   }
   
   .footer {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     text-align: center;
     padding-top: 20px;
