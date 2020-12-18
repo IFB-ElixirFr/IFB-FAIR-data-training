@@ -9,7 +9,7 @@ layout: default
     <div class="col-sm-9" data-spy="scroll" data-target="#toc" data-offset="70" >
         <div class="card">
             <div class="card-header bg-success text-white">
-                <h2 style="all:unset; font-weight: bold;">Programme</h2>
+                <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;">Programme</h2>
             </div>
             <div class="card-body">
                 <div class="row">
@@ -62,7 +62,7 @@ layout: default
         {% if page.messages %}
         <div class="card">
             <div class="card-header text-white bg-danger">
-                <h2 style="all:unset; font-weight: bold;"><i class="fas fa-exclamation-circle"></i> Take home message</h2>
+                <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-exclamation-circle"></i> Take home message</h2>
             </div>
             <div class="card-body">
                 <ul>
@@ -79,7 +79,7 @@ layout: default
         {% if page.homework %}
         <div class="card">
             <div class="card-header text-white bg-info">
-                <h2 style="all:unset; font-weight: bold;"><i class="fas fa-pen"></i> Homework</h2>
+                <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-pen"></i> Homework</h2>
             </div>
             <div class="card-body">
                 <ul>
@@ -93,38 +93,3 @@ layout: default
     </div>
 </div>
 
-
-<script charset="UTF-8">
-    $(document).ready(function(){
-        var navSelector = "#toc";
-        var $myNav = $(navSelector);
-        Toc.init($myNav);
-        
-        $("body").scrollspy({
-            target: navSelector,
-            offset: 70
-        });
-
-        // Add smooth scrolling on all links inside the navbar
-        $("#toc a").on('click', function(event) {
-            // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
-            // Prevent default anchor click behavior
-            event.preventDefault();
-
-            // Store hash
-            var hash = decodeURI(this.hash);
-            
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top - 75
-            }, 800, function(){
-        
-                // Add hash (#) to URL when done scrolling (default click behavior)
-                //window.location.hash = hash;
-            });
-            }  // End if
-        });
-});
-</script>

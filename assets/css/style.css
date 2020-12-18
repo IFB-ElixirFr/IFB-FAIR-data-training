@@ -105,8 +105,19 @@ nav[data-toggle="toc"] {
     top: 70px;
 }
 
-.anchor {
-    top: 70px;
+.card-header .fa {
+    transition: .3s transform ease-in-out;
+}
+
+.card-header .collapsed .fa {
+    transform: rotate(90deg);
+}
+
+.card-header a {
+    color:white;
+}
+.card-header a:hover {
+    text-decoration: none;
 }
 /* ---------------------------------------------------
     highlight
