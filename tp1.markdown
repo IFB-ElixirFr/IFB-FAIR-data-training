@@ -3,64 +3,96 @@ layout: tp
 title: TP Session 3
 header_title: Travaux Pratiques
 header_subTitle: Session 3 - Metadonnées
+
+titre_TP: Choix des métadonnées et soumission à l'EBI
+time : 1h
+
+orateurs:
+     - Hélène Chiapello
+     - Thomas Denecker
+     - Jean-François Dufayard
+     - Gautier Sarah
+     - Frédéric de Lamotte
+     - Paulette Lieby
+
+objectifs:
+    - Objectif 1
+    - Objectif 2
+    - Objectif 3
+  
+questions:
+    - Comment soumettre mes données sur l'ENA ?
+    - Quels est le lien avec le PGG ?
+
+messages:
+    - Message 1
+    - Message 2
+    - Message 3
+
+homework:
 ---
-# Choix des métadonnées et soumission à l'EBI
+
+## Introduction
 
 Nous vous proposons trois jeux de données pour ce TP
-- Dataset 1 : un génome bactérien de la bactérie *S. Salivarius*
-- Dataset 2 : Un transcriptome de plante 
-- Dataset 3 : Un génome du virus SARS-Cov2
+
+- Dataset 1 : Un génome bactérien de la bactérie *S. Salivarius* ;
+- Dataset 2 : Un transcriptome de plante ;
+- Dataset 3 : Un génome du virus SARS-Cov2 .
 
 ## Partie 1 : Exploration de l'European National Archive (ENA)
 
-### Connection à l'ENA
-
 ![Figure 1](https://www.ebi.ac.uk/ena/browser/assets/ENA-logo.png)
 
-Utiliser votre compte webin personnel pour vous connecter à l'instance de développement de l'ENA :
+L'European National Archive est une plateforme ouverte et soutenue pour la gestion, le partage, l'intégration, l'archivage et la diffusion de données de séquences. Pour en [savoir plus](https://www.ebi.ac.uk/ena/browser/about). 
 
-[Se connecter à l'instance de test de l'ENA](https://wwwdev.ebi.ac.uk/ena/submit/webin/)
+### Connection à l'ENA
 
-## Comment sont gérées les métadonnées sur l'ENA ? 
+Lors d'un dépôt de données sur l'ENA, il est nécessaire de créer un compte. Lors de ce TP, vous aurez besoin d'un compte personnel si vous souhaitez essayer de soumettre des données TEST. Vous pouvez cliquer [ici pour vous connecter à l'instance de test de l'ENA](https://wwwdev.ebi.ac.uk/ena/submit/webin/). 
+
+## Comment sont gérées les métadonnées sur l'ENA ?
 
 Le modèle d'organisation des données et métadonnées de l'ENA est décrit sur la figure suivante.
+
 ![Figure modele ENA](https://ena-docs.readthedocs.io/en/latest/_images/metadata_model_whole.png)
 
-Extrait de la documentation de l'ENA (disponible [ici](https://ena-docs.readthedocs.io/en/latest/submit/general-guide/metadata.html))
-
+{% include documentation.html 
+titre="Extrait de la documentation de l'ENA"
+doc = "
 - **Study**: A study (project) groups together data submitted to the archive and controls its release date. A study accession is typically used when citing data submitted to ENA. Note that all associated data and other objects are made public when the study is released.
 - **Sample**: A sample contains information about the sequenced source material. Samples are associated with checklists, which define the fields used to annotate the samples. Samples are always associated with a taxon.
 - **Experiment**: An experiment contains information about a sequencing experiment including library and instrument details.
 - **Run**: A run is part of an experiment and refers to data files containing sequence reads.
 - **Analysis**: An analysis contains secondary analysis results derived from sequence reads (e.g. a genome assembly),
 - **Submission**: A submission contains submission actions to be performed by the archive. A submission can add more objects to the archive, update already submitted objects or make objects publicly available.
+" 
+source="https://ena-docs.readthedocs.io/en/latest/submit/general-guide/metadata.html"
+%}
 
-> Question 1 :  Quels sont le ou les objets de l'ENA qui sont associés à un vocabulaire contrôlé domaine dépendant appelé *Checklist* par l'ENA ?
-> Réponse : l'objet "Sample"
+{% include question.html
+numQuestion=1
+question="Quels sont le ou les objets de l'ENA qui sont associés à un vocabulaire contrôlé domaine dépendant appelé *Checklist* par l'ENA ?" 
+solution="L'objet 'Sample'"
+%}
 
 ## Choisir une checklist correpondant au jeu de données choisi
 
 Une quantité minimale d'informations est requise lors de l'enregistrement des échantillons sur l'ENA et tous les échantillons doivent être conformes à une liste de contrôle (checklist) définissant des valeurs de métadonnées attendues. La liste de contrôle la plus appropriée pour l'enregistrement des échantillons dépend du type de l'échantillon. L'ensemble des checklists de l'ENA sont disponible [ici](https://www.ebi.ac.uk/ena/browser/checklists). 
 
-- Pour le Dataset 1 de la bactérie *S. salivarius* utiliser le mot-clé *pathogen*
-- Pour le Dataset 2 du transcriptome de plante utiliser le mot-clé *plant*
-- Pour le Dataset 3 du virus SARS-Cov2 utiliser le mot-clé *virus*
+- Pour le Dataset 1 de la bactérie *S. salivarius* utiliser le mot-clé `pathogen`
+- Pour le Dataset 2 du transcriptome de plante utiliser le mot-clé `plant`
+- Pour le Dataset 3 du virus SARS-Cov2 utiliser le mot-clé `virus`
 
+{% include question.html
+numQuestion=2
+question="Quel est le numéro d'accession de la checklist à utiliser pour le jeu de données choisi ?" 
+solution="
+- Pour le Dataset 1 (le génome bactérien de *S. salivarius*) : [ERC000028](https://www.ebi.ac.uk/ena/browser/view/ERC000028)
+- Pour le Dataset 2 (transcriptome de plante) : [ERC000037](https://www.ebi.ac.uk/ena/browser/view/ERC000037)
+- Pour le Dataset 3 (génome du virus SARS-Cov2) : [ERC000033](https://www.ebi.ac.uk/ena/browser/view/ERC000033)"
+%}
 
-> Question 2 : Quel est le numéro d'accession de la checklist à utiliser pour le jeu de données choisi ?
-> Pour le Dataset 1 (le génome bactérien de *S. salivarius*) : 
-
-https://www.ebi.ac.uk/ena/browser/view/ERC000028
-> Pour le Dataset 2 (transcriptome de plante) 
-
-
-https://www.ebi.ac.uk/ena/browser/view/ERC000037
-
-> Pour le Dataset 3 (génome du virus SARS-Cov2) : 
-
-
-https://www.ebi.ac.uk/ena/browser/view/ERC000033
-
+Les checklists sont disponibles au format XML. Vous avez par exemple ci-dessous un extrait de la checklist `ERC000028` :
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -102,6 +134,7 @@ https://www.ebi.ac.uk/ena/browser/view/ERC000033
      </CHECKLIST>
 </CHECKLIST_SET>
 ```
+
 
 ## Partie 2 - Utilisation de l'outil **omicsBroker**
 

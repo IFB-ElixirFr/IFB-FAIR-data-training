@@ -38,11 +38,6 @@ homework:
 
 {% include pdf.html adresse="./assets/PDFs/slide_test.pdf" %}
 
-{% include question.html 
-numQuestion=1
-question="Quel est le meilleur langage du monde ?" 
-solution="R" %}
-
 ## La crise de la reproductibilité
 
 **Orateurs** : Frederic & Paulette

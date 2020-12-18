@@ -2,15 +2,97 @@
 layout: default
 ---
 
-<div class="container">
-    <div class="row">
+<div class="row anchor">
     <div class="col-sm-3">
         <nav id="toc" class="sticky-top"></nav>
     </div>
-    <div class="col-sm-9">
+    <div class="col-sm-9" data-spy="scroll" data-target="#toc" data-offset="70" >
+
+        <h1>{{ page.titre_TP }}</h1>
+
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;">Programme</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4>Durée</h4>
+                        <p> {{ page.time }}</p>
+                        
+                    </div>
+                    <div class="col-sm-6">
+                        {% if page.orateurs %}
+                        <h4>Orateurs</h4>
+                        <ul>
+                            {% for item in page.orateurs %}
+                                <li> {{ item }} </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        {% if page.questions %}
+                        <h4>Questions</h4>
+                        <ul>
+                            {% for item in page.questions %}
+                                <li> {{ item }} </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        
+                    </div>
+                    <div class="col-sm-6">
+                        
+                        {% if page.objectifs %}
+                        <h4>Objectifs</h4>
+                        <ul>
+                            {% for item in page.objectifs %}
+                                <li> {{ item }} </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
         {{ content }}
-    </div>
+        <br>
+        {% if page.messages %}
+        <div class="card">
+            <div class="card-header text-white bg-danger">
+                <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-exclamation-circle"></i> Take home message</h2>
+            </div>
+            <div class="card-body">
+                <ul>
+                    {% for item in page.messages %}
+                        <li> {{ item }} </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+        
+        <br>
+    
+        {% if page.homework %}
+        <div class="card">
+            <div class="card-header text-white bg-info">
+                <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-pen"></i> Homework</h2>
+            </div>
+            <div class="card-body">
+                <ul>
+                    {% for item in page.homework %}
+                        <li> {{ item }} </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>
-
 

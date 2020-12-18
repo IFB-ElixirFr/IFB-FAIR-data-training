@@ -4,8 +4,7 @@
     </div>
     <div class="card-body">
 
-        {{ include.question }}
-        <br><br>
+        {{ include.question | markdownify }}
 
        <div class="card">
             <h5 class="card-header bg-warning" style='font-size: 1.15rem;'>
@@ -16,10 +15,11 @@
             </h5>
             <div id="collapse-collapsed_{{ include.numQuestion }}" class="collapse" aria-labelledby="heading-collapsed">
                 <div class="card-body">
-                    {{ include.solution }}
+                    {{ include.solution | markdownify }}
                 </div>
             </div>
         </div>
        
     </div>
 </div>
+<br>
