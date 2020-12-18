@@ -42,7 +42,7 @@ Une quantit√© minimale d'informations est requise lors de l'enregistrement des √
 
 https://www.ebi.ac.uk/ena/browser/view/ERC000028
 
-```xml
+``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <CHECKLIST_SET>
 <CHECKLIST accession="ERC000028" checklistType="Sample">
@@ -81,7 +81,6 @@ https://www.ebi.ac.uk/ena/browser/view/ERC000028
           </DESCRIPTOR>
      </CHECKLIST>
 </CHECKLIST_SET>
-
 ```
 
 ## Partie 2 - Utilisation de l'outil **omicsBroker**
