@@ -14,10 +14,11 @@ L’Institut Français de Bioinformatique ([IFB](https://www.france-bioinformati
 ### Objectifs pédagogiques
 
 A la fin de cette formation, les participants connaîtront et pourront mettre en œuvre les principes de la science ouverte pour gérer leurs jeux de données dans un projet :
-Les principes fondamentaux de l’Open Data en biologie et santé, y compris dans ses aspects juridiques
-Les bonnes pratiques et outils de gestion des données d’un projet en bioinformatique, en lien avec les ressources de l’infrastructure IFB
-Le PGD : séances théoriques et pratiques de construction d’un PGD sur des exemples de jeux de données omiques 
-Le choix des métadonnées : panorama des ressources existantes pour choisir des métadonnées et mise en pratique pour annoter des jeux de données omiques en vue de la publication des données dans une banque internationale ou un dataverse institutionnel.
+
+- Les principes fondamentaux de l’Open Data en biologie et santé, y compris dans ses aspects juridiques
+- Les bonnes pratiques et outils de gestion des données d’un projet en bioinformatique, en lien avec les ressources de l’infrastructure IFB
+- Le PGD : séances théoriques et pratiques de construction d’un PGD sur des exemples de jeux de données omiques 
+- Le choix des métadonnées : panorama des ressources existantes pour choisir des métadonnées et mise en pratique pour annoter des jeux de données omiques en vue de la publication des données dans une banque internationale ou un dataverse institutionnel.
 
 ### Modalités pratiques
 
@@ -26,7 +27,7 @@ Outil de visio proposé : Zoom.
 
 ### Formateurs
 
-Hélène Chiapello, Thomas Denecker, Jean-François Dufayard, Gautier Sarah, Frédéric de Lamotte, Paulette Lieby, Lionel Maurel, Julien Seiler. 
+Hélène Chiapello, Thomas Denecker, Jean-François Dufayard, Gautier Sarah, Frédéric de Lamotte, Paulette Lieby, Lionel Maurel, Julien Seiler.
 
 ### Programme de la version de test
 
