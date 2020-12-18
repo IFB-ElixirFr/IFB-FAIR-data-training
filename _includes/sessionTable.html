@@ -1,0 +1,18 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Sessions</th>
+        <th scope="col">Date</th>
+        <th scope="col">Formateurs</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for row in site.data.sessionTable %}
+        <tr>
+            <td>{{ row.Session }}</td>
+            <td>{{ row.Date }}</td>
+            <td>{{ row.Formateurs }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
