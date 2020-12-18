@@ -21,25 +21,40 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_cours" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        TPs
+                        Cours
                     </a>
-                    {% for item in site.data.TPs %}
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>
-                                {{ item.name }}
-                            </a>
-                        </div>
-                    {% endfor %}
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_cours">
+                        {% for item in site.data.sessions %}
+                                <a class="dropdown-item" href="{{ item.link }}" {% if page.url ==  item.link %} style="color: red;" {% endif %}>
+                                    {{ item.name }}
+                                </a>
+                        {% endfor %}
+                    </div>
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_TPs" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        TPs
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_TPs">
+                        {% for item in site.data.TPs %}
+                            
+                                <a class="dropdown-item" href="{{ item.link }}" {% if page.url == item.link %} style="color: red;" {% endif %}>
+                                    {{ item.name }}
+                                </a>
+                        {% endfor %}
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_editions" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         Editions
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_editions">
                         <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training" target="_blank">2020</a>
                     </div>
                 </li>

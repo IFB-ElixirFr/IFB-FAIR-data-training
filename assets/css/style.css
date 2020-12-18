@@ -13,6 +13,7 @@ html {
   body {
     /* Margin bottom by footer height */
     margin-bottom: 75px;
+    position: relative;
   }
   
   #myBtn {
@@ -48,6 +49,7 @@ html {
       margin-bottom: 10px;
   }
   
+  /*
   h2::after {
       content: '';
       display: block;
@@ -57,7 +59,7 @@ html {
       margin-top: 3px;
       box-sizing: border-box;
   }
-  
+  */
   
   .sectionCover{
       width: 100%;
@@ -98,6 +100,14 @@ html {
     max-width: 100% ;
   }
 
+
+nav[data-toggle="toc"] {
+    top: 70px;
+}
+
+.anchor {
+    top: 70px;
+}
 /* ---------------------------------------------------
     highlight
 ----------------------------------------------------- */
