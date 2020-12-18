@@ -24,12 +24,24 @@ Le modèle d'organisation des données et métadonnées de l'ENA est décrit sur
 
 Extrait de la documentation de l'ENA (disponible [ici](https://ena-docs.readthedocs.io/en/latest/submit/general-guide/metadata.html))
 
-- **Study**: A study (project) groups together data submitted to the archive and controls its release date. A study accession is typically used when citing data submitted to ENA. Note that all associated data and other objects are made public when the study is released.
+<div class="card">
+            <div class="card-header text-white bg-info">
+                <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-pen"></i> ENA Documentation</h2>
+            </div>
+            <div class="card-body">
+                - **Study**: A study (project) groups together data submitted to the archive and controls its release date. A study accession is typically used when citing data submitted to ENA. Note that all associated data and other objects are made public when the study is released.
 - **Sample**: A sample contains information about the sequenced source material. Samples are associated with checklists, which define the fields used to annotate the samples. Samples are always associated with a taxon.
 - **Experiment**: An experiment contains information about a sequencing experiment including library and instrument details.
 - **Run**: A run is part of an experiment and refers to data files containing sequence reads.
 - **Analysis**: An analysis contains secondary analysis results derived from sequence reads (e.g. a genome assembly),
 - **Submission**: A submission contains submission actions to be performed by the archive. A submission can add more objects to the archive, update already submitted objects or make objects publicly available.
+          </div>
+          <div class="card-footer">
+               Extrait de la documentation de l'ENA (disponible [ici](https://ena-docs.readthedocs.io/en/latest/submit/general-guide/metadata.html))
+          </div>
+</div>
+
+
 
 > Quels sont le ou les objets de l'ENA qui sont associés à un vocabulaire contrôlé domaine dépendant appelé *Checklist* par l'ENA ?
 > Réponse : l'objet "Sample"

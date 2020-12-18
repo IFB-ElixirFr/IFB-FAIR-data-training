@@ -7,7 +7,6 @@ header_subTitle: Les données de la Recherche et leur centralité dans le proces
 time : 3h
 
 orateurs:
-    - Hélène Chiapello 
     - Frédéric de Lamotte
     - Paulette Lieby
 
@@ -66,13 +65,13 @@ solution="R" %}
 
 ## Les principes FAIR dans les grandes lignes et penser le processus de FAIRification tout au long du projet
 
-**Orateurs** : Fred & Hélène
+**Orateurs** : Fred 
 
 **Durée** : 20 minutes
 
 ## Le Cycle de vie des données
 
-**Orateurs** : Fred & Hélène
+**Orateurs** : Fred 
 
 **Durée** : 15 minutes
 
