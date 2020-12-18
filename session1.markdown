@@ -71,7 +71,7 @@ homework:
 
 ![break](https://cdn.pixabay.com/photo/2018/11/01/20/09/break-3788979_1280.jpg)
 
-## Le Plan de Gestion des Données  (Fred & Paulette)
+## Le Plan de Gestion des Données
 
 **Orateurs** : Fred & Paulette
 
