@@ -12,13 +12,13 @@ header_title: Formateurs
   {% assign prev = forloop.index | minus:1 | modulo: 3 %}
 
   {% if forloop.first == true %}
-    <div class="row" style="margin: 50px 0px;">
+    <div class="row">
   {% elsif prev == 0 %}
-    <div class="row" style="margin: 50px 0px;">
+    <div class="row">
   {% endif %}
 
  
-  <div class="col-sm-4">
+  <div class="col-lg-4 card-marging">
     <div class="card card-formateur text-center">
       {% if formateur.urlImage %}
         <img src="{{ formateur.urlImage }}" alt="{{ formateur.lastName }}" class="avatar">

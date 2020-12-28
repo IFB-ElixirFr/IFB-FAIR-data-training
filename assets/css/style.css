@@ -123,6 +123,9 @@ nav[data-toggle="toc"] {
     border-radius: .25rem .25rem 0 0;
 }
 
+.card-marging {
+    margin: 25px 0px;
+}
 
 /* ---------------------------------------------------
     highlight
