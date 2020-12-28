@@ -43,6 +43,8 @@ plugins:
 collections:
   formateurs:
     output: true
+  cours:
+    output: true
 
 defaults:
   - scope:
@@ -52,9 +54,9 @@ defaults:
       layout: "formateur"
   - scope:
       path: ""
-      type: "posts"
+      type: "cours"
     values:
-      layout: "post"
+      layout: "cours"
   - scope:
       path: ""
     values:

@@ -66,7 +66,7 @@ homework:
 
 ## Le Cycle de vie des données
 
-**Orateurs** : Fred 
+**Orateurs** : Fred
 
 **Durée** : 15 minutes
 
