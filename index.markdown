@@ -20,8 +20,14 @@ A la fin de cette formation, les participants connaîtront et pourront mettre en
 
 ### Modalités pratiques
 
-5 séances de 3 heures en distanciel synchrone de 9h00 à 12h00. Des travaux ponctuels seront à effectuer entre les séances.
-Outil de visio proposé : Zoom.
+5 séances de 3 heures en distanciel synchrone de 9h00 à 12h00. L'outil utilisé pour cette formation est [Zoom](https://zoom.us/). Il est important de vérifier avant les sessions que :
+
+- Votre micro est fonctionnel ;
+- Votre caméra est fonctionnelle ;
+- Vous avez repéré l’espace de partage ;
+- Vous êtes en mesure de partager votre écran.
+
+Des travaux ponctuels seront à effectuer entre les séances.
 
 ### Formateurs
 
