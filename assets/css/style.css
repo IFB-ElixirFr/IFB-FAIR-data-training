@@ -118,6 +118,11 @@ nav[data-toggle="toc"] {
 .card-header a:hover {
     text-decoration: none;
 }
+.card-formateur {
+    padding-top: 16px;
+    border-radius: .25rem .25rem 0 0;
+}
+
 
 /* ---------------------------------------------------
     highlight

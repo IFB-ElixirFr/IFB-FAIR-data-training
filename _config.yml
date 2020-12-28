@@ -42,6 +42,23 @@ plugins:
 
 collections:
   formateurs:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "formateurs"
+    values:
+      layout: "formateur"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

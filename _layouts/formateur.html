@@ -1,0 +1,52 @@
+---
+layout: default
+header_title: {{ page.lastName }}
+---
+
+
+<div class="row anchorRow" id="{{ page.shortName }}" >
+    <div class="col-sm-4">
+        {% if page.urlImage %}
+            <img src="{{ page.urlImage }}" alt="{{ page.lastName }}" class="avatar">
+        {% else %}
+        <img class="avatar" alt="{{ page.githubID }}" width="100" height="100" data-proofer-ignore="true" src="https://avatars1.githubusercontent.com/{{ page.githubID }}?v=3&amp;s=100" srcset="https://avatars1.githubusercontent.com/{{ page.githubID }}?v=3&amp;s=100 1x, https://avatars1.githubusercontent.com/{{ page.githubID }}?v=3&amp;s=200 2x, https://avatars1.githubusercontent.com/{{ page.githubID }}?v=3&amp;s=300 3x, https://avatars1.githubusercontent.com/{{ page.githubID }}?v=3&amp;s=400 4x" />
+        {% endif %}
+
+        <div class="d-flex flex-row justify-content-center" style="color:#173b6c">
+
+          {% if page.githubID  %}
+          <div class="p-2"><a href="https://github.com/{{ page.githubID }}" target="_blank" class="linkSocial"><i class="fab fa-github-alt"></i></a></div>
+          {% endif %}
+
+          {% if page.ORCID  %}
+          <div class="p-2"><a href="https://orcid.org/{{ page.ORCID }}" target="_blank" class="linkSocial"><i class="fab fa-orcid"></i></a></div>
+          {% endif %}
+
+          {% if page.webSite  %}
+          <div class="p-2"><a href="https://orcid.org/{{ page.webSite }}" target="_blank" class="linkSocial"><i class="fas fa-globe"></i></i></a></div>
+          {% endif %}
+
+          {% if page.twitterID %}
+          <div class="p-2"><a href="https://twitter.com/{{ page.twitterID }}" target="_blank" class="linkSocial"><i class="fab fa-twitter"></i></a></div>
+          {% endif %}
+
+          {% if page.linkedinID %}
+          <div class="p-2"><a href="https://www.linkedin.com/in/{{ page.linkedinID }}" target="_blank" class="linkSocial"><i class="fab fa-linkedin-in"></i></a></div>
+          {% endif %}
+
+          {% if page.mail %}
+          <div class="p-2"><a href="mailto:{{ page.mail }}" target="_blank" class="linkSocial"><i class="fas fa-envelope"></i></a></div>
+          {% endif %}
+        </div>
+
+    </div>
+    <div class="col-sm-8">
+        <h2>{{ page.firstName }} {{ page.lastName }}</h2>
+        <h3>{{ page.position }}</h3>
+        <h4>{{ page.localisation }}</h4>
+        <p>{{ page.content | markdownify }}</p>
+
+        <h4>Mes cours</h4>
+
+    </div>
+  </div>

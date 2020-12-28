@@ -7,63 +7,66 @@ header_title: Formateurs
 {% assign formateurs = site.formateurs | sort:"lastName" %}
 
 {% for formateur in formateurs %}
-  <div class="row anchor" id="{{ formateur.shortName }}" >
-    <div class="col-sm-4">
-        {% if formateur.urlImage %}
-            <img src="{{ formateur.urlImage }}" alt="{{ formateur.lastName }}" class="avatar">
-        {% else %}
-        <img class="avatar" alt="{{ formateur.githubID }}" width="100" height="100" data-proofer-ignore="true" src="https://avatars1.githubusercontent.com/{{ formateur.githubID }}?v=3&amp;s=100" srcset="https://avatars1.githubusercontent.com/{{ formateur.githubID }}?v=3&amp;s=100 1x, https://avatars1.githubusercontent.com/{{ formateur.githubID }}?v=3&amp;s=200 2x, https://avatars1.githubusercontent.com/{{ formateur.githubID }}?v=3&amp;s=300 3x, https://avatars1.githubusercontent.com/{{ formateur.githubID }}?v=3&amp;s=400 4x" />
+  
+  {% assign remainder = forloop.index| modulo: 3 %}
+  {% assign prev = forloop.index | minus:1 | modulo: 3 %}
+
+  {% if forloop.first == true %}
+    <div class="row" style="margin: 50px 0px;">
+  {% elsif prev == 0 %}
+    <div class="row" style="margin: 50px 0px;">
+  {% endif %}
+
+ 
+  <div class="col-sm-4">
+    <div class="card card-formateur text-center">
+      {% if formateur.urlImage %}
+        <img src="{{ formateur.urlImage }}" alt="{{ formateur.lastName }}" class="avatar">
+      {% else %}
+      <img class="avatar" alt="{{ formateur.githubID }}" width="100" height="100" data-proofer-ignore="true" src="https://avatars1.githubusercontent.com/{{ formateur.githubID }}?v=3&amp;s=100" srcset="https://avatars1.githubusercontent.com/{{ formateur.githubID }}?v=3&amp;s=100 1x, https://avatars1.githubusercontent.com/{{ formateur.githubID }}?v=3&amp;s=200 2x, https://avatars1.githubusercontent.com/{{ formateur.githubID }}?v=3&amp;s=300 3x, https://avatars1.githubusercontent.com/{{ formateur.githubID }}?v=3&amp;s=400 4x" />
+      {% endif %}
+
+      <div class="d-flex flex-row justify-content-center" style="color:#173b6c">
+
+        {% if formateur.githubID  %}
+        <div class="p-2"><a href="https://github.com/{{ formateur.githubID }}" target="_blank" class="linkSocial"><i class="fab fa-github-alt"></i></a></div>
         {% endif %}
 
-        <div class="d-flex flex-row justify-content-center" style="color:#173b6c">
+        {% if formateur.ORCID  %}
+        <div class="p-2"><a href="https://orcid.org/{{ formateur.ORCID }}" target="_blank" class="linkSocial"><i class="fab fa-orcid"></i></a></div>
+        {% endif %}
 
-          {% if formateur.githubID  %}
-          <div class="p-2"><a href="https://github.com/{{ formateur.githubID }}" target="_blank" class="linkSocial"><i class="fab fa-github-alt"></i></a></div>
-          {% endif %}
+        {% if formateur.webSite  %}
+        <div class="p-2"><a href="https://orcid.org/{{ formateur.webSite }}" target="_blank" class="linkSocial"><i class="fas fa-globe"></i></i></a></div>
+        {% endif %}
 
-          {% if formateur.ORCID  %}
-          <div class="p-2"><a href="https://orcid.org/{{ formateur.ORCID }}" target="_blank" class="linkSocial"><i class="fab fa-orcid"></i></a></div>
-          {% endif %}
+        {% if formateur.twitterID %}
+        <div class="p-2"><a href="https://twitter.com/{{ formateur.twitterID }}" target="_blank" class="linkSocial"><i class="fab fa-twitter"></i></a></div>
+        {% endif %}
 
-          {% if formateur.webSite  %}
-          <div class="p-2"><a href="https://orcid.org/{{ formateur.webSite }}" target="_blank" class="linkSocial"><i class="fas fa-globe"></i></i></a></div>
-          {% endif %}
+        {% if formateur.linkedinID %}
+        <div class="p-2"><a href="https://www.linkedin.com/in/{{ formateur.linkedinID }}" target="_blank" class="linkSocial"><i class="fab fa-linkedin-in"></i></a></div>
+        {% endif %}
 
-          {% if formateur.twitterID %}
-          <div class="p-2"><a href="https://twitter.com/{{ formateur.twitterID }}" target="_blank" class="linkSocial"><i class="fab fa-twitter"></i></a></div>
-          {% endif %}
+        {% if formateur.mail %}
+        <div class="p-2"><a href="mailto:{{ formateur.mail }}" target="_blank" class="linkSocial"><i class="fas fa-envelope"></i></a></div>
+        {% endif %}
+      </div>
 
-          {% if formateur.linkedinID %}
-          <div class="p-2"><a href="https://www.linkedin.com/in/{{ formateur.linkedinID }}" target="_blank" class="linkSocial"><i class="fab fa-linkedin-in"></i></a></div>
-          {% endif %}
-
-          {% if formateur.mail %}
-          <div class="p-2"><a href="mailto:{{ formateur.mail }}" target="_blank" class="linkSocial"><i class="fas fa-envelope"></i></a></div>
-          {% endif %}
-        </div>
-
-    </div>
-    <div class="col-sm-8">
-        <h2>{{ formateur.firstName }} {{ formateur.lastName }}</h2>
-        <h3>{{ formateur.position }}</h3>
-        <h4>{{ formateur.localisation }}</h4>
-        <p>{{ formateur.content | markdownify }}</p>
-    </div>
-  </div>
-{% endfor %}
-
-<script>
-  $(document).ready(function(){
-    var element =document.getElementsByClassName("anchor");
-    for (var i = 0; i < element.length; i++) {
-      var rect = element[i].getBoundingClientRect();
-      var posPT = rect.top + 75 + "px" ;
-      var posMT = -(rect.top + 75) + "px" ;
-
-      element[i].style.paddingTop = posPT;
-      element[i].style.marginTop = posMT;
+      <h4>{{ formateur.firstName }} {{ formateur.lastName }}</h4>
+      <b>{{ formateur.position }}</b>
+      <p class="text-center">{{ formateur.localisation }}</p>
       
-    }
+    </div>
+    <div class="card-footer text-right">
+      <a href="{{ formateur.url }}">En savoir plus</a>
+    </div>
+    
+  </div>
 
-  })
-</script>
+  {% if forloop.last == true %}
+    </div>
+  {% elsif remainder == 0 %}
+    </div>
+  {% endif %}
+{% endfor %}
