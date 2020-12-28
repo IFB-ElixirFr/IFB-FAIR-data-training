@@ -29,7 +29,7 @@ description: >- # this means to ignore newlines until "baseurl:"
     de la recherche et présentera sous forme de séances pratiques les ressources nationales accessibles à 
     la communauté scientifique ainsi que les solutions proposées par l’IFB pour gérer les données d’un projet 
     de recherche.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/IFB-FAIR-data-training" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: IFB_Bioinfo
 github_username:  IFB-ElixirFr

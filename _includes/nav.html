@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href='{{ "./index.html" | relative_url }}'>
-            <img src='{{ "./assets/img/logo.png" | relative_url }}' height="30" class="d-inline-block align-top" alt="">
+        <a class="navbar-brand" href="{{site.baseurl}}/index.html">
+            <img src="{{site.baseurl}}/assets/img/logo.png" height="30" class="d-inline-block align-top" alt="">
             FAIR data
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -11,11 +11,11 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
                 <li {% if page.url == "./" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
-                    <a class="nav-link" href='{{ "./index.html" | relative_url }}'>Home</a>
+                    <a class="nav-link" href={{site.baseurl}}/index.html" >Home</a>
                 </li>
 
                 <li {% if page.url == "./formateurs.html" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
-                    <a class="nav-link" href='{{ "./formateurs.html" | relative_url }}'>Formateurs</a>
+                    <a class="nav-link" href="{{site.baseurl}}/formateurs.html">Formateurs</a>
                 </li>
 
                 <li class="nav-item dropdown">
@@ -25,7 +25,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_cours">
                         {% for item in site.data.sessions %}
-                                <a class="dropdown-item" href='{{  item.link  | relative_url }}' {% if page.url ==  item.link %} style="color: red;" {% endif %}>
+                                <a class="dropdown-item" href="{{site.baseurl}}/{{  item.link }}" {% if page.url ==  item.link %} style="color: red;" {% endif %}>
                                     {{ item.name }}
                                 </a>
                         {% endfor %}
@@ -40,7 +40,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_TPs">
                         {% for item in site.data.TPs %}
                             
-                                <a class="dropdown-item" href='{{  item.link | relative_url }}' {% if page.url == item.link %} style="color: red;" {% endif %}>
+                                <a class="dropdown-item" href="{{site.baseurl}}/{{ item.link }}" {% if page.url == item.link %} style="color: red;" {% endif %}>
                                     {{ item.name }}
                                 </a>
                         {% endfor %}
@@ -57,13 +57,13 @@
                     </div>
                 </li>
                 <li {% if page.url == "/apropos.html" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
-                    <a class="nav-link" href='{{ "./apropos.html" | relative_url }}'>À propos</a>
+                    <a class="nav-link" href="{{site.baseurl}}//apropos.html">À propos</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training" target="_blank">
-                    <img src='{{ "assets/img/github-logo.png" | relative_url }}' alt="GitHub" height="30px"></a>
+                    <img src="{{site.baseurl}}/assets/img/github-logo.png" alt="GitHub" height="30px"></a>
                 </li>
             </ul>
             
