@@ -164,6 +164,18 @@ nav[data-toggle="toc"] {
   }
 
 
+ .avatar {
+    border-radius: 50%;
+    width: 100px; 
+ } 
+
+.linkSocial{
+    font-size: x-large;
+    color: #173b6c;
+}
+
+
+
 /* ---------------------------------------------------
     highlight
 ----------------------------------------------------- */

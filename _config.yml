@@ -38,6 +38,10 @@ github_username:  IFB-ElixirFr
 plugins:
   - jekyll-feed
   - jekyll-toc
+  - jekyll-avatar
+
+collections:
+  formateurs:
 
 # Exclude from processing.
 # The following items will not be processed, by default.

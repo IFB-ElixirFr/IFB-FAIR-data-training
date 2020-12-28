@@ -13,9 +13,9 @@ L’Institut Français de Bioinformatique ([IFB](https://www.france-bioinformati
 
 A la fin de cette formation, les participants connaîtront et pourront mettre en œuvre les principes de la science ouverte pour gérer leurs jeux de données dans un projet :
 
-- Les principes fondamentaux de l’Open Data en biologie et santé, y compris dans ses aspects juridiques
-- Les bonnes pratiques et outils de gestion des données d’un projet en bioinformatique, en lien avec les ressources de l’infrastructure IFB
-- Le PGD : séances théoriques et pratiques de construction d’un PGD sur des exemples de jeux de données omiques 
+- Les principes fondamentaux de l’Open Data en biologie et santé, y compris dans ses aspects juridiques ;
+- Les bonnes pratiques et outils de gestion des données d’un projet en bioinformatique, en lien avec les ressources de l’infrastructure IFB ;
+- Le PGD : séances théoriques et pratiques de construction d’un PGD sur des exemples de jeux de données omiques ;
 - Le choix des métadonnées : panorama des ressources existantes pour choisir des métadonnées et mise en pratique pour annoter des jeux de données omiques en vue de la publication des données dans une banque internationale ou un dataverse institutionnel.
 
 ### Modalités pratiques
@@ -31,15 +31,19 @@ Des travaux ponctuels seront à effectuer entre les séances.
 
 ### Formateurs
 
-{% include profile.html urlImage="https://migale.inrae.fr/sites/default/files/helene_chiapello.png" name="Hélène Chiapello" %}
-{% include profile.html urlImage="https://pbs.twimg.com/profile_images/1128591238507257856/BqersTw6_400x400.jpg" name="Thomas Denecker" %}
-{% include profile.html urlImage="https://avatars1.githubusercontent.com/u/11456267?s=400&u=c6bfd397158306635fbe97b4eb4efdc9a4cb4563&v=4" name="Jean-François Dufayard" %}
-{% include profile.html urlImage="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/User_font_awesome.svg/512px-User_font_awesome.svg.png" name="Gautier Sarah" %}
-{% include profile.html urlImage="https://www.southgreen.fr/sites/southgreen.fr/files/Avatar_Fred.jpeg" name="Frédéric de Lamotte" %}
-{% include profile.html urlImage="https://www.cesgo.org/collaboration/wp-content/uploads/sites/2/avatars/200/5d9dfd4bc48e7-bpfull.jpg" name="Paulette Lieby" %}
-{% include profile.html urlImage="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/User_font_awesome.svg/512px-User_font_awesome.svg.png" name="Lionel Maurel" %}
-{% include profile.html urlImage="https://pbs.twimg.com/profile_images/1141071921007747072/tO6YzJ0A_400x400.jpg" name="Julien Seiler" %}
+{% assign formateurs = site.formateurs | sort:"lastName" %}
 
+{% for formateur in formateurs %}
+    {% capture name %}{{ formateur.firstName }} {{ formateur.lastName }}{% endcapture %}
+    {% capture shortName %}{{ formateur.shortName }}{% endcapture %}
+    {% if formateur.urlImage %}
+        {% capture urlImage %}{{ formateur.urlImage }}{% endcapture %}
+        {% include profile.html urlImage=urlImage name=name shortName=shortName %}
+    {% else %}
+        {% capture GID %}{{ formateur.githubID }}{% endcapture %}
+        {% include profileGithub.html githubId=GID name=name shortName=shortName %}
+    {% endif %}
+{% endfor %}
 
 ### Programme de la version de test
 

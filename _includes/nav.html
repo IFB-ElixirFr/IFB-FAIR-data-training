@@ -13,11 +13,9 @@
                 <li {% if page.url == "" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
-                <li {% if page.url == "/Description.html" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
-                    <a class="nav-link" href="#Description">Description</a>
-                </li>
-                <li {% if page.url == "/Programme.html" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
-                    <a class="nav-link" href="#Programme">Programme</a>
+
+                <li {% if page.url == "/formateurs.html" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
+                    <a class="nav-link" href="formateurs.html">Formateurs</a>
                 </li>
 
                 <li class="nav-item dropdown">
@@ -58,6 +56,9 @@
                         <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training" target="_blank">2020</a>
                     </div>
                 </li>
+                <li {% if page.url == "/apropos.html" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
+                    <a class="nav-link" href="apropos.html">À propos</a>
+                </li>
             </ul>
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item">
@@ -65,6 +66,7 @@
                     <img src="./assets/img/github-logo.png" alt="GitHub" height="30px"></a>
                 </li>
             </ul>
+            
 
         </div>
     </div>
