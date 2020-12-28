@@ -30,13 +30,12 @@ homework:
     - Inviter les formateurs comme collaborateurs
 ---
 
-## Activité Brise Glace
+{% for cours in site.cours %}
 
-**Durée** : 40 minutes
+## {{cours.title}}
+{{cours.content}}
 
-**Orateurs** : Tous
-
-{% include pdf.html adresse="./assets/PDFs/slide_test.pdf" %}
+{% endfor %}
 
 ## La crise de la reproductibilité
 

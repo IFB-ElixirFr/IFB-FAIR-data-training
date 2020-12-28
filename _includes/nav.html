@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
                 <li {% if page.url == "./" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
-                    <a class="nav-link" href={{site.baseurl}}/index.html" >Home</a>
+                    <a class="nav-link" href="{{site.baseurl}}/index.html" >Home</a>
                 </li>
 
                 <li {% if page.url == "./formateurs.html" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
@@ -21,7 +21,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_cours" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        Cours
+                        Session
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_cours">
                         {% for item in site.data.sessions %}
@@ -57,7 +57,7 @@
                     </div>
                 </li>
                 <li {% if page.url == "/apropos.html" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
-                    <a class="nav-link" href="{{site.baseurl}}//apropos.html">À propos</a>
+                    <a class="nav-link" href="{{site.baseurl}}/apropos.html">À propos</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav ml-auto">

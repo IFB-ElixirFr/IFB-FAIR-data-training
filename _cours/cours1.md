@@ -2,14 +2,25 @@
 layout: default
 title: "Activité Brise Glace"
 cours: 1
+session: 1
 temps: 40 minutes
-formateurs : thomasdenecker, heleneChiapello
+
+formateurs : 
+ - fredericdeLamotte
+ - gauthierSarah
+ - heleneChiapello
+ - jeanfrancoisDufayard
+ - julienSeiler
+ - lionelMaurel
+ - pauletteLieby
+ - thomasdenecker
 ---
 
-## Activité Brise Glace
+**Orateurs** : 
+{% for formateur in page.formateurs %}{% for i in site.formateurs %}{% if i.shortName == formateur %}[{{ i.firstName }} {{ i.lastName }}]({{site.baseurl}}/{{ i.url }}) ; {% endif %}{% endfor %}{% endfor %}
 
-**Durée** : 40 minutes
+**Durée** : {{ page.temps }}
 
-**Orateurs** : Tous
+{% capture urlPdf %} {{site.baseurl}}/assets/PDFs/slide_test.pdf {% endcapture %}
+{% include pdf.html adresse=urlPdf %}
 
-{% include pdf.html adresse="assets/PDFs/slide_test.pdf" %}

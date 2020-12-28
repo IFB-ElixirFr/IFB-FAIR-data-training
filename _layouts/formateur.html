@@ -60,7 +60,7 @@
                 <ul>
                 {% assign filtered_cours = site.cours | where: 'formateurs', page.shortName %}
                 {% for cours in filtered_cours %}
-                    <li><a href="{{ cours.url }}">{{ cours.title }}</a></li>
+                    <li><a href="{{site.baseurl}}/{{ cours.url }}">{{ cours.title }}</a></li>
                 {% endfor %}
                 </ul>
             </div>
