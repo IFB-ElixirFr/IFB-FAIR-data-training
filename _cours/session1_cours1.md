@@ -1,8 +1,7 @@
 ---
-layout: default
 title: "Activité Brise Glace"
 cours: 1
-session: 1
+numeroSession: 1
 temps: 40 minutes
 
 formateurs : 
@@ -23,4 +22,3 @@ formateurs :
 
 {% capture urlPdf %} {{site.baseurl}}/assets/PDFs/slide_test.pdf {% endcapture %}
 {% include pdf.html adresse=urlPdf %}
-

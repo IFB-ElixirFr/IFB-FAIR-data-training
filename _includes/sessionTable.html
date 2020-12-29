@@ -7,11 +7,29 @@
       </tr>
     </thead>
     <tbody>
-        {% for row in site.data.sessionTable %}
+        {% assign sessions = site.sessions | sort:"numeroSession" %}
+        {% for row in sessions %}
         <tr>
-            <td>{{ row.Session }}</td>
-            <td>{{ row.Date }}</td>
-            <td>{{ row.Formateurs }}</td>
+            <td>{{ row.header_subTitle }}</td>
+            <td>{{ row.timeStart }}</td>
+
+            <td>
+              {% for formateur in row.formateurs %}
+              {% assign find = "false" %}
+                {% for i in site.formateurs %}
+                  
+                  {% if i.shortName == formateur %}
+                     <a href='{{site.baseurl}}/{{ i.url }}'> {{ i.firstName }} {{ i.lastName }}</a> ; 
+                    {% assign find = "true" %}
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+                {% if find == "false" %}
+                  {{ formateur }} ;
+                {% endif %}
+              {% endfor %}
+            </td>
+            
         </tr>
         {% endfor %}
     </tbody>

@@ -2,6 +2,62 @@
 layout: default
 ---
 
+<!-- Durée -->
+{%   assign end = page.timeEnd  | date: '%s'  %}
+{%   assign start = page.timeStart  | date: '%s'  %}
+{%   assign secondsSince = end | minus: start   %}
+{%   assign hour = secondsSince | divided_by: 60 | divided_by: 60     %}
+{%   assign hourMinutes = hour | times: 60      %}
+{%   assign minutes = secondsSince | divided_by: 60 | minus: hourMinutes     %}
+
+<!-- Traduction Jour-->
+{%   assign dayEnglish =  page.timeStart | date: "%A"     %}
+{% case dayEnglish  %}
+{% when "Monday" %}
+    {%   assign dayFrench =  "Lundi" %}
+{% when "Tuesday" %}
+    {%   assign dayFrench =  "Mardi" %}
+{% when "Wednesday" %}
+    {%   assign dayFrench =  "Mercredi" %}
+{% when "Thursday" %}
+    {%   assign dayFrench =  "Jeudi" %}
+{% when "Friday" %}
+    {%   assign dayFrench =  "Vendredi" %}
+{% when "Saturday" %}
+    {%   assign dayFrench =  "Samedi" %}
+{% when "Sunday" %}
+    {%   assign dayFrench =  "Dimanche" %}
+{% endcase %}
+
+<!-- Traduction mois-->
+{%   assign monthEnglish =  page.timeStart | date: "%B"     %}
+{% case monthEnglish %}
+{% when "January" %}
+    {%   assign monthFrench =  "Janvier" %}
+{% when "February" %}
+    {%   assign monthFrench =  "Février" %}
+{% when "March" %}
+    {%   assign monthFrench =  "Mars" %}
+{% when "April" %}
+    {%   assign monthFrench =  "Avril" %}
+{% when "May" %}
+    {%   assign monthFrench =  "Mai" %}
+{% when "June" %}
+    {%   assign monthFrench =  "Juin" %}
+{% when "July" %}
+    {%   assign monthFrench =  "Juillet" %}
+{% when "August" %}
+    {%   assign monthFrench =  "Août" %}
+{% when "September" %}
+    {%   assign monthFrench =  "Septembre" %}
+{% when "October" %}
+    {%   assign monthFrench =  "Octobre" %}
+{% when "November" %}
+    {%   assign monthFrench =  "Novembre" %}
+{% when "December" %}
+    {%   assign monthFrench =  "Décembre" %}
+{% endcase %}
+
 <div class="row anchor">
     <div class="col-sm-3">
         <nav id="toc" class="sticky-top"></nav>
@@ -14,15 +70,24 @@ layout: default
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h4>Durée</h4>
-                        <p> {{ page.time }}</p>
-                        
+                        <h4>Date</h4>
+                        <p><b>Quand ?</b> : {{ dayFrench }} {{ page.timeStart | date: "%-d" }} {{ monthFrench }} {{ page.timeStart | date: "%Y" }}</p>
+                        <p><b>À quelle heure ?</b> : {{ page.timeStart | date: "%R" }} </p>
+                        <p><b>Combien de temps ?</b> : {{ hour }} h {% if minutes != 0 %}{{ minutes }}{% endif %}</p>
+                        <div title="Add to Calendar" class="addeventatc">
+                            Ajouter au calendrier
+                            <span class="start">{{ page.timeStart }}</span>
+                            <span class="end">{{ page.timeEnd }}</span>
+                            <span class="timezone">{{ page.timezone }}</span>
+                            <span class="title">[Formation] FAIR data - IFB</span>
+                            <span class="description"> {{ page.header_subTitle }}</span>
+                        </div>
                     </div>
                     <div class="col-sm-6">
-                        {% if page.orateurs %}
-                        <h4>Orateurs</h4>
+                        {% if page.formateurs %}
+                        <h4>Formateurs</h4>
                         <ul>
-                            {% for item in page.orateurs %}
+                            {% for item in page.formateurs %}
                                 <li> {{ item }} </li>
                             {% endfor %}
                         </ul>
@@ -30,6 +95,7 @@ layout: default
                     </div>
                 </div>
 
+                <br>
                 <div class="row">
                     <div class="col-sm-6">
                         {% if page.questions %}

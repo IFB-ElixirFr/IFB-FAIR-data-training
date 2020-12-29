@@ -1,7 +1,7 @@
 ---
 shortName: julienSeiler
 firstName: Julien 
-lastName: Maurel
+lastName: Seiler
 position: Formateur IFB
 localisation: "France"
 

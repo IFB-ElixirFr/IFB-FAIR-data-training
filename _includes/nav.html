@@ -24,9 +24,10 @@
                         Session
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_cours">
-                        {% for item in site.data.sessions %}
-                                <a class="dropdown-item" href="{{site.baseurl}}/{{  item.link }}" {% if page.url ==  item.link %} style="color: red;" {% endif %}>
-                                    {{ item.name }}
+                        {% assign sessions = site.sessions | sort:"numeroSession" %}
+                        {% for item in sessions %}
+                                <a class="dropdown-item" href="{{site.baseurl}}{{  item.url }}" {% if page.url ==  item.link %} style="color: red;" {% endif %}>
+                                    Session {{ item.numeroSession }}
                                 </a>
                         {% endfor %}
                     </div>

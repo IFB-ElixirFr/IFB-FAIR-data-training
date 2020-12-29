@@ -45,6 +45,8 @@ collections:
     output: true
   cours:
     output: true
+  sessions:
+    output: true
 
 defaults:
   - scope:
@@ -52,6 +54,11 @@ defaults:
       type: "formateurs"
     values:
       layout: "formateur"
+  - scope:
+      path: ""
+      type: "sessions"
+    values:
+      layout: "session"
   - scope:
       path: ""
       type: "cours"

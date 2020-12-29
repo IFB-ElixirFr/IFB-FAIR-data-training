@@ -1,12 +1,15 @@
 ---
 layout: session
-title: Cours 1
+title: Session 1
 header_title: Session 1
 header_subTitle: Les données de la Recherche et leur centralité dans le processus de recherche
+numeroSession : 1
 
-time : 3h
+timeStart: "13-01-2021 09:00"
+timeEnd: "13-01-2021 12:00"
+timezone: "Europe/Paris"
 
-orateurs:
+formateurs:
     - Frédéric de Lamotte
     - Paulette Lieby
 
@@ -30,10 +33,15 @@ homework:
     - Inviter les formateurs comme collaborateurs
 ---
 
-{% for cours in site.cours %}
 
-## {{cours.title}}
-{{cours.content}}
+{% assign listeCours = site.cours | where:"numeroSession", page.numeroSession | sort:"cours" %}
+
+{% for item in listeCours  %}
+{% assign content = item.content %}
+
+## {{item.title}}
+
+{{ content }}
 
 {% endfor %}
 
