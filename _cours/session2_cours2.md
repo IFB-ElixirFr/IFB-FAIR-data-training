@@ -1,5 +1,4 @@
 ---
-layout: default
 title: "Le nommage des fichiers"
 numeroCours: 2
 numeroSession: 2

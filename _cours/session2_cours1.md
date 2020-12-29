@@ -1,8 +1,8 @@
 ---
-layout: default
 title: "How FAIR are your data?"
 numeroCours: 1
 numeroSession: 2
+
 temps: 40 minutes
 
 formateurs : 

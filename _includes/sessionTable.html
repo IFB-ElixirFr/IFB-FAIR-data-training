@@ -1,7 +1,8 @@
-<table class="table table-striped">
+<table class="table table-striped" style="table-layout: fixed;">
     <thead>
       <tr>
         <th scope="col">Sessions</th>
+        <th scope="col">Cours</th>
         <th scope="col">Date</th>
         <th scope="col">Formateurs</th>
       </tr>
@@ -10,24 +11,42 @@
         {% assign sessions = site.sessions | sort:"numeroSession" %}
         {% for row in sessions %}
         <tr>
-            <td>{{ row.header_subTitle }}</td>
+            <td> 
+              <a href="{{site.baseurl}}{{ row.url }} ">{{ row.header_subTitle }} </a>
+            </td>
+
+            <td>
+              {% assign listeCours = site.cours | where:"numeroSession", row.numeroSession | sort:"numeroCours" %}
+                <ul>
+                  {% for item in listeCours  %}
+                  <li>
+                    <a href="{{site.baseurl}}{{item.url}}">{{item.title}} </a>
+                  </li>         
+                  {% endfor %}
+                </ul>
+            </td>
+
             <td>{{ row.timeStart }}</td>
 
             <td>
-              {% for formateur in row.formateurs %}
-              {% assign find = "false" %}
-                {% for i in site.formateurs %}
-                  
-                  {% if i.shortName == formateur %}
-                     <a href='{{site.baseurl}}/{{ i.url }}'> {{ i.firstName }} {{ i.lastName }}</a> ; 
-                    {% assign find = "true" %}
-                    {% break %}
+              <ul>
+                {% for formateur in row.formateurs %}
+                {% assign find = "false" %}
+                <li>
+                  {% for i in site.formateurs %}
+                    
+                    {% if i.shortName == formateur %}
+                      <a href='{{site.baseurl}}/{{ i.url }}'> {{ i.firstName }} {{ i.lastName }}</a>
+                      {% assign find = "true" %}
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+                  {% if find == "false" %}
+                    {{ formateur }} ;
                   {% endif %}
+                  </li>
                 {% endfor %}
-                {% if find == "false" %}
-                  {{ formateur }} ;
-                {% endif %}
-              {% endfor %}
+              </ul>
             </td>
             
         </tr>

@@ -45,6 +45,6 @@ Des travaux ponctuels seront à effectuer entre les séances.
     {% endif %}
 {% endfor %}
 
-### Programme de la version de test
+### Programme
 
 {% include sessionTable.html %}  

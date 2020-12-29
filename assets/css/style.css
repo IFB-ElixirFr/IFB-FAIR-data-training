@@ -112,6 +112,14 @@ nav[data-toggle="toc"] {
     transform: rotate(90deg);
 }
 
+td .collapsed .fa {
+    transform: rotate(90deg);
+}
+
+td a:hover {
+    text-decoration: none;
+}
+
 .card-header a {
     color:white;
 }
