@@ -18,30 +18,22 @@ L’Institut Français de Bioinformatique (IFB) organise une formation à destin
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 
-### Objectifs pédagogiques
+### Site de la formation 
 
-A la fin de cette formation, les participants connaîtront et pourront mettre en œuvre les principes de la science ouverte pour gérer leurs jeux de données dans un projet :
-- Les principes fondamentaux de l’Open Data en biologie et santé, y compris dans ses aspects juridiques
-- Les bonnes pratiques et outils de gestion des données d’un projet en bioinformatique, en lien avec les ressources de l’infrastructure IFB
-- Le PGD : séances théoriques et pratiques de construction d’un PGD sur des exemples de jeux de données omiques 
-- Le choix des métadonnées : panorama des ressources existantes pour choisir des métadonnées et mise en pratique pour annoter des jeux de données omiques en vue de la publication des données dans une banque internationale ou un dataverse institutionnel.
+Le site de la formation est disponible [:arrow_right: cliquer ici:arrow_left:](https://ifb-elixirfr.github.io/IFB-FAIR-data-training/index.html) . Vous y trouverez :
+- Les cours ;
+- Les TPs ; 
+- Les formateurs ; 
+- Le programme ;
+- et bien plus encore ! 
 
-### Modalités pratiques
+### Ajouter du contenu dans le site de formation
 
-5 séances de 3 heures en distanciel synchrone de 9h00 à 12h00. Des travaux ponctuels seront à effectuer entre les séances.
-Outil de visio proposé : zoom.
+Le site est généré par Jekyll. Il est possible d'y ajouter simplement :
+- Des formateurs ;
+- Des cours ;
+- Des sessions (composées de cours).  
 
-### Formateurs
+Une `GitHub action` est active pour mettre à jour le site lors de changements dans la branche principale (`main`). 
 
-Hélène Chiapello, Thomas Denecker, Jean-François Dufayard, Gautier Sarah, Frédéric de Lamotte, Paulette Lieby, Lionel Maurel, Julien Seiler.
-
-### Programme de la version de test
-
-| Session  | Dates    | Formateurs   |
-| -------- | -------- | ------------ |
-| Session 1 - Les données de la Recherche et leur centralité dans le processus de recherche. Crise de la reproductibilité, le PGD             | Mercredi 13 janvier 2021 | F.de Lamotte, P. Lieby |
-| Session 2 - La vie des données pendant le projet . Principe et outils pour organiser, nommer, versionner, stocker, archiver, mes données    | Jeudi 14 janvier 2021    | F. de Lamotte, J. Seiler |
-| Session 3 - Les Métadonnées. Les standards du domaine des données omiques en biologie et séances pratiques d’annotations de jeux de données | Vendredi 15 janvier 2021 | H. Chiapello, T. Denecker, J.F. Dufayard,  G. Sarah, P. Lieby, F. de Lamotte |
-| Session 4 : Partager et diffuser les données. Le cadre juridique, les entrepôts et les licences sur les données | Mercredi 20 janvier 2021 | L. Maurel, F. de Lamotte |
-| Session 5 : Le PGD : suite et fin. Débrief des séances 1 à 4 avec les participants | Jeudi 21 janvier 2021 | Tous |
-
+Tout a été fait pour n'avoir aucune programmation à réaliser. En contrepartie, un certain nombre de règles simples sont à respecter. Toutes ces règles sont décrites dans le wiki du site : [ici](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/wiki)
