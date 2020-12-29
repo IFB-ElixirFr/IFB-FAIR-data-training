@@ -10,8 +10,8 @@ timeEnd: "13-01-2021 12:00"
 timezone: "Europe/Paris"
 
 formateurs:
-    - Frédéric de Lamotte
-    - Paulette Lieby
+    - fredericdeLamotte
+    - pauletteLieby
 
 objectifs:
     - Objectif 1
@@ -34,7 +34,7 @@ homework:
 ---
 
 
-{% assign listeCours = site.cours | where:"numeroSession", page.numeroSession | sort:"cours" %}
+{% assign listeCours = site.cours | where:"numeroSession", page.numeroSession | sort:"numeroCours" %}
 
 {% for item in listeCours  %}
 {% assign content = item.content %}

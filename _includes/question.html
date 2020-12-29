@@ -1,25 +1,26 @@
 <div class="card">
     <div class="card-header text-white bg-warning">
-        <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-question-circle"></i> Question {{ include.numQuestion }}</h2>
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-question-circle"></i> Question {{ include.numQuestion }}</p>
     </div>
     <div class="card-body">
-
         {{ include.question | markdownify }}
-
-       <div class="card">
-            <h5 class="card-header bg-warning" style='font-size: 1.15rem;'>
-                <a class="collapsed d-block" data-toggle="collapse" href="#collapse-collapsed_{{ include.numQuestion }}" aria-expanded="true" aria-controls="collapse-collapsed_{{ include.numQuestion }}" id="heading-collapsed">
-                    <i class="fa fa-chevron-down float-right"></i>
-                    <i class="fas fa-eye"></i> Solution
-                </a>
-            </h5>
-            <div id="collapse-collapsed_{{ include.numQuestion }}" class="collapse" aria-labelledby="heading-collapsed">
-                <div class="card-body">
-                    {{ include.solution | markdownify }}
+        {% if include.solution %}
+        <div class="card">
+                <h5 class="card-header bg-warning" style='font-size: 1.15rem;'>
+                    <a class="collapsed d-block" data-toggle="collapse" href="#collapse-collapsed_{{ include.numQuestion }}" aria-expanded="true" aria-controls="collapse-collapsed_{{ include.numQuestion }}" id="heading-collapsed">
+                        <i class="fa fa-chevron-down float-right"></i>
+                        <i class="fas fa-eye"></i> Solution
+                    </a>
+                </h5>
+                
+                <div id="collapse-collapsed_{{ include.numQuestion }}" class="collapse" aria-labelledby="heading-collapsed">
+                    <div class="card-body">
+                        {{ include.solution | markdownify }}
+                    </div>
                 </div>
+                
             </div>
-        </div>
-       
+        {% endif %}
     </div>
 </div>
 <br>

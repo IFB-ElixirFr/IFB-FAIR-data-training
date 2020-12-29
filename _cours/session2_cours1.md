@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How FAIR are your data?"
-cours: 1
+numeroCours: 1
 numeroSession: 2
 temps: 40 minutes
 
@@ -15,7 +15,7 @@ formateurs :
 
 **Durée** : {{ page.temps }}
 
-**Source** : Le contenu : ‘How FAIR are your data?’ checklist, CC-BY by Sarah Jones & Marjan Grootveld, EUDAT dont le lien est proposé ci-dessous. L'image a été créée par [SangyaPundir](https://commons.wikimedia.org/wiki/File:FAIR_data_principles.jpg).
+**Source** : Le cours proposé ci-dessous est extrait du document : `How FAIR are your data?` checklist, CC-BY by Sarah Jones & Marjan Grootveld, EUDAT (lien ci-dessous). L'image a été créée par [SangyaPundir](https://commons.wikimedia.org/wiki/File:FAIR_data_principles.jpg).
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1065991.svg)](https://doi.org/10.5281/zenodo.1065991)
 
