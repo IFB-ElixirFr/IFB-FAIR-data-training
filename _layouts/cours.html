@@ -1,45 +1,86 @@
-<!doctype html>
-<html>
-    {%- include head.html -%}    
-  <body>
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button>
-    {%- include nav.html -%}  
-    
-    <div id="home"></div>
-    <div class="sectionCover d-flex flex-column justify-content-center align-items-center">
-        <p style="margin-bottom: .5rem; font-weight: 500; line-height: 1.2; font-size: 2.5rem;"> {{ page.title }} </p>
-        <p style="font-size: 1.6em;text-align:center;"> Cours {{ page.numeroCours }} - Session {{ page.numeroSession }} </p>
-    </div>
+---
+layout: default
+---
 
-    <div class="container">
+<script>
+var paragraph = document.getElementById("id_header_title");
+var text = document.createTextNode("{{page.title }}");
+paragraph.appendChild(text);
+
+var paragraph = document.getElementById("id_header_subTitle");
+var text = document.createTextNode("Cours {{ page.numeroCours }} - Session {{ page.numeroSession }}");
+paragraph.appendChild(text);
+</script>
+
+<div class="row">
+    <div class="col-sm-3">
+        <nav id="toc" class="sticky-top"></nav>
+    </div>
+    <div class="col-sm-9" data-spy="scroll" data-target="#toc" data-offset="70" >
+
+        <div class="card">
+            <div class="card-header text-white bg-info">
+                <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-info-circle"></i> Informations générales</h2>
+            </div>
+            <div class="card-body">
+                <p><b>Description</b> : {{ page.description }}</p>
+                <p><b>Formateurs</b> : 
+                    {% for formateur in page.formateurs %}
+                        {% assign find = "false" %}
+                        {% for i in site.formateurs %}
+                            {% if i.shortName == formateur %}
+                                <a href="{{site.baseurl}}/{{ i.url }}">{{ i.firstName }} {{ i.lastName }}</a> ; 
+                                {% assign find = "true" %} 
+                                {% break %}
+                            {% endif %}
+                        {% endfor %} 
+                        {% if find == "false" %}
+                            {{ formateur }} ; 
+                        {% endif %}
+                    {% endfor %} 
+                </p>
+                
+                <p><b>Durée</b> : {{ page.temps }}</p>
+                
+            </div>
+        </div>
+        <br>
+
+        
         <p>{{ page.content | markdownify }}</p>
+
+        <div class="row">
+            <div class="col-sm-4 text-left">
+                {% assign listCours = site.cours | where:"numeroSession", page.numeroSession  | sort: "numeroCours" %}
+                {% for i in listCours %}
+                    {% assign prev = page.numeroCours | minus: 1 %}
+                    {% if prev == i.numeroCours %}
+                        <a href="{{site.baseurl}}{{i.url}}"><i class="fas fa-arrow-alt-circle-left"></i>Vers le cours précédent </a>
+                        {% break %}
+                    {% endif %}
+                {% endfor %} 
+            </div>
+            <div class="col-sm-4 text-center">
+                {% for i in site.sessions %}
+                    {% if i.numeroSession == page.numeroSession %}
+                        {% assign urlSession = i.url %}
+                        {% break %}
+                    {% endif %}
+                {% endfor %} 
+                <a href="{{site.baseurl}}{{ urlSession }}">Retour à la page Session </a>
+            </div>
+            <div class="col-sm-4 text-right">
+                {% assign listCours = site.cours | where:"numeroSession", page.numeroSession  | sort: "numeroCours" %}
+                {% for i in listCours %}
+                    {% if page.numeroCours < i.numeroCours %}
+                        <a href="{{site.baseurl}}{{i.url}}">Vers le cours suivant <i class="fas fa-arrow-alt-circle-right"></i></a>
+                        {% break %}
+                    {% endif %}
+                {% endfor %} 
+            </div>
+        </div>
     </div>
+</div>
 
-    {%- include footer.html -%}  
-    
-    <script>
-        //Get the button
-        var mybutton = document.getElementById("myBtn");
-
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () { scrollFunction() };
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
-
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
-
-  </body>
-</html>
 
 

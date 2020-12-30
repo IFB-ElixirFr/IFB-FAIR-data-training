@@ -1,0 +1,40 @@
+---
+layout: default
+title: Rechercher
+header_title: Rechercher
+---
+
+<form action="{{ site.baseurl }}/search.html" method="get">
+  <div class="input-container">
+    <i class="fas fa-search icon"></i>
+    <input class="input-field" id="search-box"  type="text" name="query">
+  </div>
+  <div class="text-center">
+    <input class="submitBtn" type="submit" value="Rechercher">
+  </div> 
+</form>
+
+<div id="search-results"></div>
+
+<script>
+  window.store = [
+    {% for cours in site.cours %}
+      {
+        "id": "{{ cours.url | slugify }}",
+        "title": "{{ cours.title | xml_escape }}",
+        "numeroCours": "{{ cours.numeroCours | xml_escape }}",
+        "numeroSession": "{{ cours.numeroSession | xml_escape }}",
+        "temps": "{{ cours.temps | xml_escape }}",
+        "content": {{ cours.content | strip_html | strip_newlines | jsonify }},
+        "url": "{{site.baseurl}}{{ cours.url | xml_escape }}",
+        "type": "Cours"
+      }
+      {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+    ];
+
+</script>
+
+<!-- Search -->
+<script src="{{site.baseurl}}/assets/js/lunr.js"></script>
+<script src="{{site.baseurl}}/assets/js/search.js"></script>

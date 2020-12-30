@@ -2,6 +2,7 @@
 title: "Le nommage des fichiers"
 numeroCours: 2
 numeroSession: 2
+description: "L'objectif de ce cours est de comprendre pourquoi le nommage des fichiers est si important et des pistes pour mieux nommer ses fichiers."
 temps: 40 minutes
 
 formateurs : 

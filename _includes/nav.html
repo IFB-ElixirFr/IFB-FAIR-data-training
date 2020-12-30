@@ -10,14 +10,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
-                <li {% if page.url == "./" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
-                    <a class="nav-link" href="{{site.baseurl}}/index.html" >Home</a>
-                </li>
 
-                <li {% if page.url == "./formateurs.html" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
-                    <a class="nav-link" href="{{site.baseurl}}/formateurs.html">Formateurs</a>
-                </li>
-
+                <!-- Sessions -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_cours" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
@@ -33,6 +27,12 @@
                     </div>
                 </li>
 
+                <!-- Cours -->
+                <li {% if page.url == "./" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
+                    <a class="nav-link" href="{{site.baseurl}}/cours.html" >Cours</a>
+                </li>
+
+                <!-- TPs -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_TPs" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
@@ -40,14 +40,14 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_TPs">
                         {% for item in site.data.TPs %}
-                            
                                 <a class="dropdown-item" href="{{site.baseurl}}/{{ item.link }}" {% if page.url == item.link %} style="color: red;" {% endif %}>
                                     {{ item.name }}
                                 </a>
                         {% endfor %}
                     </div>
                 </li>
-
+                
+                <!-- Edition -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_editions" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
@@ -57,11 +57,43 @@
                         <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training" target="_blank">2020</a>
                     </div>
                 </li>
-                <li {% if page.url == "/apropos.html" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
-                    <a class="nav-link" href="{{site.baseurl}}/apropos.html">À propos</a>
+
+                <!-- A propos -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_editions" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        À propos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_editions">
+                        <a class="dropdown-item" href="{{site.baseurl}}/apropos.html" >De l'IFB</a>
+                        <a class="dropdown-item" href="{{site.baseurl}}/formateurs.html" >Des formateurs</a>
+                    </div>
                 </li>
+
             </ul>
+            
             <ul class="nav navbar-nav ml-auto">
+                <form class="form-inline" action="{{ site.baseurl }}/search.html" method="get">
+
+                    <div class="input-group">
+                        <input type="text" class="form-control" 
+                        id="search-box_nav" placeholder="Rechercher" aria-label="Rechercher" aria-describedby="basic-addon2" 
+                        name="query">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                      </div>
+
+                      <!--
+                    <div class="input-container_nav">
+                        
+                        <input class="input-field_nav" id="search-box"  type="text" name="query">
+                    </div>
+                    <button type="submit" class="submitBtn_nav">
+                        <i class="fas fa-search icon_nav"></i>
+                    </button>
+                    -->
+                  </form>
                 <li class="nav-item">
                     <a class="nav-link" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training" target="_blank">
                     <img src="{{site.baseurl}}/assets/img/github-logo.png" alt="GitHub" height="30px"></a>
@@ -73,5 +105,4 @@
     </div>
 
 </nav>
-
 

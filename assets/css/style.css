@@ -140,6 +140,143 @@ td a:hover {
 }
 
 /* ---------------------------------------------------
+    Search nav 
+----------------------------------------------------- */
+
+.form-control:focus:not([readonly]) {
+    border: 1px solid #ced4da;
+    box-shadow: 0 0 0 1px #ced4da;
+}
+
+.input-container_nav {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+    max-width: 200px;
+    border: solid 1px #dadce0;
+    color: #dadce0;
+    border-radius: .25rem!important;
+    margin-right: 10px;
+}
+
+.icon_nav {
+    padding: 0 10px;
+    color: gray;
+    min-width: 50px;
+    line-height: 2!important;
+    text-align: center;
+}
+.input-field_nav {
+    width: 100%;
+    padding: 0 10px;
+    outline: none;
+    border : solid 0px white;
+}
+
+.submitBtn_nav:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-image: -webkit-linear-gradient(top,#f8f9fa,#f8f9fa);
+    background-color: #f8f9fa;
+    border: 1px solid #dadce0;
+    color: #202124;
+}
+
+.submitBtn_nav {
+    background-image: -webkit-linear-gradient(top,#f8f9fa,#f8f9fa);
+    background-color: #f8f9fa;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    color: #3c4043;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    text-align: center;
+    user-select: none;
+}
+/* ---------------------------------------------------
+    Search 
+----------------------------------------------------- */
+
+  .input-container {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+    border: solid 1px gray;
+    border-radius: .25rem!important;
+  }
+
+  .icon {
+    padding: 10px;
+    color: gray;
+    min-width: 50px;
+    line-height: 2!important;
+    text-align: center;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border : solid 0px white;
+  }
+  
+  .input-container:focus-within {
+    box-shadow: 0 .4rem 0.9rem rgba(0,0,0,.15)!important;
+  }
+
+.submitBtn:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-image: -webkit-linear-gradient(top,#f8f9fa,#f8f9fa);
+    background-color: #f8f9fa;
+    border: 1px solid #dadce0;
+    color: #202124;
+}
+
+.submitBtn {
+    background-image: -webkit-linear-gradient(top,#f8f9fa,#f8f9fa);
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 150px;
+    text-align: center;
+    user-select: none;
+}
+/* ---------------------------------------------------
+    Search result
+----------------------------------------------------- */
+
+.card-footer_cours {
+background-color: #173b6c;
+color: white;
+}
+
+.noDeco {
+    text-decoration: none;
+    color: black;
+    
+}
+
+.noDeco:hover {
+    text-decoration: none;
+    color :rgb(78, 75, 75);
+}
+
+.divShadow:hover {
+    box-shadow: 0 .250rem .5rem rgba(0,0,0,.075)!important;
+}
+
+.divShadow {
+    margin-bottom: 25px;
+}
+
+
+/* ---------------------------------------------------
     Table Markdown
 ----------------------------------------------------- */
 .tableStyle

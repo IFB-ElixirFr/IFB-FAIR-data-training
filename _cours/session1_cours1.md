@@ -2,6 +2,7 @@
 title: "Activité Brise Glace"
 numeroCours: 1
 numeroSession: 1
+description: "L'objectif de ce cours est de faire connaissance"
 temps: 40 minutes
 
 formateurs : 
@@ -15,15 +16,33 @@ formateurs :
  - thomasdenecker
 ---
 
-<!-- Ne pas modifier -->
+Bienvenue à toutes et à tous dans la formation FAIR Data proposée par l'IFB. Nous sommes ravis de vous acceuillir !
 
-**Orateurs** : 
-{% for formateur in page.formateurs %}{% assign find = "false" %}{% for i in site.formateurs %}{% if i.shortName == formateur %}[{{ i.firstName }} {{ i.lastName }}]({{site.baseurl}}/{{ i.url }}) ; {% assign find = "true" %} {% break %}{% endif %}{% endfor %} {% if find == "false" %}{{ formateur }} ; {% endif %}{% endfor %}
+## Logistique
 
-**Durée** : {{ page.temps }}
-<!-- Fin Ne pas modifier -->
+Avant de commencer, faisons un petit point logistique pour s'assure que cette formation se déroule au mieux: Pourriez vous vérifier que :
 
-<!-- Le cours -->
+- Votre micro est fonctionnel ;
+- Votre caméra est fonctionnelle ;
+- Vous avez repéré l’espace de partage ;
+- Vous êtes en mesure de partager votre écran.
 
-{% capture urlPdf %} {{site.baseurl}}/assets/PDFs/slide_test.pdf {% endcapture %}
-{% include pdf.html adresse=urlPdf %}
+## Votre photo emblématique
+
+Pour mieux connaissance avec vous, pourriez vous nous partager votre photo emblématique ? Si, oui :
+
+- A-t-elle été bien téléversée sur le site de partage de la formation ?
+- A-t-elle été nommée d’une manière reconnaissable ?
+- Est-elle libre de droits ?
+
+## À vous la parole !
+
+À tour de rôle , chaque participant se présente en donnant :
+
+- Son nom et prénom ;
+- Son lieu d’activité ;
+- Un bref exposé des rôle & responsabilités ;
+- ce qu'il/elle attend de cette formation ;
+- Une présentation de la photo téléversée :
+    - Une question par personne pour déterminer le lieu où cette photo a été prise ;
+    - La langue sera donnée au chat si pas de succès.
