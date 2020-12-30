@@ -2,7 +2,7 @@
 title: "How FAIR are your data?"
 numeroCours: 1
 numeroSession: 2
-description: "L'objectif de ce cours de de faire le point sur la notion FAIR."
+description: "L'objectif de ce cours de faire le point sur la notion FAIR."
 temps: 40 minutes
 
 formateurs : 

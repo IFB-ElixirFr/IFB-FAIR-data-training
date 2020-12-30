@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-header text-white bg-warning">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-question-circle"></i> Question {{ include.qcuNumber }}</p>
+    </div>
+    <div class="card-body" id="div_qcu_{{include.qcuNumber}}">
+        {{ include.question | markdownify }}
+
+        {% assign my_array = include.choices | split: "|" %}
+        {% for item in my_array %}
+          <div>
+              <input type="radio" id="{{item}}" name="qcu_{{include.qcuNumber}}" value="{{item}}">
+              <label for="{{item}}">{{item}}</label>
+          </div>
+        {% endfor %} 
+        <button onclick="myFunction{{include.qcuNumber}}()" type="button" class="btn btn-primary" id="btn_{{include.qcuNumber}}">Vérifier la réponse</button>     
+    </div>
+</div>
+<br>
+
+<script>
+    function myFunction{{include.qcuNumber}}() {
+        var value = $('input[name=qcu_{{include.qcuNumber}}]:checked').val();
+        document.getElementById("btn_{{include.qcuNumber}}").display = "none";
+
+        if(value == "{{ include.reponse }}"){
+            document.getElementById("div_qcu_{{include.qcuNumber}}").style.backgroundColor = "#bce0bc";
+        } else {
+            
+            document.getElementById("div_qcu_{{include.qcuNumber}}").style.backgroundColor = "#F9C6BF";
+        }
+        
+    }
+</script>

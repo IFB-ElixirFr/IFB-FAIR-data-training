@@ -23,8 +23,8 @@ paragraph.appendChild(text);
                 <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-info-circle"></i> Informations générales</h2>
             </div>
             <div class="card-body">
-                <p><b>Description</b> : {{ page.description }}</p>
-                <p><b>Formateurs</b> : 
+                <p><b>Description</b> <br>  {{ page.description }}</p>
+                <p><b>Formateurs</b> <br>  
                     {% for formateur in page.formateurs %}
                         {% assign find = "false" %}
                         {% for i in site.formateurs %}
@@ -40,15 +40,19 @@ paragraph.appendChild(text);
                     {% endfor %} 
                 </p>
                 
-                <p><b>Durée</b> : {{ page.temps }}</p>
-                
+                <p><b>Durée</b> <br> {{ page.temps }}</p>
+                <p><b>Progression dans la session</b></p>
+                <div class="progress">
+                    {% assign nbCours = site.cours | where:"numeroSession", page.numeroSession | size | times: 1.0 %}
+                    {% assign progress = page.numeroCours | divided_by: nbCours | times: 100.0  %}
+                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{progress}}%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
             </div>
         </div>
         <br>
-
         
         <p>{{ page.content | markdownify }}</p>
-
+        <hr>
         <div class="row">
             <div class="col-sm-4 text-left">
                 {% assign listCours = site.cours | where:"numeroSession", page.numeroSession  | sort: "numeroCours" %}
