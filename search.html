@@ -28,9 +28,24 @@ header_title: Rechercher
         "content": {{ cours.content | strip_html | strip_newlines | jsonify }},
         "url": "{{site.baseurl}}{{ cours.url | xml_escape }}",
         "type": "Cours"
+      },
+      
+    {% endfor %}
+    {% for tp in site.TPs %}
+      {
+        "id": "{{ tp.url | slugify }}",
+        "title": "{{ tp.titre_TP | xml_escape }}",
+        "numeroTP": "{{ tp.numeroTP | xml_escape }}",
+        "numeroSession": "{{ tp.numeroSession | xml_escape }}",
+        "temps": "{{ tp.temps | xml_escape }}",
+        "tools": {{ tp.tools | strip_html | strip_newlines | jsonify }},
+        "content": {{ tp.content | strip_html | strip_newlines | jsonify }},
+        "url": "{{site.baseurl}}{{ tp.url | xml_escape }}",
+        "type": "TP"
       }
       {% unless forloop.last %},{% endunless %}
     {% endfor %}
+    
     ];
 
 </script>

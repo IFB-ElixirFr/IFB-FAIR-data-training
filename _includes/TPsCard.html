@@ -1,0 +1,42 @@
+<div class="card" style="margin-bottom: 10px;">
+    <div class="card-header" style="font-weight: bold; color:white; background-color: #009c2f ;">
+      <i class="fas fa-laptop"></i> TP {{include.itemTP.numeroTP}} - Session {{include.itemTP.numeroSession}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ include.itemTP.titre_TP }}</h5>
+      <p class="card-text">
+        <p><b>Description</b><br> {{ include.itemTP.description }}</p>
+        <p><b>Formateurs</b><br>
+            {% for formateur in include.itemTP.formateurs %}
+                {% assign find = "false" %}
+                {% for i in site.formateurs %}
+                    {% if i.shortName == formateur %}
+                        <a href="{{site.baseurl}}/{{ i.url }}">{{ i.firstName }} {{ i.lastName }}</a>
+                        {% assign find = "true" %} 
+                        {% break %}
+                    {% endif %}
+                {% endfor %} 
+                {% if find == "false" %}
+                    {{ formateur }}
+                {% endif %}
+                {% unless forloop.last %},{% endunless %}
+                {% if forloop.last  %};{% endif %}
+            {% endfor %} 
+           </p>
+        <p><b>Durée</b><br> {{ include.itemTP.temps }}</p>
+        {% if include.itemTP.tools %}
+        <p><b>Outils</b><br>
+        {% for t in include.itemTP.tools %}
+          {{t}}
+          {% unless forloop.last %},{% endunless %}
+          {% if forloop.last  %};{% endif %}
+        {% endfor %}
+        </p>
+        {% endif %}
+      </p>
+    </div>
+    <div class="card-footer text-right">
+      <a href="{{site.baseurl}}{{ include.itemTP.url }}">Aller au TP</a>
+    </div>
+  </div>
+  

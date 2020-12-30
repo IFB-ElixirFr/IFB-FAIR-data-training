@@ -39,7 +39,8 @@ homework:
 {% for item in listeCours  %}
 {% assign content = item.content %}
 
-## {{item.title}}
+{:.h1Sep}
+# {{item.title}}
 
 {{ content }}
 

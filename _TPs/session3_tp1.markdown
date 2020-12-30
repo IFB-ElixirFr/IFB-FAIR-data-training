@@ -1,19 +1,25 @@
 ---
-layout: tp
 title: TP Session 3
 header_title: Travaux Pratiques
 header_subTitle: Session 3 - Metadonnées
+numeroTP: 1
+numeroSession: 3
 
 titre_TP: Choix des métadonnées et soumission à l'EBI
-time : 1h
+description: "L'objectif est de se familiariser avec les métadonnées etsoumettre des données et des métadonnées sur ENA (EBI)"
+temps: 1h
 
-orateurs:
-     - Hélène Chiapello
-     - Thomas Denecker
-     - Jean-François Dufayard
-     - Gautier Sarah
-     - Frédéric de Lamotte
-     - Paulette Lieby
+tools:
+     - omicsBroker
+     - Navigateur web
+
+formateurs:
+     - heleneChiapello
+     - thomasdenecker
+     - jeanfrancoisDufayard
+     - gauthierSarah
+     - fredericdeLamotte
+     - pauletteLieby
 
 objectifs:
     - Objectif 1

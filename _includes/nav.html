@@ -32,21 +32,11 @@
                     <a class="nav-link" href="{{site.baseurl}}/cours.html" >Cours</a>
                 </li>
 
-                <!-- TPs -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_TPs" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        TPs
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_TPs">
-                        {% for item in site.data.TPs %}
-                                <a class="dropdown-item" href="{{site.baseurl}}/{{ item.link }}" {% if page.url == item.link %} style="color: red;" {% endif %}>
-                                    {{ item.name }}
-                                </a>
-                        {% endfor %}
-                    </div>
+                <!-- Travaux pratiques -->
+                <li {% if page.url == "./" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
+                    <a class="nav-link" href="{{site.baseurl}}/TPs.html" >TPs</a>
                 </li>
-                
+
                 <!-- Edition -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_editions" data-toggle="dropdown"

@@ -11,14 +11,16 @@
                 {% assign find = "false" %}
                 {% for i in site.formateurs %}
                     {% if i.shortName == formateur %}
-                        <a href="{{site.baseurl}}/{{ i.url }}">{{ i.firstName }} {{ i.lastName }}</a> ; 
+                        <a href="{{site.baseurl}}/{{ i.url }}">{{ i.firstName }} {{ i.lastName }}</a>
                         {% assign find = "true" %} 
                         {% break %}
                     {% endif %}
                 {% endfor %} 
                 {% if find == "false" %}
-                    {{ formateur }} ; 
+                    {{ formateur }} 
                 {% endif %}
+                {% unless forloop.last %},{% endunless %}
+                {% if forloop.last  %};{% endif %}
             {% endfor %} 
            </p>
         <p><b>Durée</b><br> {{ include.itemCours.temps }}</p>

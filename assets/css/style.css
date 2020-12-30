@@ -41,6 +41,12 @@ html {
       text-align: justify;
   }
   
+  .h1Sep{
+    background-color: #173b6c; 
+    color: white;
+    padding: 5px;
+  }
+
   h2,h3, h4 {
       color: #173b6c;
       padding-bottom: 10px;
@@ -254,6 +260,11 @@ td a:hover {
 .card-footer_cours {
 background-color: #173b6c;
 color: white;
+}
+
+.card-footer_tp {
+    background-color: #009c2f;
+    color: white;
 }
 
 .noDeco {

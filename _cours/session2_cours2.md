@@ -12,7 +12,7 @@ formateurs :
 
 ![Qui es tu en réalité ?](http://www.lebonquizz.com/media/ce-test-te-montrera-qui-tu-es-en-r-alit/0cab34aa-ab53-411a-8545-971732440128_560_420.jpg)
 
-### 1) DONNER UN NOM BREF ET EXPLICITE (SI VOUS N’ÊTES PAS UNE MACHINE)
+## 1) DONNER UN NOM BREF ET EXPLICITE (SI VOUS N’ÊTES PAS UNE MACHINE)
 
 Le nom d’un fichier doit être le plus court possible et doit refléter son contenu. Il peut contenir son sujet (rapport d’activité, résultats d’analyse, bilan, etc.), sa date, sa version (si le document est destiné à évoluer).
 
@@ -41,7 +41,7 @@ Le mot réunion n’apparaît pas dans la dénomination des fichiers car il est 
 " %}
 
 
-### 2) NE PAS METTRE D’ESPACE NI DE CARACTÈRES SPÉCIAUX (SURTOUT SI VOUS ÊTES UNE MACHINE)
+## 2) NE PAS METTRE D’ESPACE NI DE CARACTÈRES SPÉCIAUX (SURTOUT SI VOUS ÊTES UNE MACHINE)
 
 Il vaut mieux ne pas mettre d’espace entre les mots ni de caractères spéciaux (accents et cédille y compris). Pour séparer les mots, vous pouvez mettre une majuscule ou un underscore “_”.
 
@@ -50,7 +50,7 @@ En effet, il se peut que d’un système d’exploitation à un autre (Windows v
 
 Il vaut mieux donc bannir tout ce qui n’est pas alphanumérique : & / + > : ? % ( ] etc.
 
-### 3) INDIQUER LES DATES AU BON FORMAT (QUE VOUS SOYEZ OU NON UNE MACHINE)
+## 3) INDIQUER LES DATES AU BON FORMAT (QUE VOUS SOYEZ OU NON UNE MACHINE)
 
 Les dates doivent s’écrire au format AAAAMMJJ (année, mois, jour).
 Commencer par l’année permet de maintenir les documents dans un ordre chronologique.
@@ -69,7 +69,7 @@ $ tree
 ```
 " %}
 
-### 4) PLACER L’ÉLÉMENT IMPORTANT EN PREMIER
+## 4) PLACER L’ÉLÉMENT IMPORTANT EN PREMIER
 
 Il est préférable de bien choisir l’ordre des éléments dans le nom des fichiers. Mettez en premier l’élément qui vous est le plus pertinent pour pouvoir retrouver facilement votre document.
 
@@ -88,7 +88,7 @@ $ tree
 ```
 " %}
 
-### 5) INDIQUER LES VERSIONS DES DOCUMENTS
+## 5) INDIQUER LES VERSIONS DES DOCUMENTS
 
 Certains documents peuvent être amenés à évoluer, avoir plusieurs versions avant une version finale. Dans ces cas, il faut préciser la version dans le nom du fichier.
 
@@ -105,7 +105,7 @@ $ tree
 │   └── Convention_VF.txt
 ```
 
-### 6) DONNER UN NOM BREF ET EXPLICITE (SI VOUS N’ÊTES PAS UNE MACHINE)
+## 6) DONNER UN NOM BREF ET EXPLICITE (SI VOUS N’ÊTES PAS UNE MACHINE)
 
 MAIS ÇA SE DISCUTE  !
 
@@ -139,7 +139,7 @@ text = "
 Par exemple, le concept qui serait ainsi identifié : `http://exemple.com/categorie/biodiesel` devient d’une certaine façon obsolète, dès lors que le journal officiel du 22 juillet 2007 a préconisé l’utilisation de la forme française «biogazole» de préférence à « biodiesel ». Dans ce cas, ou bien l’identifiant du concept s’écarte du libellé du concept, ce qui réduit l’intérêt d’avoir un identifiant signifiant, ou bien on modifie l’identifiant du concept pour l’adapter à l’état de la langue, ce qui remet bien sûr en cause la pérennité́ de cet identifiant.
 " %}
 
-### Recommandation 
+## Recommandations
 
 Un certain nombre de recommandation sont proposées comme celle du Programme national de numérisation et de la valorisation des contenys culturels - Recommandations Techniques pour les métadonnées et standards ([disponible ici](https://www.culture.gouv.fr/Media/Thematiques/Innovation-numerique/Folder/Livrables-GT-Numerisation/Recommandations-techniques-pour-les-metadonnees-et-standards)) et proposées ci-dessous :
 

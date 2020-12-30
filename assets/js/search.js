@@ -10,13 +10,15 @@
                 return item.id === results[i].ref
             });
             var item = store[index];
+
             appendString += '<a class="noDeco" href="' + item.url + '"><div class="card divShadow"><div class="card-body">' ;
             appendString += '<h5 class="card-title">' + item.title + '</h5> ' ;
             appendString += '<p class="card-text">' + item.content.substring(0, 150) + '...</p></div>';
+            
             if (item.type == "Cours") {
                 appendString += '<div class="card-footer card-footer_cours text-right"><i class="fas fa-book"></i> Cours '+ item.numeroCours +' Session '+ item.numeroSession +' <i class="fas fa-clock"></i> '+ item.temps + ' </div>'
               } else {
-                appendString += '<div class="card-footer card-footer_cours text-right"><i class="fas fa-book"></i> Cours '+ item.numeroCours +' Session '+ item.numeroSession +' <i class="fas fa-clock"></i> '+ item.temps + ' </div>'
+                appendString += '<div class="card-footer card-footer_tp text-right"><i class="fas fa-book"></i> TP '+ item.numeroTP +' Session '+ item.numeroSession +' <i class="fas fa-clock"></i> '+ item.temps + ' </div>'
             }
             appendString += '</div></a>';
         }
@@ -43,13 +45,14 @@
     var searchTerm = getQueryVariable('query');
   
     if (searchTerm) {
-        console.log(searchTerm);
+
       document.getElementById('search-box').value =  searchTerm;
 
       var idx = lunr(function () {
         this.ref('id');
         this.field('title', { boost: 10 });
         this.field('content');
+        this.field('tools');
         this.field('url');
       
         window.store.forEach(function (doc) {

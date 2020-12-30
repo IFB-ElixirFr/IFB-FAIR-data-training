@@ -22,12 +22,26 @@ layout: default
                         
                     </div>
                     <div class="col-sm-6">
-                        {% if page.orateurs %}
-                        <h4>Orateurs</h4>
+                        {% if page.formateurs %}
+                        <h4>Formateurs</h4>
                         <ul>
-                            {% for item in page.orateurs %}
-                                <li> {{ item }} </li>
+                            {% for formateur in page.formateurs %}
+                                <li>
+                                    {% assign find = "false" %}
+                                    {% for i in site.formateurs %}
+                                    
+                                    {% if i.shortName == formateur %}
+                                        <a href='{{site.baseurl}}/{{ i.url }}'> {{ i.firstName }} {{ i.lastName }}</a> 
+                                        {% assign find = "true" %}
+                                        {% break %}
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% if find == "false" %}
+                                        {{ formateur }} 
+                                    {% endif %}
+                                </li>
                             {% endfor %}
+   
                         </ul>
                         {% endif %}
                     </div>
