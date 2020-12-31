@@ -216,7 +216,7 @@ Ci dessous, un exemple d'une table remplie :
 
 {% include repoImage.html
 pathInRepo="/assets/img/TPs/session3_tp1/metadataTable_withData.png"
-alias="Screenshot metadata table"
+alias="Screenshot metadata table with data"
 %}
 
 #### Cliquer sur le lien *Files*
@@ -282,7 +282,7 @@ Cliquer sur "Upload metadata" (Step 4) En cas de succès, un message vous sera e
 
 {% include repoImage.html
 pathInRepo="/assets/img/TPs/session3_tp1/publishENA_metadata_success.png"
-alias="Screenshot File import complet"
+alias="Screenshot File import complet success"
 %}
 
 #### Décrire les fichiers XML de métadonnées générés 
@@ -302,28 +302,28 @@ En cliquant sur `Studies Report` :
 
 {% include repoImage.html
 pathInRepo="/assets/img/TPs/session3_tp1/ENA_StudiesReport.png"
-alias="Screenshot ENA"
+alias="Screenshot ENA Studies Report"
 %}
 
 En cliquant sur `Samples Report` :
 
 {% include repoImage.html
 pathInRepo="/assets/img/TPs/session3_tp1/ENA_SamplesReport.png"
-alias="Screenshot ENA"
+alias="Screenshot ENA Samples Report"
 %}
 
 En cliquant sur `Runs Report` :
 
 {% include repoImage.html
 pathInRepo="/assets/img/TPs/session3_tp1/ENA_RunsReport.png"
-alias="Screenshot ENA"
+alias="Screenshot ENA Runs Report"
 %}
 
 En cliquant sur `Run Files Report` :
 
 {% include repoImage.html
 pathInRepo="/assets/img/TPs/session3_tp1/ENA_RunFilesReport.png"
-alias="Screenshot ENA"
+alias="Screenshot ENA Run Files Report"
 %}
 
 {% include question.html numQuestion="3" question="Quel est le numéro d'accession attribué à votre projet par l'ENA ?" %}
