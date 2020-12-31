@@ -215,7 +215,7 @@ alias="Screenshot metadata table"
 Ci dessous, un exemple d'une table remplie :
 
 {% include repoImage.html
-pathInRepo="/assets/img/TPs/session3_tp1/metadataTable.png"
+pathInRepo="/assets/img/TPs/session3_tp1/metadataTable_withData.png"
 alias="Screenshot metadata table"
 %}
 
