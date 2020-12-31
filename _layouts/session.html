@@ -116,7 +116,7 @@ layout: default
         {{ content }}
 
         {% if page.questions %}
-            {%- include questionSession.html -%}  
+            {%- include questionnement.html -%}  
         {% endif %}
 
         {% if page.objectifs %}
@@ -126,13 +126,26 @@ layout: default
         <h2> Au programme</h2>
 
         {% assign listeCours = site.cours | where:"numeroSession", page.numeroSession | sort:"numeroCours" %}
-
+        {% assign size = listeCours | size %}
+        {% if size != 0 %}
+        <h3>Les cours</h3>
         <ol>
             {% for item in listeCours  %}
             <li><a href="{{site.baseurl}}{{item.url}}">{{item.title}}</a> </li>
             {% endfor %}
         </ol>
-        
+        {% endif %}
+
+        {% assign listeTPs = site.TPs | where:"numeroSession", page.numeroSession | sort:"numeroTP" %}
+        {% assign size = listeTPs | size %}
+        {% if size != 0 %}
+        <h3>Les TPs</h3>
+        <ol>
+            {% for item in listeTPs  %}
+            <li><a href="{{site.baseurl}}{{item.url}}">{{item.titre_TP}}</a> </li>
+            {% endfor %}
+        </ol>
+        {% endif %}
 
         {% if page.messages %}
             {%- include takeHomeMessage.html -%}  

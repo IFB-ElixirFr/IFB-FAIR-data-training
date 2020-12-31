@@ -10,72 +10,53 @@ layout: default
 
         <h1>{{ page.titre_TP }}</h1>
 
-        <div class="card" >
-            <div class="card-header bg-success text-white">
-                <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;">Programme</h2>
+        <div class="card">
+            <div class="card-header text-white bg-info">
+                <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-info-circle"></i> Informations générales</h2>
             </div>
             <div class="card-body">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h4>Durée</h4>
-                        <p> {{ page.time }}</p>
-                        
-                    </div>
-                    <div class="col-sm-6">
-                        {% if page.formateurs %}
-                        <h4>Formateurs</h4>
-                        <ul>
-                            {% for formateur in page.formateurs %}
-                                <li>
-                                    {% assign find = "false" %}
-                                    {% for i in site.formateurs %}
-                                    
-                                    {% if i.shortName == formateur %}
-                                        <a href='{{site.baseurl}}/{{ i.url }}'> {{ i.firstName }} {{ i.lastName }}</a> 
-                                        {% assign find = "true" %}
-                                        {% break %}
-                                    {% endif %}
-                                    {% endfor %}
-                                    {% if find == "false" %}
-                                        {{ formateur }} 
-                                    {% endif %}
-                                </li>
-                            {% endfor %}
-   
-                        </ul>
+                <p><b>Description</b> <br>  {{ page.description }}</p>
+                <p><b>Formateurs</b> <br>  
+                    {% for formateur in page.formateurs %}
+                        {% assign find = "false" %}
+                        {% for i in site.formateurs %}
+                            {% if i.shortName == formateur %}
+                                <a href="{{site.baseurl}}/{{ i.url }}">{{ i.firstName }} {{ i.lastName }}</a> ; 
+                                {% assign find = "true" %} 
+                                {% break %}
+                            {% endif %}
+                        {% endfor %} 
+                        {% if find == "false" %}
+                            {{ formateur }} ; 
                         {% endif %}
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        {% if page.questions %}
-                        <h4>Questions</h4>
-                        <ul>
-                            {% for item in page.questions %}
-                                <li> {{ item }} </li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %}
-                        
-                    </div>
-                    <div class="col-sm-6">
-                        
-                        {% if page.objectifs %}
-                        <h4>Objectifs</h4>
-                        <ul>
-                            {% for item in page.objectifs %}
-                                <li> {{ item }} </li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %}
-                    </div>
-                </div>
+                    {% endfor %} 
+                </p>
+                
+                <p><b>Durée</b> <br> {{ page.temps }}</p>
             </div>
         </div>
+
+        {% if page.prerequisites %}
+            {%- include prerequisites.html -%}  
+        {% endif %}
+
+        {% if page.tools %}
+            {%- include tools.html -%}  
+        {% endif %}
+
+        {% if page.questions %}
+            {%- include questionnement.html -%}  
+        {% endif %}
+
+        {% if page.objectifs %}
+            {%- include objectifs.html -%}  
+        {% endif %}
+
+        
         <br>
         {{ content }}
         <br>
+
         {% if page.messages %}
         <div class="card">
             <div class="card-header text-white bg-danger">

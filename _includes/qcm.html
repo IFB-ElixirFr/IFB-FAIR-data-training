@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-header text-white bg-warning">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-question-circle"></i> Question {{ include.qcmNumber }}</p>
+    </div>
+    <div class="card-body" id="div_qcm_{{include.qcmNumber}}">
+        {{ include.question | markdownify }}
+
+        {% assign my_array = include.choices | split: "|" %}
+        {% for item in my_array %}
+            <input type="checkbox" name="qcm_{{include.qcmNumber}}" value="{{item}}"> {{item}} <br>  
+        {% endfor %} 
+        <br>
+        <button onclick="myFunctionQCM{{include.qcmNumber}}()" type="button" class="btn btn-primary" id="btn_QCM_{{include.qcmNumber}}">Vérifier la réponse</button>     
+        <p id= "reponse_QCM_{{include.qcmNumber}}" style="display: none;">La bonne réponse était: <b>{{ include.reponse | replace: "|", ", " }}</b>  </p>
+    </div>
+</div>
+<br>
+
+<script>
+    function myFunctionQCM{{include.qcmNumber}}() {
+        var array = []
+        var value = $('input[name=qcm_{{include.qcmNumber}}]:checked').each(function(){
+            array.push($(this).val()); });;
+        document.getElementById("btn_QCM_{{include.qcmNumber}}").style.display = "none";
+        const reponses = "{{ include.reponse }}";
+        const reponsesArray = reponses.split('|');
+        const filteredArray = reponsesArray.filter(value => array.includes(value));
+
+        if(array.length == reponsesArray.length){
+            if(filteredArray.length == reponsesArray.length){
+                document.getElementById("div_qcm_{{include.qcmNumber}}").style.backgroundColor = "#bce0bc";
+            } else {
+                document.getElementById("div_qcm_{{include.qcmNumber}}").style.backgroundColor = "#F9C6BF";
+                document.getElementById("reponse_QCM_{{include.qcmNumber}}").style.display = "block";
+            }
+        } else {
+            document.getElementById("div_qcm_{{include.qcmNumber}}").style.backgroundColor = "#F9C6BF";
+            document.getElementById("reponse_QCM_{{include.qcmNumber}}").style.display = "block";
+        }
+        
+    }
+</script>

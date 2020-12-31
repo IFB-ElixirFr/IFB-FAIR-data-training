@@ -12,7 +12,9 @@
               <label for="{{item}}">{{item}}</label>
           </div>
         {% endfor %} 
-        <button onclick="myFunction{{include.qcuNumber}}()" type="button" class="btn btn-primary" id="btn_{{include.qcuNumber}}">Vérifier la réponse</button>     
+        <br>
+        <button onclick="myFunction{{include.qcuNumber}}()" type="button" class="btn btn-primary" id="btn_qcu_{{include.qcuNumber}}">Vérifier la réponse</button>     
+        <p id= "reponse_QCU_{{include.qcmNumber}}" style="display: none;">La bonne réponse était: <b>{{ include.reponse }}</b>  </p>
     </div>
 </div>
 <br>
@@ -20,12 +22,12 @@
 <script>
     function myFunction{{include.qcuNumber}}() {
         var value = $('input[name=qcu_{{include.qcuNumber}}]:checked').val();
-        document.getElementById("btn_{{include.qcuNumber}}").display = "none";
+        document.getElementById("btn_qcu_{{include.qcuNumber}}").style.display = "none";
 
         if(value == "{{ include.reponse }}"){
             document.getElementById("div_qcu_{{include.qcuNumber}}").style.backgroundColor = "#bce0bc";
         } else {
-            
+            document.getElementById("reponse_QCU_{{include.qcmNumber}}").style.display = "block";
             document.getElementById("div_qcu_{{include.qcuNumber}}").style.backgroundColor = "#F9C6BF";
         }
         
