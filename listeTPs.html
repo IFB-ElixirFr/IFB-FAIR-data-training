@@ -1,0 +1,58 @@
+---
+layout: default
+title: TPs
+header_title: Listes des travaux pratiques
+---
+
+<div class="card">
+  <h5 class="card-header" style="text-decoration: none;" >
+    <a class="collapsed d-block" style="color:#173b6c" data-toggle="collapse" href="#collapse-collapsed_filters" aria-expanded="true" aria-controls="collapse-collapsed_filters" id="heading-collapsed">
+        <i class="fa fa-chevron-down float-right"></i>
+        Filtrer
+    </a>
+  </h5>
+  <div id="collapse-collapsed_filters" class="collapse" aria-labelledby="heading-collapsed">
+    <div class="card-body">
+      <b>Par session</b>
+      <select class="form-control" id="filterSession" >
+        <option> Tous </option>
+        {% assign listeDesSessions = site.sessions | sort:"numeroSession" %}
+        {% for s in listeDesSessions %}
+            <option> {{ s.numeroSession}}</option>
+        {% endfor %}
+      </select>
+      <br>
+      <div class="text-right">
+        <button class="btn btn-primary" onclick="javascript:showHideFUnction();"> <i class="fas fa-filter"></i> Filter</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<br>
+
+{% assign listeDesTPs = site.TPs | sort:"numeroSession" | sort:"numeroTP" %}
+{% for tp in listeDesTPs %}
+{% include TPsCard.html itemTP=tp %}
+{% endfor %}
+
+<script>
+    function showHideFUnction() {
+        var nbSessions = {{ site.sessions | size }};
+        var value = document.getElementById("filterSession").value;
+        if(value == "Tous"){
+          for (var i = 1; i <= nbSessions; i++) {  
+            document.getElementsByName('session_' + i ).forEach(function(entry) { entry.style.display = 'block';});
+          }
+        } else {
+          for (var i = 1; i <= nbSessions; i++) {  
+            if(i == value){
+              document.getElementsByName('session_' + i ).forEach(function(entry) { entry.style.display = 'block';});
+            } else {
+              document.getElementsByName('session_' + i ).forEach(function(entry) { entry.style.display = 'none';});
+            }
+          }
+        }
+    }
+</script>
