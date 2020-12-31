@@ -375,6 +375,22 @@ color: white;
 }
 
 /* ---------------------------------------------------
+    Include
+----------------------------------------------------- */
+
+.objectifs {
+    border-radius: 5px;
+    background: #e6f4fa;
+    padding: 5px 20px 5px 20px;
+}
+
+.questionSession{
+    border-radius: 5px;
+    background: #cef2d8;
+    padding: 5px 20px 5px 20px;
+}
+
+/* ---------------------------------------------------
     highlight
 ----------------------------------------------------- */
 /* http://jwarby.github.io/jekyll-pygments-themes/languages/javascript.html# */

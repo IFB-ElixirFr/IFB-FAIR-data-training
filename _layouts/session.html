@@ -63,17 +63,36 @@ layout: default
         <nav id="toc" class="sticky-top"></nav>
     </div>
     <div class="col-sm-9" data-spy="scroll" data-target="#toc" data-offset="70" >
+
         <div class="card">
-            <div class="card-header bg-success text-white">
-                <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;">Programme</h2>
+            <div class="card-header text-white bg-info">
+                <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-info-circle"></i> Informations générales</h2>
             </div>
             <div class="card-body">
-                <div class="row">
+                <p><b>Formateurs</b> <br>  
+                    {% for formateur in page.formateurs %}
+                        {% assign find = "false" %}
+                        {% for i in site.formateurs %}
+                            {% if i.shortName == formateur %}
+                                <a href="{{site.baseurl}}/{{ i.url }}">{{ i.firstName }} {{ i.lastName }}</a> ; 
+                                {% assign find = "true" %} 
+                                {% break %}
+                            {% endif %}
+                        {% endfor %} 
+                        {% if find == "false" %}
+                            {{ formateur }} ; 
+                        {% endif %}
+                    {% endfor %} 
+                </p>
+                
+                <h4>Date</h4>
+                <div class="row h-100 justify-content-center align-items-center">
                     <div class="col-sm-6">
-                        <h4>Date</h4>
                         <p><b>Quand ?</b> : {{ dayFrench }} {{ page.timeStart | date: "%-d" }} {{ monthFrench }} {{ page.timeStart | date: "%Y" }}</p>
                         <p><b>À quelle heure ?</b> : {{ page.timeStart | date: "%R" }} </p>
                         <p><b>Combien de temps ?</b> : {{ hour }} h {% if minutes != 0 %}{{ minutes }}{% endif %}</p>
+                    </div>
+                    <div class="col-sm-6 text-center">
                         <div title="Add to Calendar" class="addeventatc">
                             Ajouter au calendrier
                             <span class="start">{{ page.timeStart }}</span>
@@ -83,95 +102,46 @@ layout: default
                             <span class="description"> {{ page.header_subTitle }}</span>
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        {% if page.formateurs %}
-                        <h4>Formateurs</h4>
-                        <ul>
-                            {% for formateur in page.formateurs %}
-                                <li>
-                                    {% assign find = "false" %}
-                                    {% for i in site.formateurs %}
-                                    
-                                    {% if i.shortName == formateur %}
-                                        <a href='{{site.baseurl}}/{{ i.url }}'> {{ i.firstName }} {{ i.lastName }}</a> 
-                                        {% assign find = "true" %}
-                                        {% break %}
-                                    {% endif %}
-                                    {% endfor %}
-                                    {% if find == "false" %}
-                                        {{ formateur }} 
-                                    {% endif %}
-                                </li>
-                            {% endfor %}
-   
-                        </ul>
-                        {% endif %}
-                    </div>
                 </div>
 
-                <br>
-                <div class="row">
-                    <div class="col-sm-6">
-                        {% if page.questions %}
-                        <h4>Questions</h4>
-                        <ul>
-                            {% for item in page.questions %}
-                                <li> {{ item }} </li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %}
-                        
-                    </div>
-                    <div class="col-sm-6">
-                        
-                        {% if page.objectifs %}
-                        <h4>Objectifs</h4>
-                        <ul>
-                            {% for item in page.objectifs %}
-                                <li> {{ item }} </li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %}
-                    </div>
+                <h4>Progression dans la formation</h4>
+                <div class="progress">
+                    {% assign nbSessions = site.sessions | size | times: 1.0 %}
+                    {% assign progress = page.numeroSession | divided_by: nbSessions | times: 100.0  %}
+                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{progress}}%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>
         </div>
-        <br>
-        
+
         {{ content }}
 
-        <br>
-        {% if page.messages %}
-        <div class="card">
-            <div class="card-header text-white bg-danger">
-                <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-exclamation-circle"></i> Take home message</h2>
-            </div>
-            <div class="card-body">
-                <ul>
-                    {% for item in page.messages %}
-                        <li> {{ item }} </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
+        {% if page.questions %}
+            {%- include questionSession.html -%}  
         {% endif %}
+
+        {% if page.objectifs %}
+            {%- include objectifs.html -%}  
+        {% endif %}
+
+        <h2> Au programme</h2>
+
+        {% assign listeCours = site.cours | where:"numeroSession", page.numeroSession | sort:"numeroCours" %}
+
+        <ol>
+            {% for item in listeCours  %}
+            <li><a href="{{site.baseurl}}{{item.url}}">{{item.title}}</a> </li>
+            {% endfor %}
+        </ol>
         
-        <br>
-    
-        {% if page.homework %}
-        <div class="card">
-            <div class="card-header text-white bg-info">
-                <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-pen"></i> Homework</h2>
-            </div>
-            <div class="card-body">
-                <ul>
-                    {% for item in page.homework %}
-                        <li> {{ item }} </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
+
+        {% if page.messages %}
+            {%- include takeHomeMessage.html -%}  
         {% endif %}
+
+        {% if page.homework %}
+            {%- include homework.html -%}  
+        {% endif %}
+
     </div>
 </div>
 

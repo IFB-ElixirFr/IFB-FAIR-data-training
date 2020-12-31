@@ -1,0 +1,12 @@
+<div class="card" style="margin:10px 0px;">
+    <div class="card-header text-white bg-danger">
+        <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-exclamation-circle"></i> Take home message</h2>
+    </div>
+    <div class="card-body">
+        <ul>
+            {% for item in page.messages %}
+                <li> {{ item }} </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

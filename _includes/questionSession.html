@@ -1,0 +1,12 @@
+<div class="card" style="margin:10px 0px;">
+    <div class="card-header text-white" style="background-color: darkseagreen;">
+        <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-question-circle"></i> Questions de la session</h2>
+    </div>
+    <div class="card-body">
+        <ul>
+            {% for item in page.questions %}
+                <li> {{ item }} </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
