@@ -370,6 +370,9 @@ color: white;
 }
 
 
+@media print {
+    body {-webkit-print-color-adjust: exact;}
+}
 
 /* ---------------------------------------------------
     highlight
@@ -382,7 +385,7 @@ div.highlight {
 
 .highlighter-rouge {
     width: 100% ;
-    background-color: #F7F8F3;
+    background-color: #F7F8F3 !important;
 }
 
 pre {

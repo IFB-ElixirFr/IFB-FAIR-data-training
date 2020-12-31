@@ -6,11 +6,11 @@ layout: default
     <div class="col-sm-3">
         <nav id="toc" class="sticky-top"></nav>
     </div>
-    <div class="col-sm-9" data-spy="scroll" data-target="#toc" data-offset="70" >
+    <div class="col-sm-9" data-spy="scroll" data-target="#toc" data-offset="70" id="divPDF">
 
         <h1>{{ page.titre_TP }}</h1>
 
-        <div class="card">
+        <div class="card" >
             <div class="card-header bg-success text-white">
                 <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;">Programme</h2>
             </div>
@@ -107,6 +107,25 @@ layout: default
             </div>
         </div>
         {% endif %}
+        <div class="text-center">
+            <button onclick="downloadPDF_TP()" class="btn btn-danger"><i class="fas fa-file-pdf"></i> Exporter le TP en PDF</button>
+        </div>
     </div>
 </div>
 
+<script>
+    // documentation : https://printjs.crabbly.com/
+function downloadPDF_TP() {
+    printJS({
+        printable: 'divPDF', 
+        type: 'html',
+        header: "{{ page.titre_TP }}",
+        headerStyle: "width: 100%; height: 4em; padding : 1.33em 0em 1.33em 0em;  margin-bottom: 30px; background-color:#173b6c; color: white;  text-shadow: #173b6c 1px 0 10px;  text-align: center;",
+        css: ['{{site.baseurl}}/assets/fontawesome/css/all.css', 
+            'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css',
+            '{{site.baseurl}}/assets/css/style.css'
+        ],
+        documentTitle: "TP {{page.numeroTP}} Session {{page.numeroSession}} - FAIR data by IFB"
+    }) 
+}
+</script>
