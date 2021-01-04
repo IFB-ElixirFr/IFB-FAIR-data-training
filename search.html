@@ -24,9 +24,9 @@ header_title: Rechercher
         "title": "{{ seance.title | xml_escape }}",
         "numeroSeance": "{{ seance.numeroSeance | xml_escape }}",
         "numeroModule": "{{ seance.numeroModule | xml_escape }}",
-        "formateurs": "{{ seance.formateurs | | join: ', ' | xml_escape }}", 
+        "formateurs": "{{ seance.formateurs | join: ', ' | xml_escape }}", 
         "description": "{{ seance.description | xml_escape }}",
-        "content": {{ seance.content | strip_html | strip_newlines | jsonify }},
+        "content": {{ seance.content | strip_html | strip_newlines | xml_escape | jsonify }},
         "tools": {{ seance.tools | strip_html | strip_newlines | jsonify }},
         "url": "{{site.baseurl}}{{ seance.url | xml_escape }}",
         "type":  "{{ seance.type | xml_escape }}",
@@ -34,8 +34,6 @@ header_title: Rechercher
       {% unless forloop.last %},{% endunless %}
     {% endfor %}
     ];
-
-console.log(window.store)
 </script>
 
 <!-- Search -->

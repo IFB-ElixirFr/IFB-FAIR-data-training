@@ -39,3 +39,7 @@ Des travaux ponctuels seront à effectuer entre les séances.
 ### Programme
 
 {% include moduleTable.html %}  
+
+### Les mots clés de la formation
+
+{% include cloudWord.html %}
