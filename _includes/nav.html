@@ -50,11 +50,11 @@
 
                 <!-- A propos -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_editions" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_Apropos" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         À propos
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_editions">
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_Apropos">
                         <a class="dropdown-item" href="{{site.baseurl}}/apropos.html" >De l'IFB</a>
                         <a class="dropdown-item" href="{{site.baseurl}}/formateurs.html" >Des formateurs</a>
                     </div>
@@ -74,19 +74,57 @@
                         </div>
                       </div>
 
-                      <!--
-                    <div class="input-container_nav">
-                        
-                        <input class="input-field_nav" id="search-box"  type="text" name="query">
-                    </div>
-                    <button type="submit" class="submitBtn_nav">
-                        <i class="fas fa-search icon_nav"></i>
-                    </button>
-                    -->
                   </form>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training" target="_blank">
-                    <img src="{{site.baseurl}}/assets/img/github-logo.png" alt="GitHub" height="30px"></a>
+                  
+                <!-- Question -->
+                <li class="nav-item dropdown" >
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_questions" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-question-circle"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink_questions">
+                        <a class="dropdown-item" href="{{ site.github_repo_url }}" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fab fa-github"></i></i></span></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Notre GitHub </b></p>
+                                    <p class="textNav">Visiter nous ! </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="{{ site.github_repo_url }}/issues" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fas fa-book"></i></span></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Pour contribuer </b></p>
+                                    <p class="textNav">Une docu est disponible</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="{{ site.github_repo_url }}/issues" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fas fa-comments"></i></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Envie d'échanger avec nous ? </b></p>
+                                    <p class="textNav">Une discussion est ouverte</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="{{ site.github_repo_url }}/issues" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fas fa-exclamation-triangle"></i></span></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Un bug dans le site ? </b></p>
+                                    <p class="textNav">Déclarer une <i>issue</i> </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        
+                    </div>
                 </li>
             </ul>
             

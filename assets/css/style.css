@@ -40,7 +40,9 @@ html {
   p{
       text-align: justify;
   }
-  
+
+
+
   .h1Sep{
     background-color: #173b6c; 
     color: white;
@@ -131,6 +133,20 @@ td a:hover {
 
 .addeventatc {
     z-index: 1 !important;
+}
+
+/* ---------------------------------------------------
+    Nav item
+----------------------------------------------------- */
+
+p.textNav {
+    margin-bottom: 0px;
+    color: rgba(0,0,0,.5);;
+  }
+  
+.imgNav {
+    font-size: 2rem; 
+    color: rgba(0,0,0,.5);
 }
 
 /* ---------------------------------------------------
