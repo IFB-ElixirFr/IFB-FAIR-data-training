@@ -18,36 +18,24 @@ header_title: Rechercher
 
 <script>
   window.store = [
-    {% for cours in site.cours %}
+    {% for seance in site.seances %}
       {
-        "id": "{{ cours.url | slugify }}",
-        "title": "{{ cours.title | xml_escape }}",
-        "numeroCours": "{{ cours.numeroCours | xml_escape }}",
-        "numeroSession": "{{ cours.numeroSession | xml_escape }}",
-        "temps": "{{ cours.temps | xml_escape }}",
-        "content": {{ cours.content | strip_html | strip_newlines | jsonify }},
-        "url": "{{site.baseurl}}{{ cours.url | xml_escape }}",
-        "type": "Cours"
-      },
-      
-    {% endfor %}
-    {% for tp in site.TPs %}
-      {
-        "id": "{{ tp.url | slugify }}",
-        "title": "{{ tp.titre_TP | xml_escape }}",
-        "numeroTP": "{{ tp.numeroTP | xml_escape }}",
-        "numeroSession": "{{ tp.numeroSession | xml_escape }}",
-        "temps": "{{ tp.temps | xml_escape }}",
-        "tools": {{ tp.tools | strip_html | strip_newlines | jsonify }},
-        "content": {{ tp.content | strip_html | strip_newlines | jsonify }},
-        "url": "{{site.baseurl}}{{ tp.url | xml_escape }}",
-        "type": "TP"
+        "id": "{{ seance.url | slugify }}",
+        "title": "{{ seance.title | xml_escape }}",
+        "numeroSeance": "{{ seance.numeroSeance | xml_escape }}",
+        "numeroModule": "{{ seance.numeroModule | xml_escape }}",
+        "formateurs": "{{ seance.formateurs | | join: ', ' | xml_escape }}", 
+        "description": "{{ seance.description | xml_escape }}",
+        "content": {{ seance.content | strip_html | strip_newlines | jsonify }},
+        "tools": {{ seance.tools | strip_html | strip_newlines | jsonify }},
+        "url": "{{site.baseurl}}{{ seance.url | xml_escape }}",
+        "type":  "{{ seance.type | xml_escape }}",
       }
       {% unless forloop.last %},{% endunless %}
     {% endfor %}
-    
     ];
 
+console.log(window.store)
 </script>
 
 <!-- Search -->

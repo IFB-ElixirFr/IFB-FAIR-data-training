@@ -13,12 +13,14 @@
 
             appendString += '<a class="noDeco" href="' + item.url + '"><div class="card divShadow"><div class="card-body">' ;
             appendString += '<h5 class="card-title">' + item.title + '</h5> ' ;
-            appendString += '<p class="card-text">' + item.content.substring(0, 150) + '...</p></div>';
+            appendString += '<p class="card-text">' + item.description + '</p></div>';
             
-            if (item.type == "Cours") {
-                appendString += '<div class="card-footer card-footer_cours text-right"><i class="fas fa-book"></i> Cours '+ item.numeroCours +' Session '+ item.numeroSession +' <i class="fas fa-clock"></i> '+ item.temps + ' </div>'
-              } else {
-                appendString += '<div class="card-footer card-footer_tp text-right"><i class="fas fa-book"></i> TP '+ item.numeroTP +' Session '+ item.numeroSession +' <i class="fas fa-clock"></i> '+ item.temps + ' </div>'
+            if (item.type == "cours") {
+                appendString += '<div class="card-footer card-footer_cours text-right"><i class="fas fa-book"></i> Cours '+ item.numeroSeance +' Session '+ item.numeroModule +' <i class="fas fa-clock"></i> '+ item.temps + ' </div>'
+            } else if (item.type == "tp") {
+                appendString += '<div class="card-footer card-footer_tp text-right"><i class="fas fa-book"></i> TP '+ item.numeroSeance +' Session '+ item.numeroModule +' <i class="fas fa-clock"></i> '+ item.temps + ' </div>'
+            } else {
+              appendString += '<div class="card-footer card-footer_cours text-right"><i class="fas fa-book"></i> Cours '+ item.numeroSeance +' Session '+ item.numeroModule +' <i class="fas fa-clock"></i> '+ item.temps + ' </div>'
             }
             appendString += '</div></a>';
         }
@@ -51,8 +53,10 @@
       var idx = lunr(function () {
         this.ref('id');
         this.field('title', { boost: 10 });
+        this.field('formateurs');
         this.field('content');
         this.field('tools');
+        this.field('type');
         this.field('url');
       
         window.store.forEach(function (doc) {
