@@ -1,6 +1,6 @@
 
 <div class="tooltip" >
-    <a href= "formateurs/{{ include.shortName }}" >
+    <a href= "{{ site.baseurl }}/formateurs/{{ include.shortName }}" >
         <img class="avatar" alt="{{ include.githubId }}" width="100" height="100" data-proofer-ignore="true" src="https://avatars1.githubusercontent.com/{{ include.githubId }}?v=3&amp;s=100" srcset="https://avatars1.githubusercontent.com/{{ include.githubId }}?v=3&amp;s=100 1x, https://avatars1.githubusercontent.com/{{ include.githubId }}?v=3&amp;s=200 2x, https://avatars1.githubusercontent.com/{{ include.githubId }}?v=3&amp;s=300 3x, https://avatars1.githubusercontent.com/{{ include.githubId }}?v=3&amp;s=400 4x" /> 
         <span class="tooltiptext">{{ include.name }}</span>
     </a>
