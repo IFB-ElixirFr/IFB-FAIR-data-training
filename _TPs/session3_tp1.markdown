@@ -48,7 +48,7 @@ homework:
 
 Dans ce TP, nous allons réaliser les différentes étapes entre la collecte des données et la soumission dans une banque internationnale. Nous vous proposons trois jeux de données de séquences pour ce TP :
 
-- Dataset 1 : Un génome bactérien de la bactérie *S. Salivarius* ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/S_salivarius.zip));
+- Dataset 1 : Un génome bactérien de la bactérie *S. salivarius* ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/S_salivarius.zip));
 - Dataset 2 : Un transcriptome de plante ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/plante.zip));
 - Dataset 3 : Un génome du virus SARS-Cov2 ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/SARS_Covv2.zip)).
 
@@ -93,7 +93,7 @@ choices="Study|Sample|Experiment|Run|Analysis|Submission"
 reponse="Sample"
 %}
 
-## Choisir une checklist correpondant au jeu de données choisi
+## Choisir une *Checklist* correpondant au jeu de données choisi
 
 Une quantité minimale d'informations est requise lors de l'enregistrement des échantillons sur l'ENA et tous les échantillons doivent être conformes à une liste de contrôle (checklist) définissant des valeurs de métadonnées attendues. La liste de contrôle la plus appropriée pour l'enregistrement des échantillons dépend du type de l'échantillon. L'ensemble des checklists de l'ENA sont disponible [ici](https://www.ebi.ac.uk/ena/browser/checklists). 
 
