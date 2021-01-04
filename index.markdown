@@ -32,17 +32,8 @@ Des travaux ponctuels seront à effectuer entre les séances.
 ### Formateurs
 
 {% assign formateurs = site.formateurs | sort:"lastName" %}
-
 {% for formateur in formateurs %}
-    {% capture name %}{{ formateur.firstName }} {{ formateur.lastName }}{% endcapture %}
-    {% capture shortName %}{{ formateur.shortName }}{% endcapture %}
-    {% if formateur.urlImage %}
-        {% capture urlImage %}{{ formateur.urlImage }}{% endcapture %}
-        {% include profile.html urlImage=urlImage name=name shortName=shortName %}
-    {% else %}
-        {% capture GID %}{{ formateur.githubID }}{% endcapture %}
-        {% include profileGithub.html githubId=GID name=name shortName=shortName %}
-    {% endif %}
+{% include profile.html formateur=formateur %}
 {% endfor %}
 
 ### Programme

@@ -33,6 +33,7 @@ baseurl: "/IFB-FAIR-data-training" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: IFB_Bioinfo
 github_username:  IFB-ElixirFr
+github_repoName:  IFB-FAIR-data-training
 github_repo_url: "https://github.com/IFB-ElixirFr/IFB-FAIR-data-training"
 
 # Build settings
