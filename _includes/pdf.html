@@ -1,1 +1,6 @@
+
+{% if include.local %}
+<iframe src="{{site.baseurl}}{{ include.adresse }}" width="100%" height="500px"></iframe>
+{% else %}
 <iframe src="{{ include.adresse }}" width="100%" height="500px"></iframe>
+{% endif %}

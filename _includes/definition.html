@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-header text-white bg-info">
+        <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-book-open"></i> Définition</h2>
+    </div>
+    <div class="card-body">
+        {{ include.text | markdownify }}
+    </div>
+    <div class="card-footer">
+        Source : <a href="{{ include.source }}">{{ include.source }}</a> 
+    </div>
+</div>
+<br>

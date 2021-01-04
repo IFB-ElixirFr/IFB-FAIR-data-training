@@ -11,12 +11,4 @@ formateurs :
   
 ---
 
-## Part 1: standards in life sciences
-
-### What is a standard ?
-
-{% include question.html 
-question="What do you know as standard in life sciences ?" 
-consigne="5 minutes to find an example and explain why it is a standard"
-%}
-
+{% include pdf.html adresse="/assets/PDFs/slide_test.pdf" local="true" %}
