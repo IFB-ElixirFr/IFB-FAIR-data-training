@@ -11,17 +11,17 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
 
-                <!-- Sessions -->
+                <!-- Modules -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_cours" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        Session
+                        Modules
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_cours">
-                        {% assign sessions = site.sessions | sort:"numeroSession" %}
-                        {% for item in sessions %}
+                        {% assign modules = site.modules | sort:"numeroModule" %}
+                        {% for item in modules %}
                                 <a class="dropdown-item" href="{{site.baseurl}}{{  item.url }}" {% if page.url ==  item.link %} style="color: red;" {% endif %}>
-                                    Session {{ item.numeroSession }}
+                                    Module {{ item.numeroModule }}
                                 </a>
                         {% endfor %}
                     </div>

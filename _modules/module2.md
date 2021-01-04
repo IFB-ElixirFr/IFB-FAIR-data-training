@@ -1,17 +1,16 @@
 ---
-layout: session
-title: Session 4
-header_title: Session 4
-header_subTitle: "Partager et diffuser les données. Le cadre juridique, les entrepôts et les licences sur les données"
-numeroSession : 4
+title: Module 2
+header_title: Module 2
+header_subTitle: "La vie des données pendant le projet : Principe et outils pour organiser, nommer, versionner, stocker, archiver, mes données"
+numeroModule : 2
 
-timeStart: "20-01-2021 09:00"
-timeEnd: "20-01-2021 12:00"
+timeStart: "14-01-2021 09:00"
+timeEnd: "14-01-2021 12:00"
 timezone: "Europe/Paris"
 
 formateurs:
     - fredericdeLamotte
-    - lionelMaurel
+    - julienSeiler
 
 objectifs:
     - Objectif 1

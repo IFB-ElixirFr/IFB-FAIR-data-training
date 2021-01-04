@@ -20,7 +20,7 @@ A la fin de cette formation, les participants connaîtront et pourront mettre en
 
 ### Modalités pratiques
 
-5 séances de 3 heures en distanciel synchrone de 9h00 à 12h00. L'outil utilisé pour cette formation est [Zoom](https://zoom.us/). Il est important de vérifier avant les sessions que :
+10 séances de 5 heures en distanciel synchrone de 9h00 à 12h00. L'outil utilisé pour cette formation est [Zoom](https://zoom.us/). Il est important de vérifier avant les sessions que :
 
 - Votre micro est fonctionnel ;
 - Votre caméra est fonctionnelle ;
@@ -47,4 +47,4 @@ Des travaux ponctuels seront à effectuer entre les séances.
 
 ### Programme
 
-{% include sessionTable.html %}  
+{% include moduleTable.html %}  

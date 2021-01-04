@@ -1,7 +1,8 @@
 ---
 title: "How FAIR are your data?"
-numeroCours: 1
-numeroSession: 2
+numeroSeance: 1
+numeroModule: 2
+type: "cours"
 description: "L'objectif de ce cours de faire le point sur la notion FAIR."
 temps: 40 minutes
 

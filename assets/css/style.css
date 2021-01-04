@@ -141,12 +141,12 @@ td a:hover {
 
 p.textNav {
     margin-bottom: 0px;
-    color: rgba(0,0,0,.5);;
+    color:#212529;
   }
   
 .imgNav {
     font-size: 2rem; 
-    color: rgba(0,0,0,.5);
+    color: #212529;
 }
 
 /* ---------------------------------------------------

@@ -1,9 +1,8 @@
 ---
-layout: session
-title: Session 1
-header_title: Session 1
+title: Module 1
+header_title: Module 1
 header_subTitle: Les données de la Recherche et leur centralité dans le processus de recherche
-numeroSession : 1
+numeroModule : 1
 
 timeStart: "13-01-2021 09:00"
 timeEnd: "13-01-2021 12:00"

@@ -4,6 +4,9 @@
     </div>
     <div class="card-body">
         {{ include.question | markdownify }}
+        {% if include.consigne %}
+        <p>{{ include.consigne | markdownify }}</p>
+        {% endif %}
         {% if include.solution %}
         <div class="card">
                 <h5 class="card-header bg-warning" style='font-size: 1.15rem;'>

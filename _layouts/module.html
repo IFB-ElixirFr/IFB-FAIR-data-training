@@ -106,8 +106,8 @@ layout: default
 
                 <h4>Progression dans la formation</h4>
                 <div class="progress">
-                    {% assign nbSessions = site.sessions | size | times: 1.0 %}
-                    {% assign progress = page.numeroSession | divided_by: nbSessions | times: 100.0  %}
+                    {% assign nbModules = site.modules | size | times: 1.0 %}
+                    {% assign progress = page.numeroModule | divided_by: nbModules | times: 100.0  %}
                     <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{progress}}%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>
@@ -125,24 +125,13 @@ layout: default
 
         <h2> Au programme</h2>
 
-        {% assign listeCours = site.cours | where:"numeroSession", page.numeroSession | sort:"numeroCours" %}
-        {% assign size = listeCours | size %}
+        {% assign listeSeances = site.seances | where:"numeroModule", page.numeroModule | sort:"numeroSeance" %}
+        {% assign size = listeSeances | size %}
         {% if size != 0 %}
         <h3>Les cours</h3>
         <ol>
-            {% for item in listeCours  %}
+            {% for item in listeSeances  %}
             <li><a href="{{site.baseurl}}{{item.url}}">{{item.title}}</a> </li>
-            {% endfor %}
-        </ol>
-        {% endif %}
-
-        {% assign listeTPs = site.TPs | where:"numeroSession", page.numeroSession | sort:"numeroTP" %}
-        {% assign size = listeTPs | size %}
-        {% if size != 0 %}
-        <h3>Les TPs</h3>
-        <ol>
-            {% for item in listeTPs  %}
-            <li><a href="{{site.baseurl}}{{item.url}}">{{item.titre_TP}}</a> </li>
             {% endfor %}
         </ol>
         {% endif %}

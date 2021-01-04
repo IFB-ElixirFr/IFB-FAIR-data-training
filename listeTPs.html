@@ -13,12 +13,12 @@ header_title: Listes des travaux pratiques
   </h5>
   <div id="collapse-collapsed_filters" class="collapse" aria-labelledby="heading-collapsed">
     <div class="card-body">
-      <b>Par session</b>
-      <select class="form-control" id="filterSession" >
+      <b>Par module</b>
+      <select class="form-control" id="filterModule" >
         <option> Tous </option>
-        {% assign listeDesSessions = site.sessions | sort:"numeroSession" %}
-        {% for s in listeDesSessions %}
-            <option> {{ s.numeroSession}}</option>
+        {% assign listeDesModules = site.modules | sort:"numeroModule" %}
+        {% for s in listeDesModules %}
+            <option> {{ s.numeroModule}}</option>
         {% endfor %}
       </select>
       <br>
@@ -32,25 +32,29 @@ header_title: Listes des travaux pratiques
 
 <br>
 
-{% assign listeDesTPs = site.TPs | sort:"numeroSession" | sort:"numeroTP" %}
-{% for tp in listeDesTPs %}
-{% include TPsCard.html itemTP=tp %}
+{% assign listeDesTPs = site.seances |  where:"type", "tp" | group_by: "numeroModule" %}
+{% assign listeDesTPs = listeDesTPs | sort: "numeroSeance" %}
+{% for group in listeDesTPs %}
+  <h4 name='module_{{group.name}}'>Module {{group.name}}</h4>
+  {% for item in group.items %}
+  {% include seanceCard.html itemSeance=item %}
+  {% endfor %}
 {% endfor %}
 
 <script>
     function showHideFUnction() {
-        var nbSessions = {{ site.sessions | size }};
-        var value = document.getElementById("filterSession").value;
+        var nbModules = {{ site.modules | size }};
+        var value = document.getElementById("filterModule").value;
         if(value == "Tous"){
-          for (var i = 1; i <= nbSessions; i++) {  
-            document.getElementsByName('session_' + i ).forEach(function(entry) { entry.style.display = 'block';});
+          for (var i = 1; i <= nbModules; i++) {  
+            document.getElementsByName('module_' + i ).forEach(function(entry) { entry.style.display = 'block';});
           }
         } else {
-          for (var i = 1; i <= nbSessions; i++) {  
+          for (var i = 1; i <= nbModules; i++) {  
             if(i == value){
-              document.getElementsByName('session_' + i ).forEach(function(entry) { entry.style.display = 'block';});
+              document.getElementsByName('module_' + i ).forEach(function(entry) { entry.style.display = 'block';});
             } else {
-              document.getElementsByName('session_' + i ).forEach(function(entry) { entry.style.display = 'none';});
+              document.getElementsByName('module_' + i ).forEach(function(entry) { entry.style.display = 'none';});
             }
           }
         }

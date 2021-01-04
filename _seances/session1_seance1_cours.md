@@ -1,7 +1,8 @@
 ---
 title: "Activité Brise Glace"
-numeroCours: 1
-numeroSession: 1
+numeroSeance: 1
+numeroModule: 1
+type: "cours"
 description: "L'objectif de ce cours est de faire connaissance"
 temps: 40 minutes
 
@@ -14,6 +15,7 @@ formateurs :
  - lionelMaurel
  - pauletteLieby
  - thomasdenecker
+
 ---
 
 Bienvenue à toutes et à tous dans la formation FAIR Data proposée par l'IFB. Nous sommes ravis de vous acceuillir !

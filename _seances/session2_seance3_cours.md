@@ -1,7 +1,8 @@
 ---
 title: "Format de fichier"
-numeroCours: 3
-numeroSession: 2
+numeroSeance: 3
+numeroModule: 2
+type: "cours"
 description: "L'objectif de ce cours de mieux comprendre les formats de fichier."
 temps: 40 minutes
 

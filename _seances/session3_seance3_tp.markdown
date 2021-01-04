@@ -1,11 +1,8 @@
 ---
-title: TP Session 3
-header_title: Travaux Pratiques
-header_subTitle: Session 3 - Metadonnées
-numeroTP: 1
-numeroSession: 3
-
-titre_TP: Choix des métadonnées et soumission à l'EBI
+title: "Choix des métadonnées et soumission à l'EBI"
+numeroSeance: 3
+numeroModule: 3
+type: "tp"
 description: "L'objectif est de se familiariser avec les métadonnées etsoumettre des données et des métadonnées sur ENA (EBI)"
 temps: 1h
 

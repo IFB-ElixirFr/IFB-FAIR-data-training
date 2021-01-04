@@ -1,9 +1,8 @@
 ---
-layout: session
-title: Session 5
-header_title: Session 5
+title: Module 5
+header_title: Module 5
 header_subTitle: "Le PGD : suite et fin."
-numeroSession : 5
+numeroModule : 5
 
 timeStart: "21-01-2021 09:00"
 timeEnd: "21-01-2021 12:00"

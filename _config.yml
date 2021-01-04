@@ -44,11 +44,9 @@ plugins:
 collections:
   formateurs:
     output: true
-  TPs:
+  seances:
     output: true
-  cours:
-    output: true
-  sessions:
+  modules:
     output: true
 
 defaults:
@@ -59,19 +57,14 @@ defaults:
       layout: "formateur"
   - scope:
       path: ""
-      type: "TPs"
+      type: "modules"
     values:
-      layout: "tp"
+      layout: "module"
   - scope:
       path: ""
-      type: "sessions"
+      type: "seances"
     values:
-      layout: "session"
-  - scope:
-      path: ""
-      type: "cours"
-    values:
-      layout: "cours"
+      layout: "seance"
   - scope:
       path: ""
     values:

@@ -1,26 +1,32 @@
 <table class="table table-striped" style="table-layout: fixed;">
     <thead>
       <tr>
-        <th scope="col">Sessions</th>
-        <th scope="col">Cours</th>
+        <th scope="col">Module</th>
+        <th scope="col">Séances</th>
         <th scope="col">Date</th>
         <th scope="col">Formateurs</th>
       </tr>
     </thead>
     <tbody>
-        {% assign sessions = site.sessions | sort:"numeroSession" %}
-        {% for row in sessions %}
+        {% assign modules = site.modules | sort:"numeroModule" %}
+        {% for row in modules %}
         <tr>
             <td> 
               <a href="{{site.baseurl}}{{ row.url }} ">{{ row.header_subTitle }} </a>
             </td>
 
             <td>
-              {% assign listeCours = site.cours | where:"numeroSession", row.numeroSession | sort:"numeroCours" %}
+              {% assign listeSeances = site.seances | where:"numeroModule", row.numeroModule | sort:"numeroSeance" %}
                 <ul>
-                  {% for item in listeCours  %}
+                  {% for item in listeSeances  %}
                   <li>
-                    <a href="{{site.baseurl}}{{item.url}}">{{item.title}} </a>
+                    {% if item.type == "cours"  %}
+                      <a href="{{site.baseurl}}{{item.url}}">{{item.title}} (cours) </a>
+                    {% elsif item.type == "tp" %}
+                    <a href="{{site.baseurl}}{{item.url}}">{{item.title}} (TP) </a>
+                    {% else %}
+                    <a href="{{site.baseurl}}{{item.url}}">{{item.title}} (autre) </a>
+                    {% endif %}
                   </li>         
                   {% endfor %}
                 </ul>
