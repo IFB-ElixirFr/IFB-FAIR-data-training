@@ -228,7 +228,7 @@ text="
   
 1- Vous devez télécharger une des archives suivantes :
 
-  - Dataset 1 : Un génome bactérien de la bactérie *S. Salivarius* ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/S_salivarius.zip));
+  - Dataset 1 : Un génome bactérien de la bactérie *S. salivarius* ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/S_salivarius.zip));
   - Dataset 2 : Un transcriptome de plante ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/plante.zip));
   - Dataset 3 : Un génome du virus SARS-Cov2 ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/SARS_Covv2.zip)).
   
