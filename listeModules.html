@@ -1,0 +1,59 @@
+---
+layout: default
+title: Modules
+header_title: Listes des modules
+---
+
+<div class="card">
+  <h5 class="card-header" style="text-decoration: none;" >
+    <a class="collapsed d-block" style="color:#173b6c" data-toggle="collapse" href="#collapse-collapsed_filters" aria-expanded="true" aria-controls="collapse-collapsed_filters" id="heading-collapsed">
+        <i class="fa fa-chevron-down float-right"></i>
+        Filtrer
+    </a>
+  </h5>
+  <div id="collapse-collapsed_filters" class="collapse" aria-labelledby="heading-collapsed">
+    <div class="card-body">
+      <b>Par module</b>
+      <select class="form-control" id="filterModule" >
+        <option> Tous </option>
+        {% assign listeDesModules = site.modules | sort:"numeroModule" %}
+        {% for m in listeDesModules %}
+            <option> {{ m.numeroModule}}</option>
+        {% endfor %}
+      </select>
+      <br>
+      <div class="text-right">
+        <button class="btn btn-primary" onclick="javascript:showHideFUnction();"> <i class="fas fa-filter"></i> Filter</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<br>
+
+{% assign listeDesModules = site.modules | sort: "numeroModule" %}
+
+{% for module in listeDesModules %}
+  {% include moduleCard.html itemModule=module %}
+{% endfor %}
+
+<script>
+    function showHideFUnction() {
+        var nbModules = {{ site.modules | size }};
+        var value = document.getElementById("filterModule").value;
+        if(value == "Tous"){
+          for (var i = 1; i <= nbModules; i++) {  
+            document.getElementsByName('module_' + i ).forEach(function(entry) { entry.style.display = 'block';});
+          }
+        } else {
+          for (var i = 1; i <= nbModules; i++) {  
+            if(i == value){
+              document.getElementsByName('module_' + i ).forEach(function(entry) { entry.style.display = 'block';});
+            } else {
+              document.getElementsByName('module_' + i ).forEach(function(entry) { entry.style.display = 'none';});
+            }
+          }
+        }
+    }
+</script>

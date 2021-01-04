@@ -21,7 +21,6 @@ questions:
     - Quelle définition pour les données de la recherche ? 
     - Quelles seraient les conditions pour que les données soient (ré)utilisables ?
 
-
 prerequis:
 
 messages:

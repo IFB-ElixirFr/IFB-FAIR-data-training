@@ -1,0 +1,54 @@
+<!-- Durée -->
+{%   assign end = include.itemModule.timeEnd  | date: '%s'  %}
+{%   assign start = include.itemModule.timeStart  | date: '%s'  %}
+{%   assign secondsSince = end | minus: start   %}
+{%   assign hour = secondsSince | divided_by: 60 | divided_by: 60     %}
+{%   assign hourMinutes = hour | times: 60      %}
+{%   assign minutes = secondsSince | divided_by: 60 | minus: hourMinutes     %}
+
+<div class="card" style="margin-bottom: 10px;" name='module_{{include.itemModule.numeroModule}}'>
+  <div class="card-header" style="font-weight: bold; color:white; background-color: #6e6e6e ;">
+    <i class="fas fa-chalkboard"></i>  Module {{include.itemModule.numeroModule}} 
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ include.itemModule.header_subTitle }}</h5>
+    <p class="card-text">
+      <p><b>Formateurs</b><br>
+          {% for formateur in include.itemModule.formateurs %}
+              {% assign find = "false" %}
+              {% for i in site.formateurs %}
+                  {% if i.shortName == formateur %}
+                      <a href="{{site.baseurl}}/{{ i.url }}">{{ i.firstName }} {{ i.lastName }}</a>
+                      {% assign find = "true" %} 
+                      {% break %}
+                  {% endif %}
+              {% endfor %} 
+              {% if find == "false" %}
+                  {{ formateur }} 
+              {% endif %}
+              {% unless forloop.last %},{% endunless %}
+              {% if forloop.last  %};{% endif %}
+          {% endfor %} 
+        </p>
+      <p><b>Durée</b><br> {{ hour }} h {% if minutes != 0 %}{{ minutes }}{% endif %}</p>
+      {% assign listeSeances = site.seances | where:"numeroModule", include.itemModule.numeroModule | sort:"numeroSeance" %}
+      <ol>
+        {% for item in listeSeances  %}
+        <li>
+          {% if item.type == "cours"  %}
+            <a href="{{site.baseurl}}{{item.url}}">{{item.title}} (cours) </a>
+          {% elsif item.type == "tp" %}
+          <a href="{{site.baseurl}}{{item.url}}">{{item.title}} (TP) </a>
+          {% else %}
+          <a href="{{site.baseurl}}{{item.url}}">{{item.title}} (autre) </a>
+          {% endif %}
+        </li>         
+        {% endfor %}
+      </ol>
+    </p>
+  </div>
+    <div class="card-footer text-right">
+      <a href="{{site.baseurl}}{{ include.itemModule.url }}">Aller au module</a>
+    </div>
+  </div>
+

@@ -17,7 +17,7 @@
 
             <td>
               {% assign listeSeances = site.seances | where:"numeroModule", row.numeroModule | sort:"numeroSeance" %}
-                <ul>
+                <ol>
                   {% for item in listeSeances  %}
                   <li>
                     {% if item.type == "cours"  %}
@@ -29,7 +29,7 @@
                     {% endif %}
                   </li>         
                   {% endfor %}
-                </ul>
+                </ol>
             </td>
 
             <td>{{ row.timeStart }}</td>

@@ -11,21 +11,11 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
 
-                <!-- Modules -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_cours" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Modules
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_cours">
-                        {% assign modules = site.modules | sort:"numeroModule" %}
-                        {% for item in modules %}
-                                <a class="dropdown-item" href="{{site.baseurl}}{{  item.url }}" {% if page.url ==  item.link %} style="color: red;" {% endif %}>
-                                    Module {{ item.numeroModule }}
-                                </a>
-                        {% endfor %}
-                    </div>
+                <!-- Module -->
+                <li {% if page.url == "./" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
+                    <a class="nav-link" href="{{site.baseurl}}/listeModules.html" >Modules</a>
                 </li>
+
 
                 <!-- Cours -->
                 <li {% if page.url == "./" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
