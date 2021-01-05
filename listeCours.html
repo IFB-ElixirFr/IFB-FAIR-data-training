@@ -32,13 +32,13 @@ header_title: Listes des cours
 
 <br>
 
-{% assign listeDesCours = site.seances |  where:"type", "cours" | group_by: "numeroModule" %}
-{% assign listeDesCours = listeDesCours | sort: "numeroSeance" %}
+{% assign listeDesCours = site.sequences |  where:"type", "cours" | group_by: "numeroModule" %}
+{% assign listeDesCours = listeDesCours | sort: "numeroSequence" %}
 {% for group in listeDesCours %}
   <h4 name='module_{{group.name}}'>Module {{group.name}}</h4>
 
   {% for item in group.items %}
-  {% include seanceCard.html itemSeance=item %}
+  {% include sequenceCard.html itemSequence=item %}
   {% endfor %}
 {% endfor %}
 

@@ -18,18 +18,18 @@ header_title: Rechercher
 
 <script>
   window.store = [
-    {% for seance in site.seances %}
+    {% for sequence in site.sequences %}
       {
-        "id": "{{ seance.url | slugify }}",
-        "title": "{{ seance.title | xml_escape }}",
-        "numeroSeance": "{{ seance.numeroSeance | xml_escape }}",
-        "numeroModule": "{{ seance.numeroModule | xml_escape }}",
-        "formateurs": "{{ seance.formateurs | join: ', ' | xml_escape }}", 
-        "description": "{{ seance.description | xml_escape }}",
-        "content": {{ seance.content | strip_html | strip_newlines | xml_escape | jsonify }},
-        "tools": {{ seance.tools | strip_html | strip_newlines | jsonify }},
-        "url": "{{site.baseurl}}{{ seance.url | xml_escape }}",
-        "type":  "{{ seance.type | xml_escape }}",
+        "id": "{{ sequence.url | slugify }}",
+        "title": "{{ sequence.title | xml_escape }}",
+        "numeroSequence": "{{ sequence.numeroSequence | xml_escape }}",
+        "numeroModule": "{{ sequence.numeroModule | xml_escape }}",
+        "formateurs": "{{ sequence.formateurs | join: ', ' | xml_escape }}", 
+        "description": "{{ sequence.description | xml_escape }}",
+        "content": {{ sequence.content | strip_html | strip_newlines | xml_escape | jsonify }},
+        "tools": {{ sequence.tools | strip_html | strip_newlines | jsonify }},
+        "url": "{{site.baseurl}}{{ sequence.url | xml_escape }}",
+        "type":  "{{ sequence.type | xml_escape }}",
       }
       {% unless forloop.last %},{% endunless %}
     {% endfor %}

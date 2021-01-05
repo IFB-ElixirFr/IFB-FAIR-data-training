@@ -11,17 +11,21 @@
             });
             var item = store[index];
 
-            appendString += '<a class="noDeco" href="' + item.url + '"><div class="card divShadow"><div class="card-body">' ;
+            appendString += '<a class="noDeco" href="' + item.url + '"><div class="card divShadow">' ;
+
+            if (item.type == "cours") {
+              appendString += '<div class="card-header card-footer_cours"><i class="fas fa-book"></i> Cours '+ item.numeroSequence +' Module '+ item.numeroModule +' </div>'
+            } else if (item.type == "tp") {
+                appendString += '<div class="card-header card-footer_tp"><i class="fas fa-book"></i> TP '+ item.numeroSequence +' Module '+ item.numeroModule +' </div>'
+            } else {
+              appendString += '<div class="card-header card-footer_cours"><i class="fas fa-book"></i> Cours '+ item.numeroSequence +' Module '+ item.numeroModule +' </div>'
+            }
+
+            appendString += '<div class="card-body">' ;
             appendString += '<h5 class="card-title">' + item.title + '</h5> ' ;
             appendString += '<p class="card-text">' + item.description + '</p></div>';
             
-            if (item.type == "cours") {
-                appendString += '<div class="card-footer card-footer_cours text-right"><i class="fas fa-book"></i> Cours '+ item.numeroSeance +' Session '+ item.numeroModule +' <i class="fas fa-clock"></i> '+ item.temps + ' </div>'
-            } else if (item.type == "tp") {
-                appendString += '<div class="card-footer card-footer_tp text-right"><i class="fas fa-book"></i> TP '+ item.numeroSeance +' Session '+ item.numeroModule +' <i class="fas fa-clock"></i> '+ item.temps + ' </div>'
-            } else {
-              appendString += '<div class="card-footer card-footer_cours text-right"><i class="fas fa-book"></i> Cours '+ item.numeroSeance +' Session '+ item.numeroModule +' <i class="fas fa-clock"></i> '+ item.temps + ' </div>'
-            }
+            appendString += '<div class="card-footer text-right"><a href="' + item.url + '">Aller à la séquence</a></div>'
             appendString += '</div></a>';
         }
   

@@ -125,12 +125,12 @@ layout: default
 
         <h2> Au programme</h2>
 
-        {% assign listeSeances = site.seances | where:"numeroModule", page.numeroModule | sort:"numeroSeance" %}
-        {% assign size = listeSeances | size %}
+        {% assign listeSequences = site.sequences | where:"numeroModule", page.numeroModule | sort:"numeroSequence" %}
+        {% assign size = listeSequences | size %}
         {% if size != 0 %}
         <h3>Les cours</h3>
         <ol>
-            {% for item in listeSeances  %}
+            {% for item in listeSequences  %}
             <li><a href="{{site.baseurl}}{{item.url}}">{{item.title}}</a> </li>
             {% endfor %}
         </ol>

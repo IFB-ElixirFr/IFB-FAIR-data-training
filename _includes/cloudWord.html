@@ -11,8 +11,8 @@
   // https://observablehq.com/@d3/word-cloud
 
  var content = [
-    {% for seance in site.seances %}
-        {{ seance.content | strip_html | strip_newlines | xml_escape | jsonify }}
+    {% for sequence in site.sequences %}
+        {{ sequence.content | strip_html | strip_newlines | xml_escape | jsonify }}
       {% unless forloop.last %},{% endunless %}
     {% endfor %}
     ];

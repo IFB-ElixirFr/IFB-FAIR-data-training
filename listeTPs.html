@@ -32,12 +32,12 @@ header_title: Listes des travaux pratiques
 
 <br>
 
-{% assign listeDesTPs = site.seances |  where:"type", "tp" | group_by: "numeroModule" %}
-{% assign listeDesTPs = listeDesTPs | sort: "numeroSeance" %}
+{% assign listeDesTPs = site.sequences |  where:"type", "tp" | group_by: "numeroModule" %}
+{% assign listeDesTPs = listeDesTPs | sort: "numeroSequence" %}
 {% for group in listeDesTPs %}
   <h4 name='module_{{group.name}}'>Module {{group.name}}</h4>
   {% for item in group.items %}
-  {% include seanceCard.html itemSeance=item %}
+  {% include sequenceCard.html itemSequence=item %}
   {% endfor %}
 {% endfor %}
 

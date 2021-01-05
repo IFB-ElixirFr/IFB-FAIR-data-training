@@ -45,7 +45,7 @@ plugins:
 collections:
   formateurs:
     output: true
-  seances:
+  sequences:
     output: true
   modules:
     output: true
@@ -63,9 +63,9 @@ defaults:
       layout: "module"
   - scope:
       path: ""
-      type: "seances"
+      type: "sequences"
     values:
-      layout: "seance"
+      layout: "sequence"
   - scope:
       path: ""
     values:

@@ -31,9 +31,9 @@
           {% endfor %} 
         </p>
       <p><b>Durée</b><br> {{ hour }} h {% if minutes != 0 %}{{ minutes }}{% endif %}</p>
-      {% assign listeSeances = site.seances | where:"numeroModule", include.itemModule.numeroModule | sort:"numeroSeance" %}
+      {% assign listeSequences = site.sequences | where:"numeroModule", include.itemModule.numeroModule | sort:"numeroSequence" %}
       <ol>
-        {% for item in listeSeances  %}
+        {% for item in listeSequences  %}
         <li>
           {% if item.type == "cours"  %}
             <a href="{{site.baseurl}}{{item.url}}">{{item.title}} (cours) </a>

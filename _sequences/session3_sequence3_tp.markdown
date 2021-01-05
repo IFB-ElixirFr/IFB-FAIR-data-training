@@ -1,6 +1,6 @@
 ---
 title: "Choix des métadonnées et soumission à l'EBI"
-numeroSeance: 3
+numeroSequence: 3
 numeroModule: 3
 type: "tp"
 description: "L'objectif est de se familiariser avec les métadonnées etsoumettre des données et des métadonnées sur ENA (EBI)"

@@ -8,7 +8,7 @@ var text = document.createTextNode("{{page.title }}");
 paragraph.appendChild(text);
 
 var paragraph = document.getElementById("id_header_subTitle");
-var text = document.createTextNode("Séance {{ page.numeroSeance }} - Module {{ page.numeroModule }}");
+var text = document.createTextNode("Séance {{ page.numeroSequence }} - Module {{ page.numeroModule }}");
 paragraph.appendChild(text);
 </script>
 
@@ -43,8 +43,8 @@ paragraph.appendChild(text);
                     <p><b>Durée</b> <br> {{ page.temps }}</p>
                     <p><b>Progression dans le module {{ page.numeroModule }}</b></p>
                     <div class="progress">
-                        {% assign nbSeance = site.seances | where:"numeroModule", page.numeroModule | size | times: 1.0 %}
-                        {% assign progress = page.numeroSeance | divided_by: nbSeance | times: 100.0  %}
+                        {% assign nbSequence = site.sequences | where:"numeroModule", page.numeroModule | size | times: 1.0 %}
+                        {% assign progress = page.numeroSequence | divided_by: nbSequence | times: 100.0  %}
                         <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{progress}}%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
@@ -55,10 +55,10 @@ paragraph.appendChild(text);
         <hr>
         <div class="row">
             <div class="col-sm-4 text-left">
-                {% assign listSeances = site.seances | where:"numeroModule", page.numeroModule  | sort: "numeroSeance" %}
-                {% for i in listSeances %}
-                    {% assign prev = page.numeroSeance | minus: 1 %}
-                    {% if prev == i.numeroSeance %}
+                {% assign listSequences = site.sequences | where:"numeroModule", page.numeroModule  | sort: "numeroSequence" %}
+                {% for i in listSequences %}
+                    {% assign prev = page.numeroSequence | minus: 1 %}
+                    {% if prev == i.numeroSequence %}
                         <a href="{{site.baseurl}}{{i.url}}"><i class="fas fa-arrow-alt-circle-left"></i>Vers la séance précédente </a>
                         {% break %}
                     {% endif %}
@@ -74,9 +74,9 @@ paragraph.appendChild(text);
                 <a href="{{site.baseurl}}{{ urlModule }}">Retour à la page du Module </a>
             </div>
             <div class="col-sm-4 text-right">
-                {% assign listSeances = site.seances | where:"numeroModule", page.numeroModule  | sort: "numeroSeance" %}
-                {% for i in listSeances %}
-                    {% if page.numeroSeance < i.numeroSeance %}
+                {% assign listSequences = site.sequences | where:"numeroModule", page.numeroModule  | sort: "numeroSequence" %}
+                {% for i in listSequences %}
+                    {% if page.numeroSequence < i.numeroSequence %}
                         <a href="{{site.baseurl}}{{i.url}}">Vers la séance suivante <i class="fas fa-arrow-alt-circle-right"></i></a>
                         {% break %}
                     {% endif %}
@@ -107,7 +107,7 @@ function downloadPDF() {
             'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css',
             '{{site.baseurl}}/assets/css/style.css'
         ],
-        documentTitle: "Séance {{page.numeroSeance}} Module {{page.numeroModule}} - FAIR data by IFB"
+        documentTitle: "Séance {{page.numeroSequence}} Module {{page.numeroModule}} - FAIR data by IFB"
     }) 
 }
 </script>

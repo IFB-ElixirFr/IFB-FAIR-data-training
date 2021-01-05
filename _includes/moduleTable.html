@@ -2,7 +2,7 @@
     <thead>
       <tr>
         <th scope="col">Module</th>
-        <th scope="col">Séances</th>
+        <th scope="col">Séquences</th>
         <th scope="col">Date</th>
         <th scope="col">Formateurs</th>
       </tr>
@@ -16,9 +16,9 @@
             </td>
 
             <td>
-              {% assign listeSeances = site.seances | where:"numeroModule", row.numeroModule | sort:"numeroSeance" %}
+              {% assign listeSequences = site.sequences | where:"numeroModule", row.numeroModule | sort:"numeroSequence" %}
                 <ol>
-                  {% for item in listeSeances  %}
+                  {% for item in listeSequences  %}
                   <li>
                     {% if item.type == "cours"  %}
                       <a href="{{site.baseurl}}{{item.url}}">{{item.title}} (cours) </a>

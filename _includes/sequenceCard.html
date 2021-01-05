@@ -1,27 +1,27 @@
-<div class="card" style="margin-bottom: 10px;" name='module_{{include.itemSeance.numeroModule}}'>
+<div class="card" style="margin-bottom: 10px;" name='module_{{include.itemSequence.numeroModule}}'>
 
-    {% if include.itemSeance.type == 'cours'%}
+    {% if include.itemSequence.type == 'cours'%}
     <div class="card-header" style="font-weight: bold; color:white; background-color: #173b6c ;">
-        <i class="fas fa-book"></i>  Cours - Séance {{include.itemSeance.numeroSeance}} 
+        <i class="fas fa-book"></i>  Cours - Séquence {{include.itemSequence.numeroSequence}} 
     </div>
 
-    {% elsif include.itemSeance.type == 'tp' %}
+    {% elsif include.itemSequence.type == 'tp' %}
 
     <div class="card-header" style="font-weight: bold; color:white; background-color: #009c2f ;">
-      <i class="fas fa-book"></i> TP - Séance {{include.itemSeance.numeroSeance}}
+      <i class="fas fa-book"></i> TP - Séquence {{include.itemSequence.numeroSequence}}
     </div>
-    {% elsif include.itemSeance.type == 'cours-tp' %}
+    {% elsif include.itemSequence.type == 'cours-tp' %}
     <div class="card-header" style="font-weight: bold; color:white; background-color: #6c5817 ;">
-      <i class="fas fa-book"></i>  Cours-TP - Séance {{include.itemSeance.numeroSeance}} 
+      <i class="fas fa-book"></i>  Cours-TP - Séquence {{include.itemSequence.numeroSequence}} 
     </div>
     {% endif %}
 
     <div class="card-body">
-      <h5 class="card-title">{{ include.itemSeance.title }}</h5>
+      <h5 class="card-title">{{ include.itemSequence.title }}</h5>
       <p class="card-text">
-        <p><b>Description</b><br> {{ include.itemSeance.description }}</p>
+        <p><b>Description</b><br> {{ include.itemSequence.description }}</p>
         <p><b>Formateurs</b><br>
-            {% for formateur in include.itemSeance.formateurs %}
+            {% for formateur in include.itemSequence.formateurs %}
                 {% assign find = "false" %}
                 {% for i in site.formateurs %}
                     {% if i.shortName == formateur %}
@@ -37,10 +37,10 @@
                 {% if forloop.last  %};{% endif %}
             {% endfor %} 
            </p>
-        <p><b>Durée</b><br> {{ include.itemSeance.temps }}</p>
-        {% if include.itemSeance.tools %}
+        <p><b>Durée</b><br> {{ include.itemSequence.temps }}</p>
+        {% if include.itemSequence.tools %}
         <p><b>Outils</b><br>
-        {% for t in include.itemSeance.tools %}
+        {% for t in include.itemSequence.tools %}
           {{t}}
           {% unless forloop.last %},{% endunless %}
           {% if forloop.last  %};{% endif %}
@@ -50,7 +50,7 @@
       </p>
     </div>
     <div class="card-footer text-right">
-      <a href="{{site.baseurl}}{{ include.itemSeance.url }}">Aller au cours</a>
+      <a href="{{site.baseurl}}{{ include.itemSequence.url }}">Aller au cours</a>
     </div>
   </div>
 

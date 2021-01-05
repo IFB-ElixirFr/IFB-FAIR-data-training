@@ -1,6 +1,6 @@
 ---
 title: "Format de fichier"
-numeroSeance: 3
+numeroSequence: 3
 numeroModule: 2
 type: "cours"
 description: "L'objectif de ce cours de mieux comprendre les formats de fichier."

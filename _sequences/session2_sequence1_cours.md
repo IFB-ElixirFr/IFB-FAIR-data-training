@@ -1,6 +1,6 @@
 ---
 title: "How FAIR are your data?"
-numeroSeance: 1
+numeroSequence: 1
 numeroModule: 2
 type: "cours"
 description: "L'objectif de ce cours de faire le point sur la notion FAIR."

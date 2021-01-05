@@ -1,6 +1,6 @@
 ---
 title: "Activité Brise Glace"
-numeroSeance: 1
+numeroSequence: 1
 numeroModule: 1
 type: "cours"
 description: "L'objectif de ce cours est de faire connaissance"

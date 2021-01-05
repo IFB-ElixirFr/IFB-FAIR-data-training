@@ -1,6 +1,6 @@
 ---
 title: "Le nommage des fichiers"
-numeroSeance: 2
+numeroSequence: 2
 numeroModule: 2
 type: "cours"
 description: "L'objectif de ce cours est de comprendre pourquoi le nommage des fichiers est si important et des pistes pour mieux nommer ses fichiers."

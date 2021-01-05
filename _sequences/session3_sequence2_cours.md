@@ -1,6 +1,6 @@
 ---
 title: "Life science standards and ENA submission"
-numeroSeance: 2
+numeroSequence: 2
 numeroModule: 3
 type: "cours"
 description: "L'objectif d'avoir un aperçu des standards en Life science et comment soumettre sur l'ENA"
