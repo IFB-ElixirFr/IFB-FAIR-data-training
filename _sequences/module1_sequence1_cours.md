@@ -4,7 +4,7 @@ numeroSequence: 1
 numeroModule: 1
 type: "cours"
 description: "L'objectif de ce cours est de faire connaissance"
-temps: 40 minutes
+temps: 45 minutes
 
 formateurs : 
  - fredericdeLamotte
@@ -48,3 +48,6 @@ Pour mieux connaissance avec vous, pourriez vous nous partager votre photo embl�
 - Une présentation de la photo téléversée :
     - Une question par personne pour déterminer le lieu où cette photo a été prise ;
     - La langue sera donnée au chat si pas de succès.
+
+{% include youtube.html idYoutube="YcuE54E9coI"%}
+

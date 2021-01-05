@@ -1,0 +1,13 @@
+---
+layout: default
+title: Ressources
+header_title: Listes des ressources
+---
+
+{% assign listeDesRessources = site.ressources  %}
+
+{% for ressource in listeDesRessources %}
+{% include ressourceCard.html itemRessource=ressource %}
+{% endfor %}
+
+

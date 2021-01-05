@@ -58,7 +58,7 @@ paragraph.appendChild(text);
 
         <h4>Mes cours</h4>
         <ul>
-        {% assign filtered_cours = site.seances | where: 'formateurs', page.shortName %}
+        {% assign filtered_cours = site.sequences | where: 'formateurs', page.shortName %}
         {% assign filtered_cours = filtered_cours | where: 'type', "cours" %}
         {% for cours in filtered_cours %}
             <li><a href="{{site.baseurl}}/{{ cours.url }}">{{ cours.title }}</a></li>
@@ -67,7 +67,7 @@ paragraph.appendChild(text);
 
         <h4>Mes TPs</h4>
         <ul>
-        {% assign filtered_TPs = site.seances | where: 'formateurs', page.shortName %}
+        {% assign filtered_TPs = site.sequences | where: 'formateurs', page.shortName %}
         {% assign filtered_TPs = filtered_TPs | where: 'type', "tp" %}
         {% for tp in filtered_TPs %}
             <li><a href="{{site.baseurl}}/{{ tp.url }}">{{ tp.title }}</a></li>

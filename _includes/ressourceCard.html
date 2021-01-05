@@ -1,0 +1,26 @@
+<div class="card" style="margin-bottom: 10px;">
+
+    <div class="card-header" style="font-weight: bold; color:white; background-color: #6a85ac ;">
+        <i class="fas fa-book"></i>  Ressource
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">{{ include.itemRessource.title }}</h5>
+      <p class="card-text">
+        <p><b>Description</b><br> {{ include.itemRessource.description }}</p>
+        {% if include.itemRessource.tools %}
+        <p><b>Outils</b><br>
+        {% for t in include.itemRessource.tools %}
+          {{t}}
+          {% unless forloop.last %},{% endunless %}
+          {% if forloop.last  %};{% endif %}
+        {% endfor %}
+        </p>
+        {% endif %}
+      </p>
+    </div>
+    <div class="card-footer text-right">
+      <a href="{{site.baseurl}}{{ include.itemRessource.url }}">Aller à la ressource</a>
+    </div>
+  </div>
+

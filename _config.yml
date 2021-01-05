@@ -45,6 +45,8 @@ plugins:
 collections:
   formateurs:
     output: true
+  ressources:
+    output: true
   sequences:
     output: true
   modules:
@@ -56,6 +58,11 @@ defaults:
       type: "formateurs"
     values:
       layout: "formateur"
+  - scope:
+      path: ""
+      type: "ressources"
+    values:
+      layout: "ressource"
   - scope:
       path: ""
       type: "modules"
