@@ -32,6 +32,7 @@
         </p>
       <p><b>Durée</b><br> {{ hour }} h {% if minutes != 0 %}{{ minutes }}{% endif %}</p>
       {% assign listeSequences = site.sequences | where:"numeroModule", include.itemModule.numeroModule | sort:"numeroSequence" %}
+      <p><b>Programme</b></p>
       <ol>
         {% for item in listeSequences  %}
         <li>
