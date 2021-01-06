@@ -194,7 +194,7 @@ Renseigner les champs **obligatoires** demandés en utilisant le contenu du DMP 
 
 En cas de problème, le PDF peut être téléchargé [ici](https://dmp.opidor.fr/plans/7821/export.pdf){:target="_blank"} ou [ici]({{site.baseurl}}/assets/PDFs/PGD_IFB_Training_salivarius.pdf){:target="_blank"}.
 
-Pour savoir quel type d'information vous devez renseigner dans une cellule, cliquez sur la cellule en question et une notice vous donnera les informations nécessaires dala partie `Descriptions` (droite). Par exemple, ici les informations nécessaires dans la colonne `Platform` :
+Pour savoir quel type d'information vous devez renseigner dans une cellule, cliquez sur la cellule en question et une notice vous donnera les informations nécessaires dans partie `Descriptions` (droite). Par exemple, ici les informations nécessaires dans la colonne `Platform` :
 
 {% include repoImage.html
 pathInRepo="/assets/img/TPs/session3_tp1/metadataDescription.png"
@@ -222,10 +222,10 @@ text="
 
 {% include consigne.html 
 text="
-*Uploader* ces deux fichiers dans omicsBroker en cliquant sur `Browse` puis en sélectionnant les fichiers (N°1 sur la figure ci-dessous). Vous pouvez aussi faire un `Drag & Drop.
+Téléverser ces deux fichiers dans omicsBroker en cliquant sur `Browse` puis en sélectionnant les fichiers (N°1 sur la figure ci-dessous). Vous pouvez aussi faire un `Drag & Drop.
 " %}
 
-Une fois *uploadés*, vous devriez avoir comme écran la figure suivante :
+Une fois téléversés, vous devriez avoir comme écran la figure suivante :
 
 {% include repoImage.html
 pathInRepo="/assets/img/TPs/session3_tp1/fileImport.png"
@@ -234,10 +234,10 @@ alias="Screenshot File import"
 
 {% include consigne.html 
 text="
-Renseigner le md5sum pour chauque fichier (N°2 sur la figure ci-dessus).
+Renseigner le md5sum pour chaque fichier (N°2 sur la figure ci-dessus). Pour simplifier le TP et ne pas vous faire calculer en local ce md5sum, le tableau affiche le bom md5sum du fichier sur le serveur dans la colonne `md5Server`. Vous n'avez qu'à copier coller chaque valeur de cette colonne dans la colonne de droite `md5SumIn`.
 " %}
 
-L'objectif du md5sum est de s'assurer qu'aucune donnée n'a été perdue lors de l'*upload*. Pour obtenir le md5sum, nous vous conseillons la lecture [suivante](https://knowledge.autodesk.com/search-result/caas/sfdcarticles/sfdcarticles/Checking-the-MD5-checksum-of-a-Downloaded-File.html). 
+L'objectif du md5sum est de s'assurer qu'aucune donnée n'a été perdue lors du téléversement. Pour obtenir le md5sum, nous vous conseillons la lecture [suivante](https://knowledge.autodesk.com/search-result/caas/sfdcarticles/sfdcarticles/Checking-the-MD5-checksum-of-a-Downloaded-File.html).
 
 {% include consigne.html 
 text="
