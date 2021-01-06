@@ -36,7 +36,12 @@
 
             <td>
               <ul>
-                {% for formateur in row.formateurs %}
+                {% assign formateurs = "" | split: ',' %}
+                {% assign listeSequences = site.sequences | where:"numeroModule", row.numeroModule  %}
+                {% for item in listeSequences  %}
+                {% assign formateurs = formateurs | concat: item.formateurs | uniq %}
+                {% endfor %}
+                {% for formateur in formateurs %}
                 {% assign find = "false" %}
                 <li>
                   {% for i in site.formateurs %}

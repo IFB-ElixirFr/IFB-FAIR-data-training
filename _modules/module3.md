@@ -8,14 +8,6 @@ timeStart: "15-01-2021 09:00"
 timeEnd: "15-01-2021 12:00"
 timezone: "Europe/Paris"
 
-formateurs:
-    - heleneChiapello
-    - thomasdenecker
-    - jeanfrancoisDufayard
-    - gauthierSarah
-    - pauletteLieby
-    - fredericdeLamotte
-
 objectifs:
     - Objectif 1
     - Objectif 2

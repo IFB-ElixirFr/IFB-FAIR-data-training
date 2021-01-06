@@ -9,6 +9,7 @@ temps: 40 minutes
 formateurs : 
  - fredericdeLamotte
  - julienSeiler
+
 ---
 
 Il existe deux grandes catégories de formats : textuels et binaires. Distinguer les deux est un jeu pour la préservation et l’exploitation des données.

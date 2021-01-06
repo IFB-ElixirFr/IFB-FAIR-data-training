@@ -58,6 +58,13 @@ layout: default
     {%   assign monthFrench =  "Décembre" %}
 {% endcase %}
 
+
+{% assign formateurs = "" | split: ',' %}
+{% assign listeSequences = site.sequences | where:"numeroModule", page.numeroModule  %}
+{% for item in listeSequences  %}
+{% assign formateurs = formateurs | concat: item.formateurs | uniq %}
+{% endfor %}
+
 <div class="row">
     <div class="col-sm-3">
         <nav id="toc" class="sticky-top"></nav>
@@ -70,18 +77,20 @@ layout: default
             </div>
             <div class="card-body">
                 <p><b>Formateurs</b> <br>  
-                    {% for formateur in page.formateurs %}
+                    {% for formateur in formateurs %}
                         {% assign find = "false" %}
                         {% for i in site.formateurs %}
                             {% if i.shortName == formateur %}
-                                <a href="{{site.baseurl}}/{{ i.url }}">{{ i.firstName }} {{ i.lastName }}</a> ; 
+                                <a href="{{site.baseurl}}/{{ i.url }}">{{ i.firstName }} {{ i.lastName }}</a>
                                 {% assign find = "true" %} 
                                 {% break %}
                             {% endif %}
                         {% endfor %} 
                         {% if find == "false" %}
-                            {{ formateur }} ; 
+                            {{ formateur }}
                         {% endif %}
+                        {% unless forloop.last %},{% endunless %}
+                        {% if forloop.last  %};{% endif %}
                     {% endfor %} 
                 </p>
                 

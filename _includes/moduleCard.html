@@ -6,6 +6,13 @@
 {%   assign hourMinutes = hour | times: 60      %}
 {%   assign minutes = secondsSince | divided_by: 60 | minus: hourMinutes     %}
 
+<!-- Formateurs -->
+{% assign formateurs = "" | split: ',' %}
+{% assign listeSequences = site.sequences | where:"numeroModule", include.itemModule.numeroModule  %}
+{% for item in listeSequences  %}
+{% assign formateurs = formateurs | concat: item.formateurs | uniq %}
+{% endfor %}
+
 <div class="card" style="margin-bottom: 10px;" name='module_{{include.itemModule.numeroModule}}'>
   <div class="card-header" style="font-weight: bold; color:white; background-color: #6e6e6e ;">
     <i class="fas fa-chalkboard"></i>  Module {{include.itemModule.numeroModule}} 
@@ -14,7 +21,7 @@
     <h5 class="card-title">{{ include.itemModule.header_subTitle }}</h5>
     <p class="card-text">
       <p><b>Formateurs</b><br>
-          {% for formateur in include.itemModule.formateurs %}
+          {% for formateur in formateurs %}
               {% assign find = "false" %}
               {% for i in site.formateurs %}
                   {% if i.shortName == formateur %}

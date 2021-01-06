@@ -8,10 +8,6 @@ timeStart: "20-01-2021 09:00"
 timeEnd: "20-01-2021 12:00"
 timezone: "Europe/Paris"
 
-formateurs:
-    - fredericdeLamotte
-    - lionelMaurel
-
 objectifs:
     - Objectif 1
     - Objectif 2

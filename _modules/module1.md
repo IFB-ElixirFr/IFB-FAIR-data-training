@@ -8,10 +8,6 @@ timeStart: "13-01-2021 09:00"
 timeEnd: "13-01-2021 12:00"
 timezone: "Europe/Paris"
 
-formateurs:
-    - fredericdeLamotte
-    - pauletteLieby
-
 objectifs:
     - Objectif 1
     - Objectif 2
