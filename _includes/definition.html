@@ -5,8 +5,11 @@
     <div class="card-body">
         {{ include.text | markdownify }}
     </div>
+
+    {% if include.source %}
     <div class="card-footer">
         Source : <a href="{{ include.source }}">{{ include.source }}</a> 
     </div>
+    {% endif %}
 </div>
 <br>
