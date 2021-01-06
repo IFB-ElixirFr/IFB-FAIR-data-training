@@ -11,7 +11,11 @@ formateurs :
  - julienSeiler
 ---
 
-![Qui es tu en réalité ?](http://www.lebonquizz.com/media/ce-test-te-montrera-qui-tu-es-en-r-alit/0cab34aa-ab53-411a-8545-971732440128_560_420.jpg)
+{% include repoImage.html pathInRepo="/assets/img/sequences/module2_sequence2/fig1.png" %}
+
+## Pourquoi c'est si important ? 
+
+{% include repoImage.html pathInRepo="/assets/img/sequences/module2_sequence2/fig3.png" %}
 
 ## 1) DONNER UN NOM BREF ET EXPLICITE (SI VOUS N’ÊTES PAS UNE MACHINE)
 

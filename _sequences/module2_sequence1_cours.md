@@ -1,5 +1,5 @@
 ---
-title: "How FAIR are your data?"
+title: "Bonnes pratiques dans la gestion des données "
 numeroSequence: 1
 numeroModule: 2
 type: "cours"
@@ -11,13 +11,31 @@ formateurs :
  - julienSeiler
 ---
 
+## Pourquoi ?
+
+Nous sommes :
+
+- Plusieurs personnes
+- Avec plusieurs techniques
+- Sur plusieurs lieux
+- Sur plusieurs années
+
+Nous souhaitons :
+
+- Ne rien perdre
+- Pouvoir retrouver
+- Pouvoir réanalyser
+- Pouvoir partager
+
+## How FAIR are your data?
+
 **Source** : Le cours proposé ci-dessous est extrait du document : `How FAIR are your data?` checklist, CC-BY by Sarah Jones & Marjan Grootveld, EUDAT (lien ci-dessous). L'image a été créée par [SangyaPundir](https://commons.wikimedia.org/wiki/File:FAIR_data_principles.jpg).
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1065991.svg)](https://doi.org/10.5281/zenodo.1065991)
 
 ![FAIR](https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/FAIR_data_principles.jpg/800px-FAIR_data_principles.jpg)
 
-## Findable
+### Findable
 
 It should be possible for others to discover your data. Rich metadata should be available online in a
 searchable resource, and the data should be assigned a persistent identifier.
@@ -27,7 +45,7 @@ searchable resource, and the data should be assigned a persistent identifier.
 - The metadata are online in a searchable resource e.g. a catalogue or data repository
 - The metadata record specifies the persistent identifier
 
-## Accessible
+### Accessible
 
 It should be possible for humans and machines to gain access to your data, under specific conditions
 or restrictions where appropriate. FAIR does not mean that data need to be open! There should be
@@ -38,7 +56,7 @@ metadata, even if the data aren’t accessible.
 - The access procedure includes authentication and authorisation steps, if necessary
 - Metadata are accessible, wherever possible, even if the data aren’t
 
-## Interoperable
+### Interoperable
 
 Data and metadata should conform to recognised formats and standards to allow them to be
 combined and exchanged.
@@ -48,7 +66,7 @@ combined and exchanged.
 - Controlled vocabularies, keywords, thesauri or ontologies are used where possible
 - Qualified references and links are provided to other related data
 
-## Reusable
+### Reusable
 
 Lots of documentation is needed to support data interpretation and reuse. The data should conform
 to community norms and be clearly licensed so others know what kinds of reuse are permitted.
