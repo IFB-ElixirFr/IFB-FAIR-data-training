@@ -38,16 +38,13 @@ messages:
     - Remplir Opidor régulièrement vous fera gagner du temps lors de la soumission 
     - Les outils de brokering (comme omicsBroker) simplifient grandement la soumission des données et métédonnées
 
-homework:
+homework: 
+     - Vous pouvez si vous le souhaitez refaire ce TP avec un autre jeu de données (Dataset 2 ou 3)
 ---
 
 ## Introduction
 
-Dans ce TP, nous allons réaliser les différentes étapes entre la collecte des données et la soumission dans une banque internationnale. Nous vous proposons trois jeux de données de séquences pour ce TP :
-
-- Dataset 1 : Un génome bactérien de la bactérie *S. salivarius* ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/S_salivarius.zip));
-- Dataset 2 : Un transcriptome de plante ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/plante.zip));
-- Dataset 3 : Un génome du virus SARS-Cov2 ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/SARS_Covv2.zip)).
+Dans ce TP, nous allons réaliser les différentes étapes entre la collecte des données et la soumission dans une banque internationnale. Nous vous proposons un jeu de données de séquences pour ce TP d'un génome bactérien de *S. salivarius* ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/S_salivarius.zip));
 
 Vous trouverez dans le dossier une fois décompressé, deux fichiers `.fastq.gz`.
 
@@ -90,21 +87,14 @@ choices="Study|Sample|Experiment|Run|Analysis|Submission"
 reponse="Sample"
 %}
 
-## Choisir une checklist correpondant au jeu de données choisi
+## Choisir une checklist correpondant au jeu de données
 
-Une quantité minimale d'informations est requise lors de l'enregistrement des échantillons sur l'ENA et tous les échantillons doivent être conformes à une liste de contrôle (checklist) définissant des valeurs de métadonnées attendues. La liste de contrôle la plus appropriée pour l'enregistrement des échantillons dépend du type de l'échantillon. L'ensemble des checklists de l'ENA sont disponible [ici](https://www.ebi.ac.uk/ena/browser/checklists). 
-
-- Pour le Dataset 1 de la bactérie *S. salivarius* utiliser le mot-clé `pathogen` ;
-- Pour le Dataset 2 du transcriptome de plante utiliser le mot-clé `plant` ;
-- Pour le Dataset 3 du virus SARS-Cov2 utiliser le mot-clé `virus` ;
+Une quantité minimale d'informations est requise lors de l'enregistrement des échantillons sur l'ENA et tous les échantillons doivent être conformes à une liste de contrôle (checklist) définissant des valeurs de métadonnées attendues. La liste de contrôle la plus appropriée pour l'enregistrement des échantillons dépend du type de l'échantillon. L'ensemble des checklists de l'ENA sont disponible [ici](https://www.ebi.ac.uk/ena/browser/checklists). Pour le jeu de données de la bactérie *S. salivarius*, utiliser le mot-clé `pathogen`.
 
 {% include question.html
 numQuestion=2
 question="Quel est le numéro d'accession de la checklist à utiliser pour le jeu de données choisi ?" 
-solution="
-- Pour le Dataset 1 (le génome bactérien de *S. salivarius*) : [ERC000028](https://www.ebi.ac.uk/ena/browser/view/ERC000028)
-- Pour le Dataset 2 (transcriptome de plante) : [ERC000037](https://www.ebi.ac.uk/ena/browser/view/ERC000037)
-- Pour le Dataset 3 (génome du virus SARS-Cov2) : [ERC000033](https://www.ebi.ac.uk/ena/browser/view/ERC000033)"
+solution="La checklist à utiliser pour le génome bactérien de *S. salivarius* est [ERC000028](https://www.ebi.ac.uk/ena/browser/view/ERC000028)"
 %}
 
 Les checklists sont disponibles au format XML. Vous avez par exemple ci-dessous un extrait de la checklist `ERC000028` :
@@ -170,7 +160,7 @@ alias="Screenshot sidebar"
 
 #### Cliquer sur le lien *Project*.
 
-Créer un projet en renseignant uniquement les champs **obligatoires** : `Title`, `Alias` et `Description`.
+{% include consigne.html text="Créer un projet en renseignant uniquement les champs **obligatoires** : `Title`, `Alias` et `Description`." %}
 
 {% include repoImage.html
 pathInRepo="/assets/img/TPs/session3_tp1/project.png"
@@ -179,12 +169,12 @@ alias="Screenshot Project"
 
 #### Cliquer sur le lien *Samples*
 
-Sélectionner la  checklist identifiée à la question précédente.
+##### Choix de la checklist
+
+{% include consigne.html text="Sélectionner la  checklist identifiée à la question précédente." %}
+
 {% include rappel.html
-text="
-- Pour le Dataset 1 (le génome bactérien de *S. salivarius*) : [ERC000028](https://www.ebi.ac.uk/ena/browser/view/ERC000028)
-- Pour le Dataset 2 (transcriptome de plante) : [ERC000037](https://www.ebi.ac.uk/ena/browser/view/ERC000037)
-- Pour le Dataset 3 (génome du virus SARS-Cov2) : [ERC000033](https://www.ebi.ac.uk/ena/browser/view/ERC000033)
+text="Pour le jeu de données du génome bactérien de *S. salivarius*, la checklist est [ERC000028](https://www.ebi.ac.uk/ena/browser/view/ERC000028)
 "
 %}
 
@@ -193,14 +183,16 @@ pathInRepo="/assets/img/TPs/session3_tp1/checklist.png"
 alias="Screenshot checklist"
 %}
 
-Le tableau dans la partie inférieure de la page 'Metadata table' s'est mis à jour avec les champs correspondant à la Checklist sélectionnée.
+Le tableau dans la partie inférieure de la page `Metadata table` s'est mis à jour avec les champs correspondant à la Checklist sélectionnée.
 
-Renseigner les champs **obligatoires** demandés en utilisant le contenu du DMP Opidor du Dataset que vous avez choisi :
+##### Métadonnées
 
-- [lien DMP Dataset 1](#)  
-- [lien DMP Dataset 2](#)  
-- [lien DMP Dataset 3](#)
+{% include consigne.html 
+text="
+Renseigner les champs **obligatoires** demandés en utilisant le contenu du DMP Opidor associé au jeu de données. Pour le trouver, aller sur [Opidor - DMPs publics](https://dmp.opidor.fr/public_plans) et rechercher le le plan `IFB_Training_salivarius`. Ensuite, télécharger le PDF qui contient toutes les informations nécessaires.
+" %}
 
+En cas de problème, le PDF peut être téléchargé [ici](https://dmp.opidor.fr/plans/7821/export.pdf) ou [ici]({{site.baseurl}}/assets/PDFs/PGD_IFB_Training_salivarius.pdf).
 
 Pour savoir quel type d'information vous devez renseigner dans une cellule, cliquez sur la cellule en question et une notice vous donnera les informations nécessaires dala partie `Descriptions` (droite). Par exemple, ici les informations nécessaires dans la colonne `Platform` :
 
@@ -222,25 +214,37 @@ Vous avez à votre disposition 2 fichiers une fois l'archive décompressées.
 {% include rappel.html
 text="
 **Pour obtenir ces fichiers** : 
-  
-1- Vous devez télécharger une des archives suivantes :
 
-  - Dataset 1 : Un génome bactérien de la bactérie *S. Salivarius* ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/S_salivarius.zip));
-  - Dataset 2 : Un transcriptome de plante ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/plante.zip));
-  - Dataset 3 : Un génome du virus SARS-Cov2 ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/SARS_Covv2.zip)).
-  
-2- Extraire les deux fichiers présents dans l'archive.
+1. Vous devez télécharger l'archive d'un génome bactérien de la bactérie *S. Salivarius* ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/S_salivarius.zip));
+2. Extraire les deux fichiers présents dans l'archive.
 "
 %}
 
-Ces deux fichiers vont devoir être *uploader* dans cette onglet (N°1 figure ci-dessous). 
+{% include consigne.html 
+text="
+*Uploader* ces deux fichiers dans omicsBroker en cliquant sur `Browse` puis en sélectionnant les fichiers (N°1 sur la figure ci-dessous). Vous pouvez aussi faire un `Drag & Drop.
+" %}
+
+Une fois *uploadés*, vous devriez avoir comme écran la figure suivante :
 
 {% include repoImage.html
 pathInRepo="/assets/img/TPs/session3_tp1/fileImport.png"
 alias="Screenshot File import"
 %}
 
-Une fois *uploader*, vous devez renseigner le md5sum pour s'assurer qu'aucune donnée n'a été perdue lors de l'*upload*. Pour obtenir le md5sum, nous vous conseillons la lecture [suivante](https://knowledge.autodesk.com/search-result/caas/sfdcarticles/sfdcarticles/Checking-the-MD5-checksum-of-a-Downloaded-File.html). Enfin, chaque fichier doit être associé à un `Experience name` (que vous avez renseigné dans la partie précédente). Une fois toutes ces informations renseignées, vous devez avoir quelque chose de similaire à la capture d'écran ci-dessous. 
+{% include consigne.html 
+text="
+Renseigner le md5sum pour chauque fichier (N°2 sur la figure ci-dessus).
+" %}
+
+L'objectif du md5sum est de s'assurer qu'aucune donnée n'a été perdue lors de l'*upload*. Pour obtenir le md5sum, nous vous conseillons la lecture [suivante](https://knowledge.autodesk.com/search-result/caas/sfdcarticles/sfdcarticles/Checking-the-MD5-checksum-of-a-Downloaded-File.html). 
+
+{% include consigne.html 
+text="
+Associer à chaque fichier un `Experience name` que vous avez renseigné dans la partie précédente (N°2 sur la figure ci-dessus).
+" %}
+
+Une fois toutes ces informations renseignées, vous devez avoir quelque chose de similaire à la capture d'écran ci-dessous :
 
 {% include repoImage.html
 pathInRepo="/assets/img/TPs/session3_tp1/fileImportValide.png"
@@ -249,15 +253,26 @@ alias="Screenshot File import complet"
 
 ### Section *Publish* du menu latéral gauche
 
-Cette section permet de soumettre les fichiers de données et de métadonnées à l'instance de test de l'ENA
-Cliquer sur le lien *ENA*.
+Cette section permet de soumettre les fichiers de données et de métadonnées à l'instance de test de l'ENA. 
+
+{% include consigne.html 
+text="
+Cliquer sur l'onglet *ENA* dans la barre latérale.
+" %}
+
+Vous devez avoir à votre écran l'image suivante :
 
 {% include repoImage.html
 pathInRepo="/assets/img/TPs/session3_tp1/publishENA_vide.png"
 alias="Screenshot Publish in ENA"
 %}
 
-Puis renseigner votre webin et votre mot de passe : 
+{% include consigne.html 
+text="
+Renseigner votre webin et votre mot de passe.
+" %}
+
+Par exemple : 
 
 {% include repoImage.html
 pathInRepo="/assets/img/TPs/session3_tp1/publishENA_Ident.png"
@@ -266,16 +281,28 @@ alias="Screenshot Publish in ENA connexion"
 
 #### Envoyer les fichiers de données brutes sur l'instance de test de l'ENA
 
-Cliquer sur "Upload data" (Step 3). En cas de succès, un message vous sera envoyé :
+{% include consigne.html 
+text="
+Cliquer sur `Upload data` (Step 3).
+" %}
+
+En cas de succès, un message vous sera envoyé :
 
 {% include repoImage.html
 pathInRepo="/assets/img/TPs/session3_tp1/publishENA_data_success.png"
 alias="Screenshot File import complet"
 %}
 
+*Note* : si l'échec est lié au temps (message d'erreur renvoyé), recommencer jusqu'au succès.
+
 #### Envoyer les métadonnées sur l'instance de test de l'ENA 
 
-Cliquer sur "Upload metadata" (Step 4) En cas de succès, un message vous sera envoyé :
+{% include consigne.html 
+text="
+Cliquer sur `Upload metadata` (Step 4).
+" %}
+
+En cas de succès, un message vous sera envoyé :
 
 {% include repoImage.html
 pathInRepo="/assets/img/TPs/session3_tp1/publishENA_metadata_success.png"
@@ -284,11 +311,63 @@ alias="Screenshot File import complet success"
 
 #### Décrire les fichiers XML de métadonnées générés 
 
+{% include consigne.html 
+text="
 Cliquer sur les différents fichiers XML générés par la soumission et commenter.
+" %}
 
-#### Vérifier que la soumission test s'est bien passée
+Exemple du fichier `Project Set` :
 
-Pour cela, se connecter sur l'instance de test de l'ENA [ici](https://wwwdev.ebi.ac.uk/ena/submit/webin/). Une fois connecté, votre interface doit est comme ci-dessous :
+``` xml 
+<PROJECT_SET>
+  <PROJECT alias="salivarius_dynamic">
+    <TITLE>Characterization of Streptococcus salivarius conjugatif elements content and diversity</TITLE>
+    <DESCRIPTION>Une description du projet</DESCRIPTION>
+    <SUBMISSION_PROJECT>
+      <SEQUENCING_PROJECT/>
+    </SUBMISSION_PROJECT>
+  </PROJECT>
+</PROJECT_SET>
+```
+
+Exemple du fichier `Experiment`: 
+
+``` xml 
+<EXPERIMENT_SET>
+  <EXPERIMENT alias="Sequencing_of_S__salivarius_B35_strain">
+    <TITLE>Sequencing of S. salivarius B35 strain</TITLE>
+    <STUDY_REF alias="XXXXXXXXXXXXXXXXXXX"/>
+    <DESIGN>
+      <DESIGN_DESCRIPTION/>
+      <SAMPLE_DESCRIPTOR accession="XXXXXXXXXXXXXXXXXXX"/>
+      <LIBRARY_DESCRIPTOR>
+        <LIBRARY_NAME/>
+        <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+        <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+        <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+        <LIBRARY_LAYOUT>
+          <PAIRED NOMINAL_LENGTH="269"/>
+        </LIBRARY_LAYOUT>
+        <LIBRARY_CONSTRUCTION_PROTOCOL>Standart Illumina protocol</LIBRARY_CONSTRUCTION_PROTOCOL>
+      </LIBRARY_DESCRIPTOR>
+    </DESIGN>
+    <PLATFORM>
+      <ILLUMINA>
+        <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+      </ILLUMINA>
+    </PLATFORM>
+  </EXPERIMENT>
+</EXPERIMENT_SET>
+```
+
+#### Instance de test de l'ENA
+
+{% include consigne.html 
+text="
+Vérifier que les différents fichiers de soumission sont bien sur l'instance de test de l'ENA. Pour cela, se connecter sur l'instance de test de l'ENA [ici](https://wwwdev.ebi.ac.uk/ena/submit/webin/).
+" %}
+
+Une fois connecté, votre interface doit est comme ci-dessous :
 
 {% include repoImage.html
 pathInRepo="/assets/img/TPs/session3_tp1/ENA_home.png"
@@ -329,7 +408,11 @@ alias="Screenshot ENA Run Files Report"
 
 Via l'export du PGD en HTML, il est possible de pré-remplir certains items dans omicsBroker. Pour cela, vous devez :
 
-1) Exporter votre PGD au format HTML depuis Opidor.  
-2) Importer le fichier HTML dans omicsBroker.  
+1. Exporter votre PGD au format HTML depuis Opidor.  Vous pouvez cliquer [ici]({{site.baseurl}}/assets/html/PGD_IFB_Training_salivarius.htm) puis enregistrer celui du PGD du TP.
+2. Importer le fichier HTML dans omicsBroker.  
 
+
+{% include consigne.html 
+text="
 Commenter les champs importés.
+" %}
