@@ -44,7 +44,7 @@ homework:
 
 ## Introduction
 
-Dans ce TP, nous allons réaliser les différentes étapes entre la collecte des données et la soumission dans une banque internationnale. Nous vous proposons un jeu de données de séquences pour ce TP d'un génome bactérien de *S. salivarius* ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/S_salivarius.zip));
+Dans ce TP, nous allons réaliser les différentes étapes entre la collecte des données et la soumission dans une banque internationnale. Nous vous proposons un jeu de données de séquences pour ce TP d'un génome bactérien de *S. salivarius* ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/S_salivarius.zip){:target="_blank"});
 
 Vous trouverez dans le dossier une fois décompressé, deux fichiers `.fastq.gz`.
 
@@ -60,7 +60,7 @@ L'European National Archive est une plateforme ouverte et soutenue pour la gesti
 
 ### Connection à l'ENA
 
-Lors d'un dépôt de données sur l'ENA, il est nécessaire de créer un compte. Lors de ce TP, vous aurez besoin d'un compte personnel si vous souhaitez essayer de soumettre des données TEST. Vous pouvez cliquer [ici pour vous connecter à l'instance de test de l'ENA](https://wwwdev.ebi.ac.uk/ena/submit/webin/). 
+Lors d'un dépôt de données sur l'ENA, il est nécessaire de créer un compte. Lors de ce TP, vous aurez besoin d'un compte personnel si vous souhaitez essayer de soumettre des données TEST. Vous pouvez cliquer [ici pour vous connecter à l'instance de test de l'ENA](https://wwwdev.ebi.ac.uk/ena/submit/webin/){:target="_blank"}.
 
 ## Comment sont gérées les métadonnées sur l'ENA ?
 
@@ -89,7 +89,7 @@ reponse="Sample"
 
 ## Choisir une checklist correpondant au jeu de données
 
-Une quantité minimale d'informations est requise lors de l'enregistrement des échantillons sur l'ENA et tous les échantillons doivent être conformes à une liste de contrôle (checklist) définissant des valeurs de métadonnées attendues. La liste de contrôle la plus appropriée pour l'enregistrement des échantillons dépend du type de l'échantillon. L'ensemble des checklists de l'ENA sont disponible [ici](https://www.ebi.ac.uk/ena/browser/checklists). Pour le jeu de données de la bactérie *S. salivarius*, utiliser le mot-clé `pathogen`.
+Une quantité minimale d'informations est requise lors de l'enregistrement des échantillons sur l'ENA et tous les échantillons doivent être conformes à une liste de contrôle (checklist) définissant des valeurs de métadonnées attendues. La liste de contrôle la plus appropriée pour l'enregistrement des échantillons dépend du type de l'échantillon. L'ensemble des checklists de l'ENA sont disponible [ici](https://www.ebi.ac.uk/ena/browser/checklists){:target="_blank"}. Pour le jeu de données de la bactérie *S. salivarius*, utiliser le mot-clé `pathogen`.
 
 {% include question.html
 numQuestion=2
@@ -144,7 +144,7 @@ Les checklists sont disponibles au format XML. Vous avez par exemple ci-dessous 
 
 Pour ce TP, nous allons utiliser omicsBroker, un outil de *brokering* développé par l'IFB. Il s'agit d'un prototype permettant d'annoter des données de séquences et de les soumettre à l'ENA.
 
-Pour vous connecter à une instance de démonstration, cliquer sur le lien suivant : [ici](#). Cette instance sera fermer dès la fin du TP. Si vous souhaitez refaire le TP, l'ensemble des étapes d'installation sont décrites sur [GitHub](https://github.com/IFB-ElixirFr/omicsBroker).
+Pour vous connecter à une instance de démonstration, cliquer sur le lien suivant : [ici](#){:target="_blank"}. Cette instance sera fermer dès la fin du TP. Si vous souhaitez refaire le TP, l'ensemble des étapes d'installation sont décrites sur [GitHub](https://github.com/IFB-ElixirFr/omicsBroker){:target="_blank"}.
 
 - **Attention 1** : omicsBroker est un un prototype qu'il ne faut pas utiliser avec des vraies données pour une vraie soumission !
 - **Attention 2** : Avez vous bien lu le attention 1 ?
@@ -192,7 +192,7 @@ text="
 Renseigner les champs **obligatoires** demandés en utilisant le contenu du DMP Opidor associé au jeu de données. Pour le trouver, aller sur [Opidor - DMPs publics](https://dmp.opidor.fr/public_plans) et rechercher le le plan `IFB_Training_salivarius`. Ensuite, télécharger le PDF qui contient toutes les informations nécessaires.
 " %}
 
-En cas de problème, le PDF peut être téléchargé [ici](https://dmp.opidor.fr/plans/7821/export.pdf) ou [ici]({{site.baseurl}}/assets/PDFs/PGD_IFB_Training_salivarius.pdf).
+En cas de problème, le PDF peut être téléchargé [ici](https://dmp.opidor.fr/plans/7821/export.pdf){:target="_blank"} ou [ici]({{site.baseurl}}/assets/PDFs/PGD_IFB_Training_salivarius.pdf){:target="_blank"}.
 
 Pour savoir quel type d'information vous devez renseigner dans une cellule, cliquez sur la cellule en question et une notice vous donnera les informations nécessaires dala partie `Descriptions` (droite). Par exemple, ici les informations nécessaires dans la colonne `Platform` :
 
@@ -215,7 +215,7 @@ Vous avez à votre disposition 2 fichiers une fois l'archive décompressées.
 text="
 **Pour obtenir ces fichiers** : 
 
-1. Vous devez télécharger l'archive d'un génome bactérien de la bactérie *S. Salivarius* ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/S_salivarius.zip));
+1. Vous devez télécharger l'archive d'un génome bactérien de la bactérie *S. Salivarius* ([Télécharger l'archive](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/S_salivarius.zip);
 2. Extraire les deux fichiers présents dans l'archive.
 "
 %}
