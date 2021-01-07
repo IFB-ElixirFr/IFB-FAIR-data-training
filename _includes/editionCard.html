@@ -1,0 +1,22 @@
+<div class="card" style="margin-bottom: 10px;" name='module_{{include.itemEdition.numeroEdition}}'>
+
+    <div class="card-header" style="font-weight: bold; color:white; background-color: #964c90 ;">
+      <i class="fas fa-layer-group"></i> Édition {{include.itemEdition.numeroEdition}}
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">{{ include.itemEdition.title }}</h5>
+      <p class="card-text">
+        <p><b>Description</b><br> {{ include.itemEdition.description }}</p>
+        
+        <p><b>Date</b><br> 
+          <b>Début</b> : {{ include.itemEdition.timeStart }} <br> 
+          <b>Fin</b> : {{ include.itemEdition.timeEnd }}
+        </p>
+      </p>
+    </div>
+    <div class="card-footer text-right">
+      <a href="{{site.baseurl}}{{ include.itemEdition.url }}">Aller à la page de l'édition</a>
+    </div>
+  </div>
+

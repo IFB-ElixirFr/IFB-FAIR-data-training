@@ -51,6 +51,8 @@ collections:
     output: true
   modules:
     output: true
+  editions:
+    output: true
 
 defaults:
   - scope:
@@ -73,6 +75,11 @@ defaults:
       type: "sequences"
     values:
       layout: "sequence"
+  - scope:
+      path: ""
+      type: "editions"
+    values:
+      layout: "edition"
   - scope:
       path: ""
     values:

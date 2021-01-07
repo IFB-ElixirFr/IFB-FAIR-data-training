@@ -18,7 +18,7 @@ formateurs :
 
 ---
 
-Bienvenue à toutes et à tous dans la formation FAIR Data proposée par l'IFB. Nous sommes ravis de vous acceuillir !
+Bienvenue à toutes et à tous dans la formation FAIR Data proposée par l'IFB. Nous sommes ravis de vous accueillir !
 
 ## Logistique
 

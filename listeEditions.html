@@ -1,0 +1,11 @@
+---
+layout: default
+title: Éditions
+header_title: Listes des éditions
+---
+
+{% assign listeDesEditions = site.editions  %}
+{% for item in listeDesEditions %}
+{% include editionCard.html itemEdition=item %}
+{% endfor %}
+

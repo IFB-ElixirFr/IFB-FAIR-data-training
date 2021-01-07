@@ -33,14 +33,8 @@
                 </li>
 
                 <!-- Edition -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_editions" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Editions
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_editions">
-                        <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training" target="_blank">2020</a>
-                    </div>
+                <li {% if page.url == "./" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
+                    <a class="nav-link" href="{{site.baseurl}}/listeEditions.html" >Éditions</a>
                 </li>
 
                 <!-- A propos -->
