@@ -89,7 +89,7 @@ choices="Study|Sample|Experiment|Run|Analysis|Submission"
 reponse="Sample"
 %}
 
-## Choisir une checklist correpondant au jeu de données
+## Choisir une checklist correspondant au jeu de données
 
 Une quantité minimale d'informations est requise lors de l'enregistrement des échantillons sur l'ENA et tous les échantillons doivent être conformes à une liste de contrôle (checklist) définissant des valeurs de métadonnées attendues. La liste de contrôle la plus appropriée pour l'enregistrement des échantillons dépend du type de l'échantillon. L'ensemble des checklists de l'ENA sont disponible [ici](https://www.ebi.ac.uk/ena/browser/checklists){:target="_blank"}. Pour le jeu de données de la bactérie *S. salivarius*, utiliser le mot-clé `pathogen`.
 
@@ -243,7 +243,7 @@ L'objectif du md5sum est de s'assurer qu'aucune donnée n'a été perdue lors du
 
 {% include consigne.html 
 text="
-Associer à chaque fichier un `Experience name` que vous avez renseigné dans la partie précédente (N°2 sur la figure ci-dessus).
+Associer à chaque fichier un `Experience name` que vous avez renseigné dans la partie précédente (N°3 sur la figure ci-dessus). Pour cela, cliquer sur la cellule pour avoir la liste des `Experience name` disponibles dans la table `metadata table` et choisir le bon.
 " %}
 
 Une fois toutes ces informations renseignées, vous devez avoir quelque chose de similaire à la capture d'écran ci-dessous :
