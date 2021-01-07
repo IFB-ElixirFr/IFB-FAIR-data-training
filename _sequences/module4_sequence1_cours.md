@@ -2,7 +2,9 @@
 title: "Cadre Juridique "
 numeroSequence: 1
 numeroModule: 4
-type: "Cours"
+numeroEdition:
+    - 1
+type: "cours"
 description: "Cadre Juridique "
 temps: 2 heures
 

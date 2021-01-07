@@ -1,9 +1,11 @@
 ---
-title: "Les licences sur les données"
+title: "Questionnaire"
 numeroSequence: 4
 numeroModule: 4
-type: "Cours"
-description: "Les licences sur les données"
+numeroEdition:
+    - 1
+type: "autre"
+description: "Questionnaire"
 temps: 10 minutes
 
 formateurs : 

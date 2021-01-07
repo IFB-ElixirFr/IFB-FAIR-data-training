@@ -2,6 +2,8 @@
 title: "Rappel"
 numeroSequence: 0
 numeroModule: 2
+numeroEdition:
+    - 1
 type: "cours"
 description: "Rappel du module précédent"
 temps: 40 minutes

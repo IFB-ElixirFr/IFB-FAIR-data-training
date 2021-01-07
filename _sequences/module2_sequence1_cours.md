@@ -2,6 +2,8 @@
 title: "Bonnes pratiques dans la gestion des données "
 numeroSequence: 1
 numeroModule: 2
+numeroEdition:
+    - 1
 type: "cours"
 description: "L'objectif de ce cours de faire le point sur la notion FAIR."
 temps: 40 minutes

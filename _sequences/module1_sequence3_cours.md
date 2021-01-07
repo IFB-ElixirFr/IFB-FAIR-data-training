@@ -2,6 +2,8 @@
 title: "Vers FAIR"
 numeroSequence: 3
 numeroModule: 1
+numeroEdition:
+    - 1
 type: "cours"
 description: ""
 temps: 30 minutes

@@ -2,6 +2,8 @@
 title: "Crise de reproductibilité"
 numeroSequence: 2
 numeroModule: 1
+numeroEdition:
+    - 1
 type: "cours"
 description: "Présentation du contexte actuel de la reproductibilité"
 temps: 30 minutes

@@ -70,4 +70,6 @@ Des travaux ponctuels seront à effectuer entre les modules.
 
 ### Les mots clés de la formation
 
+Ce nuage de mots a été construit automatiquement à partir du contenu de toutes les séquences.
+
 {% include cloudWord.html %}

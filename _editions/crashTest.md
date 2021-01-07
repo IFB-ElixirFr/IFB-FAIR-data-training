@@ -8,6 +8,12 @@ timeEnd: "21-01-2021 12:00"
 timezone: "Europe/Paris"
 
 ---
+## Informations générales de l'édition
 
-Vous trouverez ici les informations spécifiques de l'édition ainsi que tous les contenus créés lors de cette édition. 
+### Localisation
 
+Chez nous !
+
+## Les participants
+
+## Les créations lors de l'édition

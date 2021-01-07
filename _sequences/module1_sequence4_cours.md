@@ -2,6 +2,8 @@
 title: "Cycle de vie des données"
 numeroSequence: 4
 numeroModule: 1
+numeroEdition:
+    - 1
 type: "cours"
 description: ""
 temps: 15 minutes

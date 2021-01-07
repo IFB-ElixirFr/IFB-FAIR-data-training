@@ -2,6 +2,8 @@
 title: "Le plan de gestion des données"
 numeroSequence: 5
 numeroModule: 1
+numeroEdition:
+    - 1
 type: "cours"
 description: ""
 temps: 40 minutes

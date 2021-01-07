@@ -1,9 +1,11 @@
 ---
-title: "Les licences sur les données"
+title: "Quel entrepôt pour quelles données ?"
 numeroSequence: 3
 numeroModule: 4
-type: "Cours"
-description: "Les licences sur les données"
+numeroEdition:
+    - 1
+type: "cours"
+description: "Quel entrepôt pour quelles données ?"
 temps: 30 minutes
 
 formateurs : 

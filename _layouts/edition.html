@@ -23,6 +23,45 @@ paragraph.appendChild(text);
                 </div>
             </div>
             <br>
+            <h2>Programme</h2>
+
+            {% assign listeDesSequences = site.sequences |  where:"numeroEdition", page.numeroEdition | group_by: "numeroModule" %}
+            {% assign listeDesSequences = listeDesSequences | sort: "numeroSequence" %}
+
+            {% for group in listeDesSequences %}
+              <h4 name='module_{{group.name}}'>Module {{group.name}}</h4>
+              <ol>
+                {% for item in group.items %}
+                <li><a href="{{site.baseurl}}{{ item.url }}"> 
+                    {% assign type= item.type | downcase %}
+                    {% if type == 'cours'%} <i class="fas fa-book"></i> {% elsif type == 'tp' %} <i class="fas fa-pencil-ruler"></i>{% else %} <i class="fas fa-ellipsis-h"></i> {% endif %}
+                    {{ item.title }} 
+                </a></li>
+                {% endfor %}
+              </ol>
+            {% endfor %}
+
+            <h2>Formateurs</h2>
+
+            {% assign formateurs = "" | split: ',' %}
+            {% assign listeSequences = site.sequences | where:"numeroEdition", page.numeroEdition  %}
+            {% for item in listeSequences  %}
+            {% assign formateurs = formateurs | concat: item.formateurs | uniq %}
+            {% endfor %}
+            {% for formateur in formateurs %}
+            {% assign find = "false" %}
+            {% for i in site.formateurs %}
+                    {% if i.shortName == formateur %}
+                        {% include profile.html formateur=i %}
+                        {% assign find = "true" %} 
+                        {% break %}
+                    {% endif %}
+                {% endfor %} 
+                {% if find == "false" %}
+                    {{ formateur }}
+                {% endif %}
+            {% endfor %} 
+
             <p>{{ page.content | markdownify }}</p>
         </div>
         <hr>
@@ -45,7 +84,7 @@ function downloadPDF() {
             'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css',
             '{{site.baseurl}}/assets/css/style.css'
         ],
-        documentTitle: "Séance {{page.numeroSequence}} Module {{page.numeroModule}} - FAIR data by IFB"
+        documentTitle: "Edition {{ page.numeroEdition }} - FAIR data by IFB"
     }) 
 }
 </script>
