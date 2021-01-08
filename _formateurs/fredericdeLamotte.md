@@ -11,4 +11,6 @@ mail: frederic.de-lamotte@inrae.fr
 ORCID: 0000-0003-4234-1172
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus arcu augue, euismod ultricies ultricies ut, tempor nec diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris sodales et nunc pharetra elementum. Aenean ullamcorper aliquet erat vel mattis. Nullam sed ante vel ante porttitor auctor. Sed facilisis ante nec nunc euismod, ut convallis enim ornare. Proin vel malesuada mauris. Ut egestas lectus a consequat iaculis. In nec eros lobortis, cursus turpis scelerisque, tristique arcu. Proin orci sapien, sollicitudin viverra tellus eget, mollis cursus neque. Nulla pretium eget est vitae mollis. Vivamus tempus et erat eget luctus. Quisque pulvinar urna magna, non vehicula neque ultrices sit amet. Donec ac est sit amet ligula laoreet laoreet in sed nisi.
+" Dès la maternelle, le petit Frédéric se montre à l'aise avec les gestion des données même si c'est bien plus tard que le reste du monde s'en rend compte".
+Biochimiste de formation, je suis passsé de la biologie humide à la biophysique (X-RAys et RMN) puis à la modelisation moléculaire (moins fatigante …). Parrallèlement, l'aire du haut débit m'a amené à me préoccuper de la gestion de jeux de données de plus en plus important
+Actuellement, je suis le Data Steward du Département Biologie et Amélioration des Plantes d'INRAe et un membre heureux de l'IFB
