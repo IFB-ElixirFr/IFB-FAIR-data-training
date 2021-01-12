@@ -13,6 +13,8 @@ formateurs :
  - pauletteLieby
 
 ---
+{% include pdf.html adresse="/assets/PDFs/Module1_Sequence3.pdf" local="true" %}
+
 
 ## Réutiliser les données? Où est le problème?
 
