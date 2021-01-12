@@ -2,7 +2,7 @@
 shortName: julienSeiler
 firstName: Julien 
 lastName: Seiler
-position: "Ingénieur de Recherche"
+position: "Ingénieur de Recherche / Formateur IFB"
 localisation: "BigEst - Strasbourg"
 
 githubID: julozi
@@ -13,4 +13,4 @@ ORCID: 0000-0002-4549-5188
 
 ---
 
-Co-Responsable du Core Cluster IFB - Responsable informatique à l'IGBMC - Développeur Python - HPC Geek
+Co-Responsable du Core Cluster IFB - Responsable informatique à l'IGBMC - HPC Geek - Développeur Python
