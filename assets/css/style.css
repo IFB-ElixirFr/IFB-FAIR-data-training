@@ -150,6 +150,48 @@ p.textNav {
 }
 
 /* ---------------------------------------------------
+    Carousel
+----------------------------------------------------- */
+.carousel-inner {
+    padding: 0px 20px;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      height: 25px;
+      width: 25px;
+      background-image: none;
+    }
+    .carousel-control-next, .carousel-control-prev {
+        width: 30px;
+    }
+    .carousel-control-next-icon:after
+    {
+      content: '>';
+      font-size: 25px;
+      color: gray;
+      font-weight: bold;
+    }
+    
+    .carousel-control-prev-icon:after {
+      content: '<';
+      font-size: 25px;
+      color: gray;
+      font-weight: bold;
+      
+    }
+    
+    .carousel {
+      max-height: 700px;
+      overflow: hidden;
+    }
+    
+    .carousel-item img {
+        width: 100%;
+        height: auto;
+      }
+
+/* ---------------------------------------------------
     Search nav 
 ----------------------------------------------------- */
 
