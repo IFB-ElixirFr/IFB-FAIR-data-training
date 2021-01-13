@@ -19,6 +19,8 @@ Chez nous !
 
 ## Les participants
 
+{% include participants.html name='participants_edition1' %}
+
 ## Photos de la formation
 
 {% include carousel.html pathFolderImages='assets/edition1/photosGroupe' %}

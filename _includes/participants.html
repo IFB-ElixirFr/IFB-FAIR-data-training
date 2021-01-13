@@ -1,0 +1,28 @@
+<table class="table table-striped">
+{% for row in site.data[ include.name ] %}
+
+{% if forloop.first %}
+<thead>
+<tr>
+{% for pair in row %}
+<th>{{ pair[0] }}</th>
+{% endfor %}
+</tr> 
+</thead>
+<tbody>
+{% endif %}
+<tr>
+{% for pair in row %}
+<td>
+{% if forloop.index == 3 %}
+<a href="mailto:{{ pair[1] }}">{{ pair[1] }}</a> 
+{% else %}
+{{ pair[1] }}
+{% endif %}   
+</td>
+{% endfor %}
+</tr>
+{% endfor %}
+
+</tbody>
+</table>
