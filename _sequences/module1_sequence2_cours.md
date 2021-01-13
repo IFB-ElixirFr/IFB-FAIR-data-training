@@ -13,6 +13,9 @@ formateurs :
  - pauletteLieby
 
 ---
+
+## Les slides
+
 {% include pdf.html adresse="/assets/PDFs/Module1_Sequence2.pdf" local="true" %}
 
 ## La disruption numérique : une bascule brutale

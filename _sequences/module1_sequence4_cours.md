@@ -14,6 +14,8 @@ formateurs :
 
 ---
 
+## Les slides
+
 {% include pdf.html adresse="/assets/PDFs/Module1_Sequence4.pdf" local="true" %}
 
 ## La vie des données
