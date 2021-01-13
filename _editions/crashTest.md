@@ -19,6 +19,10 @@ Chez nous !
 
 ## Les participants
 
+## Photos de la formation
+
+{% include carousel.html pathFolderImages='assets/edition1/photosGroupe' %}
+
 ## Les créations lors de l'édition
 
 ### Quelle définition pour les données de la recherche ?
@@ -77,7 +81,7 @@ text="Ne pas effacer un post qui semble vide, il est simplement en train d’êt
 
 **Outils utilisé**  : [Mentimeter](https://www.menti.com/)
 
-
+{% include repoImage.html pathInRepo="assets/edition1/module1/1-definition-donnees-recheche.2400x2400.jpeg" %}
 
 ### Les points d’attention à avoir le long d’un projet, de sa conception jusqu’à sa valorisation
 
@@ -88,3 +92,5 @@ text="Ne pas effacer un post qui semble vide, il est simplement en train d’êt
 **Outils utilisé** : [scrumblr](http://scrumblr.ca/)
 
 {% include repoImage.html pathInRepo="assets/edition1/module1/pointAttentionVieDonnees.png" %}
+
+
