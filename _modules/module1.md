@@ -17,7 +17,7 @@ homework:
     - Créer et ouvrir un Plan de Gestion des Données basé sur le modèle choisi (mode entraînement)
     - Inviter les formateurs comme collaborateurs
 
-fomulaireAvis: "https://forms.gle/QgfKTDVu91jC7pHeA"
+fomulaireAvis: "https://forms.gle/KJWPYezuHRtMMCtL7"
 ---
 
 ## Slide du module

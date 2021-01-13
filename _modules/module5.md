@@ -8,4 +8,5 @@ timeStart: "21-01-2021 09:00"
 timeEnd: "21-01-2021 12:00"
 timezone: "Europe/Paris"
 
+fomulaireAvis: "https://forms.gle/s4EQEnFTRYdmtdqf7"
 ---
