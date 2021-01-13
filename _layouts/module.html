@@ -122,8 +122,6 @@ layout: default
             </div>
         </div>
 
-        {{ content }}
-
         {% if page.questions %}
             {%- include questionnement.html -%}  
         {% endif %}
@@ -144,6 +142,8 @@ layout: default
             {% endfor %}
         </ol>
         {% endif %}
+
+        {{ content }}
 
         {% if page.messages %}
             {%- include takeHomeMessage.html -%}  
