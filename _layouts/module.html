@@ -156,6 +156,32 @@ layout: default
         {% if page.fomulaireAvis %}
             {%- include googleForm.html -%}  
         {% endif %}
+        <hr>
+
+        <div class="row">
+            <div class="col-sm-4 text-left">
+                {% assign listeDesModules = site.modules | sort: "numeroModule" %}
+                {% for i in listeDesModules %}
+                    {% assign prev = page.numeroModule | minus: 1 %}
+                    {% if prev == i.numeroModule %}
+                        <a href="{{site.baseurl}}{{i.url}}"><i class="fas fa-arrow-alt-circle-left"></i>Vers le module précédent </a>
+                        {% break %}
+                    {% endif %}
+                {% endfor %} 
+            </div>
+            <div class="col-sm-4 text-center">
+                <a href="{{site.baseurl}}/listeModules.html">Retour à la liste des modules </a>
+            </div>
+            <div class="col-sm-4 text-right">
+                {% assign listeDesModules = site.modules | sort: "numeroModule" %}
+                {% for i in listeDesModules %}
+                    {% if page.numeroModule < i.numeroModule %}
+                        <a href="{{site.baseurl}}{{i.url}}">Vers le module suivant <i class="fas fa-arrow-alt-circle-right"></i></a>
+                        {% break %}
+                    {% endif %}
+                {% endfor %} 
+            </div>
+        </div>
 
     </div>
 </div>

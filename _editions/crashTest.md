@@ -11,6 +11,8 @@ timezone: "Europe/Paris"
 
 ## Informations générales de l'édition
 
+Cette édition a pour objectif de tester le contenu pédagogique sur un public ciblé.
+
 ### Localisation
 
 Chez nous !
@@ -26,6 +28,10 @@ Chez nous !
 **Quand ?**  [Module 1 - Séquence 2]({{site.baseurl}}{{sequenceURL[0].url}})
 
 **Outils utilisé** : [scrumblr](http://scrumblr.ca/)
+
+{%include warning.html 
+text="Ne pas effacer un post qui semble vide, il est simplement en train d’être rédigé
+" %}
 
 #### Groupe 1
 
