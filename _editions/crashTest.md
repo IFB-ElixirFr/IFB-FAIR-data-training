@@ -120,3 +120,13 @@ text="Ne pas effacer un post qui semble vide, il est simplement en train d’êt
 **Outils utilisé** : [scrumblr](http://scrumblr.ca/)
 
 {% include repoImage.html pathInRepo="assets/edition1/module2/outilsSolutions.png" %}
+
+#### Où se situe mon fichier ?
+
+{% assign sequenceURL = site.sequences | where:"numeroModule", "2" | where:"numeroSequence", "4"  %}
+
+**Quand ?**  [Module 2 - Séquence 4]({{site.baseurl}}{{sequenceURL[0].url}})
+
+**Outils utilisé** : [chart.js](https://www.chartjs.org/)
+
+{% include radar.html googleSheetURL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQaaOFu939-1mc_z0fbp92cO1D-qZYSJRdZ0326IJgffulUY2R9qpJfjaRlzAuLOO2Dp8plfP_y3P4E/pub?gid=841555717&single=true&output=csv" colStart="2" colEnd="12" %}

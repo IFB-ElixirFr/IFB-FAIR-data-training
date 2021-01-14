@@ -1,0 +1,49 @@
+
+<canvas id="myChart" width="400" height="400"></canvas>
+
+<script>
+
+Papa.parse("{{ include.googleSheetURL }}", {
+	download: true,
+	complete: function(results) {
+        var ctx = 'myChart';
+
+        function colorGen() {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            return "rgba(" + r + "," + g + "," + b + ",0.1)";
+        }
+
+        var myChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: results.data[0].slice({{ include.colStart }}, {{ include.colEnd }} + 1), 
+                datasets: []
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Évaluation de notre solution de stockage de données'
+                }
+            }
+        });
+
+        for (index = 1; index < results.data.length ; index++) {
+            var col = colorGen();
+            var newDataset = {
+                label: results.data[index][1],
+                backgroundColor: col,
+                borderColor: col,
+                data: []
+            };
+            newDataset.data = results.data[index].slice({{ include.colStart }}, {{ include.colEnd }} + 1) ;
+            myChart.config.data.datasets.push(newDataset);
+        }
+
+        myChart.update();
+        
+	}
+});
+
+</script>
