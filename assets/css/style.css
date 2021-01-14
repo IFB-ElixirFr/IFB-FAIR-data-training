@@ -135,6 +135,13 @@ td a:hover {
     z-index: 1 !important;
 }
 
+.styleTitle {
+    background-color: #173b6c;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+}
+
 /* ---------------------------------------------------
     Nav item
 ----------------------------------------------------- */
@@ -148,6 +155,7 @@ p.textNav {
     font-size: 2rem; 
     color: #212529;
 }
+
 
 /* ---------------------------------------------------
     Bubble
