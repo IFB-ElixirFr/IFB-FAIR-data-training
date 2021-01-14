@@ -110,3 +110,13 @@ text="Ne pas effacer un post qui semble vide, il est simplement en train d’êt
 **Outils utilisé** : [scrumblr](http://scrumblr.ca/)
 
 {% include repoImage.html pathInRepo="assets/edition1/module2/formatsFichier.png" %}
+
+#### Outils et solution : vous utilisez quoi ?
+
+{% assign sequenceURL = site.sequences | where:"numeroModule", "2" | where:"numeroSequence", "5"  %}
+
+**Quand ?**  [Module 2 - Séquence 5]({{site.baseurl}}{{sequenceURL[0].url}})
+
+**Outils utilisé** : [scrumblr](http://scrumblr.ca/)
+
+{% include repoImage.html pathInRepo="assets/edition1/module2/outilsSolutions.png" %}
