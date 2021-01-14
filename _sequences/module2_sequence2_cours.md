@@ -13,4 +13,4 @@ formateurs :
  - julienSeiler
 ---
 
-{% include pdf.html adresse="/assets/PDFs/module2_sequence2_cours.pdf" local="true" %}
+{% include pdf.html adresse="assets/PDFs/edition1/Module2/Module2_sequence2.pdf" local="true" %}

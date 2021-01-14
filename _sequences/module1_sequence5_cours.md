@@ -16,7 +16,7 @@ formateurs :
 
 ## Les slides
 
-{% include pdf.html adresse="/assets/PDFs/Module1_Sequence5.pdf" local="true" %}
+{% include pdf.html adresse="assets/PDFs/edition1/Module1/Module1_Sequence5.pdf" local="true" %}
 
 ## Pour quoi faire ?
 

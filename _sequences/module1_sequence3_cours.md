@@ -16,7 +16,7 @@ formateurs :
 
 ## Les slides
 
-{% include pdf.html adresse="/assets/PDFs/Module1_Sequence3.pdf" local="true" %}
+{% include pdf.html adresse="assets/PDFs/edition1/Module1/Module1_Sequence3.pdf" local="true" %}
 
 
 ## Réutiliser les données? Où est le problème?

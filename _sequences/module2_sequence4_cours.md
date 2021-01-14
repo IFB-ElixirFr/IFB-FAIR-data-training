@@ -14,4 +14,4 @@ formateurs :
 
 ---
 
-{% include pdf.html adresse="/assets/PDFs/module2_sequence4_cours.pdf" local="true" %}
+{% include pdf.html adresse="assets/PDFs/edition1/Module2/Module2_sequence4.pdf" local="true" %}

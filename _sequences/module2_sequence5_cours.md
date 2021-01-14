@@ -1,6 +1,6 @@
 ---
 title: "Outils et solution"
-numeroSequence: 4
+numeroSequence: 5
 numeroModule: 2
 numeroEdition:
     - 1
@@ -14,4 +14,4 @@ formateurs :
 
 ---
 
-{% include pdf.html adresse="/assets/PDFs/module2_sequence5_cours.pdf" local="true" %}
+{% include pdf.html adresse="assets/PDFs/edition1/Module2/Module2_sequence5.pdf" local="true" %}

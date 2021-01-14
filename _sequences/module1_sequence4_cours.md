@@ -16,7 +16,7 @@ formateurs :
 
 ## Les slides
 
-{% include pdf.html adresse="/assets/PDFs/Module1_Sequence4.pdf" local="true" %}
+{% include pdf.html adresse="assets/PDFs/edition1/Module1/Module1_Sequence4.pdf" local="true" %}
 
 ## La vie des données
 

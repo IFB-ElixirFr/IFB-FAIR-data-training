@@ -24,7 +24,7 @@ Bienvenue à toutes et à tous dans la formation FAIR Data proposée par l'IFB. 
 
 ## Les slides
 
-{% include pdf.html adresse="/assets/PDFs/Module1_Sequence1.pdf" local="true" %}
+{% include pdf.html adresse="assets/PDFs/edition1/Module1/Module1_Sequence1.pdf" local="true" %}
 
 ## Logistique
 
