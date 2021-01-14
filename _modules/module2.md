@@ -8,7 +8,12 @@ timeStart: "14-01-2021 09:00"
 timeEnd: "14-01-2021 12:00"
 timezone: "Europe/Paris"
 
+homework:
+    - "Créer un compte sur l'ENA (prod) : [ici](https://www.ebi.ac.uk/ena/submit/webin/accountInfo)"
+
 fomulaireAvis: "https://forms.gle/YjjLaNLMNyCEGRtQ9"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
+## Slide du module
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRC8g3Y1QU0qObgbUgxpmIvjrqEQLxfBjoCys55owPRUkC0Esvpt2iweg25kGdQtA/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>

@@ -5,7 +5,7 @@
     <div class="card-body">
         <ul>
             {% for item in page.homework %}
-                <li> {{ item }} </li>
+                <li> {{ item | markdownify }} </li>
             {% endfor %}
         </ul>
     </div>
