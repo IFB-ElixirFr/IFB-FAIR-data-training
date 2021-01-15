@@ -1,12 +1,13 @@
 
-<canvas id="myChart" width="400" height="400"></canvas>
+<button id="toggle_{{include.chartNum}}">show/hide all</button>
+<canvas id="myChart_{{include.chartNum}}" width="400" height="400"></canvas>
 
 <script>
 
 Papa.parse("{{ include.googleSheetURL }}", {
 	download: true,
 	complete: function(results) {
-        var ctx = 'myChart';
+        var ctx = 'myChart_{{include.chartNum}}';
 
         function colorGen() {
             const r = Math.floor(Math.random() * 256);
@@ -42,8 +43,15 @@ Papa.parse("{{ include.googleSheetURL }}", {
         }
 
         myChart.update();
-        
+        $("#toggle_{{include.chartNum}}").click(function() {
+            myChart.data.datasets.forEach(function(ds) {
+            ds.hidden = !ds.hidden;
+        });
+        myChart.update();
+        });
 	}
 });
+
+
 
 </script>
