@@ -1,21 +1,28 @@
-<table class="table table-striped" style="table-layout: fixed;">
+<style>
+  .fixedTable {
+      table-layout: fixed;
+  }
+</style>
+
+<div class="table-responsive">
+  <table id="moduleTab" class="table table-striped fixedTable" >
     <thead>
       <tr>
-        <th scope="col">Module</th>
-        <th scope="col">Séquences</th>
-        <th scope="col">Date</th>
-        <th scope="col">Formateurs</th>
+        <th scope="col" >Module</th>
+        <th scope="col" >Séquences</th>
+        <th scope="col" >Date</th>
+        <th scope="col" >Formateurs</th>
       </tr>
     </thead>
     <tbody>
         {% assign modules = site.modules | sort:"numeroModule" %}
         {% for row in modules %}
         <tr>
-            <td> 
+            <td  > 
               <a href="{{site.baseurl}}{{ row.url }} ">{{ row.header_subTitle }} </a>
             </td>
 
-            <td>
+            <td s>
               {% assign listeSequences = site.sequences | where:"numeroModule", row.numeroModule | sort:"numeroSequence" %}
                 <ol>
                   {% for item in listeSequences  %}
@@ -32,9 +39,9 @@
                 </ol>
             </td>
 
-            <td>{{ row.timeStart }}</td>
+            <td >{{ row.timeStart }}</td>
 
-            <td>
+            <td >
               <ul>
                 {% assign formateurs = "" | split: ',' %}
                 {% assign listeSequences = site.sequences | where:"numeroModule", row.numeroModule  %}
@@ -64,3 +71,13 @@
         {% endfor %}
     </tbody>
   </table>
+</div>
+
+
+<script>
+  if ($(window).width() > 992) {
+    $('.moduleTab').addClass('fixedTable');
+} else {
+    $('.moduleTab').removeClass('fixedTable');
+}
+</script>
