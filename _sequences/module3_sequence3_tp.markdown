@@ -146,7 +146,7 @@ Les checklists sont disponibles au format XML. Vous avez par exemple ci-dessous 
 
 Pour ce TP, nous allons utiliser omicsBroker, un outil de *brokering* développé par l'IFB. Il s'agit d'un prototype permettant d'annoter des données de séquences et de les soumettre à l'ENA.
 
-Pour vous connecter à une instance de démonstration, cliquer sur le lien suivant : [ici](#){:target="_blank"}. Cette instance sera fermer dès la fin du TP. Si vous souhaitez refaire le TP, l'ensemble des étapes d'installation sont décrites sur [GitHub](https://github.com/IFB-ElixirFr/omicsBroker){:target="_blank"}.
+Pour vous connecter à une instance de démonstration, cliquer sur le lien suivant : [ici](http://134.158.247.213:443/){:target="_blank"}. Cette instance sera fermer dès la fin du TP. Si vous souhaitez refaire le TP, l'ensemble des étapes d'installation sont décrites sur [GitHub](https://github.com/IFB-ElixirFr/omicsBroker){:target="_blank"}.
 
 - **Attention 1** : omicsBroker est un un prototype qu'il ne faut pas utiliser avec des vraies données pour une vraie soumission !
 - **Attention 2** : Avez vous bien lu le attention 1 ?
