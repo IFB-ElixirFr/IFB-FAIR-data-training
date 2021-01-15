@@ -1,0 +1,17 @@
+<div id="pieDiv_{{include.chartNum}}"></div>
+
+<script>
+    var data = [{
+    values: {{ include.values }},
+    labels: {{ include.labels }},
+    type: 'pie'
+    }];
+
+    var layout = {
+        title: "{{include.title}}",
+        yaxis: {fixedrange: true},
+        xaxis : {fixedrange: true}
+    };
+
+    Plotly.newPlot("pieDiv_{{include.chartNum}}", data, layout);
+</script>

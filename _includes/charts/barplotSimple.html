@@ -1,0 +1,20 @@
+<div id="barDiv_{{include.chartNum}}"></div>
+
+<script>
+var plotDiv = document.getElementById("barDiv_");
+var data = [
+  {
+    x: {{ include.x }} ,
+    y: {{ include.y }} ,
+    type: 'bar'
+  }
+];
+
+var layout = {
+    title: "{{include.title}}",
+    yaxis: {fixedrange: true},
+    xaxis : {fixedrange: true}
+};
+
+Plotly.newPlot("barDiv_{{include.chartNum}}", data, layout);
+</script>

@@ -148,3 +148,19 @@ text="Ne pas effacer un post qui semble vide, il est simplement en train d’êt
 Source : [xkcd](https://xkcd.com/927/)
 
 {% include repoImage.html pathInRepo="assets/edition1/module3/standard.png" %}
+
+
+{% include charts/pieChartPlotly.html chartNum="2" title ="How many standards are associated to the Genomic Standards Consortium ?" 
+labels="['4', '5', '6', 'None']"
+values="[0, 6, 94, 0]"
+%}
+
+{% include charts/pieChartPlotly.html chartNum="3" title ="What type of standard is : Minimum information about any(x) Sequence (MiXS) ?" 
+labels="['A format (or schema)', 'A terminology (or ontology)', 'A guideline (or recommandation)', 'An identifier']"
+values="[6, 13, 81, 0]"
+%}
+
+{% include charts/pieChartPlotly.html chartNum="4" title ="What is the record status of the GAZ record ? " 
+labels="['R (Ready for Use)', 'Dev (In Devlopment)', 'U (Uncertain)', 'D (Deprecated)']"
+values="[6, 0, 94, 0]"
+%}
