@@ -149,6 +149,10 @@ Source : [xkcd](https://xkcd.com/927/)
 
 {% include repoImage.html pathInRepo="assets/edition1/module3/standard.png" %}
 
+#### Find the Genomics Standard Consortium (GSC) used by both ENA and SRA databases in the FAIRsharing resource
+
+**Quand ?**  [Module 3 - Séquence 2]({{site.baseurl}}{{sequenceURL[0].url}})
+
 
 {% include charts/pieChartPlotly.html chartNum="2" title ="How many standards are associated to the Genomic Standards Consortium ?" 
 labels="['4', '5', '6', 'None']"
