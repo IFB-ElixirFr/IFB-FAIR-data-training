@@ -28,7 +28,7 @@ table="
 | Outil | Fonction | Site | Commentaire |
 | ----- | -------- | ---- | ----------- |
 | hackmd | Ecriture collaborative de documents en markdown | [https://hackmd.io/](https://hackmd.io/){:target=('_blank'} | Il est possible et recommandé d’utiliser son compte github si on en a un |
-| Opidor | Rédaction  et partage  de PGD | [https://dmp.opidor.fr](https://dmp.opidor.fr){:target='_blank'} | Il est recommandé de faire cela quelques jours avant le démarrage du cours ; il se peut que la validation du compte ne soit pas immédiate |
+| Opidor | Rédaction  et partage  de PGD | [https://dmp.opidor.fr](https://dmp.opidor.fr){:target='_blank'} | **Recommandations** : (1) Le faire quelques jours avant le démarrage du cours : il se peut que la validation du compte ne soit pas immédiate et (2) Utiliser une « identification institutionnelle » plutôt qu'une identification par nom et mot de passe.|
 | OSF | Création d’un espace partagé pour gérer les documents /fichiers d’un projet | [https://osf.io/](https://osf.io/){:target='_blank'} | Il est recommandé d’utiliser son ORCID si on en a un. Lors du renseignement du profil, bien veiller à choisir le lieu de stockage comme étant Frankfurt / Allemagne |
 | ENA | Ressource européenne pour l’archivage des données de séquences  (nous travaillerons sur l’instance de test) | [https://wwwdev.ebi.ac.uk/ena/submit/webin/accountInfo](https://wwwdev.ebi.ac.uk/ena/submit/webin/accountInfo){:target='_blank'} | A la fin de la procédure, vous devez recevoir un nom d’utilisateur du type ‘Webin-xxx’ |
 " %}
