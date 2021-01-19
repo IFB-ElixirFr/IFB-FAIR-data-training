@@ -151,8 +151,9 @@ Source : [xkcd](https://xkcd.com/927/)
 
 #### Find the Genomics Standard Consortium (GSC) used by both ENA and SRA databases in the FAIRsharing resource
 
-**Quand ?**  [Module 3 - Séquence 2]({{site.baseurl}}{{sequenceURL[0].url}})
+{% assign sequenceURL = site.sequences | where:"numeroModule", "3" | where:"numeroSequence", "3"  %}
 
+**Quand ?**  [Module 3 - Séquence 3]({{site.baseurl}}{{sequenceURL[0].url}})
 
 {% include charts/pieChartPlotly.html chartNum="2" title ="How many standards are associated to the Genomic Standards Consortium ?" 
 labels="['4', '5', '6', 'None']"
@@ -168,3 +169,14 @@ values="[6, 13, 81, 0]"
 labels="['R (Ready for Use)', 'Dev (In Devlopment)', 'U (Uncertain)', 'D (Deprecated)']"
 values="[6, 0, 94, 0]"
 %}
+
+{:.styleTitle}
+### Module 4
+
+#### Résultats du questionnaire
+
+{% assign sequenceURL = site.sequences | where:"numeroModule", "4" | where:"numeroSequence", "4"  %}
+
+**Quand ?**  [Module 4 - Séquence 4]({{site.baseurl}}{{sequenceURL[0].url}})
+
+{% include charts/noteBar.html googleSheetURL="https://docs.google.com/spreadsheets/d/e/2PACX-1vRAFcYxkvkFRX-47Ym8N6ndkeUfnQzGTCo7f9Hp7BLrt9BpR_luMnA0DnAsJbY3U4nD4VMxPc1xqhKO/pub?gid=250458557&single=true&output=csv" chartNum="5" %}

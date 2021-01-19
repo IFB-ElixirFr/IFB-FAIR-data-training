@@ -1,0 +1,67 @@
+<div id="barNoteDiv_{{include.chartNum}}"></div>
+
+<script>
+
+Papa.parse("{{ include.googleSheetURL }}", {
+	download: true,
+	complete: function(results) {
+        var noteInter ; 
+        var text = Array(21);
+        var notesX = Array.from(Array(21).keys()); 
+        var notesY = Array(21).fill(0);
+        var color = Array(10).fill('rgb(241, 148, 138)').concat(Array(11).fill('rgb(88, 214, 141)'))
+    
+        var nbParticipants = results.data.length -1 ; 
+
+        var sum = 0;
+        for (index = 1; index < results.data.length ; index++) {
+            noteInter = results.data[index][2];
+            noteInter = noteInter.split(' / ');
+            noteInter = Math.round(20 * noteInter[0]/ noteInter[1]);
+            sum += parseInt( noteInter, 10 ); 
+            notesY[noteInter] = notesY[noteInter] + 1 ; 
+        }
+
+        var avg = sum/nbParticipants;
+
+        for (index = 0; index < notesY.length ; index++) {
+            text[index] = "# de participants : " + notesY[index]; 
+            notesY[index] = 100 * notesY[index] / nbParticipants; 
+        }
+        
+        var data = [
+        {
+            x: notesX,
+            y: notesY,
+            type: 'bar',
+            text: text,
+            marker: {
+                color: color
+            }
+        }
+        ];
+        var layout = {
+            title: 'Distribution des résultats des participants',
+		barmode: 'stack',
+		shapes: [{
+			type: 'line',
+			xref: 'paper',
+			x0: avg / 20,
+			y0: 0,
+			x1: avg / 20 ,
+			y1: 100,
+			line: {
+				color: 'gray',
+				width: 2,
+				dash: 'dot'
+			}
+		}]
+	};
+
+        Plotly.newPlot('barNoteDiv_{{include.chartNum}}', data, layout);
+	}
+});
+
+
+
+</script>
