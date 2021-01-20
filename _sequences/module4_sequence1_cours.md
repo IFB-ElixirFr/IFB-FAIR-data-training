@@ -13,4 +13,10 @@ formateurs :
 
 ---
 
+## Cours 
+
 {% include pdf.html adresse="/assets/PDFs/edition1/Module4/module4_sequence1_LM.pdf" local="true" %}
+
+## Logigrammes
+
+{% include pdf.html adresse="/assets/PDFs/edition1/Module4/Ouverture_Donnees_INRAe_Decision.pdf" local="true" %}

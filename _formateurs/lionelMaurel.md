@@ -5,8 +5,10 @@ lastName: Maurel
 position: Formateur IFB
 localisation: "France"
 
-urlImage: https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/User_font_awesome.svg/512px-User_font_awesome.svg.png
+urlImage: "https://cdn.radiofrance.fr/s3/cruiser-production/2019/07/c6188191-8033-4b19-8e5e-ce83c4f564ac/838_lionelmaurelfc.jpg"
 mail: lionel.maurel@cnrs.fr
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus arcu augue, euismod ultricies ultricies ut, tempor nec diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris sodales et nunc pharetra elementum. Aenean ullamcorper aliquet erat vel mattis. Nullam sed ante vel ante porttitor auctor. Sed facilisis ante nec nunc euismod, ut convallis enim ornare. Proin vel malesuada mauris. Ut egestas lectus a consequat iaculis. In nec eros lobortis, cursus turpis scelerisque, tristique arcu. Proin orci sapien, sollicitudin viverra tellus eget, mollis cursus neque. Nulla pretium eget est vitae mollis. Vivamus tempus et erat eget luctus. Quisque pulvinar urna magna, non vehicula neque ultrices sit amet. Donec ac est sit amet ligula laoreet laoreet in sed nisi.
+"Lionel Maurel est un juriste, conservateur de bibliothèques et blogueur né en 19761. Ses billets portent sur les communs et le droit d'auteur à l'ère du numérique."
+
+Extrait de la page [wikipédia](https://fr.wikipedia.org/wiki/Lionel_Maurel)
