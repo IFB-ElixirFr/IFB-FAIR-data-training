@@ -173,10 +173,23 @@ values="[6, 0, 94, 0]"
 {:.styleTitle}
 ### Module 4
 
+#### Connaissez vous des entrepôts de données ?
+
+{% assign sequenceURL = site.sequences | where:"numeroModule", "4" | where:"numeroSequence", "2"  %}
+
+**Quand ?**  [Module 4 - Séquence 2]({{site.baseurl}}{{sequenceURL[0].url}})
+
+**Outils utilisé** : [scrumblr](http://scrumblr.ca/)
+
+{% include repoImage.html pathInRepo="assets/edition1/module4/entrepotDonnees.png" %}
+
+{:.styleTitle}
+### Module 5
+
 #### Résultats du questionnaire
 
-{% assign sequenceURL = site.sequences | where:"numeroModule", "4" | where:"numeroSequence", "4"  %}
+{% assign sequenceURL = site.sequences | where:"numeroModule", "5" | where:"numeroSequence", "4"  %}
 
-**Quand ?**  [Module 4 - Séquence 4]({{site.baseurl}}{{sequenceURL[0].url}})
+**Quand ?**  [Module 5 - Séquence 4]({{site.baseurl}}{{sequenceURL[0].url}})
 
 {% include charts/noteBar.html googleSheetURL="https://docs.google.com/spreadsheets/d/e/2PACX-1vRAFcYxkvkFRX-47Ym8N6ndkeUfnQzGTCo7f9Hp7BLrt9BpR_luMnA0DnAsJbY3U4nD4VMxPc1xqhKO/pub?gid=250458557&single=true&output=csv" chartNum="5" %}
