@@ -14,4 +14,5 @@ formateurs :
 
 ---
 
-{% include repoImage.html pathInRepo="assets/img/divers/WIP.png" %}
+
+{% include pdf.html adresse="/assets/PDFs/edition1/Module4/Module4_sequence2_cours.pdf" local="true" %}
