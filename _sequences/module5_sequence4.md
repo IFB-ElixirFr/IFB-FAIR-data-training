@@ -21,4 +21,7 @@ formateurs :
 ---
 
 ## Questionnaire sur les 4 premiers modules de formation
-{% include repoImage.html pathInRepo="assets/img/divers/WIP.png" %}
+
+[![quiz](https://image.freepik.com/vecteurs-libre/quiz-dans-style-bande-dessinee-pop-art_175838-505.jpg)](https://forms.gle/uKnXtvdGA2oPsux27){:target="_blank"}
+
+Lien vers le quizz : [ici](https://forms.gle/uKnXtvdGA2oPsux27){:target="_blank"} ou cliquer sur l'image ! 
