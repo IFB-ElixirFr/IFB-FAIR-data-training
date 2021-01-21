@@ -9,6 +9,6 @@ urlImage: "https://cdn.radiofrance.fr/s3/cruiser-production/2019/07/c6188191-803
 mail: lionel.maurel@cnrs.fr
 ---
 
-"Lionel Maurel est un juriste, conservateur de bibliothèques et blogueur né en 19761. Ses billets portent sur les communs et le droit d'auteur à l'ère du numérique."
+"Lionel Maurel est un juriste, conservateur de bibliothèques et blogueur né en 1976. Ses billets portent sur les communs et le droit d'auteur à l'ère du numérique."
 
 Extrait de la page [wikipédia](https://fr.wikipedia.org/wiki/Lionel_Maurel)
