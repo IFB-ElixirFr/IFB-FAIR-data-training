@@ -195,3 +195,13 @@ values="[6, 0, 94, 0]"
 **Quand ?**  [Module 5 - Séquence 4]({{site.baseurl}}{{sequenceURL[0].url}})
 
 {% include charts/noteBar.html googleSheetURL="https://docs.google.com/spreadsheets/d/e/2PACX-1vS_VdTZhsIfQzTVLNfp2sFe1X_4ZnmeXt1CyJTiS8a26uKDfdUlbv2D6vnihEqqySLuZ7z1yQU3GsWm/pub?gid=547997008&single=true&output=csv" chartNum="5" %}
+
+## Liens utiles
+
+- [https://pgd17juin2019.sciencesconf.org/program](https://pgd17juin2019.sciencesconf.org/program)
+- [https://fairsharing.org/databases/](https://fairsharing.org/databases/)
+- [https://www.nature.com/sdata/policies/repositories](https://www.nature.com/sdata/policies/repositories)
+- [http://about.zenodo.org](http://about.zenodo.org)
+- [https://search.datacite.org/data-centers](https://search.datacite.org/data-centers)
+- [https://cordis.europa.eu/project/rcn/207500/](https://cordis.europa.eu/project/rcn/207500/)
+- [https://ds-wizard.org](https://ds-wizard.org)
