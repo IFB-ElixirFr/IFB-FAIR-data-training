@@ -186,6 +186,8 @@ values="[6, 0, 94, 0]"
 {:.styleTitle}
 ### Module 5
 
+{% include youtube.html idYoutube="5nUBWPbJFAU"%}
+
 #### Résultats du questionnaire
 
 {% assign sequenceURL = site.sequences | where:"numeroModule", "5" | where:"numeroSequence", "4"  %}
