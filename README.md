@@ -3,6 +3,8 @@
 
 L’Institut Français de Bioinformatique (IFB) organise une formation à destination de bioinformaticiens, biologistes et médecins impliqués dans des projets d’analyse bioinformatique de jeux de données omiques et souhaitant mettre en œuvre les principes "FAIR" (Facile à trouver, Accessible, Interopérable, Réutilisable) tout au long du déroulement du projet. La formation abordera les différents points fondamentaux (théoriques, pratiques, juridiques) en lien avec la politique nationale d’ouverture des données de la recherche et présentera sous forme de séances pratiques les ressources nationales et internationales accessibles à la communauté scientifique ainsi que les solutions proposées par l’IFB pour gérer les données d’un projet de recherche.
 
+[![DOI](https://zenodo.org/badge/322232271.svg)](https://zenodo.org/badge/latestdoi/322232271)
+
 [![](https://img.shields.io/badge/LICENCE-GNU--Affero-brightgreen.svg)](https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/blob/main/LICENSE) 
 
 [![Website Ressources](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://ifb-elixirfr.github.io/IFB-FAIR-data-training/)
