@@ -4,6 +4,7 @@ numeroSequence: 2
 numeroModule: 4
 numeroEdition:
     - 1
+    - 2
 type: "cours"
 description: "Les licences sur les données"
 temps: 30 minutes

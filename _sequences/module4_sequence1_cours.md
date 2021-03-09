@@ -4,6 +4,7 @@ numeroSequence: 1
 numeroModule: 4
 numeroEdition:
     - 1
+    - 2
 type: "cours"
 description: "Cadre Juridique "
 temps: 2 heures

@@ -4,6 +4,7 @@ numeroSequence: 1
 numeroModule: 1
 numeroEdition:
     - 1
+    - 2
 type: "cours"
 description: "L'objectif de ce cours est de faire connaissance"
 temps: 45 minutes

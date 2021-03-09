@@ -4,6 +4,7 @@ numeroSequence: 2
 numeroModule: 5
 numeroEdition:
     - 1
+    - 2
 type: "autre"
 description: "Un temps d'échanges entre tous les participants et les formateurs"
 temps: 45 minutes

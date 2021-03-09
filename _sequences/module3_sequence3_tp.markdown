@@ -4,6 +4,7 @@ numeroSequence: 3
 numeroModule: 3
 numeroEdition:
     - 1
+    - 2
 type: "tp"
 description: "L'objectif est de se familiariser avec les métadonnées etsoumettre des données et des métadonnées sur ENA (EBI)"
 temps: 1h

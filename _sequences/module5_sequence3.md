@@ -4,6 +4,7 @@ numeroSequence: 3
 numeroModule: 5
 numeroEdition:
     - 1
+    - 2
 type: "autre"
 description: "Un petit quizz pour tester vos connaissances après cette formation."
 temps: 45 minutes
