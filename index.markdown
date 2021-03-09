@@ -27,7 +27,6 @@ table="
 {:.table .table-striped}
 | Outil | Fonction | Site | Commentaire |
 | ----- | -------- | ---- | ----------- |
-| hackmd | Ecriture collaborative de documents en markdown | [https://hackmd.io/](https://hackmd.io/){:target=('_blank'} | Il est possible et recommandé d’utiliser son compte github si on en a un |
 | Opidor | Rédaction  et partage  de PGD | [https://dmp.opidor.fr](https://dmp.opidor.fr){:target='_blank'} | **Recommandations** : (1) Le faire quelques jours avant le démarrage du cours : il se peut que la validation du compte ne soit pas immédiate et (2) Utiliser une « identification institutionnelle » plutôt qu'une identification par nom et mot de passe.|
 | OSF | Création d’un espace partagé pour gérer les documents /fichiers d’un projet | [https://osf.io/](https://osf.io/){:target='_blank'} | Il est recommandé d’utiliser son ORCID si on en a un. Lors du renseignement du profil, bien veiller à choisir le lieu de stockage comme étant Frankfurt / Allemagne |
 | ENA | Ressource européenne pour l’archivage des données de séquences  (nous travaillerons sur l’instance de test) | [https://wwwdev.ebi.ac.uk/ena/submit/webin/accountInfo](https://wwwdev.ebi.ac.uk/ena/submit/webin/accountInfo){:target='_blank'} | A la fin de la procédure, vous devez recevoir un nom d’utilisateur du type ‘Webin-xxx’ |
@@ -44,7 +43,7 @@ Docker est un outil de gestion de containers (utilisation comme solution de seco
    - Lancer `docker run hello-world`. Si le retour est : `Hello from Docker!` C’est que l’installation est correcte ;
    - Dans ce cas : lancer la commande `docker pull tdenecker/omicsbroker`. Une fois le téléchargement terminé, vous êtes prêt pour le TP.
 
-#### 3. De choisir et déposer sur un espace partagé OSF une photo emblématique d’un lieu de votre choix que vous appréciez particulièrement
+#### 3. De choisir et déposer sur un espace partagé OSF une photo d’un lieu ou objet de votre choix que les autres participants devront deviner
 
 1. Nommer ce fichier avec votre nom
 2. Déposer le fichier sur le site [https://osf.io/](https://osf.io/){:target="_blank"} : utiliser pour cela le lien confirmant l’ouverture de l’accès au projet et transférer la photo sur Formation IFB science ouverte & PGD 
