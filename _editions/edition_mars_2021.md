@@ -41,13 +41,13 @@ text="Ne pas effacer un post qui semble vide, il est simplement en train d’êt
 " %}
 
 ##### Groupe 1
-{% include repoImage.html pathInRepo="assets/edition1/module1/Données_recherche_Salle1.jpeg" %}
+{% include repoImage.html pathInRepo="assets/edition1/module1/Donnees_recherche_Salle1.jpeg" %}
 
 ##### Groupe 2
-{% include repoImage.html pathInRepo="assets/edition1/module1/Données_recherche_Salle2.png" %}
+{% include repoImage.html pathInRepo="assets/edition1/module1/Donnees_recherche_Salle2.png" %}
 
 ##### Groupe 3
-{% include repoImage.html pathInRepo="assets/edition1/module1/Données_recherche_Salle3.png" %}
+{% include repoImage.html pathInRepo="assets/edition1/module1/Donnees_recherche_Salle3.png" %}
 
 #### Données réutilisables
 
