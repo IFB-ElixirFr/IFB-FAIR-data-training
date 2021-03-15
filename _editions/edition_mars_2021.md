@@ -24,3 +24,27 @@ Chez nous !
 ## Photos de la formation
 
 ## Les créations lors de l'édition
+
+{:.styleTitle}
+### Module 1 
+
+#### Quelle définition pour les données de la recherche ?
+
+{% assign sequenceURL = site.sequences | where:"numeroModule", "1" | where:"numeroSequence", "2" | where: "numeroEdition", "1" %}
+
+**Quand ?**  [Module 1 - Séquence 2]({{site.baseurl}}{{sequenceURL[0].url}})
+
+**Outils utilisé** : [scrumblr](http://scrumblr.ca/)
+
+{%include warning.html 
+text="Ne pas effacer un post qui semble vide, il est simplement en train d’être rédigé
+" %}
+
+##### Groupe 1
+{% include repoImage.html pathInRepo="assets/edition1/module1/Données_recherche_Salle1.jpeg" %}
+
+##### Groupe 2
+{% include repoImage.html pathInRepo="assets/edition1/module1/Données_recherche_Salle2.png" %}
+
+##### Groupe 3
+{% include repoImage.html pathInRepo="assets/edition1/module1/Données_recherche_Salle3.png" %}
