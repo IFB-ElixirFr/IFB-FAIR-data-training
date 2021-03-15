@@ -32,7 +32,16 @@ header_title: Listes des cours
 
 <br>
 
-{% assign listeDesCours = site.sequences |  where:"type", "cours" | where:"numeroEdition", "0" | group_by: "numeroModule" %}
+{% assign listeSequences_to_max = site.sequences %}
+{% assign max_value = 0 | plus: 0 %}
+{% for item in listeSequences_to_max  %} 
+  {% assign inter_test = item.numeroEdition[0] | to_integer %}
+  {% if inter_test > max_value  %}
+    {% assign max_value = inter_test  %}
+  {% endif %}
+{% endfor %}
+
+{% assign listeDesCours = site.sequences |  where:"type", "cours" | where:"numeroEdition", max_value | group_by: "numeroModule" %}
 {% assign listeDesCours = listeDesCours | sort: "numeroSequence" %}
 {% for group in listeDesCours %}
   <h4 name='module_{{group.name}}'>Module {{group.name}}</h4>

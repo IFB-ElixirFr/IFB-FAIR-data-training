@@ -38,7 +38,18 @@
           {% endfor %} 
         </p>
       <p><b>Durée</b><br> {{ hour }} h {% if minutes != 0 %}{{ minutes }}{% endif %}</p>
-      {% assign listeSequences = site.sequences | where:"numeroModule", include.itemModule.numeroModule | sort:"numeroSequence" %}
+      
+      {% assign listeSequences_to_max = site.sequences | where:"numeroModule", include.itemModule.numeroModule %}
+
+      {% assign max_value = 0 | plus: 0 %}
+      {% for item in listeSequences_to_max  %} 
+        {% assign inter_test = item.numeroEdition[0] | to_integer %}
+        {% if inter_test > max_value  %}
+          {% assign max_value = inter_test  %}
+        {% endif %}
+      {% endfor %}
+
+      {% assign listeSequences = site.sequences | where:"numeroModule", include.itemModule.numeroModule | where:"numeroEdition", max_value  | sort:"numeroSequence" %}
       <p><b>Programme</b></p>
       <ol>
         {% for item in listeSequences  %}

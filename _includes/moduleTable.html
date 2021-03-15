@@ -15,6 +15,16 @@
       </tr>
     </thead>
     <tbody>
+
+        {% assign listeSequences_to_max = site.sequences %}
+        {% assign max_value = 0 | plus: 0 %}
+        {% for item in listeSequences_to_max  %} 
+          {% assign inter_test = item.numeroEdition[0] | to_integer %}
+          {% if inter_test > max_value  %}
+            {% assign max_value = inter_test  %}
+          {% endif %}
+        {% endfor %}
+
         {% assign modules = site.modules | sort:"numeroModule" %}
         {% for row in modules %}
         <tr>
@@ -23,7 +33,7 @@
             </td>
 
             <td s>
-              {% assign listeSequences = site.sequences | where:"numeroModule", row.numeroModule | where:"numeroEdition", "1" | sort:"numeroSequence" %}
+              {% assign listeSequences = site.sequences | where:"numeroModule", row.numeroModule | where:"numeroEdition", max_value | sort:"numeroSequence" %}
                 <ol>
                   {% for item in listeSequences  %}
                   <li>
@@ -44,7 +54,7 @@
             <td >
               <ul>
                 {% assign formateurs = "" | split: ',' %}
-                {% assign listeSequences = site.sequences | where:"numeroModule", row.numeroModule | where:"numeroEdition", "1"   %}
+                {% assign listeSequences = site.sequences | where:"numeroModule", row.numeroModule | where:"numeroEdition", max_value %}
                 {% for item in listeSequences  %}
                 {% assign formateurs = formateurs | concat: item.formateurs | uniq %}
                 {% endfor %}
