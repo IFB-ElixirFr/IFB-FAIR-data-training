@@ -48,3 +48,15 @@ text="Ne pas effacer un post qui semble vide, il est simplement en train d’êt
 
 ##### Groupe 3
 {% include repoImage.html pathInRepo="assets/edition1/module1/Données_recherche_Salle3.png" %}
+
+#### Données réutilisables
+
+**Outils utilisé**  : [Mentimeter](https://www.menti.com/)
+
+{% include repoImage.html pathInRepo="assets/edition1/module1/donnees_reutilisables_edition1.jpeg" %}
+
+#### Réutiliser les données? Où est le problème?
+
+**Outils utilisé** : [scrumblr](http://scrumblr.ca/)
+
+{% include repoImage.html pathInRepo="assets/edition1/module1/cyclevie_edition1.jpeg" %}
