@@ -3,8 +3,7 @@ title: "Activité Brise Glace"
 numeroSequence: 1
 numeroModule: 1
 numeroEdition:
-    - 1
-    - 2
+    - 0
 type: "cours"
 description: "L'objectif de ce cours est de faire connaissance"
 temps: 45 minutes
@@ -25,7 +24,7 @@ Bienvenue à toutes et à tous dans la formation FAIR Data proposée par l'IFB. 
 
 ## Les slides
 
-{% include pdf.html adresse="assets/PDFs/edition1/Module1/Module1_Sequence1.pdf" local="true" %}
+{% include pdf.html adresse="assets/PDFs/edition0/Module1/Module1_Sequence1.pdf" local="true" %}
 
 ## Logistique
 

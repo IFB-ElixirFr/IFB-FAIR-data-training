@@ -4,7 +4,6 @@ numeroSequence: 2
 numeroModule: 1
 numeroEdition:
     - 1
-    - 2
 type: "cours"
 description: "Présentation du contexte actuel de la reproductibilité"
 temps: 30 minutes
@@ -14,10 +13,6 @@ formateurs :
  - pauletteLieby
 
 ---
-
-## Les slides
-
-{% include pdf.html adresse="assets/PDFs/edition1/Module1/Module1_Sequence2.pdf" local="true" %}
 
 ## La disruption numérique : une bascule brutale
 

@@ -23,7 +23,7 @@
             </td>
 
             <td s>
-              {% assign listeSequences = site.sequences | where:"numeroModule", row.numeroModule | sort:"numeroSequence" %}
+              {% assign listeSequences = site.sequences | where:"numeroModule", row.numeroModule | where:"numeroEdition", "1" | sort:"numeroSequence" %}
                 <ol>
                   {% for item in listeSequences  %}
                   <li>
@@ -44,7 +44,7 @@
             <td >
               <ul>
                 {% assign formateurs = "" | split: ',' %}
-                {% assign listeSequences = site.sequences | where:"numeroModule", row.numeroModule  %}
+                {% assign listeSequences = site.sequences | where:"numeroModule", row.numeroModule | where:"numeroEdition", "1"   %}
                 {% for item in listeSequences  %}
                 {% assign formateurs = formateurs | concat: item.formateurs | uniq %}
                 {% endfor %}

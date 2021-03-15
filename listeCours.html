@@ -32,7 +32,7 @@ header_title: Listes des cours
 
 <br>
 
-{% assign listeDesCours = site.sequences |  where:"type", "cours" | group_by: "numeroModule" %}
+{% assign listeDesCours = site.sequences |  where:"type", "cours" | where:"numeroEdition", "0" | group_by: "numeroModule" %}
 {% assign listeDesCours = listeDesCours | sort: "numeroSequence" %}
 {% for group in listeDesCours %}
   <h4 name='module_{{group.name}}'>Module {{group.name}}</h4>

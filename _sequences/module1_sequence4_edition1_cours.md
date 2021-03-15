@@ -4,7 +4,6 @@ numeroSequence: 4
 numeroModule: 1
 numeroEdition:
     - 1
-    - 2
 type: "cours"
 description: ""
 temps: 15 minutes
@@ -14,10 +13,6 @@ formateurs :
  - pauletteLieby
 
 ---
-
-## Les slides
-
-{% include pdf.html adresse="assets/PDFs/edition1/Module1/Module1_Sequence4.pdf" local="true" %}
 
 ## La vie des données
 

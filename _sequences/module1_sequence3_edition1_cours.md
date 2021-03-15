@@ -4,7 +4,6 @@ numeroSequence: 3
 numeroModule: 1
 numeroEdition:
     - 1
-    - 2
 type: "cours"
 description: ""
 temps: 30 minutes
@@ -14,10 +13,6 @@ formateurs :
  - pauletteLieby
 
 ---
-
-## Les slides
-
-{% include pdf.html adresse="assets/PDFs/edition1/Module1/Module1_Sequence3.pdf" local="true" %}
 
 
 ## Réutiliser les données? Où est le problème?
@@ -42,7 +37,6 @@ Les principes FAIR Data sont un ensemble de principes directeurs visant à rendr
 Ces principes fournissent des orientations pour la gestion des données scientifiques et sont pertinents pour toutes les parties prenantes de l'écosystème numérique actuel.
 
 Ils s'adressent directement aux producteurs et aux éditeurs de données afin de promouvoir une utilisation maximale des données de recherche. 
-
 
 ## Vos données sont elles FAIR ?
 

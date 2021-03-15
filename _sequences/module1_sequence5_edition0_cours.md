@@ -3,8 +3,7 @@ title: "Le plan de gestion des données"
 numeroSequence: 5
 numeroModule: 1
 numeroEdition:
-    - 1
-    - 2
+    - 0
 type: "cours"
 description: ""
 temps: 40 minutes
@@ -17,7 +16,7 @@ formateurs :
 
 ## Les slides
 
-{% include pdf.html adresse="assets/PDFs/edition1/Module1/Module1_Sequence5.pdf" local="true" %}
+{% include pdf.html adresse="assets/PDFs/edition0/Module1/Module1_Sequence5.pdf" local="true" %}
 
 ## Pour quoi faire ?
 

@@ -3,8 +3,7 @@ title: "Les licences sur les données"
 numeroSequence: 2
 numeroModule: 4
 numeroEdition:
-    - 1
-    - 2
+    - 0
 type: "cours"
 description: "Les licences sur les données"
 temps: 30 minutes
@@ -16,4 +15,4 @@ formateurs :
 ---
 
 
-{% include pdf.html adresse="/assets/PDFs/edition1/Module4/Module4_sequence2_cours.pdf" local="true" %}
+{% include pdf.html adresse="/assets/PDFs/edition0/Module4/Module4_sequence2_cours.pdf" local="true" %}

@@ -3,8 +3,7 @@ title: "Opidor"
 numeroSequence: 6
 numeroModule: 1
 numeroEdition:
-    - 1
-    - 2
+    - 0
 type: "demo"
 description: "Demo de comment se connecter, comment choisir un modèle de PGD et inviter les formateurs sur leur DMP"
 temps: 40 minutes

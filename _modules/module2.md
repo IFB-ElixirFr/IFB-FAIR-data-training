@@ -15,5 +15,3 @@ fomulaireAvis:
 ---
 
 ## Slide du module
-
-

@@ -1,7 +1,7 @@
 ---
 title: "Première édition"
 description: "Cette édition est la première édition de FAIR data"
-numeroEdition : 2
+numeroEdition : 1
 
 timeStart: "15-03-2021 09:00"
 timeEnd: "19-03-2021 12:00"
@@ -19,6 +19,7 @@ Chez nous !
 
 ## Les participants
 
+{% include participants.html name='participants_edition1' %}
 
 ## Photos de la formation
 

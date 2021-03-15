@@ -21,3 +21,6 @@ fomulaireAvis:
 ---
 
 ## Slide du module
+
+
+{% include pdf.html adresse="assets/PDFs/edition1/Module1/Session_01_Diaporama_Complet.pdf" local="true" %}

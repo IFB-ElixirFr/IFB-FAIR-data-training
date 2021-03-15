@@ -1,7 +1,7 @@
 ---
 title: "Crash test"
 description: "Cette édition a pour objectif de tester le contenu pédagogique sur un public ciblé"
-numeroEdition : 1
+numeroEdition : 0
 
 timeStart: "13-01-2021 09:00"
 timeEnd: "21-01-2021 12:00"
@@ -19,11 +19,11 @@ Chez nous !
 
 ## Les participants
 
-{% include participants.html name='participants_edition1' %}
+{% include participants.html name='participants_edition0' %}
 
 ## Photos de la formation
 
-{% include carousel.html pathFolderImages='assets/edition1/photosGroupe' %}
+{% include carousel.html pathFolderImages='assets/edition0/photosGroupe' %}
 
 ## Les créations lors de l'édition
 
@@ -44,21 +44,21 @@ text="Ne pas effacer un post qui semble vide, il est simplement en train d’êt
 
 ##### Groupe 1
 
-{% include repoImage.html pathInRepo="assets/edition1/module1/def_data_grp1.PNG" %}
+{% include repoImage.html pathInRepo="assets/edition0/module1/def_data_grp1.PNG" %}
 
 <i class="fas fa-comments"></i>
 **Proposition** : "*Numérisation d’un signal issu d’observation avec métadonnées associées incluant les transformations méthodologiques*"
 
 ##### Groupe 2
 
-{% include repoImage.html pathInRepo="assets/edition1/module1/def_data_grp2.png" %}
+{% include repoImage.html pathInRepo="assets/edition0/module1/def_data_grp2.png" %}
 
 <i class="fas fa-comments"></i>
 **Proposition** : "*Définition OCDE, avec les technologies actuelles, génération massive de données qui va au delà de ce qui est strictement nécessaire pour les résultats de la recherche. Donc : ‘réparer’ la crise de repro. Exemple : données perdues, non utilisés*"
 
 ##### Groupe 3
 
-{% include repoImage.html pathInRepo="assets/edition1/module1/def_data_grp3.png" %}
+{% include repoImage.html pathInRepo="assets/edition0/module1/def_data_grp3.png" %}
 
 <i class="fas fa-comments"></i>
 **Proposition** : "*On est partis sur différents axes, d’un côté les types de données (audio, video, qualitatif, quantitatif,...), origine de la donnée, est-ce que les outils sont considérées comme des données de la recherche. Lien entre donnée/interprétation/connaissance. FAIR*"
@@ -86,7 +86,7 @@ text="Ne pas effacer un post qui semble vide, il est simplement en train d’êt
 
 **Outils utilisé**  : [Mentimeter](https://www.menti.com/)
 
-{% include repoImage.html pathInRepo="assets/edition1/module1/1-definition-donnees-recheche.2400x2400.jpeg" %}
+{% include repoImage.html pathInRepo="assets/edition0/module1/1-definition-donnees-recheche.2400x2400.jpeg" %}
 
 #### Les points d’attention à avoir le long d’un projet, de sa conception jusqu’à sa valorisation
 
@@ -96,7 +96,7 @@ text="Ne pas effacer un post qui semble vide, il est simplement en train d’êt
 
 **Outils utilisé** : [scrumblr](http://scrumblr.ca/)
 
-{% include repoImage.html pathInRepo="assets/edition1/module1/pointAttentionVieDonnees.png" %}
+{% include repoImage.html pathInRepo="assets/edition0/module1/pointAttentionVieDonnees.png" %}
 
 {:.styleTitle}
 ### Module 2
@@ -109,7 +109,7 @@ text="Ne pas effacer un post qui semble vide, il est simplement en train d’êt
 
 **Outils utilisé** : [scrumblr](http://scrumblr.ca/)
 
-{% include repoImage.html pathInRepo="assets/edition1/module2/formatsFichier.png" %}
+{% include repoImage.html pathInRepo="assets/edition0/module2/formatsFichier.png" %}
 
 #### Outils et solution : vous utilisez quoi ?
 
@@ -119,7 +119,7 @@ text="Ne pas effacer un post qui semble vide, il est simplement en train d’êt
 
 **Outils utilisé** : [scrumblr](http://scrumblr.ca/)
 
-{% include repoImage.html pathInRepo="assets/edition1/module2/outilsSolutions.png" %}
+{% include repoImage.html pathInRepo="assets/edition0/module2/outilsSolutions.png" %}
 
 #### Où se situe mon fichier ?
 
@@ -147,7 +147,7 @@ text="Ne pas effacer un post qui semble vide, il est simplement en train d’êt
 {:.text-center}
 Source : [xkcd](https://xkcd.com/927/)
 
-{% include repoImage.html pathInRepo="assets/edition1/module3/standard.png" %}
+{% include repoImage.html pathInRepo="assets/edition0/module3/standard.png" %}
 
 #### Find the Genomics Standard Consortium (GSC) used by both ENA and SRA databases in the FAIRsharing resource
 
@@ -181,7 +181,7 @@ values="[6, 0, 94, 0]"
 
 **Outils utilisé** : [scrumblr](http://scrumblr.ca/)
 
-{% include repoImage.html pathInRepo="assets/edition1/module4/entrepotDonnees.png" %}
+{% include repoImage.html pathInRepo="assets/edition0/module4/entrepotDonnees.png" %}
 
 {:.styleTitle}
 ### Module 5
