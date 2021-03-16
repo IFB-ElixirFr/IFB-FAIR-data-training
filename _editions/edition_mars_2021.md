@@ -23,6 +23,8 @@ Chez nous !
 
 ## Photos de la formation
 
+{% include carousel.html pathFolderImages='assets/edition1/photosGroupe' %}
+
 ## Les créations lors de l'édition
 
 {:.styleTitle}
@@ -60,3 +62,12 @@ text="Ne pas effacer un post qui semble vide, il est simplement en train d’êt
 **Outils utilisé** : [scrumblr](http://scrumblr.ca/)
 
 {% include repoImage.html pathInRepo="assets/edition1/module1/cyclevie_edition1.jpeg" %}
+
+{:.styleTitle}
+### Module 2
+
+#### Formats des données
+
+**Outils utilisé** : [scrumblr](http://scrumblr.ca/)
+
+{% include repoImage.html pathInRepo="assets/edition1/module2/format.png" %}
