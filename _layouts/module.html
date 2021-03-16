@@ -132,7 +132,17 @@ layout: default
 
         <h2> Au programme</h2>
 
-        {% assign listeSequences = site.sequences | where:"numeroModule", page.numeroModule | sort:"numeroSequence" %}
+
+        {% assign listeSequences_to_max = site.sequences %}
+        {% assign max_value = 0 | plus: 0 %}
+        {% for item in listeSequences_to_max  %} 
+        {% assign inter_test = item.numeroEdition[0] | to_integer %}
+        {% if inter_test > max_value  %}
+            {% assign max_value = inter_test  %}
+        {% endif %}
+        {% endfor %}
+
+        {% assign listeSequences = site.sequences | where:"numeroModule", page.numeroModule | where:"numeroEdition", max_value | sort:"numeroSequence" %}
         {% assign size = listeSequences | size %}
         {% if size != 0 %}
         <h3>Les cours</h3>

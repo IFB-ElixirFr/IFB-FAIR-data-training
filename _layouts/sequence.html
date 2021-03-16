@@ -55,10 +55,11 @@ paragraph.appendChild(text);
         <hr>
         <div class="row">
             <div class="col-sm-4 text-left">
+
                 {% assign listSequences = site.sequences | where:"numeroModule", page.numeroModule  | sort: "numeroSequence" %}
                 {% for i in listSequences %}
                     {% assign prev = page.numeroSequence | minus: 1 %}
-                    {% if prev == i.numeroSequence %}
+                    {% if prev == i.numeroSequence and i.numeroEdition == page.numeroEdition  %}
                         <a href="{{site.baseurl}}{{i.url}}"><i class="fas fa-arrow-alt-circle-left"></i>Vers la séance précédente </a>
                         {% break %}
                     {% endif %}
@@ -74,9 +75,9 @@ paragraph.appendChild(text);
                 <a href="{{site.baseurl}}{{ urlModule }}">Retour à la page du Module </a>
             </div>
             <div class="col-sm-4 text-right">
-                {% assign listSequences = site.sequences | where:"numeroModule", page.numeroModule  | sort: "numeroSequence" %}
+                {% assign listSequences = site.sequences | where:"numeroModule", page.numeroModule  | where:"numeroEdition", page.numeroEdition  | sort: "numeroSequence" %}
                 {% for i in listSequences %}
-                    {% if page.numeroSequence < i.numeroSequence %}
+                    {% if page.numeroSequence < i.numeroSequence and i.numeroEdition == page.numeroEdition %}
                         <a href="{{site.baseurl}}{{i.url}}">Vers la séance suivante <i class="fas fa-arrow-alt-circle-right"></i></a>
                         {% break %}
                     {% endif %}
