@@ -71,3 +71,10 @@ text="Ne pas effacer un post qui semble vide, il est simplement en train d’êt
 **Outils utilisé** : [scrumblr](http://scrumblr.ca/)
 
 {% include repoImage.html pathInRepo="assets/edition1/module2/format.png" %}
+
+#### Liens partagés
+
+**Structure des dossiers**
+
+- [Lien 1](https://genr.eu/wp/towards-a-standardized-research-folder-structure/)
+- [Lien 2](https://zenodo.org/record/4410128#.YFCNNmRuckh)
