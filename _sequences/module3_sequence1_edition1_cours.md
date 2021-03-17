@@ -12,3 +12,6 @@ formateurs :
  - fredericdeLamotte
   
 ---
+
+
+{% include pdf.html adresse="assets/PDFs/edition1/Module3/Module3_Sequence1.pdf" local="true" %}

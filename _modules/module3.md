@@ -12,3 +12,8 @@ fomulaireAvis: ""
 ---
 
 ## Slide du module
+
+{% include pdf.html adresse="assets/PDFs/edition1/Module3/Module3_Sequence1.pdf" local="true" %}
+
+{% include pdf.html adresse="assets/PDFs/edition1/Module3/Module3_sequence2_cours.pdf" local="true" %}
+
