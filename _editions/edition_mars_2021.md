@@ -87,3 +87,18 @@ text="Ne pas effacer un post qui semble vide, il est simplement en train d’êt
 **Outils utilisé** : [scrumblr](http://scrumblr.ca/)
 
 {% include repoImage.html pathInRepo="assets/edition1/module3/standard.png" %}
+
+
+{:.styleTitle}
+### Module 4
+
+#### Liens partagés
+
+- [https://hal.inrae.fr/hal-02791224/file/Guide_Juridique_V1_2.pdf](https://hal.inrae.fr/hal-02791224/file/Guide_Juridique_V1_2.pdf)
+- [https://www.data.gouv.fr/fr/licences](https://www.data.gouv.fr/fr/licences)
+- [https://www.ouvrirlascience.fr/plan-national-pour-la-science-ouverte/](https://www.ouvrirlascience.fr/plan-national-pour-la-science-ouverte/)
+- [https://www.conseil-etat.fr/actualites/actualites/health-data-hub-et-protection-de-donnees-personnelles-des-precautions-doivent-etre-prises-dans-l-attente-d-une-solution-perenne](https://www.conseil-etat.fr/actualites/actualites/health-data-hub-et-protection-de-donnees-personnelles-des-precautions-doivent-etre-prises-dans-l-attente-d-une-solution-perenne)
+- [https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000042413782](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000042413782)
+- [https://esante.gouv.fr/labels-certifications/hds/liste-des-herbergeurs-certifies](https://esante.gouv.fr/labels-certifications/hds/liste-des-herbergeurs-certifies)
+- [https://gitlab.com/paule00/all-fair-and-open-science-related-ressources](https://gitlab.com/paule00/all-fair-and-open-science-related-ressources)
+- [https://theconversation.com/comment-la-science-ouverte-peut-sinspirer-du-libre-acces-aux-donnees-publiques-157091](https://theconversation.com/comment-la-science-ouverte-peut-sinspirer-du-libre-acces-aux-donnees-publiques-157091)
