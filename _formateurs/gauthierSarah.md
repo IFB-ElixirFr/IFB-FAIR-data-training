@@ -1,6 +1,6 @@
 ---
 shortName: gauthierSarah
-firstName: Gauthier 
+firstName: Gautier 
 lastName: Sarah
 position: Ingénieur d'étude/ Formateur IFB
 localisation: "AGAP - Montpellier"
