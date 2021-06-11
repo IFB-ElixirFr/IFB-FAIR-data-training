@@ -1,0 +1,1555 @@
+<!doctype html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFB FAIR-bioinfo training</title>
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/IFB-FAIR-data-training/assets/css/style.css">
+
+    <!-- Icons -->
+    <!-- https://boxicons.com/ -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Nav icon -->
+    <link rel="icon" type="image/png" href="/IFB-FAIR-data-training/assets/img/logo.png"/>
+
+    <!-- TOC -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
+    <!-- add after bootstrap.min.js -->
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+    
+    <!-- fontawesome - Icons -->
+    <link href= "/IFB-FAIR-data-training/assets/fontawesome/css/all.css" rel="stylesheet">
+    
+    <!-- PDF script -->
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <link href= "https://printjs-4de6.kxcdn.com/print.min.css" rel="stylesheet">
+
+    <!-- papaParse -->
+    <script type="text/javascript" src="/IFB-FAIR-data-training/assets/js/papaparse.min.js" ></script>
+
+    <!-- Charts -->
+    <script src="/IFB-FAIR-data-training/assets/js/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+    <!-- AddEvent script -->
+    <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+
+    <!-- AddEvent Settings -->
+    <!-- Documentation : https://www.addevent.com/documentation/add-to-calendar-button -->
+    <script type="text/javascript">
+    window.addeventasync = function(){
+        addeventatc.settings({
+            appleical  : {show:true, text:"Apple Calendar"},
+            google     : {show:true, text:"Google <em>(online)</em>"},
+            office365  : {show:true, text:"Office 365 <em>(online)</em>"},
+            outlook    : {show:true, text:"Outlook"},
+            outlookcom : {show:true, text:"Outlook.com <em>(online)</em>"},
+            yahoo      : {show:true, text:"Yahoo <em>(online)</em>"}
+        });
+    };
+    </script>
+</head><body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button><nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="/IFB-FAIR-data-training/index.html">
+            <img src="/IFB-FAIR-data-training/assets/img/logo.png" height="30" class="d-inline-block align-top" alt="">
+            FAIR data
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto">
+
+                <!-- Module -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeModules.html" >Modules</a>
+                </li>
+
+
+                <!-- Cours -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeCours.html" >Cours</a>
+                </li>
+
+                <!-- Travaux pratiques -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeTPs.html" >TPs</a>
+                </li>
+
+                <!-- Ressources -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeRessources.html" >Ressources</a>
+                </li>
+
+                <!-- Edition -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeEditions.html" >Éditions</a>
+                </li>
+
+                <!-- A propos -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_Apropos" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        À propos
+                    </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_Apropos">
+                        <a class="dropdown-item" href="/IFB-FAIR-data-training/apropos.html" >De l'IFB</a>
+                        <a class="dropdown-item" href="/IFB-FAIR-data-training/formateurs.html" >Des formateurs</a>
+                    </div>
+                </li>
+
+            </ul>
+            
+            <ul class="nav navbar-nav ml-auto">
+                <form class="form-inline" action="/IFB-FAIR-data-training/search.html" method="get">
+
+                    <div class="input-group">
+                        <input type="text" class="form-control" 
+                        id="search-box_nav" placeholder="Rechercher" aria-label="Rechercher" aria-describedby="basic-addon2" 
+                        name="query">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                      </div>
+
+                  </form>
+                  
+                <!-- Question -->
+                <li class="nav-item dropdown" >
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_questions" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-question-circle"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink_questions">
+                        <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fab fa-github"></i></i></span></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Notre GitHub </b></p>
+                                    <p class="textNav">Visiter nous ! </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/wiki" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fas fa-book"></i></span></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Pour contribuer </b></p>
+                                    <p class="textNav">Une docu est disponible</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/discussions" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fas fa-comments"></i></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Envie d'échanger avec nous ? </b></p>
+                                    <p class="textNav">Une discussion est ouverte</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/issues" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fas fa-exclamation-triangle"></i></span></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Un bug dans le site ? </b></p>
+                                    <p class="textNav">Déclarer une <i>issue</i> </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        
+                    </div>
+                </li>
+            </ul>
+            
+
+        </div>
+    </div>
+
+</nav>
+
+<div id="home"></div>
+    <div class="sectionCover d-flex flex-column justify-content-center align-items-center">
+        <p id="id_header_title" style="margin-bottom: .5rem; font-weight: 500; line-height: 1.2; font-size: 2.5rem;">Formation IFB science ouverte & PGD </p>
+        <p id="id_header_subTitle" style="font-size: 1.6em;text-align:center;">Comment gérer des jeux de données haut-débit en sciences de la vie et de la santé</p>
+    </div>
+
+    <div class="container">
+        <h3 id="présentation-et-application-des-principes-fair-de-gestion-des-données-dans-un-projet-bioinformatique">Présentation et application des principes FAIR de gestion des données dans un projet bioinformatique.</h3>
+
+<p>L’Institut Français de Bioinformatique (<a href="https://www.france-bioinformatique.fr/">IFB</a>) organise une formation à destination de bioinformaticiens, biologistes et médecins impliqués dans des projets d’analyse bioinformatique de jeux de données omiques et souhaitant mettre en œuvre les principes “FAIR” (Facile à trouver, Accessible, Interopérable, Réutilisable) tout au long du déroulement du projet. La formation abordera les différents points fondamentaux (théoriques, pratiques, juridiques) en lien avec la politique nationale d’ouverture des données de la recherche et présentera sous forme de séances pratiques les ressources nationales accessibles à la communauté scientifique ainsi que les solutions proposées par l’IFB pour gérer les données d’un projet de recherche.</p>
+
+<h3 id="objectifs-pédagogiques">Objectifs pédagogiques</h3>
+
+<p>A la fin de cette formation, les participants connaîtront et pourront mettre en œuvre les principes de la science ouverte pour gérer leurs jeux de données dans un projet :</p>
+
+<ul>
+  <li>Les principes fondamentaux de l’Open Data en biologie et santé, y compris dans ses aspects juridiques ;</li>
+  <li>Les bonnes pratiques et outils de gestion des données d’un projet en bioinformatique, en lien avec les ressources de l’infrastructure IFB ;</li>
+  <li>Le PGD : séances théoriques et pratiques de construction d’un PGD sur des exemples de jeux de données omiques ;</li>
+  <li>Le choix des métadonnées : panorama des ressources existantes pour choisir des métadonnées et mise en pratique pour annoter des jeux de données omiques en vue de la publication des données dans une banque internationale ou un dataverse institutionnel.</li>
+</ul>
+
+<h3 id="prérequis--nous-demandons-à-chaque-participant-formateur-et-apprenant">Prérequis : nous demandons à chaque participant (formateur et apprenant)</h3>
+
+<h4 id="1-de-vous-créer-un-compte-personnel-sur-les-outils-listés-dans-le-tableau-ci-dessous-pour-vous-permettre-de-les-utiliser-pendant-la-formation-">1. De vous créer un compte personnel sur les outils listés dans le tableau ci-dessous pour vous permettre de les utiliser pendant la formation :</h4>
+
+<div class="table-responsive">
+    
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Outil</th>
+      <th>Fonction</th>
+      <th>Site</th>
+      <th>Commentaire</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Opidor</td>
+      <td>Rédaction  et partage  de PGD</td>
+      <td><a href="https://dmp.opidor.fr" target="_blank">https://dmp.opidor.fr</a></td>
+      <td><strong>Recommandations</strong> : (1) Le faire quelques jours avant le démarrage du cours : il se peut que la validation du compte ne soit pas immédiate et (2) Utiliser une « identification institutionnelle » plutôt qu’une identification par nom et mot de passe.</td>
+    </tr>
+    <tr>
+      <td>OSF</td>
+      <td>Création d’un espace partagé pour gérer les documents /fichiers d’un projet</td>
+      <td><a href="https://osf.io/" target="_blank">https://osf.io/</a></td>
+      <td>Il est recommandé d’utiliser son ORCID si on en a un. Lors du renseignement du profil, bien veiller à choisir le lieu de stockage comme étant Frankfurt / Allemagne</td>
+    </tr>
+    <tr>
+      <td>ENA</td>
+      <td>Ressource européenne pour l’archivage des données de séquences  (nous travaillerons sur l’instance de test)</td>
+      <td><a href="https://wwwdev.ebi.ac.uk/ena/submit/webin/accountInfo" target="_blank">https://wwwdev.ebi.ac.uk/ena/submit/webin/accountInfo</a></td>
+      <td>A la fin de la procédure, vous devez recevoir un nom d’utilisateur du type ‘Webin-xxx’</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+<h4 id="2-dinstaller-docker">2. D’installer docker</h4>
+
+<p>Docker est un outil de gestion de containers (utilisation comme solution de secours pour le TP de la session 3 métadonnées).</p>
+
+<ol>
+  <li>Aller sur le site https://docs.docker.com/get-docker/</li>
+  <li>A la fin de l’installation, pour vérifier que l’installation est correcte,
+    <ul>
+      <li>Lancer docker (comme indiqué dans la page d’installation) ;</li>
+      <li>Ouvrir un terminal ;</li>
+      <li>Lancer <code class="language-plaintext highlighter-rouge">docker run hello-world</code>. Si le retour est : <code class="language-plaintext highlighter-rouge">Hello from Docker!</code> C’est que l’installation est correcte ;</li>
+      <li>Dans ce cas : lancer la commande <code class="language-plaintext highlighter-rouge">docker pull tdenecker/omicsbroker</code>. Une fois le téléchargement terminé, vous êtes prêt pour le TP.</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="3-de-choisir-et-déposer-sur-un-espace-partagé-osf-une-photo-dun-lieu-ou-objet-de-votre-choix-que-les-autres-participants-devront-deviner">3. De choisir et déposer sur un espace partagé OSF une photo d’un lieu ou objet de votre choix que les autres participants devront deviner</h4>
+
+<ol>
+  <li>Nommer ce fichier avec votre nom</li>
+  <li>Déposer le fichier sur le site <a href="https://osf.io/" target="_blank">https://osf.io/</a> : utiliser pour cela le lien confirmant l’ouverture de l’accès au projet et transférer la photo sur Formation IFB science ouverte &amp; PGD</li>
+</ol>
+
+<h3 id="modalités-pratiques">Modalités pratiques</h3>
+
+<p>5 modules de 3 heures en distanciel synchrone de 9h00 à 12h00. L’outil utilisé pour cette formation est <a href="https://zoom.us/">Zoom</a>. Il est important de vérifier avant les sessions que :</p>
+
+<ul>
+  <li>Votre micro est fonctionnel ;</li>
+  <li>Votre caméra est fonctionnelle ;</li>
+  <li>Vous avez repéré l’espace de partage ;</li>
+  <li>Vous êtes en mesure de partager votre écran.</li>
+</ul>
+
+<p>Des travaux ponctuels seront à effectuer entre les modules.</p>
+
+<h3 id="formateurs">Formateurs</h3>
+
+<div class="tooltip">
+    <a href="/IFB-FAIR-data-training/formateurs/heleneChiapello.html">
+    
+    <img src="https://migale.inrae.fr/sites/default/files/helene_chiapello.png" alt="Hélène Chiapello" class="avatar" />
+    
+    </a>
+    <span class="tooltiptext">Hélène Chiapello</span>
+</div>
+
+<div class="tooltip">
+    <a href="/IFB-FAIR-data-training/formateurs/thomasDenecker.html">
+    
+    <img class="avatar" alt="thomasdenecker" width="100" height="100" data-proofer-ignore="true" src="https://avatars1.githubusercontent.com/thomasdenecker?v=3&amp;s=100" srcset="https://avatars1.githubusercontent.com/thomasdenecker?v=3&amp;s=100 1x, https://avatars1.githubusercontent.com/thomasdenecker?v=3&amp;s=200 2x, https://avatars1.githubusercontent.com/thomasdenecker?v=3&amp;s=300 3x, https://avatars1.githubusercontent.com/thomasdenecker?v=3&amp;s=400 4x" /> 
+    
+    </a>
+    <span class="tooltiptext">Thomas Denecker</span>
+</div>
+
+<div class="tooltip">
+    <a href="/IFB-FAIR-data-training/formateurs/jeanfrancoisDufayard.html">
+    
+    <img class="avatar" alt="dufayard" width="100" height="100" data-proofer-ignore="true" src="https://avatars1.githubusercontent.com/dufayard?v=3&amp;s=100" srcset="https://avatars1.githubusercontent.com/dufayard?v=3&amp;s=100 1x, https://avatars1.githubusercontent.com/dufayard?v=3&amp;s=200 2x, https://avatars1.githubusercontent.com/dufayard?v=3&amp;s=300 3x, https://avatars1.githubusercontent.com/dufayard?v=3&amp;s=400 4x" /> 
+    
+    </a>
+    <span class="tooltiptext">Jean-François Dufayard</span>
+</div>
+
+<div class="tooltip">
+    <a href="/IFB-FAIR-data-training/formateurs/pauletteLieby.html">
+    
+    <img src="https://raw.githubusercontent.com/IFB-ElixirFr/IFB-FAIR-data-training/main/assets/img/paulette_lieby.jpg" alt="Paulette Lieby" class="avatar" />
+    
+    </a>
+    <span class="tooltiptext">Paulette Lieby</span>
+</div>
+
+<div class="tooltip">
+    <a href="/IFB-FAIR-data-training/formateurs/lionelMaurel.html">
+    
+    <img src="https://cdn.radiofrance.fr/s3/cruiser-production/2019/07/c6188191-8033-4b19-8e5e-ce83c4f564ac/838_lionelmaurelfc.jpg" alt="Lionel Maurel" class="avatar" />
+    
+    </a>
+    <span class="tooltiptext">Lionel Maurel</span>
+</div>
+
+<div class="tooltip">
+    <a href="/IFB-FAIR-data-training/formateurs/gauthierSarah.html">
+    
+    <img class="avatar" alt="gsarah" width="100" height="100" data-proofer-ignore="true" src="https://avatars1.githubusercontent.com/gsarah?v=3&amp;s=100" srcset="https://avatars1.githubusercontent.com/gsarah?v=3&amp;s=100 1x, https://avatars1.githubusercontent.com/gsarah?v=3&amp;s=200 2x, https://avatars1.githubusercontent.com/gsarah?v=3&amp;s=300 3x, https://avatars1.githubusercontent.com/gsarah?v=3&amp;s=400 4x" /> 
+    
+    </a>
+    <span class="tooltiptext">Gautier Sarah</span>
+</div>
+
+<div class="tooltip">
+    <a href="/IFB-FAIR-data-training/formateurs/julienSeiler.html">
+    
+    <img class="avatar" alt="julozi" width="100" height="100" data-proofer-ignore="true" src="https://avatars1.githubusercontent.com/julozi?v=3&amp;s=100" srcset="https://avatars1.githubusercontent.com/julozi?v=3&amp;s=100 1x, https://avatars1.githubusercontent.com/julozi?v=3&amp;s=200 2x, https://avatars1.githubusercontent.com/julozi?v=3&amp;s=300 3x, https://avatars1.githubusercontent.com/julozi?v=3&amp;s=400 4x" /> 
+    
+    </a>
+    <span class="tooltiptext">Julien Seiler</span>
+</div>
+
+<div class="tooltip">
+    <a href="/IFB-FAIR-data-training/formateurs/fredericdeLamotte.html">
+    
+    <img src="https://www.southgreen.fr/sites/southgreen.fr/files/Avatar_Fred.jpeg" alt="Frédéric de Lamotte" class="avatar" />
+    
+    </a>
+    <span class="tooltiptext">Frédéric de Lamotte</span>
+</div>
+
+<div class="tooltip">
+    <a href="/IFB-FAIR-data-training/formateurs/jvanheld.html">
+    
+    <img class="avatar" alt="jvanheld" width="100" height="100" data-proofer-ignore="true" src="https://avatars1.githubusercontent.com/jvanheld?v=3&amp;s=100" srcset="https://avatars1.githubusercontent.com/jvanheld?v=3&amp;s=100 1x, https://avatars1.githubusercontent.com/jvanheld?v=3&amp;s=200 2x, https://avatars1.githubusercontent.com/jvanheld?v=3&amp;s=300 3x, https://avatars1.githubusercontent.com/jvanheld?v=3&amp;s=400 4x" /> 
+    
+    </a>
+    <span class="tooltiptext">Jacques van Helden</span>
+</div>
+
+<h3 id="programme">Programme</h3>
+
+<style>
+  .fixedTable {
+      table-layout: fixed;
+  }
+</style>
+
+<div class="table-responsive">
+  <table id="moduleTab" class="table table-striped fixedTable">
+    <thead>
+      <tr>
+        <th scope="col">Module</th>
+        <th scope="col">Séquences</th>
+        <th scope="col">Date</th>
+        <th scope="col">Formateurs</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        
+        
+        
+
+        
+        
+        <tr>
+            <td> 
+              <a href="/IFB-FAIR-data-training/modules/module1.html ">Les données de la Recherche et leur centralité dans le processus de recherche </a>
+            </td>
+
+            <td s="">
+              
+                <ol>
+                  
+                  <li>
+                    
+                      <a href="/IFB-FAIR-data-training/sequences/module1_sequence1_edition1_cours.html">Activité Brise Glace (cours) </a>
+                    
+                  </li>         
+                  
+                  <li>
+                    
+                      <a href="/IFB-FAIR-data-training/sequences/module1_sequence2_edition1_cours.html">Crise de reproductibilité (cours) </a>
+                    
+                  </li>         
+                  
+                  <li>
+                    
+                      <a href="/IFB-FAIR-data-training/sequences/module1_sequence3_edition1_cours.html">Vers FAIR (cours) </a>
+                    
+                  </li>         
+                  
+                  <li>
+                    
+                      <a href="/IFB-FAIR-data-training/sequences/module1_sequence4_edition1_cours.html">Cycle de vie des données (cours) </a>
+                    
+                  </li>         
+                  
+                  <li>
+                    
+                      <a href="/IFB-FAIR-data-training/sequences/module1_sequence5_edition1_cours.html">Le plan de gestion des données (cours) </a>
+                    
+                  </li>         
+                  
+                  <li>
+                    
+                    <a href="/IFB-FAIR-data-training/sequences/module1_sequence6_edition1_TP.html">Opidor (autre) </a>
+                    
+                  </li>         
+                  
+                </ol>
+            </td>
+
+            <td>15-03-2021 09:00</td>
+
+            <td>
+              <ul>
+                
+                
+                
+                
+                
+                <li>
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/fredericdeLamotte.html"> Frédéric de Lamotte</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/gauthierSarah.html"> Gautier Sarah</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/heleneChiapello.html"> Hélène Chiapello</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/jeanfrancoisDufayard.html"> Jean-François Dufayard</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/julienSeiler.html"> Julien Seiler</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/lionelMaurel.html"> Lionel Maurel</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/pauletteLieby.html"> Paulette Lieby</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/thomasDenecker.html"> Thomas Denecker</a>
+                      
+                      
+                  
+                  </li>
+                
+              </ul>
+            </td>
+            
+        </tr>
+        
+        <tr>
+            <td> 
+              <a href="/IFB-FAIR-data-training/modules/module2.html ">La vie des données pendant le projet : Principe et outils pour organiser, nommer, versionner, stocker, archiver, mes données </a>
+            </td>
+
+            <td s="">
+              
+                <ol>
+                  
+                  <li>
+                    
+                    <a href="/IFB-FAIR-data-training/sequences/module2_sequence1_edition1_cours.html">Introduction (TP) </a>
+                    
+                  </li>         
+                  
+                  <li>
+                    
+                      <a href="/IFB-FAIR-data-training/sequences/module2_sequence2_edition1_cours.html">Le nommage des fichiers (cours) </a>
+                    
+                  </li>         
+                  
+                  <li>
+                    
+                      <a href="/IFB-FAIR-data-training/sequences/module2_sequence3_edition1_cours.html">Format de fichier (cours) </a>
+                    
+                  </li>         
+                  
+                  <li>
+                    
+                      <a href="/IFB-FAIR-data-training/sequences/module2_sequence4_edition1_cours.html">Stockage et accès (cours) </a>
+                    
+                  </li>         
+                  
+                  <li>
+                    
+                      <a href="/IFB-FAIR-data-training/sequences/module2_sequence5_edition1_cours.html">Outils et solution (cours) </a>
+                    
+                  </li>         
+                  
+                </ol>
+            </td>
+
+            <td>16-03-2021 09:00</td>
+
+            <td>
+              <ul>
+                
+                
+                
+                
+                
+                <li>
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/fredericdeLamotte.html"> Frédéric de Lamotte</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/julienSeiler.html"> Julien Seiler</a>
+                      
+                      
+                  
+                  </li>
+                
+              </ul>
+            </td>
+            
+        </tr>
+        
+        <tr>
+            <td> 
+              <a href="/IFB-FAIR-data-training/modules/module3.html ">Les Métadonnées : les standards du domaine des données omiques en biologie et séances pratiques d’annotations de jeux de données </a>
+            </td>
+
+            <td s="">
+              
+                <ol>
+                  
+                  <li>
+                    
+                      <a href="/IFB-FAIR-data-training/sequences/module3_sequence1_edition1_cours.html"> Introduction aux métadonnées (cours) </a>
+                    
+                  </li>         
+                  
+                  <li>
+                    
+                      <a href="/IFB-FAIR-data-training/sequences/module3_sequence2_edition1_cours.html">Life science standards and ENA submission (cours) </a>
+                    
+                  </li>         
+                  
+                  <li>
+                    
+                    <a href="/IFB-FAIR-data-training/sequences/module3_sequence3_edition1_tp.html">Choix des métadonnées et soumission à l'EBI (TP) </a>
+                    
+                  </li>         
+                  
+                </ol>
+            </td>
+
+            <td>17-03-2021 09:00</td>
+
+            <td>
+              <ul>
+                
+                
+                
+                
+                
+                <li>
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/fredericdeLamotte.html"> Frédéric de Lamotte</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/heleneChiapello.html"> Hélène Chiapello</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/thomasDenecker.html"> Thomas Denecker</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/jeanfrancoisDufayard.html"> Jean-François Dufayard</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/gauthierSarah.html"> Gautier Sarah</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/pauletteLieby.html"> Paulette Lieby</a>
+                      
+                      
+                  
+                  </li>
+                
+              </ul>
+            </td>
+            
+        </tr>
+        
+        <tr>
+            <td> 
+              <a href="/IFB-FAIR-data-training/modules/module4.html ">Partager et diffuser les données. Le cadre juridique, les entrepôts et les licences sur les données </a>
+            </td>
+
+            <td s="">
+              
+                <ol>
+                  
+                  <li>
+                    
+                      <a href="/IFB-FAIR-data-training/sequences/module4_sequence1_edition1_cours.html">Cadre Juridique  (cours) </a>
+                    
+                  </li>         
+                  
+                  <li>
+                    
+                      <a href="/IFB-FAIR-data-training/sequences/module4_sequence2_edition1_cours.html">Les licences sur les données (cours) </a>
+                    
+                  </li>         
+                  
+                </ol>
+            </td>
+
+            <td>18-03-2021 09:00</td>
+
+            <td>
+              <ul>
+                
+                
+                
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/lionelMaurel.html"> Lionel Maurel</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/fredericdeLamotte.html"> Frédéric de Lamotte</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/pauletteLieby.html"> Paulette Lieby</a>
+                      
+                      
+                  
+                  </li>
+                
+              </ul>
+            </td>
+            
+        </tr>
+        
+        <tr>
+            <td> 
+              <a href="/IFB-FAIR-data-training/modules/module5.html ">Le PGD : suite et fin. </a>
+            </td>
+
+            <td s="">
+              
+                <ol>
+                  
+                  <li>
+                    
+                    <a href="/IFB-FAIR-data-training/sequences/module5_sequence1_edition1.html">Fin du PGD (autre) </a>
+                    
+                  </li>         
+                  
+                  <li>
+                    
+                    <a href="/IFB-FAIR-data-training/sequences/module5_sequence2_edition1.html">Débrief de la formation (autre) </a>
+                    
+                  </li>         
+                  
+                  <li>
+                    
+                    <a href="/IFB-FAIR-data-training/sequences/module5_sequence3_edition1.html">Quizz (autre) </a>
+                    
+                  </li>         
+                  
+                  <li>
+                    
+                    <a href="/IFB-FAIR-data-training/sequences/module5_sequence4_edition1.html">Questionnaire (autre) </a>
+                    
+                  </li>         
+                  
+                </ol>
+            </td>
+
+            <td>19-03-2021 09:00</td>
+
+            <td>
+              <ul>
+                
+                
+                
+                
+                
+                <li>
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/fredericdeLamotte.html"> Frédéric de Lamotte</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/gauthierSarah.html"> Gautier Sarah</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/heleneChiapello.html"> Hélène Chiapello</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/jeanfrancoisDufayard.html"> Jean-François Dufayard</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/julienSeiler.html"> Julien Seiler</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/pauletteLieby.html"> Paulette Lieby</a>
+                      
+                      
+                  
+                  </li>
+                
+                
+                <li>
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      <a href="/IFB-FAIR-data-training//formateurs/thomasDenecker.html"> Thomas Denecker</a>
+                      
+                      
+                  
+                  </li>
+                
+              </ul>
+            </td>
+            
+        </tr>
+        
+    </tbody>
+  </table>
+</div>
+
+<script>
+  if ($(window).width() > 992) {
+    $('.moduleTab').addClass('fixedTable');
+} else {
+    $('.moduleTab').removeClass('fixedTable');
+}
+</script>
+
+<h3 id="les-mots-clés-de-la-formation">Les mots clés de la formation</h3>
+
+<p>Ce nuage de mots a été construit automatiquement à partir du contenu de toutes les séquences.</p>
+
+<script src="https://d3js.org/d3.v6.min.js"></script>
+
+<!-- Load d3-cloud -->
+<script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+<script>
+
+  // https://observablehq.com/@d3/word-cloud
+
+ var content = [
+    
+        ["Bienvenue à toutes et à tous dans la formation FAIR Data proposée par l’IFB. Nous sommes ravis de vous accueillir !  Les slides    Logistique  Avant de commencer"," faisons un petit point logistique pour s’assure que cette formation se déroule au mieux: Pourriez vous vérifier que :     Votre micro est fonctionnel ;   Votre caméra est fonctionnelle ;   Vous avez repéré l’espace de partage ;   Vous êtes en mesure de partager votre écran.   Votre photo emblématique  Pour mieux connaissance avec vous"," pourriez vous nous partager votre photo emblématique ? Si"," oui :     A-t-elle été bien téléversée sur le site de partage de la formation ?   A-t-elle été nommée d’une manière reconnaissable ?   Est-elle libre de droits ?   À vous la parole !  À tour de rôle "," chaque participant se présente en donnant :     Son nom et prénom ;   Son lieu d’activité ;   Un bref exposé des rôle &amp; responsabilités ;   ce qu’il/elle attend de cette formation ;   Une présentation de la photo téléversée :            Une question par personne pour déterminer le lieu où cette photo a été prise ;       La langue sera donnée au chat si pas de succès."]
+      ,
+    
+        ["Bienvenue à toutes et à tous dans la formation FAIR Data proposée par l’IFB. Nous sommes ravis de vous accueillir !  Logistique  Avant de commencer"," faisons un petit point logistique pour s’assure que cette formation se déroule au mieux: Pourriez vous vérifier que :     Votre micro est fonctionnel ;   Votre caméra est fonctionnelle ;   Vous avez repéré l’espace de partage ;   Vous êtes en mesure de partager votre écran.   Votre photo emblématique  Pour mieux connaissance avec vous"," pourriez vous nous partager votre photo emblématique ? Si"," oui :     A-t-elle été bien téléversée sur le site de partage de la formation ?   A-t-elle été nommée d’une manière reconnaissable ?   Est-elle libre de droits ?   À vous la parole !  À tour de rôle "," chaque participant se présente en donnant :     Son nom et prénom ;   Son lieu d’activité ;   Un bref exposé des rôle &amp; responsabilités ;   ce qu’il/elle attend de cette formation ;   Une présentation de la photo téléversée :            Une question par personne pour déterminer le lieu où cette photo a été prise ;       La langue sera donnée au chat si pas de succès."]
+      ,
+    
+        ["Les slides    La disruption numérique : une bascule brutale    Qui bouscule l’existant     Uber : La première compagnie de taxi n’en possède aucun ;   AirBnB : Le premier fournisseur de logement n’en possède pas ;   Skype : La première compagnie de téléphonie ne possède pas de standard ;   Facebook : Le premier fournisseur d’info ne crée pas de contenu ;   Netflix : Le premier diffuseur de film ne possède pas de salle de cinéma.     Le déluge de données en Science  Les techniques à haut débit"," une révolution qui provoque un déluge de données. Par exemple pour le génome humain :     en 1990 = 13 ans et 3 Milliards $   en 2015 = quelques heures et 1000 $     Par conséquent :     La quantité de données à stocker et analyser explose   Le rendement d’analyse chute   Répondre aux questions de Science  Avant     Concevoir l’expérimentation   Collecter des résultats   Analyser des résultats   Maintenant  Un changement de paradigme     Générer massivement des données   Organiser (stocker"," documenter"," annoter)   Analyser (extraire de l’information)   Diffuser l’information   Les ravages du temps    Les défis de la reproductibilité  En psychologie    En biologie      Source : 1","500 scientists lift the lid on reproducibility”. Nature. 533: 452–454 - 2016    Disruption + Big Data + Crise  Le traitement de l’information (scientifique) sera notre Noeud Gordien                   Question                    Quelle définition pour les données de la recherche ?                    Pour tenter d’aborder cette question"," nous allons procéder en 4 étapes :     Vous allez prendre un temps de réflexion individuelle de 5 minutes pour rédiger sur le document partagé une première définition qui vous est personnelle.   Pendant les 5 minutes suivantes"," vous discuterez de vos définitions avec trois autres participants et proposerez une définition combinée"," en gardant la trace des divergences s’il y a lieu. Donc vous finissez ces 5 minutes avec 1 définition 3.Votre groupe prendra connaissance de l’ensemble des définitions consolidées proposées puis une discussion portera sur les divergences entre ces définitions (temps prévu 10 minutes)   L’activité se terminera par la présentation des définitions les plus courantes des données de la Recherche                                               Définition                   Les données de recherche sont les preuves qui sous-tendent la réponse à la question de recherche et peuvent être utilisées pour valider les résultats"," quelle que soit leur forme (i.e. imprimée"," numérique ou physique).  Il peut s’agir de renseignements quantitatifs ou d’énoncés qualitatifs recueillis par les chercheurs dans le cadre de leurs travaux par expérimentation"," observation"," modélisation"," entrevue ou autres méthodes"," ou de renseignements tirés de preuves existantes.  Les données peuvent être brutes ou primaires (par exemple"," directement issues de mesures ou de collectes) ou dérivées de données primaires par analyse ou interprétation (e.g. nettoyées ou extraites d’un ensemble de données plus vaste)"," ou encore dérivées de sources existantes dont les droits peuvent être détenus par d’autres."]
+      ,
+    
+        ["La disruption numérique : une bascule brutale    Qui bouscule l’existant     Uber : La première compagnie de taxi n’en possède aucun ;   AirBnB : Le premier fournisseur de logement n’en possède pas ;   Skype : La première compagnie de téléphonie ne possède pas de standard ;   Facebook : Le premier fournisseur d’info ne crée pas de contenu ;   Netflix : Le premier diffuseur de film ne possède pas de salle de cinéma.     Le déluge de données en Science  Les techniques à haut débit"," une révolution qui provoque un déluge de données. Par exemple pour le génome humain :     en 1990 = 13 ans et 3 Milliards $   en 2015 = quelques heures et 1000 $     Par conséquent :     La quantité de données à stocker et analyser explose   Le rendement d’analyse chute   Répondre aux questions de Science  Avant     Concevoir l’expérimentation   Collecter des résultats   Analyser des résultats   Maintenant  Un changement de paradigme     Générer massivement des données   Organiser (stocker"," documenter"," annoter)   Analyser (extraire de l’information)   Diffuser l’information   Les ravages du temps    Les défis de la reproductibilité  En psychologie    En biologie      Source : 1","500 scientists lift the lid on reproducibility”. Nature. 533: 452–454 - 2016    Disruption + Big Data + Crise  Le traitement de l’information (scientifique) sera notre Noeud Gordien                   Question                    Quelle définition pour les données de la recherche ?                    Pour tenter d’aborder cette question"," nous allons procéder en 4 étapes :     Vous allez prendre un temps de réflexion individuelle de 5 minutes pour rédiger sur le document partagé une première définition qui vous est personnelle.   Pendant les 5 minutes suivantes"," vous discuterez de vos définitions avec trois autres participants et proposerez une définition combinée"," en gardant la trace des divergences s’il y a lieu. Donc vous finissez ces 5 minutes avec 1 définition 3.Votre groupe prendra connaissance de l’ensemble des définitions consolidées proposées puis une discussion portera sur les divergences entre ces définitions (temps prévu 10 minutes)   L’activité se terminera par la présentation des définitions les plus courantes des données de la Recherche                                               Définition                   Les données de recherche sont les preuves qui sous-tendent la réponse à la question de recherche et peuvent être utilisées pour valider les résultats"," quelle que soit leur forme (i.e. imprimée"," numérique ou physique).  Il peut s’agir de renseignements quantitatifs ou d’énoncés qualitatifs recueillis par les chercheurs dans le cadre de leurs travaux par expérimentation"," observation"," modélisation"," entrevue ou autres méthodes"," ou de renseignements tirés de preuves existantes.  Les données peuvent être brutes ou primaires (par exemple"," directement issues de mesures ou de collectes) ou dérivées de données primaires par analyse ou interprétation (e.g. nettoyées ou extraites d’un ensemble de données plus vaste)"," ou encore dérivées de sources existantes dont les droits peuvent être détenus par d’autres."]
+      ,
+    
+        ["Les slides    Réutiliser les données? Où est le problème?                   Question                    Quelles conditions pour que les données soient réutilisables ?                    Pour tenter d’aborder cette question"," nous allons procéder en deux étapes :     1-\tRéfléchissez à cinq conditions nécessaires et indiquez les dans (Mentimeter : lien dans le chat). \t2-\tÀ partir du nuage de mots créé collectivement quels regroupements pouvons-nous faire ?                             Les principes FAIR    Les principes FAIR Data sont un ensemble de principes directeurs visant à rendre les données trouvables"," accessibles"," interopérables et réutilisables.  Ces principes fournissent des orientations pour la gestion des données scientifiques et sont pertinents pour toutes les parties prenantes de l’écosystème numérique actuel.  Ils s’adressent directement aux producteurs et aux éditeurs de données afin de promouvoir une utilisation maximale des données de recherche.  Vos données sont elles FAIR ?  FAIR comme     Findable / Trouvable   Accessible   Interoperable   Reusable / Reutilisable   La source des informations ci-dessous : https://doranum.fr/enjeux-benefices/principes-fair/  Findable – Faciliter la découverte des données     Les données ont un PID (Persistent IDentifier ou identifiant pérenne en français) ;   Les données sont décrites par des métadonnées ;   Ces métadonnées spécifient le PID des données ;   Les données sont déposées dans un entrepôt de données.   Accessible – Permettre l’accès aux données et leur téléchargement     Les données sont accessibles à travers un protocole de communication standard ;   Ce protocole est libre et ouvert ;   Ce protocole permet un accès par authentification si besoin ;   Les métadonnées restent accessibles même si les données ne le sont pas.   Interoperable – Permettre l’exploitation des données quel que soit l’environnement informatique utilisé     Les données sont décrites avec un vocabulaire contrôlé ;   Le vocabulaire utilisé respecte les principes FAIR ;   Les métadonnées sont reliées à d’autres données.   Reusable – Permettre la réutilisation des données pour de futures recherches     Les métadonnées ont une pluralité d’attributs ;   Une licence de réutilisation est attribuée aux données ;   La description des données indique leur provenance ;   Le partage des données suit les standards de la communauté scientifique.   FAIR self assessment tool    Source : FAIR self assessment tool – ARDC"]
+      ,
+    
+        ["Réutiliser les données? Où est le problème?                   Question                    Quelles conditions pour que les données soient réutilisables ?                    Pour tenter d’aborder cette question"," nous allons procéder en deux étapes :     1-\tRéfléchissez à cinq conditions nécessaires et indiquez les dans (Mentimeter : lien dans le chat). \t2-\tÀ partir du nuage de mots créé collectivement quels regroupements pouvons-nous faire ?                             Les principes FAIR    Les principes FAIR Data sont un ensemble de principes directeurs visant à rendre les données trouvables"," accessibles"," interopérables et réutilisables.  Ces principes fournissent des orientations pour la gestion des données scientifiques et sont pertinents pour toutes les parties prenantes de l’écosystème numérique actuel.  Ils s’adressent directement aux producteurs et aux éditeurs de données afin de promouvoir une utilisation maximale des données de recherche.  Vos données sont elles FAIR ?  FAIR comme     Findable / Trouvable   Accessible   Interoperable   Reusable / Reutilisable   La source des informations ci-dessous : https://doranum.fr/enjeux-benefices/principes-fair/  Findable – Faciliter la découverte des données     Les données ont un PID (Persistent IDentifier ou identifiant pérenne en français) ;   Les données sont décrites par des métadonnées ;   Ces métadonnées spécifient le PID des données ;   Les données sont déposées dans un entrepôt de données.   Accessible – Permettre l’accès aux données et leur téléchargement     Les données sont accessibles à travers un protocole de communication standard ;   Ce protocole est libre et ouvert ;   Ce protocole permet un accès par authentification si besoin ;   Les métadonnées restent accessibles même si les données ne le sont pas.   Interoperable – Permettre l’exploitation des données quel que soit l’environnement informatique utilisé     Les données sont décrites avec un vocabulaire contrôlé ;   Le vocabulaire utilisé respecte les principes FAIR ;   Les métadonnées sont reliées à d’autres données.   Reusable – Permettre la réutilisation des données pour de futures recherches     Les métadonnées ont une pluralité d’attributs ;   Une licence de réutilisation est attribuée aux données ;   La description des données indique leur provenance ;   Le partage des données suit les standards de la communauté scientifique.   FAIR self assessment tool    Source : FAIR self assessment tool – ARDC"]
+      ,
+    
+        ["Les slides    La vie des données  Plusieurs temporalités :     Le temps d’une thèse   Le temps d’un projet de recherche   Le temps de vie de la thématique dans le labo   Le temps de vie de la thématique dans l’institution   Le temps de vie de la thématique …   Un projet sur la durée    Un projet sur la durée    Les étapes  Le modèle de UK Data Archive définit les six étapes suivantes :     Création ou collecte des données (creating data) ;   Traitement des données (processing data) ;   Analyse des données (analysing data) ;   Conservation des données (preserving data) ;   Accès aux données (giving access to data / data discovery) ;   Réutilisation des données (reusing data).     Source : Une introduction à la gestion et au partage des données de la recherche - Le cycle de vie des données  Une vue plus détaillée    Donc"," gérer quoi ? Exemple d’un projet Bioinfo  Le passé    Le leg (du doctorant précédent …)   La biblio à T0   Les méthodes pré existantes   Le présent    Les manipes   La création de connaissance (méthodes"," posters …)   Le futur    Le manuscrit   Les publications   Des échantillons    dans les frigos   dans les tiroirs   Des fichiers    des petits"," des gros   un peu partout (PC"," cloud"," cluster)   des données brutes"," du code"," des résultats   De la connaissance    du code   des publications   Donc"," un PGD !  Un plan de gestion de données ou un DMP (data management plan)"]
+      ,
+    
+        ["La vie des données  Plusieurs temporalités :     Le temps d’une thèse   Le temps d’un projet de recherche   Le temps de vie de la thématique dans le labo   Le temps de vie de la thématique dans l’institution   Le temps de vie de la thématique …   Un projet sur la durée    Un projet sur la durée    Les étapes  Le modèle de UK Data Archive définit les six étapes suivantes :     Création ou collecte des données (creating data) ;   Traitement des données (processing data) ;   Analyse des données (analysing data) ;   Conservation des données (preserving data) ;   Accès aux données (giving access to data / data discovery) ;   Réutilisation des données (reusing data).     Source : Une introduction à la gestion et au partage des données de la recherche - Le cycle de vie des données  Une vue plus détaillée    Donc"," gérer quoi ? Exemple d’un projet Bioinfo  Le passé    Le leg (du doctorant précédent …)   La biblio à T0   Les méthodes pré existantes   Le présent    Les manipes   La création de connaissance (méthodes"," posters …)   Le futur    Le manuscrit   Les publications   Des échantillons    dans les frigos   dans les tiroirs   Des fichiers    des petits"," des gros   un peu partout (PC"," cloud"," cluster)   des données brutes"," du code"," des résultats   De la connaissance    du code   des publications   Donc"," un PGD !  Un plan de gestion de données ou un DMP (data management plan)"]
+      ,
+    
+        ["Les slides    Pour quoi faire ?  Plan : on planifie (donc on anticipe)  Gestion : on gère"," on fait fructifier (on commence déjà par ne plus perdre)  Données : Data is the new oil  Gérer les données : comment ?  Une approche pragmatique:     Simple à comprendre   Simple à mettre en place   Simple à évaluer   Simple à faire évoluer   Donc le Plan de Gestion des Données     Actuellement… un document texte (en attendant mieux)   Les objectifs du PGD  Assurer la reproductibilité des expériences  Décrire les données    Respecter le droit et les personnes  Clarifier le cadre juridique et éthique    Permettre la réutilisation des données  Garantir la compréhension des données    Éviter les pertes de données  Assurer un stockage adapté    Établir le rôle de chacun  Définir les responsabilités    Clarifier les droits de réutilisation**  Spécifier les modalités de partage    Un PGD - plusieurs versions  C’est un document évolutif (au moins 3 versions) :     V1 à 6 mois : C’est un livrable pour H2020 et ANR   V2 à mi-parcours: Quand la connaissance des données progresse   V3 en fin de projet : Quand le flux de données se calme et qu’on a une bonne vision globale (Le confinement est un moment idéal pour ce genre de ménage !)"]
+      ,
+    
+        ["Pour quoi faire ?  Plan : on planifie (donc on anticipe)  Gestion : on gère"," on fait fructifier (on commence déjà par ne plus perdre)  Données : Data is the new oil  Gérer les données : comment ?  Une approche pragmatique:     Simple à comprendre   Simple à mettre en place   Simple à évaluer   Simple à faire évoluer   Donc le Plan de Gestion des Données     Actuellement… un document texte (en attendant mieux)   Les objectifs du PGD  Assurer la reproductibilité des expériences  Décrire les données    Respecter le droit et les personnes  Clarifier le cadre juridique et éthique    Permettre la réutilisation des données  Garantir la compréhension des données    Éviter les pertes de données  Assurer un stockage adapté    Établir le rôle de chacun  Définir les responsabilités    Clarifier les droits de réutilisation**  Spécifier les modalités de partage    Un PGD - plusieurs versions  C’est un document évolutif (au moins 3 versions) :     V1 à 6 mois : C’est un livrable pour H2020 et ANR   V2 à mi-parcours: Quand la connaissance des données progresse   V3 en fin de projet : Quand le flux de données se calme et qu’on a une bonne vision globale (Le confinement est un moment idéal pour ce genre de ménage !)"]
+      ,
+    
+        ["Recommandations     Se connecter par institution (mettre dans les recommandations)   Mentionner votre ORCID   Rédacteur  Qui est le rédacteur du PGD ? Quel est son rôle de rédacteur du PGD ?  Quelqu’un qui a la propre connaissance du projet/données. En parallèle"," il est aussi possible de renseigner tous rôles pertinents des différents acteurs du projet. Il sera possible par exemple de co-rédiger le PGD       Choix du modèle  Quel modèle choisir : INRAE ou ANR ?  Le choix dépend de vous. Il peut y avoir peu de questions (plus difficile à rédiger une réponse complète) ou beaucoup de questions (divide and conquer : plus simple mais plus long). En résumé : ANR -&gt; INRAe -&gt; CCIP2N3       Consignes     Ouvrir un PGD de test (case à cocher) avec le modèle de votre choix. Vous pouvez faire aussi un vrai PGD ;   Inviter les formateurs.   Le 5e module aura pour objectif d’accompagner les participants à la rédaction de votre PGD."]
+      ,
+    
+        ["Recommandations     Se connecter par institution (mettre dans les recommandations)   Mentionner votre ORCID   Rédacteur  Qui est le rédacteur du PGD ? Quel est son rôle de rédacteur du PGD ?  Quelqu’un qui a la propre connaissance du projet/données. En parallèle"," il est aussi possible de renseigner tous rôles pertinents des différents acteurs du projet. Il sera possible par exemple de co-rédiger le PGD       Choix du modèle  Quel modèle choisir : INRAE ou ANR ?  Le choix dépend de vous. Il peut y avoir peu de questions (plus difficile à rédiger une réponse complète) ou beaucoup de questions (divide and conquer : plus simple mais plus long). En résumé : ANR -&gt; INRAe -&gt; CCIP2N3       Consignes     Ouvrir un PGD de test (case à cocher) avec le modèle de votre choix. Vous pouvez faire aussi un vrai PGD ;   Inviter les formateurs.   Le 5e module aura pour objectif d’accompagner les participants à la rédaction de votre PGD."]
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        ["Introduction  Dans ce TP"," nous allons réaliser les différentes étapes entre la collecte des données et la soumission dans une banque internationnale. Nous vous proposons un jeu de données de séquences pour ce TP d’un génome bactérien de S. salivarius (Télécharger l’archive);  Vous trouverez dans le dossier une fois décompressé"," deux fichiers .fastq.gz.  Important : Ces données sont des données fictives extraites de METAGENOTE. Elles ne sont en rien significatives.  Comme ces données sont des données de séquences"," nous allons les soumettre sur l’ENA"," la banque européenne de séquences.  Partie 1 : Exploration de l’European National Archive (ENA)    L’European National Archive est une plateforme ouverte et soutenue pour la gestion"," le partage"," l’intégration"," l’archivage et la diffusion de données de séquences. Pour en savoir plus.  Connection à l’ENA  Lors d’un dépôt de données sur l’ENA"," il est nécessaire de créer un compte. Lors de ce TP"," vous aurez besoin d’un compte personnel si vous souhaitez essayer de soumettre des données TEST. Vous pouvez cliquer ici pour vous connecter à l’instance de test de l’ENA.  Comment sont gérées les métadonnées sur l’ENA ?  Chaque base de données organise ses données différement. Concernant l’ENA"," vous trouverez ci-dessous son modèle d’organisation des données et métadonnées de l’ENA :                   Extrait de la documentation de l'ENA                       Study: A study (project) groups together data submitted to the archive and controls its release date. A study accession is typically used when citing data submitted to ENA. Note that all associated data and other objects are made public when the study is released.   Sample: A sample contains information about the sequenced source material. Samples are associated with checklists"," which define the fields used to annotate the samples. Samples are always associated with a taxon.   Experiment: An experiment contains information about a sequencing experiment including library and instrument details.   Run: A run is part of an experiment and refers to data files containing sequence reads.   Analysis: An analysis contains secondary analysis results derived from sequence reads (e.g. a genome assembly)","   Submission: A submission contains submission actions to be performed by the archive. A submission can add more objects to the archive"," update already submitted objects or make objects publicly available.                     Source : lien                          Question 1                   Quels sont le ou les objets de l’ENA qui sont associés à un vocabulaire contrôlé domaine dépendant appelé Checklist par l’ENA ?                                  Study                           Sample                           Experiment                           Run                           Analysis                           Submission                                 Vérifier la réponse              La bonne réponse était: Sample              Choisir une checklist correspondant au jeu de données  Une quantité minimale d’informations est requise lors de l’enregistrement des échantillons sur l’ENA et tous les échantillons doivent être conformes à une liste de contrôle (checklist) définissant des valeurs de métadonnées attendues. La liste de contrôle la plus appropriée pour l’enregistrement des échantillons dépend du type de l’échantillon. L’ensemble des checklists de l’ENA sont disponible ici. Pour le jeu de données de la bactérie S. salivarius"," utiliser le mot-clé pathogen.                 Question 2                   Quel est le numéro d’accession de la checklist à utiliser pour le jeu de données choisi ?                                                                                                                     Solution                                                                                                                      La checklist à utiliser pour le génome bactérien de S. salivarius est ERC000028                                                                                        Les checklists sont disponibles au format XML. Vous avez par exemple ci-dessous un extrait de la checklist ERC000028 :  &lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt; &lt;CHECKLIST_SET&gt; &lt;CHECKLIST accession=\"ERC000028\" checklistType=\"Sample\"&gt;           &lt;IDENTIFIERS&gt;                &lt;PRIMARY_ID&gt;ERC000028&lt;/PRIMARY_ID&gt;           &lt;/IDENTIFIERS&gt;           &lt;DESCRIPTOR&gt;                &lt;LABEL&gt;ENA prokaryotic pathogen minimal sample checklist&lt;/LABEL&gt;                &lt;NAME&gt;ENA prokaryotic pathogen minimal sample checklist&lt;/NAME&gt;                &lt;DESCRIPTION&gt;Minimum information required for a prokaryotic pathogen sample&lt;/DESCRIPTION&gt;                &lt;AUTHORITY&gt;ENA&lt;/AUTHORITY&gt;                &lt;FIELD_GROUP restrictionType=\"Any number or none of the fields\"&gt;                     &lt;NAME&gt;Collection event information&lt;/NAME&gt;                     &lt;FIELD&gt;                          &lt;LABEL&gt;isolation_source&lt;/LABEL&gt;                          &lt;NAME&gt;isolation_source&lt;/NAME&gt;                          &lt;DESCRIPTION&gt;describes the physical"," environmental and/or local geographical source of the biological sample from which the sample was derived&lt;/DESCRIPTION&gt;                          &lt;FIELD_TYPE&gt;                               &lt;TEXT_FIELD/&gt;                          &lt;/FIELD_TYPE&gt;                          &lt;MANDATORY&gt;mandatory&lt;/MANDATORY&gt;                          &lt;MULTIPLICITY&gt;multiple&lt;/MULTIPLICITY&gt;                     &lt;/FIELD&gt;                     &lt;FIELD&gt;                          &lt;LABEL&gt;lat_lon&lt;/LABEL&gt;                          &lt;NAME&gt;lat_lon&lt;/NAME&gt;                          &lt;DESCRIPTION&gt;geographical coordinates of the location where the specimen was collected&lt;/DESCRIPTION&gt;                          &lt;FIELD_TYPE&gt;                               &lt;TEXT_FIELD/&gt;                          &lt;/FIELD_TYPE&gt;                          &lt;MANDATORY&gt;recommended&lt;/MANDATORY&gt;                          &lt;MULTIPLICITY&gt;multiple&lt;/MULTIPLICITY&gt;                     &lt;/FIELD&gt;                     [...]                 &lt;/FIELD_GROUP&gt;           &lt;/DESCRIPTOR&gt;      &lt;/CHECKLIST&gt; &lt;/CHECKLIST_SET&gt;   Partie 2 - Utilisation de l’outil omicsBroker  Pour ce TP"," nous allons utiliser omicsBroker"," un outil de brokering développé par l’IFB. Il s’agit d’un prototype permettant d’annoter des données de séquences et de les soumettre à l’ENA.  Pour vous connecter à une instance de démonstration"," cliquer sur le lien suivant : ici. Cette instance sera fermer dès la fin du TP. Si vous souhaitez refaire le TP"," l’ensemble des étapes d’installation sont décrites sur GitHub.     Attention 1 : omicsBroker est un un prototype qu’il ne faut pas utiliser avec des vraies données pour une vraie soumission !   Attention 2 : Avez vous bien lu le attention 1 ?   Section Annotation du menu lattéral gauche  Cette section vous permet de créer un projet"," de choisir une Checklist et remplir les métadonnées décrivant vos échantillons.    Cliquer sur le lien Project.                 Consignes                    Créer un projet en renseignant uniquement les champs obligatoires : Title"," Alias et Description.           Cliquer sur le lien Samples  Choix de la checklist                 Consignes                    Sélectionner la  checklist identifiée à la question précédente.                        Rappel                    Pour le jeu de données du génome bactérien de S. salivarius"," la checklist est ERC000028           Le tableau dans la partie inférieure de la page Metadata table s’est mis à jour avec les champs correspondant à la Checklist sélectionnée.  Métadonnées                 Consignes                     Renseigner les champs obligatoires demandés en utilisant le contenu du DMP Opidor associé au jeu de données. Pour le trouver"," aller sur Opidor - DMPs publics et rechercher le le plan IFB_Training_salivarius. Ensuite"," télécharger le PDF qui contient toutes les informations nécessaires.         En cas de problème"," le PDF peut être téléchargé ici ou ici.  Pour savoir quel type d’information vous devez renseigner dans une cellule"," cliquez sur la cellule en question et une notice vous donnera les informations nécessaires dans partie Descriptions (droite). Par exemple"," ici les informations nécessaires dans la colonne Platform :    Ci dessous"," un exemple d’une table remplie :    Cliquer sur le lien Files  Vous avez à votre disposition 2 fichiers une fois l’archive décompressées.                Rappel                     Pour obtenir ces fichiers :     Vous devez télécharger l’archive d’un génome bactérien de la bactérie S. Salivarius (Télécharger l’archive;   Extraire les deux fichiers présents dans l’archive.                         Consignes                     Téléverser ces deux fichiers dans omicsBroker en cliquant sur Browse puis en sélectionnant les fichiers (N°1 sur la figure ci-dessous). Vous pouvez aussi faire un `Drag &amp; Drop.         Une fois téléversés"," vous devriez avoir comme écran la figure suivante :                   Consignes                     Renseigner le md5sum pour chaque fichier (N°2 sur la figure ci-dessus). Pour simplifier le TP et ne pas vous faire calculer en local ce md5sum"," le tableau affiche le bom md5sum du fichier sur le serveur dans la colonne md5Server. Vous n’avez qu’à copier coller chaque valeur de cette colonne dans la colonne de droite md5SumIn.         L’objectif du md5sum est de s’assurer qu’aucune donnée n’a été perdue lors du téléversement. Pour obtenir le md5sum"," nous vous conseillons la lecture suivante.                 Consignes                     Associer à chaque fichier un Experience name que vous avez renseigné dans la partie précédente (N°3 sur la figure ci-dessus). Pour cela"," cliquer sur la cellule pour avoir la liste des Experience name disponibles dans la table metadata table et choisir le bon.         Une fois toutes ces informations renseignées"," vous devez avoir quelque chose de similaire à la capture d’écran ci-dessous :    Section Publish du menu latéral gauche  Cette section permet de soumettre les fichiers de données et de métadonnées à l’instance de test de l’ENA.                 Consignes                     Cliquer sur l’onglet ENA dans la barre latérale.         Vous devez avoir à votre écran l’image suivante :                   Consignes                     Renseigner votre webin et votre mot de passe.         Par exemple :    Envoyer les fichiers de données brutes sur l’instance de test de l’ENA                 Consignes                     Cliquer sur Upload data (Step 3).         En cas de succès"," un message vous sera envoyé :    Note : si l’échec est lié au temps (message d’erreur renvoyé)"," recommencer jusqu’au succès.  Envoyer les métadonnées sur l’instance de test de l’ENA                 Consignes                     Cliquer sur Upload metadata (Step 4).         En cas de succès"," un message vous sera envoyé :    Décrire les fichiers XML de métadonnées générés                 Consignes                     Cliquer sur les différents fichiers XML générés par la soumission et commenter.         Exemple du fichier Project Set :  &lt;PROJECT_SET&gt;   &lt;PROJECT alias=\"salivarius_dynamic\"&gt;     &lt;TITLE&gt;Characterization of Streptococcus salivarius conjugatif elements content and diversity&lt;/TITLE&gt;     &lt;DESCRIPTION&gt;Une description du projet&lt;/DESCRIPTION&gt;     &lt;SUBMISSION_PROJECT&gt;       &lt;SEQUENCING_PROJECT/&gt;     &lt;/SUBMISSION_PROJECT&gt;   &lt;/PROJECT&gt; &lt;/PROJECT_SET&gt;   Exemple du fichier Experiment:  &lt;EXPERIMENT_SET&gt;   &lt;EXPERIMENT alias=\"Sequencing_of_S__salivarius_B35_strain\"&gt;     &lt;TITLE&gt;Sequencing of S. salivarius B35 strain&lt;/TITLE&gt;     &lt;STUDY_REF alias=\"XXXXXXXXXXXXXXXXXXX\"/&gt;     &lt;DESIGN&gt;       &lt;DESIGN_DESCRIPTION/&gt;       &lt;SAMPLE_DESCRIPTOR accession=\"XXXXXXXXXXXXXXXXXXX\"/&gt;       &lt;LIBRARY_DESCRIPTOR&gt;         &lt;LIBRARY_NAME/&gt;         &lt;LIBRARY_STRATEGY&gt;WGS&lt;/LIBRARY_STRATEGY&gt;         &lt;LIBRARY_SOURCE&gt;GENOMIC&lt;/LIBRARY_SOURCE&gt;         &lt;LIBRARY_SELECTION&gt;RANDOM&lt;/LIBRARY_SELECTION&gt;         &lt;LIBRARY_LAYOUT&gt;           &lt;PAIRED NOMINAL_LENGTH=\"269\"/&gt;         &lt;/LIBRARY_LAYOUT&gt;         &lt;LIBRARY_CONSTRUCTION_PROTOCOL&gt;Standart Illumina protocol&lt;/LIBRARY_CONSTRUCTION_PROTOCOL&gt;       &lt;/LIBRARY_DESCRIPTOR&gt;     &lt;/DESIGN&gt;     &lt;PLATFORM&gt;       &lt;ILLUMINA&gt;         &lt;INSTRUMENT_MODEL&gt;Illumina HiSeq 2000&lt;/INSTRUMENT_MODEL&gt;       &lt;/ILLUMINA&gt;     &lt;/PLATFORM&gt;   &lt;/EXPERIMENT&gt; &lt;/EXPERIMENT_SET&gt;   Instance de test de l’ENA                 Consignes                     Vérifier que les différents fichiers de soumission sont bien sur l’instance de test de l’ENA. Pour cela"," se connecter sur l’instance de test de l’ENA ici.         Une fois connecté"," votre interface doit est comme ci-dessous :    En cliquant sur Studies Report :    En cliquant sur Samples Report :    En cliquant sur Runs Report :    En cliquant sur Run Files Report :                   Question 3                   Quel est le numéro d’accession attribué à votre projet par l’ENA ?                             Question Bonus : importation de métadonnées depuis le PGD  Via l’export du PGD en HTML"," il est possible de pré-remplir certains items dans omicsBroker. Pour cela"," vous devez :     Exporter votre PGD au format HTML depuis Opidor.  Vous pouvez cliquer ici puis enregistrer celui du PGD du TP.   Importer le fichier HTML dans omicsBroker.                  Consignes                     Commenter les champs importés."]
+      ,
+    
+        ["Introduction  Dans ce TP"," nous allons réaliser les différentes étapes entre la collecte des données et la soumission dans une banque internationnale. Nous vous proposons un jeu de données de séquences pour ce TP d’un génome bactérien de S. salivarius (Télécharger l’archive);  Vous trouverez dans le dossier une fois décompressé"," deux fichiers .fastq.gz.  Important : Ces données sont des données fictives extraites de METAGENOTE. Elles ne sont en rien significatives.  Comme ces données sont des données de séquences"," nous allons les soumettre sur l’ENA"," la banque européenne de séquences.  Partie 1 : Exploration de l’European National Archive (ENA)    L’European National Archive est une plateforme ouverte et soutenue pour la gestion"," le partage"," l’intégration"," l’archivage et la diffusion de données de séquences. Pour en savoir plus.  Connection à l’ENA  Lors d’un dépôt de données sur l’ENA"," il est nécessaire de créer un compte. Lors de ce TP"," vous aurez besoin d’un compte personnel si vous souhaitez essayer de soumettre des données TEST. Vous pouvez cliquer ici pour vous connecter à l’instance de test de l’ENA.  Comment sont gérées les métadonnées sur l’ENA ?  Chaque base de données organise ses données différement. Concernant l’ENA"," vous trouverez ci-dessous son modèle d’organisation des données et métadonnées de l’ENA :                   Extrait de la documentation de l'ENA                       Study: A study (project) groups together data submitted to the archive and controls its release date. A study accession is typically used when citing data submitted to ENA. Note that all associated data and other objects are made public when the study is released.   Sample: A sample contains information about the sequenced source material. Samples are associated with checklists"," which define the fields used to annotate the samples. Samples are always associated with a taxon.   Experiment: An experiment contains information about a sequencing experiment including library and instrument details.   Run: A run is part of an experiment and refers to data files containing sequence reads.   Analysis: An analysis contains secondary analysis results derived from sequence reads (e.g. a genome assembly)","   Submission: A submission contains submission actions to be performed by the archive. A submission can add more objects to the archive"," update already submitted objects or make objects publicly available.                     Source : lien                          Question 1                   Quels sont le ou les objets de l’ENA qui sont associés à un vocabulaire contrôlé domaine dépendant appelé Checklist par l’ENA ?                                  Study                           Sample                           Experiment                           Run                           Analysis                           Submission                                 Vérifier la réponse              La bonne réponse était: Sample              Choisir une checklist correspondant au jeu de données  Une quantité minimale d’informations est requise lors de l’enregistrement des échantillons sur l’ENA et tous les échantillons doivent être conformes à une liste de contrôle (checklist) définissant des valeurs de métadonnées attendues. La liste de contrôle la plus appropriée pour l’enregistrement des échantillons dépend du type de l’échantillon. L’ensemble des checklists de l’ENA sont disponible ici. Pour le jeu de données de la bactérie S. salivarius"," utiliser le mot-clé pathogen.                 Question 2                   Quel est le numéro d’accession de la checklist à utiliser pour le jeu de données choisi ?                                                                                                                     Solution                                                                                                                      La checklist à utiliser pour le génome bactérien de S. salivarius est ERC000028                                                                                        Les checklists sont disponibles au format XML. Vous avez par exemple ci-dessous un extrait de la checklist ERC000028 :  &lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt; &lt;CHECKLIST_SET&gt; &lt;CHECKLIST accession=\"ERC000028\" checklistType=\"Sample\"&gt;           &lt;IDENTIFIERS&gt;                &lt;PRIMARY_ID&gt;ERC000028&lt;/PRIMARY_ID&gt;           &lt;/IDENTIFIERS&gt;           &lt;DESCRIPTOR&gt;                &lt;LABEL&gt;ENA prokaryotic pathogen minimal sample checklist&lt;/LABEL&gt;                &lt;NAME&gt;ENA prokaryotic pathogen minimal sample checklist&lt;/NAME&gt;                &lt;DESCRIPTION&gt;Minimum information required for a prokaryotic pathogen sample&lt;/DESCRIPTION&gt;                &lt;AUTHORITY&gt;ENA&lt;/AUTHORITY&gt;                &lt;FIELD_GROUP restrictionType=\"Any number or none of the fields\"&gt;                     &lt;NAME&gt;Collection event information&lt;/NAME&gt;                     &lt;FIELD&gt;                          &lt;LABEL&gt;isolation_source&lt;/LABEL&gt;                          &lt;NAME&gt;isolation_source&lt;/NAME&gt;                          &lt;DESCRIPTION&gt;describes the physical"," environmental and/or local geographical source of the biological sample from which the sample was derived&lt;/DESCRIPTION&gt;                          &lt;FIELD_TYPE&gt;                               &lt;TEXT_FIELD/&gt;                          &lt;/FIELD_TYPE&gt;                          &lt;MANDATORY&gt;mandatory&lt;/MANDATORY&gt;                          &lt;MULTIPLICITY&gt;multiple&lt;/MULTIPLICITY&gt;                     &lt;/FIELD&gt;                     &lt;FIELD&gt;                          &lt;LABEL&gt;lat_lon&lt;/LABEL&gt;                          &lt;NAME&gt;lat_lon&lt;/NAME&gt;                          &lt;DESCRIPTION&gt;geographical coordinates of the location where the specimen was collected&lt;/DESCRIPTION&gt;                          &lt;FIELD_TYPE&gt;                               &lt;TEXT_FIELD/&gt;                          &lt;/FIELD_TYPE&gt;                          &lt;MANDATORY&gt;recommended&lt;/MANDATORY&gt;                          &lt;MULTIPLICITY&gt;multiple&lt;/MULTIPLICITY&gt;                     &lt;/FIELD&gt;                     [...]                 &lt;/FIELD_GROUP&gt;           &lt;/DESCRIPTOR&gt;      &lt;/CHECKLIST&gt; &lt;/CHECKLIST_SET&gt;   Partie 2 - Utilisation de l’outil omicsBroker  Pour ce TP"," nous allons utiliser omicsBroker"," un outil de brokering développé par l’IFB. Il s’agit d’un prototype permettant d’annoter des données de séquences et de les soumettre à l’ENA.  Pour vous connecter à une instance de démonstration"," cliquer sur le lien suivant : ici. Cette instance sera fermer dès la fin du TP. Si vous souhaitez refaire le TP"," l’ensemble des étapes d’installation sont décrites sur GitHub.     Attention 1 : omicsBroker est un un prototype qu’il ne faut pas utiliser avec des vraies données pour une vraie soumission !   Attention 2 : Avez vous bien lu le attention 1 ?   Section Annotation du menu lattéral gauche  Cette section vous permet de créer un projet"," de choisir une Checklist et remplir les métadonnées décrivant vos échantillons.    Cliquer sur le lien Project.                 Consignes                    Créer un projet en renseignant uniquement les champs obligatoires : Title"," Alias et Description.           Cliquer sur le lien Samples  Choix de la checklist                 Consignes                    Sélectionner la  checklist identifiée à la question précédente.                        Rappel                    Pour le jeu de données du génome bactérien de S. salivarius"," la checklist est ERC000028           Le tableau dans la partie inférieure de la page Metadata table s’est mis à jour avec les champs correspondant à la Checklist sélectionnée.  Métadonnées                 Consignes                     Renseigner les champs obligatoires demandés en utilisant le contenu du DMP Opidor associé au jeu de données. Pour le trouver"," aller sur Opidor - DMPs publics et rechercher le le plan IFB_Training_salivarius. Ensuite"," télécharger le PDF qui contient toutes les informations nécessaires.         En cas de problème"," le PDF peut être téléchargé ici ou ici.  Pour savoir quel type d’information vous devez renseigner dans une cellule"," cliquez sur la cellule en question et une notice vous donnera les informations nécessaires dans partie Descriptions (droite). Par exemple"," ici les informations nécessaires dans la colonne Platform :    Ci dessous"," un exemple d’une table remplie :    Cliquer sur le lien Files  Vous avez à votre disposition 2 fichiers une fois l’archive décompressées.                Rappel                     Pour obtenir ces fichiers :     Vous devez télécharger l’archive d’un génome bactérien de la bactérie S. Salivarius (Télécharger l’archive;   Extraire les deux fichiers présents dans l’archive.                         Consignes                     Téléverser ces deux fichiers dans omicsBroker en cliquant sur Browse puis en sélectionnant les fichiers (N°1 sur la figure ci-dessous). Vous pouvez aussi faire un `Drag &amp; Drop.         Une fois téléversés"," vous devriez avoir comme écran la figure suivante :                   Consignes                     Renseigner le md5sum pour chaque fichier (N°2 sur la figure ci-dessus). Pour simplifier le TP et ne pas vous faire calculer en local ce md5sum"," le tableau affiche le bom md5sum du fichier sur le serveur dans la colonne md5Server. Vous n’avez qu’à copier coller chaque valeur de cette colonne dans la colonne de droite md5SumIn.         L’objectif du md5sum est de s’assurer qu’aucune donnée n’a été perdue lors du téléversement. Pour obtenir le md5sum"," nous vous conseillons la lecture suivante.                 Consignes                     Associer à chaque fichier un Experience name que vous avez renseigné dans la partie précédente (N°3 sur la figure ci-dessus). Pour cela"," cliquer sur la cellule pour avoir la liste des Experience name disponibles dans la table metadata table et choisir le bon.         Une fois toutes ces informations renseignées"," vous devez avoir quelque chose de similaire à la capture d’écran ci-dessous :    Section Publish du menu latéral gauche  Cette section permet de soumettre les fichiers de données et de métadonnées à l’instance de test de l’ENA.                 Consignes                     Cliquer sur l’onglet ENA dans la barre latérale.         Vous devez avoir à votre écran l’image suivante :                   Consignes                     Renseigner votre webin et votre mot de passe.         Par exemple :    Envoyer les fichiers de données brutes sur l’instance de test de l’ENA                 Consignes                     Cliquer sur Upload data (Step 3).         En cas de succès"," un message vous sera envoyé :    Note : si l’échec est lié au temps (message d’erreur renvoyé)"," recommencer jusqu’au succès.  Envoyer les métadonnées sur l’instance de test de l’ENA                 Consignes                     Cliquer sur Upload metadata (Step 4).         En cas de succès"," un message vous sera envoyé :    Décrire les fichiers XML de métadonnées générés                 Consignes                     Cliquer sur les différents fichiers XML générés par la soumission et commenter.         Exemple du fichier Project Set :  &lt;PROJECT_SET&gt;   &lt;PROJECT alias=\"salivarius_dynamic\"&gt;     &lt;TITLE&gt;Characterization of Streptococcus salivarius conjugatif elements content and diversity&lt;/TITLE&gt;     &lt;DESCRIPTION&gt;Une description du projet&lt;/DESCRIPTION&gt;     &lt;SUBMISSION_PROJECT&gt;       &lt;SEQUENCING_PROJECT/&gt;     &lt;/SUBMISSION_PROJECT&gt;   &lt;/PROJECT&gt; &lt;/PROJECT_SET&gt;   Exemple du fichier Experiment:  &lt;EXPERIMENT_SET&gt;   &lt;EXPERIMENT alias=\"Sequencing_of_S__salivarius_B35_strain\"&gt;     &lt;TITLE&gt;Sequencing of S. salivarius B35 strain&lt;/TITLE&gt;     &lt;STUDY_REF alias=\"XXXXXXXXXXXXXXXXXXX\"/&gt;     &lt;DESIGN&gt;       &lt;DESIGN_DESCRIPTION/&gt;       &lt;SAMPLE_DESCRIPTOR accession=\"XXXXXXXXXXXXXXXXXXX\"/&gt;       &lt;LIBRARY_DESCRIPTOR&gt;         &lt;LIBRARY_NAME/&gt;         &lt;LIBRARY_STRATEGY&gt;WGS&lt;/LIBRARY_STRATEGY&gt;         &lt;LIBRARY_SOURCE&gt;GENOMIC&lt;/LIBRARY_SOURCE&gt;         &lt;LIBRARY_SELECTION&gt;RANDOM&lt;/LIBRARY_SELECTION&gt;         &lt;LIBRARY_LAYOUT&gt;           &lt;PAIRED NOMINAL_LENGTH=\"269\"/&gt;         &lt;/LIBRARY_LAYOUT&gt;         &lt;LIBRARY_CONSTRUCTION_PROTOCOL&gt;Standart Illumina protocol&lt;/LIBRARY_CONSTRUCTION_PROTOCOL&gt;       &lt;/LIBRARY_DESCRIPTOR&gt;     &lt;/DESIGN&gt;     &lt;PLATFORM&gt;       &lt;ILLUMINA&gt;         &lt;INSTRUMENT_MODEL&gt;Illumina HiSeq 2000&lt;/INSTRUMENT_MODEL&gt;       &lt;/ILLUMINA&gt;     &lt;/PLATFORM&gt;   &lt;/EXPERIMENT&gt; &lt;/EXPERIMENT_SET&gt;   Instance de test de l’ENA                 Consignes                     Vérifier que les différents fichiers de soumission sont bien sur l’instance de test de l’ENA. Pour cela"," se connecter sur l’instance de test de l’ENA ici.         Une fois connecté"," votre interface doit est comme ci-dessous :    En cliquant sur Studies Report :    En cliquant sur Samples Report :    En cliquant sur Runs Report :    En cliquant sur Run Files Report :                   Question 3                   Quel est le numéro d’accession attribué à votre projet par l’ENA ?                             Question Bonus : importation de métadonnées depuis le PGD  Via l’export du PGD en HTML"," il est possible de pré-remplir certains items dans omicsBroker. Pour cela"," vous devez :     Exporter votre PGD au format HTML depuis Opidor.  Vous pouvez cliquer ici puis enregistrer celui du PGD du TP.   Importer le fichier HTML dans omicsBroker.                  Consignes                     Commenter les champs importés."]
+      ,
+    
+        ["Cours    Logigrammes"]
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        []
+      ,
+    
+        ["Questionnaire    Un petit quizz pour tester vos connaissances après cette formation.  Lien vers le quizz :"]
+      ,
+    
+        ["Questionnaire    Un petit quizz pour tester vos connaissances après cette formation.  Lien vers le quizz :"]
+      ,
+    
+        ["Questionnaire sur les 4 premiers modules de formation    Lien vers le quizz : ici ou cliquer sur l’image !"]
+      ,
+    
+        ["Questionnaire sur les 4 premiers modules de formation    Lien vers le quizz : ici ou cliquer sur l’image !"]
+      
+    
+    ];
+
+
+ // https://github.com/stopwords-iso
+ var stopwords = new Set("1,2,3,4,5,6,7,8,9,0,├──,└──,à,a,abord,absolument,afin,ah,ai,aie,aient,aies,ailleurs,ainsi,ait,allaient,allo,allons,allô,alors,anterieur,anterieure,anterieures,apres,après,as,assez,attendu,au,aucun,aucune,aucuns,aujourd,aujourd'hui,aupres,auquel,aura,aurai,auraient,aurais,aurait,auras,aurez,auriez,aurions,aurons,auront,aussi,autant,autre,autrefois,autrement,autres,autrui,aux,auxquelles,auxquels,avaient,avais,avait,avant,avec,avez,aviez,avions,avoir,avons,ayant,ayez,ayons,b,bah,bas,basee,bat,beau,beaucoup,bien,bigre,bon,boum,bravo,brrr,c,car,ce,ceci,cela,celle,celle-ci,celle-là,celles,celles-ci,celles-là,celui,celui-ci,celui-là,celà,cent,cependant,certain,certaine,certaines,certains,certes,ces,cet,cette,ceux,ceux-ci,ceux-là,chacun,chacune,chaque,cher,chers,chez,chiche,chut,chère,chères,ci,cinq,cinquantaine,cinquante,cinquantième,cinquième,clac,clic,combien,comme,comment,comparable,comparables,compris,concernant,contre,couic,crac,d,da,dans,de,debout,dedans,dehors,deja,delà,depuis,dernier,derniere,derriere,derrière,des,desormais,desquelles,desquels,dessous,dessus,deux,deuxième,deuxièmement,devant,devers,devra,devrait,different,differentes,differents,différent,différente,différentes,différents,dire,directe,directement,dit,dite,dits,divers,diverse,diverses,dix,dix-huit,dix-neuf,dix-sept,dixième,doit,doivent,donc,dont,dos,douze,douzième,dring,droite,du,duquel,durant,dès,début,désormais,e,effet,egale,egalement,egales,eh,elle,elle-même,elles,elles-mêmes,en,encore,enfin,entre,envers,environ,es,essai,est,et,etant,etc,etre,eu,eue,eues,euh,eurent,eus,eusse,eussent,eusses,eussiez,eussions,eut,eux,eux-mêmes,exactement,excepté,extenso,exterieur,eûmes,eût,eûtes,f,fais,faisaient,faisant,fait,faites,façon,feront,fi,flac,floc,fois,font,force,furent,fus,fusse,fussent,fusses,fussiez,fussions,fut,fûmes,fût,fûtes,g,gens,h,ha,haut,hein,hem,hep,hi,ho,holà,hop,hormis,hors,hou,houp,hue,hui,huit,huitième,hum,hurrah,hé,hélas,i,ici,il,ils,importe,j,je,jusqu,jusque,juste,k,l,la,laisser,laquelle,las,le,lequel,les,lesquelles,lesquels,leur,leurs,longtemps,lors,lorsque,lui,lui-meme,lui-même,là,lès,m,ma,maint,maintenant,mais,malgre,malgré,maximale,me,meme,memes,merci,mes,mien,mienne,miennes,miens,mille,mince,mine,minimale,moi,moi-meme,moi-même,moindres,moins,mon,mot,moyennant,multiple,multiples,même,mêmes,n,na,naturel,naturelle,naturelles,ne,neanmoins,necessaire,necessairement,neuf,neuvième,ni,nombreuses,nombreux,nommés,non,nos,notamment,notre,nous,nous-mêmes,nouveau,nouveaux,nul,néanmoins,nôtre,nôtres,o,oh,ohé,ollé,olé,on,ont,onze,onzième,ore,ou,ouf,ouias,oust,ouste,outre,ouvert,ouverte,ouverts,o|,où,p,paf,pan,par,parce,parfois,parle,parlent,parler,parmi,parole,parseme,partant,particulier,particulière,particulièrement,pas,passé,pendant,pense,permet,personne,personnes,peu,peut,peuvent,peux,pff,pfft,pfut,pif,pire,pièce,plein,plouf,plupart,plus,plusieurs,plutôt,possessif,possessifs,possible,possibles,pouah,pour,pourquoi,pourrais,pourrait,pouvait,prealable,precisement,premier,première,premièrement,pres,probable,probante,procedant,proche,près,psitt,pu,puis,puisque,pur,pure,q,qu,quand,quant,quant-à-soi,quanta,quarante,quatorze,quatre,quatre-vingt,quatrième,quatrièmement,que,quel,quelconque,quelle,quelles,quelqu'un,quelque,quelques,quels,qui,quiconque,quinze,quoi,quoique,r,rare,rarement,rares,relative,relativement,remarquable,rend,rendre,restant,reste,restent,restrictif,retour,revoici,revoilà,rien,s,sa,sacrebleu,sait,sans,sapristi,sauf,se,sein,seize,selon,semblable,semblaient,semble,semblent,sent,sept,septième,sera,serai,seraient,serais,serait,seras,serez,seriez,serions,serons,seront,ses,seul,seule,seulement,si,sien,sienne,siennes,siens,sinon,six,sixième,soi,soi-même,soient,sois,soit,soixante,sommes,son,sont,sous,souvent,soyez,soyons,specifique,specifiques,speculatif,stop,strictement,subtiles,suffisant,suffisante,suffit,suis,suit,suivant,suivante,suivantes,suivants,suivre,sujet,superpose,sur,surtout,t,ta,tac,tandis,tant,tardive,te,tel,telle,tellement,telles,tels,tenant,tend,tenir,tente,tes,tic,tien,tienne,tiennes,tiens,toc,toi,toi-même,ton,touchant,toujours,tous,tout,toute,toutefois,toutes,treize,trente,tres,trois,troisième,troisièmement,trop,très,tsoin,tsouin,tu,té,u,un,une,unes,uniformement,unique,uniques,uns,v,va,vais,valeur,vas,vers,via,vif,vifs,vingt,vivat,vive,vives,vlan,voici,voie,voient,voilà,voire,vont,vos,votre,vous,vous-mêmes,vu,vé,vôtre,vôtres,w,x,y,z,zut,à,â,ça,ès,étaient,étais,était,étant,état,étiez,étions,été,étée,étées,étés,êtes,être,ô,'ll,'tis,'twas,'ve,10,39,a,a's,able,ableabout,about,above,abroad,abst,accordance,according,accordingly,across,act,actually,ad,added,adj,adopted,ae,af,affected,affecting,affects,after,afterwards,ag,again,against,ago,ah,ahead,ai,ain't,aint,al,all,allow,allows,almost,alone,along,alongside,already,also,although,always,am,amid,amidst,among,amongst,amoungst,amount,an,and,announce,another,any,anybody,anyhow,anymore,anyone,anything,anyway,anyways,anywhere,ao,apart,apparently,appear,appreciate,appropriate,approximately,aq,ar,are,area,areas,aren,aren't,arent,arise,around,arpa,as,aside,ask,asked,asking,asks,associated,at,au,auth,available,aw,away,awfully,az,b,ba,back,backed,backing,backs,backward,backwards,bb,bd,be,became,because,become,becomes,becoming,been,before,beforehand,began,begin,beginning,beginnings,begins,behind,being,beings,believe,below,beside,besides,best,better,between,beyond,bf,bg,bh,bi,big,bill,billion,biol,bj,bm,bn,bo,both,bottom,br,brief,briefly,bs,bt,but,buy,bv,bw,by,bz,c,c'mon,c's,ca,call,came,can,can't,cannot,cant,caption,case,cases,cause,causes,cc,cd,certain,certainly,cf,cg,ch,changes,ci,ck,cl,clear,clearly,click,cm,cmon,cn,co,co.,com,come,comes,computer,con,concerning,consequently,consider,considering,contain,containing,contains,copy,corresponding,could,could've,couldn,couldn't,couldnt,course,cr,cry,cs,cu,currently,cv,cx,cy,cz,d,dare,daren't,darent,date,de,dear,definitely,describe,described,despite,detail,did,didn,didn't,didnt,differ,different,differently,directly,dj,dk,dm,do,does,doesn,doesn't,doesnt,doing,don,don't,done,dont,doubtful,down,downed,downing,downs,downwards,due,during,dz,e,each,early,ec,ed,edu,ee,effect,eg,eh,eight,eighty,either,eleven,else,elsewhere,empty,end,ended,ending,ends,enough,entirely,er,es,especially,et,et-al,etc,even,evenly,ever,evermore,every,everybody,everyone,everything,everywhere,ex,exactly,example,except,f,face,faces,fact,facts,fairly,far,farther,felt,few,fewer,ff,fi,fifteen,fifth,fifty,fify,fill,find,finds,fire,first,five,fix,fj,fk,fm,fo,followed,following,follows,for,forever,former,formerly,forth,forty,forward,found,four,fr,free,from,front,full,fully,further,furthered,furthering,furthermore,furthers,fx,g,ga,gave,gb,gd,ge,general,generally,get,gets,getting,gf,gg,gh,gi,give,given,gives,giving,gl,gm,gmt,gn,go,goes,going,gone,good,goods,got,gotten,gov,gp,gq,gr,great,greater,greatest,greetings,group,grouped,grouping,groups,gs,gt,gu,gw,gy,h,had,hadn't,hadnt,half,happens,hardly,has,hasn,hasn't,hasnt,have,haven,haven't,havent,having,he,he'd,he'll,he's,hed,hell,hello,help,hence,her,here,here's,hereafter,hereby,herein,heres,hereupon,hers,herself,herse”,hes,hi,hid,high,higher,highest,him,himself,himse”,his,hither,hk,hm,hn,home,homepage,hopefully,how,how'd,how'll,how's,howbeit,however,hr,ht,htm,html,http,hu,hundred,i,i'd,i'll,i'm,i've,i.e.,id,ie,if,ignored,ii,il,ill,im,immediate,immediately,importance,important,in,inasmuch,inc,inc.,indeed,index,indicate,indicated,indicates,information,inner,inside,insofar,instead,int,interest,interested,interesting,interests,into,invention,inward,io,iq,ir,is,isn,isn't,isnt,it,it'd,it'll,it's,itd,itll,its,itself,itse”,ive,j,je,jm,jo,join,jp,just,k,ke,keep,keeps,kept,keys,kg,kh,ki,kind,km,kn,knew,know,known,knows,kp,kr,kw,ky,kz,l,la,large,largely,last,lately,later,latest,latter,latterly,lb,lc,least,length,less,lest,let,let's,lets,li,like,liked,likely,likewise,line,little,lk,ll,long,longer,longest,look,looking,looks,low,lower,lr,ls,lt,ltd,lu,lv,ly,m,ma,made,mainly,make,makes,making,man,many,may,maybe,mayn't,maynt,mc,md,me,mean,means,meantime,meanwhile,member,members,men,merely,mg,mh,microsoft,might,might've,mightn't,mightnt,mil,mill,million,mine,minus,miss,mk,ml,mm,mn,mo,more,moreover,most,mostly,move,mp,mq,mr,mrs,ms,msie,mt,mu,much,mug,must,must've,mustn't,mustnt,mv,mw,mx,my,myself,myse”,mz,n,na,name,namely,nay,nc,nd,ne,near,nearly,necessarily,necessary,need,needed,needing,needn't,neednt,needs,neither,net,netscape,never,neverf,neverless,nevertheless,new,newer,newest,next,nf,ng,ni,nine,ninety,nl,no,no-one,nobody,non,none,nonetheless,noone,nor,normally,nos,not,noted,nothing,notwithstanding,novel,now,nowhere,np,nr,nu,null,number,numbers,nz,o,obtain,obtained,obviously,of,off,often,oh,ok,okay,old,older,oldest,om,omitted,on,once,one,one's,ones,only,onto,open,opened,opening,opens,opposite,or,ord,order,ordered,ordering,orders,org,other,others,otherwise,ought,oughtn't,oughtnt,our,ours,ourselves,out,outside,over,overall,owing,own,p,pa,page,pages,part,parted,particular,particularly,parting,parts,past,pe,per,perhaps,pf,pg,ph,pk,pl,place,placed,places,please,plus,pm,pmid,pn,point,pointed,pointing,points,poorly,possible,possibly,potentially,pp,pr,predominantly,present,presented,presenting,presents,presumably,previously,primarily,probably,problem,problems,promptly,proud,provided,provides,pt,put,puts,pw,py,q,qa,que,quickly,quite,qv,r,ran,rather,rd,re,readily,really,reasonably,recent,recently,ref,refs,regarding,regardless,regards,related,relatively,research,reserved,respectively,resulted,resulting,results,right,ring,ro,room,rooms,round,ru,run,rw,s,sa,said,same,saw,say,saying,says,sb,sc,sd,se,sec,second,secondly,seconds,section,see,seeing,seem,seemed,seeming,seems,seen,sees,self,selves,sensible,sent,serious,seriously,seven,seventy,several,sg,sh,shall,shan't,shant,she,she'd,she'll,she's,shed,shell,shes,should,should've,shouldn,shouldn't,shouldnt,show,showed,showing,shown,showns,shows,si,side,sides,significant,significantly,similar,similarly,since,sincere,site,six,sixty,sj,sk,sl,slightly,sm,small,smaller,smallest,sn,so,some,somebody,someday,somehow,someone,somethan,something,sometime,sometimes,somewhat,somewhere,soon,sorry,specifically,specified,specify,specifying,sr,st,state,states,still,stop,strongly,su,sub,substantially,successfully,such,sufficiently,suggest,sup,sure,sv,sy,system,sz,t,t's,take,taken,taking,tc,td,tell,ten,tends,test,text,tf,tg,th,than,thank,thanks,thanx,that,that'll,that's,that've,thatll,thats,thatve,the,their,theirs,them,themselves,then,thence,there,there'd,there'll,there're,there's,there've,thereafter,thereby,thered,therefore,therein,therell,thereof,therere,theres,thereto,thereupon,thereve,these,they,they'd,they'll,they're,they've,theyd,theyll,theyre,theyve,thick,thin,thing,things,think,thinks,third,thirty,this,thorough,thoroughly,those,thou,though,thoughh,thought,thoughts,thousand,three,throug,through,throughout,thru,thus,til,till,tip,tis,tj,tk,tm,tn,to,today,together,too,took,top,toward,towards,tp,tr,tried,tries,trillion,truly,try,trying,ts,tt,turn,turned,turning,turns,tv,tw,twas,twelve,twenty,twice,two,tz,u,ua,ug,uk,um,un,under,underneath,undoing,unfortunately,unless,unlike,unlikely,until,unto,up,upon,ups,upwards,us,use,used,useful,usefully,usefulness,uses,using,usually,uucp,uy,uz,v,va,value,various,vc,ve,versus,very,vg,vi,via,viz,vn,vol,vols,vs,vu,w,want,wanted,wanting,wants,was,wasn,wasn't,wasnt,way,ways,we,we'd,we'll,we're,we've,web,webpage,website,wed,welcome,well,wells,went,were,weren,weren't,werent,weve,wf,what,what'd,what'll,what's,what've,whatever,whatll,whats,whatve,when,when'd,when'll,when's,whence,whenever,where,where'd,where'll,where's,whereafter,whereas,whereby,wherein,wheres,whereupon,wherever,whether,which,whichever,while,whilst,whim,whither,who,who'd,who'll,who's,whod,whoever,whole,wholl,whom,whomever,whos,whose,why,why'd,why'll,why's,widely,width,will,willing,wish,with,within,without,won,won't,wonder,wont,words,work,worked,working,works,world,would,would've,wouldn,wouldn't,wouldnt,ws,www,x,y,ye,year,years,yes,yet,you,you'd,you'll,you're,you've,youd,youll,young,younger,youngest,your,youre,yours,yourself,yourselves,youve,yt,yu,z,za,zero,zm,zr".split(","));
+
+ var content = content.toString();
+ content = content.replace(/[’.,\/#!$%\^&\*;:{}=\-_`~()]/g," ");
+
+ var words = content.split(/[\s.]+/g)
+  .map(w => w.replace(/^[“‘"\-—()\[\]{}]+/g, ""))
+  .map(w => w.replace(/[«»│;:.!?()\[\]{},"'’”\-—]+$/g, ""))
+  .map(w => w.replace(/['’]s$/g, ""))
+  .map(w => w.replace([0-9], ""))
+  .map(w => w.substring(0, 30))
+  .map(w => w.toLowerCase())
+  .filter(w => w && !stopwords.has(w))
+
+  var data = d3.rollups(words, group => group.length, w => w)
+  .sort(([, a], [, b]) => d3.descending(a, b))
+  .slice(0, 30)
+  .map(([text, value]) => ({text, value}));
+
+  console.log(document.getElementById('my_dataviz').clientWidth); 
+
+ // set the dimensions and margins of the graph
+var margin = {top: 10, right: 10, bottom: 10, left: 10},
+    width = document.getElementById('my_dataviz').clientWidth - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
+// Wordcloud features that are different from one word to the other must be here
+var layout = d3.layout.cloud()
+  .size([width, height])
+  .words(data.map(function(d) { return {text: d.text, size:d.value}; }))
+  .padding(20)        //space between words
+  .rotate(0)
+  .fontSize(function(d) { return d.size  * 5 ; })      // font size of words
+  .on("end", draw);
+layout.start();
+
+// This function takes the output of 'layout' above and draw the words
+// Wordcloud features that are THE SAME from one word to the other can be here
+function draw(words) {
+  svg
+    .append("g")
+      .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+      .selectAll("text")
+        .data(words)
+      .enter().append("text")
+        .style("font-size", function(d) { return d.size; })
+        .style("fill", "#173b6c")
+        .attr("text-anchor", "middle")
+        .style("font-family", "Impact")
+        .attr("transform", function(d) {
+          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+        })
+        .text(function(d) { return d.text; });
+}
+
+</script>
+
+
+    </div><footer class="footer">
+    <div class="container">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-sm-6">
+                <div class="d-flex flex-row">
+                    <img src="/IFB-FAIR-data-training/assets/img/logo-ifb.svg" | relative_url }}' alt="IFB" height="50px">
+                    <img src="/IFB-FAIR-data-training/assets/img/logo-elixir-france.png" | relative_url }}' alt="IFB" height="50px">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <span class="text-muted" ><a href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training" target="_blank" style="color:#173b6c">IFB-FAIR-data-training</a> is maintained by <a
+                    href="https://github.com/IFB-ElixirFr" target="_blank" style="color:#173b6c">IFB-ElixirFr</a>.</span>
+                    
+                    <div class="d-flex flex-row justify-content-center" style="color:#173b6c">
+                        <div class="p-2"><a href="https://github.com/IFB-ElixirFr" target="_blank" class="linkSocial"><i class="fab fa-github-alt"></i></div>
+                        <div class="p-2"><a href="https://twitter.com/IFB_Bioinfo" target="_blank" class="linkSocial"><i class="fab fa-twitter"></i></a></div>
+                        <div class="p-2"><a href="https://www.linkedin.com/company/institut-fran%C3%A7ais-de-bioinformatique/" target="_blank" class="linkSocial"><i class="fab fa-linkedin-in"></i></a></div>
+                        <div class="p-2"><a href="https://www.youtube.com/channel/UC-PWpzAklKLdjxtdHnkoeCw" target="_blank" class="linkSocial"><i class="fab fa-youtube"></i></a></i></div>
+                    </div>
+                    
+            </div>
+        </div>
+    </div>
+</footer><!-- The Modal -->
+    <div id="modal_div" class="modal">
+
+        <!-- The Close Button -->
+        <span class="close" id="modal_close">&times;</span>
+
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="modal_img">
+
+        <!-- Modal Caption (Image Text) -->
+        <div id="modal_caption"></div>
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+    function image(img) {
+        // Get the modal
+        var modal = document.getElementById("modal_div");       
+        var modalImg = document.getElementById("modal_img");
+        var captionText = document.getElementById("modal_caption");
+        
+        // Display image
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        captionText.innerHTML = img.alt;
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementById("modal_close");
+    
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+
+    <script charset="UTF-8">
+        $(document).ready(function(){
+            var navSelector = "#toc";
+            var $myNav = $(navSelector);
+            Toc.init($myNav);
+            
+            $("body").scrollspy({
+                target: navSelector,
+                offset: 70
+            });
+
+            // Add smooth scrolling on all links inside the navbar
+            $("#toc a").on('click', function(event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = decodeURI(this.hash);
+                
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top - 75
+                }, 800, function(){
+            
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    //window.location.hash = hash;
+                });
+                }  // End if
+            });
+
+        });
+        
+    </script>
+
+
+  </body>
+</html>
+

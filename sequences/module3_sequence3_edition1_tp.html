@@ -1,0 +1,1037 @@
+<!doctype html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFB FAIR-bioinfo training</title>
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/IFB-FAIR-data-training/assets/css/style.css">
+
+    <!-- Icons -->
+    <!-- https://boxicons.com/ -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Nav icon -->
+    <link rel="icon" type="image/png" href="/IFB-FAIR-data-training/assets/img/logo.png"/>
+
+    <!-- TOC -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
+    <!-- add after bootstrap.min.js -->
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+    
+    <!-- fontawesome - Icons -->
+    <link href= "/IFB-FAIR-data-training/assets/fontawesome/css/all.css" rel="stylesheet">
+    
+    <!-- PDF script -->
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <link href= "https://printjs-4de6.kxcdn.com/print.min.css" rel="stylesheet">
+
+    <!-- papaParse -->
+    <script type="text/javascript" src="/IFB-FAIR-data-training/assets/js/papaparse.min.js" ></script>
+
+    <!-- Charts -->
+    <script src="/IFB-FAIR-data-training/assets/js/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+    <!-- AddEvent script -->
+    <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+
+    <!-- AddEvent Settings -->
+    <!-- Documentation : https://www.addevent.com/documentation/add-to-calendar-button -->
+    <script type="text/javascript">
+    window.addeventasync = function(){
+        addeventatc.settings({
+            appleical  : {show:true, text:"Apple Calendar"},
+            google     : {show:true, text:"Google <em>(online)</em>"},
+            office365  : {show:true, text:"Office 365 <em>(online)</em>"},
+            outlook    : {show:true, text:"Outlook"},
+            outlookcom : {show:true, text:"Outlook.com <em>(online)</em>"},
+            yahoo      : {show:true, text:"Yahoo <em>(online)</em>"}
+        });
+    };
+    </script>
+</head><body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button><nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="/IFB-FAIR-data-training/index.html">
+            <img src="/IFB-FAIR-data-training/assets/img/logo.png" height="30" class="d-inline-block align-top" alt="">
+            FAIR data
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto">
+
+                <!-- Module -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeModules.html" >Modules</a>
+                </li>
+
+
+                <!-- Cours -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeCours.html" >Cours</a>
+                </li>
+
+                <!-- Travaux pratiques -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeTPs.html" >TPs</a>
+                </li>
+
+                <!-- Ressources -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeRessources.html" >Ressources</a>
+                </li>
+
+                <!-- Edition -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeEditions.html" >Éditions</a>
+                </li>
+
+                <!-- A propos -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_Apropos" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        À propos
+                    </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_Apropos">
+                        <a class="dropdown-item" href="/IFB-FAIR-data-training/apropos.html" >De l'IFB</a>
+                        <a class="dropdown-item" href="/IFB-FAIR-data-training/formateurs.html" >Des formateurs</a>
+                    </div>
+                </li>
+
+            </ul>
+            
+            <ul class="nav navbar-nav ml-auto">
+                <form class="form-inline" action="/IFB-FAIR-data-training/search.html" method="get">
+
+                    <div class="input-group">
+                        <input type="text" class="form-control" 
+                        id="search-box_nav" placeholder="Rechercher" aria-label="Rechercher" aria-describedby="basic-addon2" 
+                        name="query">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                      </div>
+
+                  </form>
+                  
+                <!-- Question -->
+                <li class="nav-item dropdown" >
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_questions" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-question-circle"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink_questions">
+                        <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fab fa-github"></i></i></span></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Notre GitHub </b></p>
+                                    <p class="textNav">Visiter nous ! </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/wiki" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fas fa-book"></i></span></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Pour contribuer </b></p>
+                                    <p class="textNav">Une docu est disponible</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/discussions" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fas fa-comments"></i></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Envie d'échanger avec nous ? </b></p>
+                                    <p class="textNav">Une discussion est ouverte</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/issues" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fas fa-exclamation-triangle"></i></span></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Un bug dans le site ? </b></p>
+                                    <p class="textNav">Déclarer une <i>issue</i> </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        
+                    </div>
+                </li>
+            </ul>
+            
+
+        </div>
+    </div>
+
+</nav>
+
+<div id="home"></div>
+    <div class="sectionCover d-flex flex-column justify-content-center align-items-center">
+        <p id="id_header_title" style="margin-bottom: .5rem; font-weight: 500; line-height: 1.2; font-size: 2.5rem;"> </p>
+        <p id="id_header_subTitle" style="font-size: 1.6em;text-align:center;"></p>
+    </div>
+
+    <div class="container">
+        <script>
+var paragraph = document.getElementById("id_header_title");
+var text = document.createTextNode("Choix des métadonnées et soumission à l'EBI");
+paragraph.appendChild(text);
+
+var paragraph = document.getElementById("id_header_subTitle");
+var text = document.createTextNode("Séquence 3 - Module 3 - Edition 1");
+paragraph.appendChild(text);
+</script>
+
+<div class="row">
+    <div class="col-sm-3">
+        <nav id="toc" class="sticky-top"></nav>
+    </div>
+    <div class="col-sm-9" data-spy="scroll" data-target="#toc" data-offset="70" >
+        <div id="divPDF">
+            <div class="card">
+                <div class="card-header text-white bg-info">
+                    <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-info-circle"></i> Informations générales</h2>
+                </div>
+                <div class="card-body">
+                    <p><b>Description</b> <br>  L'objectif est de se familiariser avec les métadonnées etsoumettre des données et des métadonnées sur ENA (EBI)</p>
+                    <p><b>Formateurs</b> <br>  
+                        
+                            
+                            
+                                
+                            
+                                
+                            
+                                
+                                    <a href="/IFB-FAIR-data-training//formateurs/heleneChiapello.html">Hélène Chiapello</a> ; 
+                                     
+                                     
+                            
+                        
+                            
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    <a href="/IFB-FAIR-data-training//formateurs/thomasDenecker.html">Thomas Denecker</a> ; 
+                                     
+                                     
+                            
+                        
+                            
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    <a href="/IFB-FAIR-data-training//formateurs/jeanfrancoisDufayard.html">Jean-François Dufayard</a> ; 
+                                     
+                                     
+                            
+                        
+                            
+                            
+                                
+                            
+                                
+                                    <a href="/IFB-FAIR-data-training//formateurs/gauthierSarah.html">Gautier Sarah</a> ; 
+                                     
+                                     
+                            
+                        
+                            
+                            
+                                
+                                    <a href="/IFB-FAIR-data-training//formateurs/fredericdeLamotte.html">Frédéric de Lamotte</a> ; 
+                                     
+                                     
+                            
+                        
+                            
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    <a href="/IFB-FAIR-data-training//formateurs/pauletteLieby.html">Paulette Lieby</a> ; 
+                                     
+                                     
+                            
+                         
+                    </p>
+                    
+                    <p><b>Durée</b> <br> 1h</p>
+                    <p><b>Progression dans le module 3</b></p>
+                    <div class="progress">
+                        
+                        
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50.0%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <p><h2 id="introduction">Introduction</h2>
+
+<p>Dans ce TP, nous allons réaliser les différentes étapes entre la collecte des données et la soumission dans une banque internationnale. Nous vous proposons un jeu de données de séquences pour ce TP d’un génome bactérien de <em>S. salivarius</em> (<a href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/S_salivarius.zip" target="_blank">Télécharger l’archive</a>);</p>
+
+<p>Vous trouverez dans le dossier une fois décompressé, deux fichiers <code class="language-plaintext highlighter-rouge">.fastq.gz</code>.</p>
+
+<p><strong>Important</strong> : Ces données sont des données fictives extraites de METAGENOTE. Elles ne sont en rien significatives.</p>
+
+<p>Comme ces données sont des données de séquences, nous allons les soumettre sur l’ENA, la banque européenne de séquences.</p>
+
+<h2 id="partie-1--exploration-de-leuropean-national-archive-ena">Partie 1 : Exploration de l’European National Archive (ENA)</h2>
+
+<p><img src="https://www.ebi.ac.uk/ena/browser/assets/ENA-logo.png" alt="Figure 1" /></p>
+
+<p>L’European National Archive est une plateforme ouverte et soutenue pour la gestion, le partage, l’intégration, l’archivage et la diffusion de données de séquences. Pour en <a href="https://www.ebi.ac.uk/ena/browser/about">savoir plus</a>.</p>
+
+<h3 id="connection-à-lena">Connection à l’ENA</h3>
+
+<p>Lors d’un dépôt de données sur l’ENA, il est nécessaire de créer un compte. Lors de ce TP, vous aurez besoin d’un compte personnel si vous souhaitez essayer de soumettre des données TEST. Vous pouvez cliquer <a href="https://wwwdev.ebi.ac.uk/ena/submit/webin/" target="_blank">ici pour vous connecter à l’instance de test de l’ENA</a>.</p>
+
+<h2 id="comment-sont-gérées-les-métadonnées-sur-lena-">Comment sont gérées les métadonnées sur l’ENA ?</h2>
+
+<p>Chaque base de données organise ses données différement. Concernant l’ENA, vous trouverez ci-dessous son modèle d’organisation des données et métadonnées de l’ENA :</p>
+
+<p><img src="https://ena-docs.readthedocs.io/en/latest/_images/metadata_model_whole.png" alt="Figure modele ENA" /></p>
+
+<div class="card">
+    <div class="card-header text-white bg-info">
+        <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-book-open"></i> Extrait de la documentation de l'ENA</h2>
+    </div>
+    <div class="card-body">
+        
+<ul>
+  <li><strong>Study</strong>: A study (project) groups together data submitted to the archive and controls its release date. A study accession is typically used when citing data submitted to ENA. Note that all associated data and other objects are made public when the study is released.</li>
+  <li><strong>Sample</strong>: A sample contains information about the sequenced source material. Samples are associated with checklists, which define the fields used to annotate the samples. Samples are always associated with a taxon.</li>
+  <li><strong>Experiment</strong>: An experiment contains information about a sequencing experiment including library and instrument details.</li>
+  <li><strong>Run</strong>: A run is part of an experiment and refers to data files containing sequence reads.</li>
+  <li><strong>Analysis</strong>: An analysis contains secondary analysis results derived from sequence reads (e.g. a genome assembly),</li>
+  <li><strong>Submission</strong>: A submission contains submission actions to be performed by the archive. A submission can add more objects to the archive, update already submitted objects or make objects publicly available.</li>
+</ul>
+
+    </div>
+    <div class="card-footer">
+        Source : <a href="https://ena-docs.readthedocs.io/en/latest/submit/general-guide/metadata.html">lien</a> 
+    </div>
+</div>
+<p><br /></p>
+
+<div class="card">
+    <div class="card-header text-white bg-warning">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-question-circle"></i> Question 1</p>
+    </div>
+    <div class="card-body" id="div_qcm_1">
+        <p>Quels sont le ou les objets de l’ENA qui sont associés à un vocabulaire contrôlé domaine dépendant appelé <em>Checklist</em> par l’ENA ?</p>
+
+
+        
+        
+            <input type="checkbox" name="qcm_1" value="Study" /> Study <br />  
+        
+            <input type="checkbox" name="qcm_1" value="Sample" /> Sample <br />  
+        
+            <input type="checkbox" name="qcm_1" value="Experiment" /> Experiment <br />  
+        
+            <input type="checkbox" name="qcm_1" value="Run" /> Run <br />  
+        
+            <input type="checkbox" name="qcm_1" value="Analysis" /> Analysis <br />  
+        
+            <input type="checkbox" name="qcm_1" value="Submission" /> Submission <br />  
+         
+        <br />
+        <button onclick="myFunctionQCM1()" type="button" class="btn btn-primary" id="btn_QCM_1">Vérifier la réponse</button>     
+        <p id="reponse_QCM_1" style="display: none;">La bonne réponse était: <b>Sample</b>  </p>
+    </div>
+</div>
+<p><br /></p>
+
+<script>
+    function myFunctionQCM1() {
+        var array = []
+        var value = $('input[name=qcm_1]:checked').each(function(){
+            array.push($(this).val()); });;
+        document.getElementById("btn_QCM_1").style.display = "none";
+        const reponses = "Sample";
+        const reponsesArray = reponses.split('|');
+        const filteredArray = reponsesArray.filter(value => array.includes(value));
+
+        if(array.length == reponsesArray.length){
+            if(filteredArray.length == reponsesArray.length){
+                document.getElementById("div_qcm_1").style.backgroundColor = "#bce0bc";
+            } else {
+                document.getElementById("div_qcm_1").style.backgroundColor = "#F9C6BF";
+                document.getElementById("reponse_QCM_1").style.display = "block";
+            }
+        } else {
+            document.getElementById("div_qcm_1").style.backgroundColor = "#F9C6BF";
+            document.getElementById("reponse_QCM_1").style.display = "block";
+        }
+        
+    }
+</script>
+
+<h2 id="choisir-une-checklist-correspondant-au-jeu-de-données">Choisir une checklist correspondant au jeu de données</h2>
+
+<p>Une quantité minimale d’informations est requise lors de l’enregistrement des échantillons sur l’ENA et tous les échantillons doivent être conformes à une liste de contrôle (checklist) définissant des valeurs de métadonnées attendues. La liste de contrôle la plus appropriée pour l’enregistrement des échantillons dépend du type de l’échantillon. L’ensemble des checklists de l’ENA sont disponible <a href="https://www.ebi.ac.uk/ena/browser/checklists" target="_blank">ici</a>. Pour le jeu de données de la bactérie <em>S. salivarius</em>, utiliser le mot-clé <code class="language-plaintext highlighter-rouge">pathogen</code>.</p>
+
+<div class="card">
+    <div class="card-header text-white bg-warning">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-question-circle"></i> Question 2</p>
+    </div>
+    <div class="card-body">
+        <p>Quel est le numéro d’accession de la checklist à utiliser pour le jeu de données choisi ?</p>
+
+        
+        
+        <div class="card">
+                <h5 class="card-header bg-warning" style="font-size: 1.15rem;">
+                    <a class="collapsed d-block" data-toggle="collapse" href="#collapse-collapsed_2" aria-expanded="true" aria-controls="collapse-collapsed_2" id="heading-collapsed">
+                        <i class="fa fa-chevron-down float-right"></i>
+                        <i class="fas fa-eye"></i> Solution
+                    </a>
+                </h5>
+                
+                <div id="collapse-collapsed_2" class="collapse" aria-labelledby="heading-collapsed">
+                    <div class="card-body">
+                        <p>La checklist à utiliser pour le génome bactérien de <em>S. salivarius</em> est <a href="https://www.ebi.ac.uk/ena/browser/view/ERC000028">ERC000028</a></p>
+
+                    </div>
+                </div>
+                
+            </div>
+        
+    </div>
+</div>
+<p><br /></p>
+
+<p>Les checklists sont disponibles au format XML. Vous avez par exemple ci-dessous un extrait de la checklist <code class="language-plaintext highlighter-rouge">ERC000028</code> :</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;CHECKLIST_SET&gt;</span>
+<span class="nt">&lt;CHECKLIST</span> <span class="na">accession=</span><span class="s">"ERC000028"</span> <span class="na">checklistType=</span><span class="s">"Sample"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;IDENTIFIERS&gt;</span>
+               <span class="nt">&lt;PRIMARY_ID&gt;</span>ERC000028<span class="nt">&lt;/PRIMARY_ID&gt;</span>
+          <span class="nt">&lt;/IDENTIFIERS&gt;</span>
+          <span class="nt">&lt;DESCRIPTOR&gt;</span>
+               <span class="nt">&lt;LABEL&gt;</span>ENA prokaryotic pathogen minimal sample checklist<span class="nt">&lt;/LABEL&gt;</span>
+               <span class="nt">&lt;NAME&gt;</span>ENA prokaryotic pathogen minimal sample checklist<span class="nt">&lt;/NAME&gt;</span>
+               <span class="nt">&lt;DESCRIPTION&gt;</span>Minimum information required for a prokaryotic pathogen sample<span class="nt">&lt;/DESCRIPTION&gt;</span>
+               <span class="nt">&lt;AUTHORITY&gt;</span>ENA<span class="nt">&lt;/AUTHORITY&gt;</span>
+               <span class="nt">&lt;FIELD_GROUP</span> <span class="na">restrictionType=</span><span class="s">"Any number or none of the fields"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;NAME&gt;</span>Collection event information<span class="nt">&lt;/NAME&gt;</span>
+                    <span class="nt">&lt;FIELD&gt;</span>
+                         <span class="nt">&lt;LABEL&gt;</span>isolation_source<span class="nt">&lt;/LABEL&gt;</span>
+                         <span class="nt">&lt;NAME&gt;</span>isolation_source<span class="nt">&lt;/NAME&gt;</span>
+                         <span class="nt">&lt;DESCRIPTION&gt;</span>describes the physical, environmental and/or local geographical source of the biological sample from which the sample was derived<span class="nt">&lt;/DESCRIPTION&gt;</span>
+                         <span class="nt">&lt;FIELD_TYPE&gt;</span>
+                              <span class="nt">&lt;TEXT_FIELD/&gt;</span>
+                         <span class="nt">&lt;/FIELD_TYPE&gt;</span>
+                         <span class="nt">&lt;MANDATORY&gt;</span>mandatory<span class="nt">&lt;/MANDATORY&gt;</span>
+                         <span class="nt">&lt;MULTIPLICITY&gt;</span>multiple<span class="nt">&lt;/MULTIPLICITY&gt;</span>
+                    <span class="nt">&lt;/FIELD&gt;</span>
+                    <span class="nt">&lt;FIELD&gt;</span>
+                         <span class="nt">&lt;LABEL&gt;</span>lat_lon<span class="nt">&lt;/LABEL&gt;</span>
+                         <span class="nt">&lt;NAME&gt;</span>lat_lon<span class="nt">&lt;/NAME&gt;</span>
+                         <span class="nt">&lt;DESCRIPTION&gt;</span>geographical coordinates of the location where the specimen was collected<span class="nt">&lt;/DESCRIPTION&gt;</span>
+                         <span class="nt">&lt;FIELD_TYPE&gt;</span>
+                              <span class="nt">&lt;TEXT_FIELD/&gt;</span>
+                         <span class="nt">&lt;/FIELD_TYPE&gt;</span>
+                         <span class="nt">&lt;MANDATORY&gt;</span>recommended<span class="nt">&lt;/MANDATORY&gt;</span>
+                         <span class="nt">&lt;MULTIPLICITY&gt;</span>multiple<span class="nt">&lt;/MULTIPLICITY&gt;</span>
+                    <span class="nt">&lt;/FIELD&gt;</span>
+                    [...]
+                <span class="nt">&lt;/FIELD_GROUP&gt;</span>
+          <span class="nt">&lt;/DESCRIPTOR&gt;</span>
+     <span class="nt">&lt;/CHECKLIST&gt;</span>
+<span class="nt">&lt;/CHECKLIST_SET&gt;</span>
+</code></pre></div></div>
+
+<h2 id="partie-2---utilisation-de-loutil-omicsbroker">Partie 2 - Utilisation de l’outil <strong>omicsBroker</strong></h2>
+
+<p>Pour ce TP, nous allons utiliser omicsBroker, un outil de <em>brokering</em> développé par l’IFB. Il s’agit d’un prototype permettant d’annoter des données de séquences et de les soumettre à l’ENA.</p>
+
+<p>Pour vous connecter à une instance de démonstration, cliquer sur le lien suivant : <a href="http://134.158.247.47:443/" target="_blank">ici</a>. Cette instance sera fermer dès la fin du TP. Si vous souhaitez refaire le TP, l’ensemble des étapes d’installation sont décrites sur <a href="https://github.com/IFB-ElixirFr/omicsBroker" target="_blank">GitHub</a>.</p>
+
+<ul>
+  <li><strong>Attention 1</strong> : omicsBroker est un un prototype qu’il ne faut pas utiliser avec des vraies données pour une vraie soumission !</li>
+  <li><strong>Attention 2</strong> : Avez vous bien lu le attention 1 ?</li>
+</ul>
+
+<h3 id="section-annotation-du-menu-lattéral-gauche">Section <em>Annotation</em> du menu lattéral gauche</h3>
+
+<p>Cette section vous permet de créer un projet, de choisir une Checklist et remplir les métadonnées décrivant vos échantillons.</p>
+
+<p><img src="/IFB-FAIR-data-training//assets/img/TPs/session3_tp1/sidebar.png" alt="Screenshot sidebar" style="max-width: 100%;" id="imageID_Screenshot_sidebar" onclick="image(this)" /></p>
+
+<h4 id="cliquer-sur-le-lien-project">Cliquer sur le lien <em>Project</em>.</h4>
+
+<div class="card" style="margin:10px 0px;">
+    <div class="card-header text-white" style="background-color: rgb(175, 175, 175);">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-pencil-ruler"></i> Consignes </p>
+    </div>
+    <div class="card-body">
+        <p>Créer un projet en renseignant uniquement les champs <strong>obligatoires</strong> : <code class="language-plaintext highlighter-rouge">Title</code>, <code class="language-plaintext highlighter-rouge">Alias</code> et <code class="language-plaintext highlighter-rouge">Description</code>.</p>
+
+    </div>
+</div>
+
+<p><img src="/IFB-FAIR-data-training//assets/img/TPs/session3_tp1/project.png" alt="Screenshot Project" style="max-width: 100%;" id="imageID_Screenshot_Project" onclick="image(this)" /></p>
+
+<h4 id="cliquer-sur-le-lien-samples">Cliquer sur le lien <em>Samples</em></h4>
+
+<h5 id="choix-de-la-checklist">Choix de la checklist</h5>
+
+<div class="card" style="margin:10px 0px;">
+    <div class="card-header text-white" style="background-color: rgb(175, 175, 175);">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-pencil-ruler"></i> Consignes </p>
+    </div>
+    <div class="card-body">
+        <p>Sélectionner la  checklist identifiée à la question précédente.</p>
+
+    </div>
+</div>
+
+<div class="card" style="margin:10px 0px;">
+    <div class="card-header text-white" style="background-color: chocolate;">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-sticky-note"></i> Rappel </p>
+    </div>
+    <div class="card-body">
+        <p>Pour le jeu de données du génome bactérien de <em>S. salivarius</em>, la checklist est <a href="https://www.ebi.ac.uk/ena/browser/view/ERC000028">ERC000028</a></p>
+
+    </div>
+</div>
+
+<p><img src="/IFB-FAIR-data-training//assets/img/TPs/session3_tp1/checklist.png" alt="Screenshot checklist" style="max-width: 100%;" id="imageID_Screenshot_checklist" onclick="image(this)" /></p>
+
+<p>Le tableau dans la partie inférieure de la page <code class="language-plaintext highlighter-rouge">Metadata table</code> s’est mis à jour avec les champs correspondant à la Checklist sélectionnée.</p>
+
+<h5 id="métadonnées">Métadonnées</h5>
+
+<div class="card" style="margin:10px 0px;">
+    <div class="card-header text-white" style="background-color: rgb(175, 175, 175);">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-pencil-ruler"></i> Consignes </p>
+    </div>
+    <div class="card-body">
+        
+<p>Renseigner les champs <strong>obligatoires</strong> demandés en utilisant le contenu du DMP Opidor associé au jeu de données. Pour le trouver, aller sur <a href="https://dmp.opidor.fr/public_plans">Opidor - DMPs publics</a> et rechercher le le plan <code class="language-plaintext highlighter-rouge">IFB_Training_salivarius</code>. Ensuite, télécharger le PDF qui contient toutes les informations nécessaires.</p>
+
+    </div>
+</div>
+
+<p>En cas de problème, le PDF peut être téléchargé <a href="https://dmp.opidor.fr/plans/7821/export.pdf" target="_blank">ici</a> ou <a href="/IFB-FAIR-data-training/assets/PDFs/PGD_IFB_Training_salivarius.pdf" target="_blank">ici</a>.</p>
+
+<p>Pour savoir quel type d’information vous devez renseigner dans une cellule, cliquez sur la cellule en question et une notice vous donnera les informations nécessaires dans partie <code class="language-plaintext highlighter-rouge">Descriptions</code> (droite). Par exemple, ici les informations nécessaires dans la colonne <code class="language-plaintext highlighter-rouge">Platform</code> :</p>
+
+<p><img src="/IFB-FAIR-data-training//assets/img/TPs/session3_tp1/metadataDescription.png" alt="Screenshot metadata table" style="max-width: 100%;" id="imageID_Screenshot_metadata_table" onclick="image(this)" /></p>
+
+<p>Ci dessous, un exemple d’une table remplie :</p>
+
+<p><img src="/IFB-FAIR-data-training//assets/img/TPs/session3_tp1/metadataTable_withData.png" alt="Screenshot metadata table with data" style="max-width: 100%;" id="imageID_Screenshot_metadata_table_with_data" onclick="image(this)" /></p>
+
+<h4 id="cliquer-sur-le-lien-files">Cliquer sur le lien <em>Files</em></h4>
+
+<p>Vous avez à votre disposition 2 fichiers une fois l’archive décompressées.</p>
+<div class="card" style="margin:10px 0px;">
+    <div class="card-header text-white" style="background-color: chocolate;">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-sticky-note"></i> Rappel </p>
+    </div>
+    <div class="card-body">
+        
+<p><strong>Pour obtenir ces fichiers</strong> :</p>
+
+<ol>
+  <li>Vous devez télécharger l’archive d’un génome bactérien de la bactérie <em>S. Salivarius</em> (<a href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/raw/main/assets/data/S_salivarius.zip">Télécharger l’archive</a>;</li>
+  <li>Extraire les deux fichiers présents dans l’archive.</li>
+</ol>
+
+    </div>
+</div>
+
+<div class="card" style="margin:10px 0px;">
+    <div class="card-header text-white" style="background-color: rgb(175, 175, 175);">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-pencil-ruler"></i> Consignes </p>
+    </div>
+    <div class="card-body">
+        
+<p>Téléverser ces deux fichiers dans omicsBroker en cliquant sur <code class="language-plaintext highlighter-rouge">Browse</code> puis en sélectionnant les fichiers (N°1 sur la figure ci-dessous). Vous pouvez aussi faire un `Drag &amp; Drop.</p>
+
+    </div>
+</div>
+
+<p>Une fois téléversés, vous devriez avoir comme écran la figure suivante :</p>
+
+<p><img src="/IFB-FAIR-data-training//assets/img/TPs/session3_tp1/fileImport.png" alt="Screenshot File import" style="max-width: 100%;" id="imageID_Screenshot_File_import" onclick="image(this)" /></p>
+
+<div class="card" style="margin:10px 0px;">
+    <div class="card-header text-white" style="background-color: rgb(175, 175, 175);">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-pencil-ruler"></i> Consignes </p>
+    </div>
+    <div class="card-body">
+        
+<p>Renseigner le md5sum pour chaque fichier (N°2 sur la figure ci-dessus). Pour simplifier le TP et ne pas vous faire calculer en local ce md5sum, le tableau affiche le bom md5sum du fichier sur le serveur dans la colonne <code class="language-plaintext highlighter-rouge">md5Server</code>. Vous n’avez qu’à copier coller chaque valeur de cette colonne dans la colonne de droite <code class="language-plaintext highlighter-rouge">md5SumIn</code>.</p>
+
+    </div>
+</div>
+
+<p>L’objectif du md5sum est de s’assurer qu’aucune donnée n’a été perdue lors du téléversement. Pour obtenir le md5sum, nous vous conseillons la lecture <a href="https://knowledge.autodesk.com/search-result/caas/sfdcarticles/sfdcarticles/Checking-the-MD5-checksum-of-a-Downloaded-File.html">suivante</a>.</p>
+
+<div class="card" style="margin:10px 0px;">
+    <div class="card-header text-white" style="background-color: rgb(175, 175, 175);">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-pencil-ruler"></i> Consignes </p>
+    </div>
+    <div class="card-body">
+        
+<p>Associer à chaque fichier un <code class="language-plaintext highlighter-rouge">Experience name</code> que vous avez renseigné dans la partie précédente (N°3 sur la figure ci-dessus). Pour cela, cliquer sur la cellule pour avoir la liste des <code class="language-plaintext highlighter-rouge">Experience name</code> disponibles dans la table <code class="language-plaintext highlighter-rouge">metadata table</code> et choisir le bon.</p>
+
+    </div>
+</div>
+
+<p>Une fois toutes ces informations renseignées, vous devez avoir quelque chose de similaire à la capture d’écran ci-dessous :</p>
+
+<p><img src="/IFB-FAIR-data-training//assets/img/TPs/session3_tp1/fileImportValide.png" alt="Screenshot File import complet" style="max-width: 100%;" id="imageID_Screenshot_File_import_complet" onclick="image(this)" /></p>
+
+<h3 id="section-publish-du-menu-latéral-gauche">Section <em>Publish</em> du menu latéral gauche</h3>
+
+<p>Cette section permet de soumettre les fichiers de données et de métadonnées à l’instance de test de l’ENA.</p>
+
+<div class="card" style="margin:10px 0px;">
+    <div class="card-header text-white" style="background-color: rgb(175, 175, 175);">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-pencil-ruler"></i> Consignes </p>
+    </div>
+    <div class="card-body">
+        
+<p>Cliquer sur l’onglet <em>ENA</em> dans la barre latérale.</p>
+
+    </div>
+</div>
+
+<p>Vous devez avoir à votre écran l’image suivante :</p>
+
+<p><img src="/IFB-FAIR-data-training//assets/img/TPs/session3_tp1/publishENA_vide.png" alt="Screenshot Publish in ENA" style="max-width: 100%;" id="imageID_Screenshot_Publish_in_ENA" onclick="image(this)" /></p>
+
+<div class="card" style="margin:10px 0px;">
+    <div class="card-header text-white" style="background-color: rgb(175, 175, 175);">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-pencil-ruler"></i> Consignes </p>
+    </div>
+    <div class="card-body">
+        
+<p>Renseigner votre webin et votre mot de passe.</p>
+
+    </div>
+</div>
+
+<p>Par exemple :</p>
+
+<p><img src="/IFB-FAIR-data-training//assets/img/TPs/session3_tp1/publishENA_Ident.png" alt="Screenshot Publish in ENA connexion" style="max-width: 100%;" id="imageID_Screenshot_Publish_in_ENA_connexion" onclick="image(this)" /></p>
+
+<h4 id="envoyer-les-fichiers-de-données-brutes-sur-linstance-de-test-de-lena">Envoyer les fichiers de données brutes sur l’instance de test de l’ENA</h4>
+
+<div class="card" style="margin:10px 0px;">
+    <div class="card-header text-white" style="background-color: rgb(175, 175, 175);">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-pencil-ruler"></i> Consignes </p>
+    </div>
+    <div class="card-body">
+        
+<p>Cliquer sur <code class="language-plaintext highlighter-rouge">Upload data</code> (Step 3).</p>
+
+    </div>
+</div>
+
+<p>En cas de succès, un message vous sera envoyé :</p>
+
+<p><img src="/IFB-FAIR-data-training//assets/img/TPs/session3_tp1/publishENA_data_success.png" alt="Screenshot File import complet" style="max-width: 100%;" id="imageID_Screenshot_File_import_complet" onclick="image(this)" /></p>
+
+<p><em>Note</em> : si l’échec est lié au temps (message d’erreur renvoyé), recommencer jusqu’au succès.</p>
+
+<h4 id="envoyer-les-métadonnées-sur-linstance-de-test-de-lena">Envoyer les métadonnées sur l’instance de test de l’ENA</h4>
+
+<div class="card" style="margin:10px 0px;">
+    <div class="card-header text-white" style="background-color: rgb(175, 175, 175);">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-pencil-ruler"></i> Consignes </p>
+    </div>
+    <div class="card-body">
+        
+<p>Cliquer sur <code class="language-plaintext highlighter-rouge">Upload metadata</code> (Step 4).</p>
+
+    </div>
+</div>
+
+<p>En cas de succès, un message vous sera envoyé :</p>
+
+<p><img src="/IFB-FAIR-data-training//assets/img/TPs/session3_tp1/publishENA_metadata_success.png" alt="Screenshot File import complet success" style="max-width: 100%;" id="imageID_Screenshot_File_import_complet_success" onclick="image(this)" /></p>
+
+<h4 id="décrire-les-fichiers-xml-de-métadonnées-générés">Décrire les fichiers XML de métadonnées générés</h4>
+
+<div class="card" style="margin:10px 0px;">
+    <div class="card-header text-white" style="background-color: rgb(175, 175, 175);">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-pencil-ruler"></i> Consignes </p>
+    </div>
+    <div class="card-body">
+        
+<p>Cliquer sur les différents fichiers XML générés par la soumission et commenter.</p>
+
+    </div>
+</div>
+
+<p>Exemple du fichier <code class="language-plaintext highlighter-rouge">Project Set</code> :</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;PROJECT_SET&gt;</span>
+  <span class="nt">&lt;PROJECT</span> <span class="na">alias=</span><span class="s">"salivarius_dynamic"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;TITLE&gt;</span>Characterization of Streptococcus salivarius conjugatif elements content and diversity<span class="nt">&lt;/TITLE&gt;</span>
+    <span class="nt">&lt;DESCRIPTION&gt;</span>Une description du projet<span class="nt">&lt;/DESCRIPTION&gt;</span>
+    <span class="nt">&lt;SUBMISSION_PROJECT&gt;</span>
+      <span class="nt">&lt;SEQUENCING_PROJECT/&gt;</span>
+    <span class="nt">&lt;/SUBMISSION_PROJECT&gt;</span>
+  <span class="nt">&lt;/PROJECT&gt;</span>
+<span class="nt">&lt;/PROJECT_SET&gt;</span>
+</code></pre></div></div>
+
+<p>Exemple du fichier <code class="language-plaintext highlighter-rouge">Experiment</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;EXPERIMENT_SET&gt;</span>
+  <span class="nt">&lt;EXPERIMENT</span> <span class="na">alias=</span><span class="s">"Sequencing_of_S__salivarius_B35_strain"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;TITLE&gt;</span>Sequencing of S. salivarius B35 strain<span class="nt">&lt;/TITLE&gt;</span>
+    <span class="nt">&lt;STUDY_REF</span> <span class="na">alias=</span><span class="s">"XXXXXXXXXXXXXXXXXXX"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;DESIGN&gt;</span>
+      <span class="nt">&lt;DESIGN_DESCRIPTION/&gt;</span>
+      <span class="nt">&lt;SAMPLE_DESCRIPTOR</span> <span class="na">accession=</span><span class="s">"XXXXXXXXXXXXXXXXXXX"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;LIBRARY_DESCRIPTOR&gt;</span>
+        <span class="nt">&lt;LIBRARY_NAME/&gt;</span>
+        <span class="nt">&lt;LIBRARY_STRATEGY&gt;</span>WGS<span class="nt">&lt;/LIBRARY_STRATEGY&gt;</span>
+        <span class="nt">&lt;LIBRARY_SOURCE&gt;</span>GENOMIC<span class="nt">&lt;/LIBRARY_SOURCE&gt;</span>
+        <span class="nt">&lt;LIBRARY_SELECTION&gt;</span>RANDOM<span class="nt">&lt;/LIBRARY_SELECTION&gt;</span>
+        <span class="nt">&lt;LIBRARY_LAYOUT&gt;</span>
+          <span class="nt">&lt;PAIRED</span> <span class="na">NOMINAL_LENGTH=</span><span class="s">"269"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/LIBRARY_LAYOUT&gt;</span>
+        <span class="nt">&lt;LIBRARY_CONSTRUCTION_PROTOCOL&gt;</span>Standart Illumina protocol<span class="nt">&lt;/LIBRARY_CONSTRUCTION_PROTOCOL&gt;</span>
+      <span class="nt">&lt;/LIBRARY_DESCRIPTOR&gt;</span>
+    <span class="nt">&lt;/DESIGN&gt;</span>
+    <span class="nt">&lt;PLATFORM&gt;</span>
+      <span class="nt">&lt;ILLUMINA&gt;</span>
+        <span class="nt">&lt;INSTRUMENT_MODEL&gt;</span>Illumina HiSeq 2000<span class="nt">&lt;/INSTRUMENT_MODEL&gt;</span>
+      <span class="nt">&lt;/ILLUMINA&gt;</span>
+    <span class="nt">&lt;/PLATFORM&gt;</span>
+  <span class="nt">&lt;/EXPERIMENT&gt;</span>
+<span class="nt">&lt;/EXPERIMENT_SET&gt;</span>
+</code></pre></div></div>
+
+<h4 id="instance-de-test-de-lena">Instance de test de l’ENA</h4>
+
+<div class="card" style="margin:10px 0px;">
+    <div class="card-header text-white" style="background-color: rgb(175, 175, 175);">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-pencil-ruler"></i> Consignes </p>
+    </div>
+    <div class="card-body">
+        
+<p>Vérifier que les différents fichiers de soumission sont bien sur l’instance de test de l’ENA. Pour cela, se connecter sur l’instance de test de l’ENA <a href="https://wwwdev.ebi.ac.uk/ena/submit/webin/">ici</a>.</p>
+
+    </div>
+</div>
+
+<p>Une fois connecté, votre interface doit est comme ci-dessous :</p>
+
+<p><img src="/IFB-FAIR-data-training//assets/img/TPs/session3_tp1/ENA_home.png" alt="Screenshot ENA" style="max-width: 100%;" id="imageID_Screenshot_ENA" onclick="image(this)" /></p>
+
+<p>En cliquant sur <code class="language-plaintext highlighter-rouge">Studies Report</code> :</p>
+
+<p><img src="/IFB-FAIR-data-training//assets/img/TPs/session3_tp1/ENA_StudiesReport.png" alt="Screenshot ENA Studies Report" style="max-width: 100%;" id="imageID_Screenshot_ENA_Studies_Report" onclick="image(this)" /></p>
+
+<p>En cliquant sur <code class="language-plaintext highlighter-rouge">Samples Report</code> :</p>
+
+<p><img src="/IFB-FAIR-data-training//assets/img/TPs/session3_tp1/ENA_SamplesReport.png" alt="Screenshot ENA Samples Report" style="max-width: 100%;" id="imageID_Screenshot_ENA_Samples_Report" onclick="image(this)" /></p>
+
+<p>En cliquant sur <code class="language-plaintext highlighter-rouge">Runs Report</code> :</p>
+
+<p><img src="/IFB-FAIR-data-training//assets/img/TPs/session3_tp1/ENA_RunsReport.png" alt="Screenshot ENA Runs Report" style="max-width: 100%;" id="imageID_Screenshot_ENA_Runs_Report" onclick="image(this)" /></p>
+
+<p>En cliquant sur <code class="language-plaintext highlighter-rouge">Run Files Report</code> :</p>
+
+<p><img src="/IFB-FAIR-data-training//assets/img/TPs/session3_tp1/ENA_RunFilesReport.png" alt="Screenshot ENA Run Files Report" style="max-width: 100%;" id="imageID_Screenshot_ENA_Run_Files_Report" onclick="image(this)" /></p>
+
+<div class="card">
+    <div class="card-header text-white bg-warning">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-question-circle"></i> Question 3</p>
+    </div>
+    <div class="card-body">
+        <p>Quel est le numéro d’accession attribué à votre projet par l’ENA ?</p>
+
+        
+        
+    </div>
+</div>
+<p><br /></p>
+
+<h3 id="question-bonus--importation-de-métadonnées-depuis-le-pgd">Question Bonus : importation de métadonnées depuis le PGD</h3>
+
+<p>Via l’export du PGD en HTML, il est possible de pré-remplir certains items dans omicsBroker. Pour cela, vous devez :</p>
+
+<ol>
+  <li>Exporter votre PGD au format HTML depuis Opidor.  Vous pouvez cliquer <a href="/IFB-FAIR-data-training/assets/html/PGD_IFB_Training_salivarius.htm">ici</a> puis enregistrer celui du PGD du TP.</li>
+  <li>Importer le fichier HTML dans omicsBroker.</li>
+</ol>
+
+<div class="card" style="margin:10px 0px;">
+    <div class="card-header text-white" style="background-color: rgb(175, 175, 175);">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-pencil-ruler"></i> Consignes </p>
+    </div>
+    <div class="card-body">
+        
+<p>Commenter les champs importés.</p>
+
+    </div>
+</div>
+
+</p>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-4 text-left">
+
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                        <a href="/IFB-FAIR-data-training/sequences/module3_sequence2_edition1_cours.html"><i class="fas fa-arrow-alt-circle-left"></i>Vers la séance précédente </a>
+                         
+            </div>
+            <div class="col-sm-4 text-center">
+                
+                    
+                
+                    
+                
+                    
+                        
+                         
+                <a href="/IFB-FAIR-data-training/modules/module3.html">Retour à la page du Module </a>
+            </div>
+            <div class="col-sm-4 text-right">
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                 
+            </div>
+        </div>
+        <br>
+        <div class="text-center">
+            <button onclick="downloadPDF()" class="btn btn-danger"><i class="fas fa-file-pdf"></i> Exporter la séance en PDF</button>
+        </div>
+        <hr>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    // documentation : https://printjs.crabbly.com/
+function downloadPDF() {
+    printJS({
+        printable: 'divPDF', 
+        type: 'html',
+        header: "Choix des métadonnées et soumission à l'EBI",
+        headerStyle: "width: 100%; height: 4em; padding : 1.33em 0em 1.33em 0em;  margin-bottom: 30px; background-color:#173b6c; color: white;  text-shadow: #173b6c 1px 0 10px;  text-align: center;",
+        css: ['/IFB-FAIR-data-training/assets/fontawesome/css/all.css', 
+            'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css',
+            '/IFB-FAIR-data-training/assets/css/style.css'
+        ],
+        documentTitle: "Séance 3 Module 3 - FAIR data by IFB"
+    }) 
+}
+</script>
+
+    </div><footer class="footer">
+    <div class="container">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-sm-6">
+                <div class="d-flex flex-row">
+                    <img src="/IFB-FAIR-data-training/assets/img/logo-ifb.svg" | relative_url }}' alt="IFB" height="50px">
+                    <img src="/IFB-FAIR-data-training/assets/img/logo-elixir-france.png" | relative_url }}' alt="IFB" height="50px">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <span class="text-muted" ><a href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training" target="_blank" style="color:#173b6c">IFB-FAIR-data-training</a> is maintained by <a
+                    href="https://github.com/IFB-ElixirFr" target="_blank" style="color:#173b6c">IFB-ElixirFr</a>.</span>
+                    
+                    <div class="d-flex flex-row justify-content-center" style="color:#173b6c">
+                        <div class="p-2"><a href="https://github.com/IFB-ElixirFr" target="_blank" class="linkSocial"><i class="fab fa-github-alt"></i></div>
+                        <div class="p-2"><a href="https://twitter.com/IFB_Bioinfo" target="_blank" class="linkSocial"><i class="fab fa-twitter"></i></a></div>
+                        <div class="p-2"><a href="https://www.linkedin.com/company/institut-fran%C3%A7ais-de-bioinformatique/" target="_blank" class="linkSocial"><i class="fab fa-linkedin-in"></i></a></div>
+                        <div class="p-2"><a href="https://www.youtube.com/channel/UC-PWpzAklKLdjxtdHnkoeCw" target="_blank" class="linkSocial"><i class="fab fa-youtube"></i></a></i></div>
+                    </div>
+                    
+            </div>
+        </div>
+    </div>
+</footer><!-- The Modal -->
+    <div id="modal_div" class="modal">
+
+        <!-- The Close Button -->
+        <span class="close" id="modal_close">&times;</span>
+
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="modal_img">
+
+        <!-- Modal Caption (Image Text) -->
+        <div id="modal_caption"></div>
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+    function image(img) {
+        // Get the modal
+        var modal = document.getElementById("modal_div");       
+        var modalImg = document.getElementById("modal_img");
+        var captionText = document.getElementById("modal_caption");
+        
+        // Display image
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        captionText.innerHTML = img.alt;
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementById("modal_close");
+    
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+
+    <script charset="UTF-8">
+        $(document).ready(function(){
+            var navSelector = "#toc";
+            var $myNav = $(navSelector);
+            Toc.init($myNav);
+            
+            $("body").scrollspy({
+                target: navSelector,
+                offset: 70
+            });
+
+            // Add smooth scrolling on all links inside the navbar
+            $("#toc a").on('click', function(event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = decodeURI(this.hash);
+                
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top - 75
+                }, 800, function(){
+            
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    //window.location.hash = hash;
+                });
+                }  // End if
+            });
+
+        });
+        
+    </script>
+
+
+  </body>
+</html>
+

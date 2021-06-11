@@ -1,0 +1,672 @@
+<!doctype html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFB FAIR-bioinfo training</title>
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/IFB-FAIR-data-training/assets/css/style.css">
+
+    <!-- Icons -->
+    <!-- https://boxicons.com/ -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Nav icon -->
+    <link rel="icon" type="image/png" href="/IFB-FAIR-data-training/assets/img/logo.png"/>
+
+    <!-- TOC -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
+    <!-- add after bootstrap.min.js -->
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+    
+    <!-- fontawesome - Icons -->
+    <link href= "/IFB-FAIR-data-training/assets/fontawesome/css/all.css" rel="stylesheet">
+    
+    <!-- PDF script -->
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <link href= "https://printjs-4de6.kxcdn.com/print.min.css" rel="stylesheet">
+
+    <!-- papaParse -->
+    <script type="text/javascript" src="/IFB-FAIR-data-training/assets/js/papaparse.min.js" ></script>
+
+    <!-- Charts -->
+    <script src="/IFB-FAIR-data-training/assets/js/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+    <!-- AddEvent script -->
+    <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+
+    <!-- AddEvent Settings -->
+    <!-- Documentation : https://www.addevent.com/documentation/add-to-calendar-button -->
+    <script type="text/javascript">
+    window.addeventasync = function(){
+        addeventatc.settings({
+            appleical  : {show:true, text:"Apple Calendar"},
+            google     : {show:true, text:"Google <em>(online)</em>"},
+            office365  : {show:true, text:"Office 365 <em>(online)</em>"},
+            outlook    : {show:true, text:"Outlook"},
+            outlookcom : {show:true, text:"Outlook.com <em>(online)</em>"},
+            yahoo      : {show:true, text:"Yahoo <em>(online)</em>"}
+        });
+    };
+    </script>
+</head><body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button><nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="/IFB-FAIR-data-training/index.html">
+            <img src="/IFB-FAIR-data-training/assets/img/logo.png" height="30" class="d-inline-block align-top" alt="">
+            FAIR data
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto">
+
+                <!-- Module -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeModules.html" >Modules</a>
+                </li>
+
+
+                <!-- Cours -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeCours.html" >Cours</a>
+                </li>
+
+                <!-- Travaux pratiques -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeTPs.html" >TPs</a>
+                </li>
+
+                <!-- Ressources -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeRessources.html" >Ressources</a>
+                </li>
+
+                <!-- Edition -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeEditions.html" >Éditions</a>
+                </li>
+
+                <!-- A propos -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_Apropos" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        À propos
+                    </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_Apropos">
+                        <a class="dropdown-item" href="/IFB-FAIR-data-training/apropos.html" >De l'IFB</a>
+                        <a class="dropdown-item" href="/IFB-FAIR-data-training/formateurs.html" >Des formateurs</a>
+                    </div>
+                </li>
+
+            </ul>
+            
+            <ul class="nav navbar-nav ml-auto">
+                <form class="form-inline" action="/IFB-FAIR-data-training/search.html" method="get">
+
+                    <div class="input-group">
+                        <input type="text" class="form-control" 
+                        id="search-box_nav" placeholder="Rechercher" aria-label="Rechercher" aria-describedby="basic-addon2" 
+                        name="query">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                      </div>
+
+                  </form>
+                  
+                <!-- Question -->
+                <li class="nav-item dropdown" >
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_questions" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-question-circle"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink_questions">
+                        <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fab fa-github"></i></i></span></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Notre GitHub </b></p>
+                                    <p class="textNav">Visiter nous ! </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/wiki" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fas fa-book"></i></span></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Pour contribuer </b></p>
+                                    <p class="textNav">Une docu est disponible</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/discussions" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fas fa-comments"></i></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Envie d'échanger avec nous ? </b></p>
+                                    <p class="textNav">Une discussion est ouverte</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/issues" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fas fa-exclamation-triangle"></i></span></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Un bug dans le site ? </b></p>
+                                    <p class="textNav">Déclarer une <i>issue</i> </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        
+                    </div>
+                </li>
+            </ul>
+            
+
+        </div>
+    </div>
+
+</nav>
+
+<div id="home"></div>
+    <div class="sectionCover d-flex flex-column justify-content-center align-items-center">
+        <p id="id_header_title" style="margin-bottom: .5rem; font-weight: 500; line-height: 1.2; font-size: 2.5rem;"> </p>
+        <p id="id_header_subTitle" style="font-size: 1.6em;text-align:center;"></p>
+    </div>
+
+    <div class="container">
+        <script>
+var paragraph = document.getElementById("id_header_title");
+var text = document.createTextNode("Les bases de Git");
+paragraph.appendChild(text);
+
+var paragraph = document.getElementById("id_header_subTitle");
+var text = document.createTextNode("Ressource");
+paragraph.appendChild(text);
+</script>
+
+<div class="row">
+    <div class="col-sm-3">
+        <nav id="toc" class="sticky-top"></nav>
+    </div>
+    <div class="col-sm-9" data-spy="scroll" data-target="#toc" data-offset="70" >
+        <div id="divPDF">
+            <div class="card">
+                <div class="card-header text-white bg-info">
+                    <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-info-circle"></i> Informations générales</h2>
+                </div>
+                <div class="card-body">
+                    <p><b>Description</b> <br>  Rappel des bases de Git</p>
+                </div>
+            </div>
+            <br>
+            <p><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/2000px-Git-logo.svg.png" alt="Git logo" /></p>
+
+<h2 id="installation">Installation</h2>
+
+<p>La page git (<a href="https://git-scm.com/downloads">ici</a>) regroupe les différents modes d’installation. Pour Mac OSX et Windows, des utilitaires sont disponibles. Pour linux, si git n’est pas déjà installé, l’installation se fait en ligne de commande.</p>
+
+<h2 id="utiliser-git">Utiliser git</h2>
+
+<p>Pour <strong>linux</strong> et <strong>Mac OSX</strong>, il suffit d’ouvrir un terminal. Pour vérifier que git est correctement installé, vous pouvez essayer la commande suivante : <code class="language-plaintext highlighter-rouge">git --version</code></p>
+
+<p>Sur <strong>Windows</strong>, il suffit d’ouvrir l’application git bash (rechercher Git bash avec cortana). Un bash avec les commandes de base de Linux sont disponibles.</p>
+
+<h2 id="initialiser-un-projet-avec-git">Initialiser un projet avec Git</h2>
+
+<p>Pour commencer, nous allons créer un dossier et se déplacer dedans</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir gitFolder
+$ cd gitFolder
+</code></pre></div></div>
+
+<p>Ensuite, nous allons définir notre identité (à ne faire qu’une seule fois par machine)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --global user.name "Prénom Nom"
+$ git config --global user.email "moi@mail.com"
+</code></pre></div></div>
+
+<p>Enfin, nous allons initialiser Git</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git init
+</code></pre></div></div>
+
+<h2 id="ajouter-un-fichier">Ajouter un fichier</h2>
+
+<h3 id="git-a-t-il-détecté-des-changements-">Git a-t-il détecté des changements ?</h3>
+<p>Avant d’ajouter un fichier, nous pouvons demander à git s’il a détecté des changements</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git status
+
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+</code></pre></div></div>
+<p>Il n’y a pas de changements pour le moment.</p>
+
+<h3 id="création-dun-fichier">Création d’un fichier</h3>
+
+<p>Nous allons créer un fichier test.txt comme exemple. Pour remplir ce fichier, nous utiliserons <code class="language-plaintext highlighter-rouge">nano</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nano test.txt
+</code></pre></div></div>
+
+<p>Une fois les modifications apportées, nous pouvons afficher le contenu de test.txt :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cat test.txt
+Mon premier fichier sur Git
+</code></pre></div></div>
+<h3 id="git-a-t-il-détecté-des-changements--1">Git a-t-il détecté des changements ?</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+(use "git add file..." to include in what will be committed)
+
+    test.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+</code></pre></div></div>
+
+<p>Git a cette fois-ci détecté des changements. Il indique que le fichier n’est pas surveillé (untracker files). Nous allons pour cela  utiliser la commande <code class="language-plaintext highlighter-rouge">git add</code>comme indiqué.</p>
+
+<h2 id="créer-un-snapshot">Créer un snapshot</h2>
+<p>Les changements que nous venons de réaliser nous conviennent. Nous souhaitons à présent que git réalise une photo du fichier à ce temps t (snapshot).</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add test.txt 
+</code></pre></div></div>
+
+<p>Nous pouvons voir que le statut a changé :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached file..." to unstage)
+
+        new file:   test.txt
+</code></pre></div></div>
+
+<h2 id="enregistrer-le-snapshot">Enregistrer le snapshot</h2>
+
+<p>Nous allons maintenant enregistrer ce snapshot et lui ajouter une légende :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit -m "My first commit"
+[master (root-commit) b4a7d66] My first commit
+1 file changed, 1 insertion(+)
+create mode 100644 test.txt
+</code></pre></div></div>
+
+<p>Encore une fois, le statut a changé :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git status
+On branch master
+nothing to commit, working tree clean
+</code></pre></div></div>
+
+<h2 id="nouvelles-modifications">Nouvelles modifications</h2>
+<p>Nous allons refaire des modifications du fichier test.txt.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cat test.txt
+Mon premier test sur Git
+
+Modification du texte.
+</code></pre></div></div>
+
+<p>Si nous regardons le statut, nous obtenons :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git status
+On branch master
+Changes not staged for commit:
+	(use "git add file..." to update what will be committed)
+	(use "git checkout -- file..." to discard changes in working directory)
+
+				modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre></div></div>
+<h2 id="quelles-sont-les-différences-avec-le-fichier-précédent">Quelles sont les différences avec le fichier précédent?</h2>
+
+<p>Nous souhaitons à présent savoir s’il existe des différences entre le dernier snapshot et maintenant.</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> git diff
+<span class="p">The file will have its original line endings in your working directory.
+</span><span class="gh">diff --git a/test.txt b/test.txt
+index cd1ad34..32a6825 100644
+</span><span class="gd">--- a/test.txt
+</span><span class="gi">+++ b/test.txt
+</span><span class="p">@@ -1 +1,3 @@</span>
+<span class="gd">-Mon premier fichier sur Git
+</span><span class="gi">+Mon premier test sur Git
++
++Modification du texte.
+</span></code></pre></div></div>
+<p>Les ajouts sont en vert avec un + et les suppressions sont en rouge avec un -.</p>
+
+<h2 id="un-nouveau-snapshot">Un nouveau snapshot</h2>
+<p>De nouveau, nous allons réaliser un snapshot et l’enregistrer.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git add  test.txt
+$ git commit -m "My first commit"
+[master (root-commit) b4a7d66] My first commit
+1 file changed, 1 insertion(+)
+create mode 100644 test.txt
+
+$ git status
+On branch master
+nothing to commit, working tree clean
+</code></pre></div></div>
+<h2 id="liste-des-commits">Liste des commits</h2>
+<p>Il peut être intéressant à présent de voir où nous en sommes dans les commits. Il est possible grâce à la commande <code class="language-plaintext highlighter-rouge">git log</code> d’afficher les commits du plus récent au plus ancien.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git log
+commit bbea074d0b2f6335f99e2d54c6a7092adb08f337 (HEAD -&gt; master)
+Author: thomasdenecker thomas.denecker@gmail.com
+Date:   Tue Nov 13 15:15:59 2018 +0100
+
+    My second commit
+
+commit b4a7d66afb8066bced7a0d6113ab26a519b1b6be
+Author: thomasdenecker thomas.denecker@gmail.com
+Date:   Tue Nov 13 14:49:29 2018 +0100
+
+    My first commit
+</code></pre></div></div>
+
+<h2 id="les-branches">Les branches</h2>
+<p>Au cours du développement, nous pouvons avoir besoin de faire des tests sans affecter le code principal. Il est possible grâce à git de faire une “copie” du projet initial (master) dans une branche. Tous les modifications dans la branche n’affecteront pas le code principal.</p>
+
+<p>Github résume en une figure le flow à suivre lors du développement (<a href="https://guides.github.com/pdfs/githubflow-online.pdf">ici</a>).</p>
+
+<p><img src="/IFB-FAIR-data-training//assets/img/ressources/git/githubflow.png" alt="" style="max-width: 100%;" id="imageID_" onclick="image(this)" /></p>
+
+<p>Actuellement, nous sommes dans la branche principale (master). L’étoile indique la branche où nous sommes.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch
+* master
+</code></pre></div></div>
+<h3 id="création-dune-branche">Création d’une branche</h3>
+<p>Nous allons créer une nouvelle branche (modifications) :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch modifications
+$ git branch
+* master
+  modification
+</code></pre></div></div>
+
+<p>Ensuite, nous allons nous déplacer dans cette branche :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git checkout modification
+Switched to branch 'modification'
+
+$ git branch
+  master
+* modification
+</code></pre></div></div>
+<h3 id="modifications-dans-la-branche">Modifications dans la branche</h3>
+<p>Nous allons à présent modifier le contenu de test.txt.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cat test.tex
+Mon premier test sur Git
+
+Modification du texte.
+
+Modification dans la branche.
+</code></pre></div></div>
+<p>Nous utilisons ensuite la commande <code class="language-plaintext highlighter-rouge">git diff master</code> pour détecter les différences avec la branche master.</p>
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> git diff master
+<span class="p">warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory.
+</span><span class="gh">diff --git a/test.txt b/test.txt
+index 32a6825..ea7aaba 100644
+</span><span class="gd">--- a/test.txt
+</span><span class="gi">+++ b/test.txt
+</span><span class="p">@@ -1,3 +1,6 @@</span>
+ Mon premier test sur Git
+
+ Modification du texte.
+<span class="gi">+
++Modification dans la branche.
++
+</span></code></pre></div></div>
+
+<h3 id="snapshot-dans-la-branche">Snapshot dans la branche</h3>
+<p>Comme dans la branche principale, nous allons ensuite réaliser un snapshot de test.txt.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git add test.txt
+$ git commit -m "Changement dans la branche."
+[modification c334c8b] Changement dans la branche
+	1 file changed, 3 insertions(+)
+</code></pre></div></div>
+
+<p>Si nous reprenons la liste des commits, nous avons bien 3 enregistrements :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git log
+commit c334c8b34368e9be690b9884d9ba18e8c64407c1 (HEAD -&gt; modification)
+Author: thomasdenecker thomas.denecker@gmail.com
+Date:   Tue Nov 13 16:01:08 2018 +0100
+
+    Changement dans la branche
+
+commit bbea074d0b2f6335f99e2d54c6a7092adb08f337 (master)
+Author: thomasdenecker thomas.denecker@gmail.com
+Date:   Tue Nov 13 15:15:59 2018 +0100
+
+    My second commit
+
+commit b4a7d66afb8066bced7a0d6113ab26a519b1b6be
+Author: thomasdenecker thomas.denecker@gmail.com
+Date:   Tue Nov 13 14:49:29 2018 +0100
+
+    My first commit
+</code></pre></div></div>
+<h3 id="basculer-les-changements-dans-la-branche-master">Basculer les changements dans la branche master</h3>
+
+<p>Une fois les tests et modifications terminés dans la branche, il est possible de basculer ces changements dans la branche principale (master).</p>
+
+<p>1- Nous revenons dans la branche principale</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git checkout master
+Switched to branch 'master'
+</code></pre></div></div>
+
+<p>2- Nous réalisons le “merge” des branches</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git merge modifications
+Updating bbea074..c334c8b
+Fast-forward
+test.txt | 3 +++
+1 file changed, 3 insertions(+)
+</code></pre></div></div>
+
+<p>3- Nous supprimons la branche modification</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch -d modification
+Deleted branch modification (was c334c8b).
+</code></pre></div></div>
+<h3 id="vérification-des-changements-dans-la-branche">Vérification des changements dans la branche</h3>
+<p>Nous pouvons commencer par vérifier le statut de la branche.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git status
+On branch master
+nothing to commit, working tree clean
+</code></pre></div></div>
+<p>Enfin, nous pouvons lire le contenu du fichier. Le contenu a bien changé.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cat test.txt
+Mon premier test sur Git
+
+Modification du texte.
+
+Modification dans la branche.
+</code></pre></div></div>
+<h2 id="distribution-du-projet">Distribution du projet</h2>
+<p>Le projet est actuellement sur notre dépôt local et uniquement sur notre dépôt local. L’étape suivante consiste à mettre le projet sur un espace partagé : un dépôt distant. Le prochain chapitre portera sur Github, le dépôt distant le plus utilisé actuellement.</p>
+
+<h2 id="ressources">Ressources</h2>
+
+<p>De nombreuses ressources sont disponibles en ligne. En voici une liste non exhaustive :</p>
+<ul>
+  <li>La git cheat sheet de Github : <a href="https://github.com/thomasdenecker/Au_coin_d_un_clavier/blob/master/docs/assets/pdf/git-cheat-sheet-education.pdf">le pdf</a></li>
+  <li>Le site de Pierre Poulain : <a href="http://cupnet.net/git-github/">ici</a></li>
+</ul>
+</p>
+        </div>
+        <hr>
+        <div class="text-center">
+            <button onclick="downloadPDF()" class="btn btn-danger"><i class="fas fa-file-pdf"></i> Exporter la séance en PDF</button>
+        </div>
+        <hr>
+    </div>
+</div>
+
+<script>
+    // documentation : https://printjs.crabbly.com/
+function downloadPDF() {
+    printJS({
+        printable: 'divPDF', 
+        type: 'html',
+        header: "Les bases de Git",
+        headerStyle: "width: 100%; height: 4em; padding : 1.33em 0em 1.33em 0em;  margin-bottom: 30px; background-color:#173b6c; color: white;  text-shadow: #173b6c 1px 0 10px;  text-align: center;",
+        css: ['/IFB-FAIR-data-training/assets/fontawesome/css/all.css', 
+            'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css',
+            '/IFB-FAIR-data-training/assets/css/style.css'
+        ],
+        documentTitle: "Séance  Module  - FAIR data by IFB"
+    }) 
+}
+</script>
+
+    </div><footer class="footer">
+    <div class="container">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-sm-6">
+                <div class="d-flex flex-row">
+                    <img src="/IFB-FAIR-data-training/assets/img/logo-ifb.svg" | relative_url }}' alt="IFB" height="50px">
+                    <img src="/IFB-FAIR-data-training/assets/img/logo-elixir-france.png" | relative_url }}' alt="IFB" height="50px">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <span class="text-muted" ><a href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training" target="_blank" style="color:#173b6c">IFB-FAIR-data-training</a> is maintained by <a
+                    href="https://github.com/IFB-ElixirFr" target="_blank" style="color:#173b6c">IFB-ElixirFr</a>.</span>
+                    
+                    <div class="d-flex flex-row justify-content-center" style="color:#173b6c">
+                        <div class="p-2"><a href="https://github.com/IFB-ElixirFr" target="_blank" class="linkSocial"><i class="fab fa-github-alt"></i></div>
+                        <div class="p-2"><a href="https://twitter.com/IFB_Bioinfo" target="_blank" class="linkSocial"><i class="fab fa-twitter"></i></a></div>
+                        <div class="p-2"><a href="https://www.linkedin.com/company/institut-fran%C3%A7ais-de-bioinformatique/" target="_blank" class="linkSocial"><i class="fab fa-linkedin-in"></i></a></div>
+                        <div class="p-2"><a href="https://www.youtube.com/channel/UC-PWpzAklKLdjxtdHnkoeCw" target="_blank" class="linkSocial"><i class="fab fa-youtube"></i></a></i></div>
+                    </div>
+                    
+            </div>
+        </div>
+    </div>
+</footer><!-- The Modal -->
+    <div id="modal_div" class="modal">
+
+        <!-- The Close Button -->
+        <span class="close" id="modal_close">&times;</span>
+
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="modal_img">
+
+        <!-- Modal Caption (Image Text) -->
+        <div id="modal_caption"></div>
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+    function image(img) {
+        // Get the modal
+        var modal = document.getElementById("modal_div");       
+        var modalImg = document.getElementById("modal_img");
+        var captionText = document.getElementById("modal_caption");
+        
+        // Display image
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        captionText.innerHTML = img.alt;
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementById("modal_close");
+    
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+
+    <script charset="UTF-8">
+        $(document).ready(function(){
+            var navSelector = "#toc";
+            var $myNav = $(navSelector);
+            Toc.init($myNav);
+            
+            $("body").scrollspy({
+                target: navSelector,
+                offset: 70
+            });
+
+            // Add smooth scrolling on all links inside the navbar
+            $("#toc a").on('click', function(event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = decodeURI(this.hash);
+                
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top - 75
+                }, 800, function(){
+            
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    //window.location.hash = hash;
+                });
+                }  // End if
+            });
+
+        });
+        
+    </script>
+
+
+  </body>
+</html>
+

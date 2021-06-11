@@ -1,0 +1,1380 @@
+<!doctype html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFB FAIR-bioinfo training</title>
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/IFB-FAIR-data-training/assets/css/style.css">
+
+    <!-- Icons -->
+    <!-- https://boxicons.com/ -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Nav icon -->
+    <link rel="icon" type="image/png" href="/IFB-FAIR-data-training/assets/img/logo.png"/>
+
+    <!-- TOC -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
+    <!-- add after bootstrap.min.js -->
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+    
+    <!-- fontawesome - Icons -->
+    <link href= "/IFB-FAIR-data-training/assets/fontawesome/css/all.css" rel="stylesheet">
+    
+    <!-- PDF script -->
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <link href= "https://printjs-4de6.kxcdn.com/print.min.css" rel="stylesheet">
+
+    <!-- papaParse -->
+    <script type="text/javascript" src="/IFB-FAIR-data-training/assets/js/papaparse.min.js" ></script>
+
+    <!-- Charts -->
+    <script src="/IFB-FAIR-data-training/assets/js/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+    <!-- AddEvent script -->
+    <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+
+    <!-- AddEvent Settings -->
+    <!-- Documentation : https://www.addevent.com/documentation/add-to-calendar-button -->
+    <script type="text/javascript">
+    window.addeventasync = function(){
+        addeventatc.settings({
+            appleical  : {show:true, text:"Apple Calendar"},
+            google     : {show:true, text:"Google <em>(online)</em>"},
+            office365  : {show:true, text:"Office 365 <em>(online)</em>"},
+            outlook    : {show:true, text:"Outlook"},
+            outlookcom : {show:true, text:"Outlook.com <em>(online)</em>"},
+            yahoo      : {show:true, text:"Yahoo <em>(online)</em>"}
+        });
+    };
+    </script>
+</head><body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button><nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="/IFB-FAIR-data-training/index.html">
+            <img src="/IFB-FAIR-data-training/assets/img/logo.png" height="30" class="d-inline-block align-top" alt="">
+            FAIR data
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto">
+
+                <!-- Module -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeModules.html" >Modules</a>
+                </li>
+
+
+                <!-- Cours -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeCours.html" >Cours</a>
+                </li>
+
+                <!-- Travaux pratiques -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeTPs.html" >TPs</a>
+                </li>
+
+                <!-- Ressources -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeRessources.html" >Ressources</a>
+                </li>
+
+                <!-- Edition -->
+                <li  class="nav-item"  >
+                    <a class="nav-link" href="/IFB-FAIR-data-training/listeEditions.html" >Éditions</a>
+                </li>
+
+                <!-- A propos -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_Apropos" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        À propos
+                    </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_Apropos">
+                        <a class="dropdown-item" href="/IFB-FAIR-data-training/apropos.html" >De l'IFB</a>
+                        <a class="dropdown-item" href="/IFB-FAIR-data-training/formateurs.html" >Des formateurs</a>
+                    </div>
+                </li>
+
+            </ul>
+            
+            <ul class="nav navbar-nav ml-auto">
+                <form class="form-inline" action="/IFB-FAIR-data-training/search.html" method="get">
+
+                    <div class="input-group">
+                        <input type="text" class="form-control" 
+                        id="search-box_nav" placeholder="Rechercher" aria-label="Rechercher" aria-describedby="basic-addon2" 
+                        name="query">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                      </div>
+
+                  </form>
+                  
+                <!-- Question -->
+                <li class="nav-item dropdown" >
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_questions" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-question-circle"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink_questions">
+                        <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fab fa-github"></i></i></span></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Notre GitHub </b></p>
+                                    <p class="textNav">Visiter nous ! </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/wiki" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fas fa-book"></i></span></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Pour contribuer </b></p>
+                                    <p class="textNav">Une docu est disponible</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/discussions" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fas fa-comments"></i></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Envie d'échanger avec nous ? </b></p>
+                                    <p class="textNav">Une discussion est ouverte</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item" href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training/issues" target="_blank">
+                            <div class="d-flex flex-row">
+                                <div class="p-2"><span class="imgNav"><i class="fas fa-exclamation-triangle"></i></span></div>
+                                <div class="p-2">
+                                    <p class="textNav"><b>Un bug dans le site ? </b></p>
+                                    <p class="textNav">Déclarer une <i>issue</i> </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        
+                    </div>
+                </li>
+            </ul>
+            
+
+        </div>
+    </div>
+
+</nav>
+
+<div id="home"></div>
+    <div class="sectionCover d-flex flex-column justify-content-center align-items-center">
+        <p id="id_header_title" style="margin-bottom: .5rem; font-weight: 500; line-height: 1.2; font-size: 2.5rem;"> </p>
+        <p id="id_header_subTitle" style="font-size: 1.6em;text-align:center;"></p>
+    </div>
+
+    <div class="container">
+        <script>
+var paragraph = document.getElementById("id_header_title");
+var text = document.createTextNode("Première édition");
+paragraph.appendChild(text);
+</script>
+
+<div class="row">
+    <div class="col-sm-3">
+        <nav id="toc" class="sticky-top"></nav>
+    </div>
+    <div class="col-sm-9" data-spy="scroll" data-target="#toc" data-offset="70" >
+        <div id="divPDF">
+            <div class="card">
+                <div class="card-header text-white bg-info">
+                    <h2 style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-info-circle"></i> Informations générales</h2>
+                </div>
+                <div class="card-body">
+                    <p><b>Description</b> <br>  Cette édition est la première édition de FAIR data</p>
+                </div>
+            </div>
+            <br>
+            <h2>Programme</h2>
+
+            
+            
+
+            
+              <h4 name='module_1'>Module 1</h4>
+              <ol>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module1_sequence1_edition1_cours.html"> 
+                    
+                     <i class="fas fa-book"></i> 
+                    Activité Brise Glace 
+                </a></li>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module1_sequence2_edition1_cours.html"> 
+                    
+                     <i class="fas fa-book"></i> 
+                    Crise de reproductibilité 
+                </a></li>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module1_sequence3_edition1_cours.html"> 
+                    
+                     <i class="fas fa-book"></i> 
+                    Vers FAIR 
+                </a></li>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module1_sequence4_edition1_cours.html"> 
+                    
+                     <i class="fas fa-book"></i> 
+                    Cycle de vie des données 
+                </a></li>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module1_sequence5_edition1_cours.html"> 
+                    
+                     <i class="fas fa-book"></i> 
+                    Le plan de gestion des données 
+                </a></li>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module1_sequence6_edition1_TP.html"> 
+                    
+                     <i class="fas fa-ellipsis-h"></i> 
+                    Opidor 
+                </a></li>
+                
+              </ol>
+            
+              <h4 name='module_2'>Module 2</h4>
+              <ol>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module2_sequence1_edition1_cours.html"> 
+                    
+                     <i class="fas fa-pencil-ruler"></i>
+                    Introduction 
+                </a></li>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module2_sequence2_edition1_cours.html"> 
+                    
+                     <i class="fas fa-book"></i> 
+                    Le nommage des fichiers 
+                </a></li>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module2_sequence3_edition1_cours.html"> 
+                    
+                     <i class="fas fa-book"></i> 
+                    Format de fichier 
+                </a></li>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module2_sequence4_edition1_cours.html"> 
+                    
+                     <i class="fas fa-book"></i> 
+                    Stockage et accès 
+                </a></li>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module2_sequence5_edition1_cours.html"> 
+                    
+                     <i class="fas fa-book"></i> 
+                    Outils et solution 
+                </a></li>
+                
+              </ol>
+            
+              <h4 name='module_3'>Module 3</h4>
+              <ol>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module3_sequence1_edition1_cours.html"> 
+                    
+                     <i class="fas fa-book"></i> 
+                     Introduction aux métadonnées 
+                </a></li>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module3_sequence2_edition1_cours.html"> 
+                    
+                     <i class="fas fa-book"></i> 
+                    Life science standards and ENA submission 
+                </a></li>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module3_sequence3_edition1_tp.html"> 
+                    
+                     <i class="fas fa-pencil-ruler"></i>
+                    Choix des métadonnées et soumission à l'EBI 
+                </a></li>
+                
+              </ol>
+            
+              <h4 name='module_4'>Module 4</h4>
+              <ol>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module4_sequence1_edition1_cours.html"> 
+                    
+                     <i class="fas fa-book"></i> 
+                    Cadre Juridique  
+                </a></li>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module4_sequence2_edition1_cours.html"> 
+                    
+                     <i class="fas fa-book"></i> 
+                    Les licences sur les données 
+                </a></li>
+                
+              </ol>
+            
+              <h4 name='module_5'>Module 5</h4>
+              <ol>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module5_sequence1_edition1.html"> 
+                    
+                     <i class="fas fa-ellipsis-h"></i> 
+                    Fin du PGD 
+                </a></li>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module5_sequence2_edition1.html"> 
+                    
+                     <i class="fas fa-ellipsis-h"></i> 
+                    Débrief de la formation 
+                </a></li>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module5_sequence3_edition1.html"> 
+                    
+                     <i class="fas fa-ellipsis-h"></i> 
+                    Quizz 
+                </a></li>
+                
+                <li><a href="/IFB-FAIR-data-training/sequences/module5_sequence4_edition1.html"> 
+                    
+                     <i class="fas fa-ellipsis-h"></i> 
+                    Questionnaire 
+                </a></li>
+                
+              </ol>
+            
+
+            <h2>Formateurs</h2>
+
+            
+            
+            
+            
+            
+            
+                    
+                        
+<div class="tooltip" >
+    <a href= "/IFB-FAIR-data-training/formateurs/fredericdeLamotte.html" >
+    
+    <img src="https://www.southgreen.fr/sites/southgreen.fr/files/Avatar_Fred.jpeg" alt="Frédéric de Lamotte" class="avatar">
+    
+    </a>
+    <span class="tooltiptext">Frédéric de Lamotte</span>
+</div>
+
+
+
+                         
+                         
+                
+            
+            
+            
+                    
+                
+                    
+                        
+<div class="tooltip" >
+    <a href= "/IFB-FAIR-data-training/formateurs/gauthierSarah.html" >
+    
+    <img class="avatar" alt="gsarah" width="100" height="100" data-proofer-ignore="true" src="https://avatars1.githubusercontent.com/gsarah?v=3&amp;s=100" srcset="https://avatars1.githubusercontent.com/gsarah?v=3&amp;s=100 1x, https://avatars1.githubusercontent.com/gsarah?v=3&amp;s=200 2x, https://avatars1.githubusercontent.com/gsarah?v=3&amp;s=300 3x, https://avatars1.githubusercontent.com/gsarah?v=3&amp;s=400 4x" /> 
+    
+    </a>
+    <span class="tooltiptext">Gautier Sarah</span>
+</div>
+
+
+
+                         
+                         
+                
+            
+            
+            
+                    
+                
+                    
+                
+                    
+                        
+<div class="tooltip" >
+    <a href= "/IFB-FAIR-data-training/formateurs/heleneChiapello.html" >
+    
+    <img src="https://migale.inrae.fr/sites/default/files/helene_chiapello.png" alt="Hélène Chiapello" class="avatar">
+    
+    </a>
+    <span class="tooltiptext">Hélène Chiapello</span>
+</div>
+
+
+
+                         
+                         
+                
+            
+            
+            
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+<div class="tooltip" >
+    <a href= "/IFB-FAIR-data-training/formateurs/jeanfrancoisDufayard.html" >
+    
+    <img class="avatar" alt="dufayard" width="100" height="100" data-proofer-ignore="true" src="https://avatars1.githubusercontent.com/dufayard?v=3&amp;s=100" srcset="https://avatars1.githubusercontent.com/dufayard?v=3&amp;s=100 1x, https://avatars1.githubusercontent.com/dufayard?v=3&amp;s=200 2x, https://avatars1.githubusercontent.com/dufayard?v=3&amp;s=300 3x, https://avatars1.githubusercontent.com/dufayard?v=3&amp;s=400 4x" /> 
+    
+    </a>
+    <span class="tooltiptext">Jean-François Dufayard</span>
+</div>
+
+
+
+                         
+                         
+                
+            
+            
+            
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+<div class="tooltip" >
+    <a href= "/IFB-FAIR-data-training/formateurs/julienSeiler.html" >
+    
+    <img class="avatar" alt="julozi" width="100" height="100" data-proofer-ignore="true" src="https://avatars1.githubusercontent.com/julozi?v=3&amp;s=100" srcset="https://avatars1.githubusercontent.com/julozi?v=3&amp;s=100 1x, https://avatars1.githubusercontent.com/julozi?v=3&amp;s=200 2x, https://avatars1.githubusercontent.com/julozi?v=3&amp;s=300 3x, https://avatars1.githubusercontent.com/julozi?v=3&amp;s=400 4x" /> 
+    
+    </a>
+    <span class="tooltiptext">Julien Seiler</span>
+</div>
+
+
+
+                         
+                         
+                
+            
+            
+            
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+<div class="tooltip" >
+    <a href= "/IFB-FAIR-data-training/formateurs/lionelMaurel.html" >
+    
+    <img src="https://cdn.radiofrance.fr/s3/cruiser-production/2019/07/c6188191-8033-4b19-8e5e-ce83c4f564ac/838_lionelmaurelfc.jpg" alt="Lionel Maurel" class="avatar">
+    
+    </a>
+    <span class="tooltiptext">Lionel Maurel</span>
+</div>
+
+
+
+                         
+                         
+                
+            
+            
+            
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+<div class="tooltip" >
+    <a href= "/IFB-FAIR-data-training/formateurs/pauletteLieby.html" >
+    
+    <img src="https://raw.githubusercontent.com/IFB-ElixirFr/IFB-FAIR-data-training/main/assets/img/paulette_lieby.jpg" alt="Paulette Lieby" class="avatar">
+    
+    </a>
+    <span class="tooltiptext">Paulette Lieby</span>
+</div>
+
+
+
+                         
+                         
+                
+            
+            
+            
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+<div class="tooltip" >
+    <a href= "/IFB-FAIR-data-training/formateurs/thomasDenecker.html" >
+    
+    <img class="avatar" alt="thomasdenecker" width="100" height="100" data-proofer-ignore="true" src="https://avatars1.githubusercontent.com/thomasdenecker?v=3&amp;s=100" srcset="https://avatars1.githubusercontent.com/thomasdenecker?v=3&amp;s=100 1x, https://avatars1.githubusercontent.com/thomasdenecker?v=3&amp;s=200 2x, https://avatars1.githubusercontent.com/thomasdenecker?v=3&amp;s=300 3x, https://avatars1.githubusercontent.com/thomasdenecker?v=3&amp;s=400 4x" /> 
+    
+    </a>
+    <span class="tooltiptext">Thomas Denecker</span>
+</div>
+
+
+
+                         
+                         
+                
+             
+
+            <p><h2 id="informations-générales-de-lédition">Informations générales de l’édition</h2>
+
+<p>Cette édition a la première édition de FAIR data.</p>
+
+<h3 id="localisation">Localisation</h3>
+
+<p>Chez nous !</p>
+
+<h2 id="les-participants">Les participants</h2>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        
+        
+        
+        <thead>
+        <tr>
+        
+        <th>Nom</th>
+        
+        <th>Prenom</th>
+        
+        <th>Mail</th>
+        
+        </tr> 
+        </thead>
+        <tbody>
+        
+        <tr>
+        
+        <td>
+        
+        Badoual
+           
+        </td>
+        
+        <td>
+        
+        Ariane
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:ariane.badoual@inria.fr">ariane.badoual@inria.fr</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        Bihouée
+           
+        </td>
+        
+        <td>
+        
+        Audrey
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:audrey.bihouee@univ-nantes.fr">audrey.bihouee@univ-nantes.fr</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        BRANGER
+           
+        </td>
+        
+        <td>
+        
+        Maxime
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:maxime.branger@inrae.fr">maxime.branger@inrae.fr</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        COGNAT
+           
+        </td>
+        
+        <td>
+        
+        Valerie
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:valerie.cognat@ibmp-cnrs.unistra.fr">valerie.cognat@ibmp-cnrs.unistra.fr</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        DA ROCHA
+           
+        </td>
+        
+        <td>
+        
+        MARTINE
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:martine.da-rocha@inrae.fr">martine.da-rocha@inrae.fr</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        Dupouy
+           
+        </td>
+        
+        <td>
+        
+        Marion
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:marion.dupouy@era-bio-it.com">marion.dupouy@era-bio-it.com</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        Guéguen
+           
+        </td>
+        
+        <td>
+        
+        Loraine
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:lgueguen@sb-roscoff.fr">lgueguen@sb-roscoff.fr</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        Habib
+           
+        </td>
+        
+        <td>
+        
+        christophe
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:habib.c@chu-toulouse.fr">habib.c@chu-toulouse.fr</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        Hennion
+           
+        </td>
+        
+        <td>
+        
+        Magali
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:hennion@bio.ens.psl.eu">hennion@bio.ens.psl.eu</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        Kuchly
+           
+        </td>
+        
+        <td>
+        
+        claire
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:claire.kuchly@inrae.fr">claire.kuchly@inrae.fr</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        LEFEBVRE
+           
+        </td>
+        
+        <td>
+        
+        Marie
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:marie.lefebvre@inrae.fr">marie.lefebvre@inrae.fr</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        Michotey
+           
+        </td>
+        
+        <td>
+        
+        Célia
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:celia.michotey@inrae.fr">celia.michotey@inrae.fr</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        Naouar
+           
+        </td>
+        
+        <td>
+        
+        Naira
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:naira.naouar@upmc.fr">naira.naouar@upmc.fr</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        Navratil
+           
+        </td>
+        
+        <td>
+        
+        Vincent
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:vincent.navratil@univ-lyon1.fr">vincent.navratil@univ-lyon1.fr</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        Pericard
+           
+        </td>
+        
+        <td>
+        
+        Pierre
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:pierre.pericard@univ-lille.fr">pierre.pericard@univ-lille.fr</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        Puthier
+           
+        </td>
+        
+        <td>
+        
+        Denis
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:denis.puthier@univ-amu.fr">denis.puthier@univ-amu.fr</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        Ranwez
+           
+        </td>
+        
+        <td>
+        
+        vincent
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:ranwez@supagro.fr">ranwez@supagro.fr</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        Rogier
+           
+        </td>
+        
+        <td>
+        
+        Odile
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:odile.rogier@inrae.fr">odile.rogier@inrae.fr</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        Swennen
+           
+        </td>
+        
+        <td>
+        
+        Dominique
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:dominique.swennen@inrae.fr">dominique.swennen@inrae.fr</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        
+        <td>
+        
+        TEREZOL
+           
+        </td>
+        
+        <td>
+        
+        Morgane
+           
+        </td>
+        
+        <td>
+        
+        <a href="mailto:morgane.terezol@univ-amu.fr">morgane.terezol@univ-amu.fr</a> 
+           
+        </td>
+        
+        </tr>
+        
+        
+        </tbody>
+        </table>
+</div>
+
+<h2 id="photos-de-la-formation">Photos de la formation</h2>
+
+<div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+
+<ol class="carousel-indicators">
+
+
+
+<li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>  
+ 
+
+
+
+<li data-target="#carouselIndicators" data-slide-to="1"></li>
+ 
+ 
+</ol>
+
+<div class="carousel-inner">
+
+
+
+<div class="carousel-item active">
+<img class="d-block w-100" src="/IFB-FAIR-data-training/assets/edition1/photosGroupe/PhotosGroupe-2021-03-16-11.19.57.png" alt="Slide 1" />
+</div>
+              
+
+
+
+<div class="carousel-item">
+<img class="d-block w-100" src="/IFB-FAIR-data-training/assets/edition1/photosGroupe/PhotosGroupe2021-03-16-11.19.53.png" lt="Slide 2" />
+</div>
+              
+ 
+</div>
+
+<a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>
+
+<h2 id="les-créations-lors-de-lédition">Les créations lors de l’édition</h2>
+
+<h3 class="styleTitle" id="module-1">Module 1</h3>
+
+<h4 id="quelle-définition-pour-les-données-de-la-recherche-">Quelle définition pour les données de la recherche ?</h4>
+
+<p><strong>Quand ?</strong>  <a href="/IFB-FAIR-data-training/sequences/module1_sequence2_edition1_cours.html">Module 1 - Séquence 2</a></p>
+
+<p><strong>Outils utilisé</strong> : <a href="http://scrumblr.ca/">scrumblr</a></p>
+
+<div class="card" style="margin:10px 0px;">
+    <div class="card-header text-white" style="background-color: red;">
+        <p style="all:unset; font-size: 1.15rem; font-weight: bold;"><i class="fas fa-exclamation-triangle"></i> Attention</p>
+    </div>
+    <div class="card-body">
+        <p>Ne pas effacer un post qui semble vide, il est simplement en train d’être rédigé</p>
+
+    </div>
+</div>
+
+<h5 id="groupe-1">Groupe 1</h5>
+
+<p><img src="/IFB-FAIR-data-training/assets/edition1/module1/Donnees_recherche_Salle1.jpeg" alt="" style="max-width: 100%;" id="imageID_" onclick="image(this)" /></p>
+
+<h5 id="groupe-2">Groupe 2</h5>
+
+<p><img src="/IFB-FAIR-data-training/assets/edition1/module1/Donnees_recherche_Salle2.png" alt="" style="max-width: 100%;" id="imageID_" onclick="image(this)" /></p>
+
+<h5 id="groupe-3">Groupe 3</h5>
+
+<p><img src="/IFB-FAIR-data-training/assets/edition1/module1/Donnees_recherche_Salle3.png" alt="" style="max-width: 100%;" id="imageID_" onclick="image(this)" /></p>
+
+<h4 id="données-réutilisables">Données réutilisables</h4>
+
+<p><strong>Outils utilisé</strong>  : <a href="https://www.menti.com/">Mentimeter</a></p>
+
+<p><img src="/IFB-FAIR-data-training/assets/edition1/module1/donnees_reutilisables_edition1.jpeg" alt="" style="max-width: 100%;" id="imageID_" onclick="image(this)" /></p>
+
+<h4 id="réutiliser-les-données-où-est-le-problème">Réutiliser les données? Où est le problème?</h4>
+
+<p><strong>Outils utilisé</strong> : <a href="http://scrumblr.ca/">scrumblr</a></p>
+
+<p><img src="/IFB-FAIR-data-training/assets/edition1/module1/cyclevie_edition1.jpeg" alt="" style="max-width: 100%;" id="imageID_" onclick="image(this)" /></p>
+
+<h3 class="styleTitle" id="module-2">Module 2</h3>
+
+<h4 id="formats-des-données">Formats des données</h4>
+
+<p><strong>Outils utilisé</strong> : <a href="http://scrumblr.ca/">scrumblr</a></p>
+
+<p><img src="/IFB-FAIR-data-training/assets/edition1/module2/format.png" alt="" style="max-width: 100%;" id="imageID_" onclick="image(this)" /></p>
+
+<h4 id="liens-partagés">Liens partagés</h4>
+
+<p><strong>Structure des dossiers</strong></p>
+
+<ul>
+  <li><a href="https://genr.eu/wp/towards-a-standardized-research-folder-structure/">Lien 1</a></li>
+  <li><a href="https://zenodo.org/record/4410128#.YFCNNmRuckh">Lien 2</a></li>
+</ul>
+
+<h3 class="styleTitle" id="module-3">Module 3</h3>
+
+<h4 id="standards">Standards</h4>
+
+<p><strong>Outils utilisé</strong> : <a href="http://scrumblr.ca/">scrumblr</a></p>
+
+<p><img src="/IFB-FAIR-data-training/assets/edition1/module3/standard.png" alt="" style="max-width: 100%;" id="imageID_" onclick="image(this)" /></p>
+
+<h3 class="styleTitle" id="module-4">Module 4</h3>
+
+<h4 id="liens-partagés-1">Liens partagés</h4>
+
+<ul>
+  <li><a href="https://hal.inrae.fr/hal-02791224/file/Guide_Juridique_V1_2.pdf">https://hal.inrae.fr/hal-02791224/file/Guide_Juridique_V1_2.pdf</a></li>
+  <li><a href="https://www.data.gouv.fr/fr/licences">https://www.data.gouv.fr/fr/licences</a></li>
+  <li><a href="https://www.ouvrirlascience.fr/plan-national-pour-la-science-ouverte/">https://www.ouvrirlascience.fr/plan-national-pour-la-science-ouverte/</a></li>
+  <li><a href="https://www.conseil-etat.fr/actualites/actualites/health-data-hub-et-protection-de-donnees-personnelles-des-precautions-doivent-etre-prises-dans-l-attente-d-une-solution-perenne">https://www.conseil-etat.fr/actualites/actualites/health-data-hub-et-protection-de-donnees-personnelles-des-precautions-doivent-etre-prises-dans-l-attente-d-une-solution-perenne</a></li>
+  <li><a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000042413782">https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000042413782</a></li>
+  <li><a href="https://esante.gouv.fr/labels-certifications/hds/liste-des-herbergeurs-certifies">https://esante.gouv.fr/labels-certifications/hds/liste-des-herbergeurs-certifies</a></li>
+  <li><a href="https://gitlab.com/paule00/all-fair-and-open-science-related-ressources">https://gitlab.com/paule00/all-fair-and-open-science-related-ressources</a></li>
+  <li><a href="https://theconversation.com/comment-la-science-ouverte-peut-sinspirer-du-libre-acces-aux-donnees-publiques-157091">https://theconversation.com/comment-la-science-ouverte-peut-sinspirer-du-libre-acces-aux-donnees-publiques-157091</a></li>
+</ul>
+</p>
+        </div>
+        <hr>
+        <div class="text-center">
+            <button onclick="downloadPDF()" class="btn btn-danger"><i class="fas fa-file-pdf"></i> Exporter la séance en PDF</button>
+        </div>
+        <hr>
+    </div>
+</div>
+
+<script>
+    // documentation : https://printjs.crabbly.com/
+function downloadPDF() {
+    printJS({
+        printable: 'divPDF', 
+        type: 'html',
+        header: "Première édition",
+        headerStyle: "width: 100%; height: 4em; padding : 1.33em 0em 1.33em 0em;  margin-bottom: 30px; background-color:#173b6c; color: white;  text-shadow: #173b6c 1px 0 10px;  text-align: center;",
+        css: ['/IFB-FAIR-data-training/assets/fontawesome/css/all.css', 
+            'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css',
+            '/IFB-FAIR-data-training/assets/css/style.css'
+        ],
+        documentTitle: "Edition 1 - FAIR data by IFB"
+    }) 
+}
+</script>
+
+    </div><footer class="footer">
+    <div class="container">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-sm-6">
+                <div class="d-flex flex-row">
+                    <img src="/IFB-FAIR-data-training/assets/img/logo-ifb.svg" | relative_url }}' alt="IFB" height="50px">
+                    <img src="/IFB-FAIR-data-training/assets/img/logo-elixir-france.png" | relative_url }}' alt="IFB" height="50px">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <span class="text-muted" ><a href="https://github.com/IFB-ElixirFr/IFB-FAIR-data-training" target="_blank" style="color:#173b6c">IFB-FAIR-data-training</a> is maintained by <a
+                    href="https://github.com/IFB-ElixirFr" target="_blank" style="color:#173b6c">IFB-ElixirFr</a>.</span>
+                    
+                    <div class="d-flex flex-row justify-content-center" style="color:#173b6c">
+                        <div class="p-2"><a href="https://github.com/IFB-ElixirFr" target="_blank" class="linkSocial"><i class="fab fa-github-alt"></i></div>
+                        <div class="p-2"><a href="https://twitter.com/IFB_Bioinfo" target="_blank" class="linkSocial"><i class="fab fa-twitter"></i></a></div>
+                        <div class="p-2"><a href="https://www.linkedin.com/company/institut-fran%C3%A7ais-de-bioinformatique/" target="_blank" class="linkSocial"><i class="fab fa-linkedin-in"></i></a></div>
+                        <div class="p-2"><a href="https://www.youtube.com/channel/UC-PWpzAklKLdjxtdHnkoeCw" target="_blank" class="linkSocial"><i class="fab fa-youtube"></i></a></i></div>
+                    </div>
+                    
+            </div>
+        </div>
+    </div>
+</footer><!-- The Modal -->
+    <div id="modal_div" class="modal">
+
+        <!-- The Close Button -->
+        <span class="close" id="modal_close">&times;</span>
+
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="modal_img">
+
+        <!-- Modal Caption (Image Text) -->
+        <div id="modal_caption"></div>
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+    function image(img) {
+        // Get the modal
+        var modal = document.getElementById("modal_div");       
+        var modalImg = document.getElementById("modal_img");
+        var captionText = document.getElementById("modal_caption");
+        
+        // Display image
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        captionText.innerHTML = img.alt;
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementById("modal_close");
+    
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+
+    <script charset="UTF-8">
+        $(document).ready(function(){
+            var navSelector = "#toc";
+            var $myNav = $(navSelector);
+            Toc.init($myNav);
+            
+            $("body").scrollspy({
+                target: navSelector,
+                offset: 70
+            });
+
+            // Add smooth scrolling on all links inside the navbar
+            $("#toc a").on('click', function(event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = decodeURI(this.hash);
+                
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top - 75
+                }, 800, function(){
+            
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    //window.location.hash = hash;
+                });
+                }  // End if
+            });
+
+        });
+        
+    </script>
+
+
+  </body>
+</html>
+
